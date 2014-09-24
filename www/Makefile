@@ -13,6 +13,7 @@
     SUBDIR += ach
     SUBDIR += adzap
     SUBDIR += amphetadesk
+    SUBDIR += alef-webfont
     SUBDIR += analog
     SUBDIR += anyremote2html
     SUBDIR += anyterm
@@ -43,7 +44,6 @@
     SUBDIR += b2evolution
     SUBDIR += bacula-web
     SUBDIR += baikal
-    SUBDIR += bannerfilter
     SUBDIR += bblog
     SUBDIR += bigbluebutton
     SUBDIR += bins
@@ -63,6 +63,7 @@
     SUBDIR += cakephp22
     SUBDIR += cakephp23
     SUBDIR += calamaris
+    SUBDIR += calendarserver
     SUBDIR += castget
     SUBDIR += caudium14
     SUBDIR += cblog
@@ -105,8 +106,6 @@
     SUBDIR += ctemplate
     SUBDIR += cutycapt
     SUBDIR += dalbum
-    SUBDIR += dansguardian
-    SUBDIR += dansguardian-devel
     SUBDIR += davical
     SUBDIR += dddbl
     SUBDIR += decss
@@ -378,6 +377,8 @@
     SUBDIR += links
     SUBDIR += links-hacked
     SUBDIR += links1
+    SUBDIR += linux-c6-qt47-webkit
+    SUBDIR += linux-c6-flashplugin11
     SUBDIR += linux-f10-flashplugin11
     SUBDIR += linux-firefox
     SUBDIR += linux-libgtkembedmoz
@@ -397,7 +398,6 @@
     SUBDIR += mathjax
     SUBDIR += mathopd
     SUBDIR += mediawiki119
-    SUBDIR += mediawiki121
     SUBDIR += mediawiki122
     SUBDIR += mediawiki123
     SUBDIR += mergelog
@@ -812,6 +812,7 @@
     SUBDIR += p5-Dancer-Plugin-ExtDirect
     SUBDIR += p5-Dancer-Plugin-Feed
     SUBDIR += p5-Dancer-Plugin-Lexicon
+    SUBDIR += p5-Dancer-Plugin-Memcached
     SUBDIR += p5-Dancer-Plugin-REST
     SUBDIR += p5-Dancer-Plugin-SiteMap
     SUBDIR += p5-Dancer-Plugin-ValidationClass
@@ -1634,6 +1635,7 @@
     SUBDIR += py-praw
     SUBDIR += py-prewikka
     SUBDIR += py-py-restclient
+    SUBDIR += py-pyjwt
     SUBDIR += py-pylons
     SUBDIR += py-pyquery
     SUBDIR += py-pyramid
@@ -1727,14 +1729,12 @@
     SUBDIR += rt42
     SUBDIR += ruby-amazon
     SUBDIR += ruby-aws
-    SUBDIR += ruby-borges
-    SUBDIR += ruby-fcgi
-    SUBDIR += ruby-fcgiwrap
     SUBDIR += ruby-google
     SUBDIR += ruby-wgettsv
     SUBDIR += rubygem-actionpack
     SUBDIR += rubygem-actionpack4
     SUBDIR += rubygem-activeresource
+    SUBDIR += rubygem-activeresource4
     SUBDIR += rubygem-acts-as-taggable-on
     SUBDIR += rubygem-addressable
     SUBDIR += rubygem-akami
@@ -1792,6 +1792,7 @@
     SUBDIR += rubygem-journey
     SUBDIR += rubygem-jquery-atwho-rails
     SUBDIR += rubygem-jquery-rails
+    SUBDIR += rubygem-jquery-rails4
     SUBDIR += rubygem-jquery-turbolinks
     SUBDIR += rubygem-jquery-ui-rails
     SUBDIR += rubygem-jruby-rack
@@ -1835,7 +1836,9 @@
     SUBDIR += rubygem-rack-test
     SUBDIR += rubygem-rack15
     SUBDIR += rubygem-rails
+    SUBDIR += rubygem-rails4
     SUBDIR += rubygem-railties
+    SUBDIR += rubygem-railties4
     SUBDIR += rubygem-raindrops
     SUBDIR += rubygem-ramaze
     SUBDIR += rubygem-raphael-rails
@@ -1852,7 +1855,6 @@
     SUBDIR += rubygem-robots
     SUBDIR += rubygem-savon
     SUBDIR += rubygem-scrapi
-    SUBDIR += rubygem-scrubyt
     SUBDIR += rubygem-select2-rails
     SUBDIR += rubygem-selenium-webdriver
     SUBDIR += rubygem-simple-rss
@@ -1912,7 +1914,6 @@
     SUBDIR += spreadlogd
     SUBDIR += sqstat
     SUBDIR += squid
-    SUBDIR += squid32
     SUBDIR += squid33
     SUBDIR += squid_radius_auth
     SUBDIR += squidclamav
@@ -2079,7 +2080,6 @@
     SUBDIR += vdradmin-am
     SUBDIR += vee
     SUBDIR += vertx
-    SUBDIR += videocache
     SUBDIR += vimb
     SUBDIR += visitors
     SUBDIR += volta

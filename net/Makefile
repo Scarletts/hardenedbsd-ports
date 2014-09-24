@@ -144,6 +144,7 @@
     SUBDIR += gnome-nettool
     SUBDIR += gnu-dico
     SUBDIR += gnu-radius
+    SUBDIR += go-cs
     SUBDIR += go.net
     SUBDIR += gofish
     SUBDIR += gogoc
@@ -245,6 +246,7 @@
     SUBDIR += jsch
     SUBDIR += jumpgate
     SUBDIR += jwhois
+    SUBDIR += kamailio
     SUBDIR += kdenetwork4
     SUBDIR += kdenetwork4-filesharing
     SUBDIR += kdenetwork4-strigi-analyzers
@@ -326,6 +328,8 @@
     SUBDIR += linc-reference
     SUBDIR += linknx
     SUBDIR += linphone
+    SUBDIR += linux-c6-openldap
+    SUBDIR += linux-c6-tcp_wrappers-libs
     SUBDIR += linux-f10-nss_ldap
     SUBDIR += linux-f10-openldap
     SUBDIR += linuxigd
@@ -863,8 +867,10 @@
     SUBDIR += py-eventlet
     SUBDIR += py-gntp
     SUBDIR += py-google
+    SUBDIR += py-gspread
     SUBDIR += py-gspreadsheet
     SUBDIR += py-impacket
+    SUBDIR += py-ipaddress
     SUBDIR += py-iplib
     SUBDIR += py-kombu
     SUBDIR += py-ldap2
@@ -892,6 +898,7 @@
     SUBDIR += py-pypcap
     SUBDIR += py-pysendfile
     SUBDIR += py-pysphere
+    SUBDIR += py-pyvmomi
     SUBDIR += py-pyzmq
     SUBDIR += py-qt4-network
     SUBDIR += py-radix
@@ -972,10 +979,7 @@
     SUBDIR += rtpproxy
     SUBDIR += rtptools
     SUBDIR += ruby-dict
-    SUBDIR += ruby-growl
     SUBDIR += ruby-icmp
-    SUBDIR += ruby-ldap
-    SUBDIR += ruby-net-geoip
     SUBDIR += ruby-tcpsocketpipe
     SUBDIR += ruby-tserver
     SUBDIR += rubygem-amazon-ec2
@@ -1020,6 +1024,7 @@
     SUBDIR += rubygem-rightgogrid
     SUBDIR += rubygem-righthttpconnection
     SUBDIR += rubygem-rightslicehost
+    SUBDIR += rubygem-ruby-growl
     SUBDIR += rubygem-rubyntlm
     SUBDIR += rubygem-rubyntlm01
     SUBDIR += rubygem-rubytter

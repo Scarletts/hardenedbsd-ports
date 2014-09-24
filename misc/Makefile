@@ -13,6 +13,7 @@
     SUBDIR += asbutton
     SUBDIR += asr-manpages
     SUBDIR += astrolog
+    SUBDIR += auto-multiple-choice
     SUBDIR += bb
     SUBDIR += bbjd
     SUBDIR += bdelta
@@ -73,6 +74,7 @@
     SUBDIR += esniper
     SUBDIR += estic
     SUBDIR += excel-writer
+    SUBDIR += exercism
     SUBDIR += explosions
     SUBDIR += fbless
     SUBDIR += felis
@@ -383,7 +385,6 @@
     SUBDIR += rpl
     SUBDIR += rtfm
     SUBDIR += ruby-progressbar
-    SUBDIR += ruby-vpim
     SUBDIR += rubygem-dotenv
     SUBDIR += rubygem-iesd
     SUBDIR += rubygem-mime-types
