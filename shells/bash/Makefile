@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=		bash
-PATCHLEVEL=		25
+PATCHLEVEL=		26
 PORTVERSION=		4.3.${PATCHLEVEL:S/^0//g}
 PORTREVISION?=		0
 CATEGORIES=		shells
@@ -25,10 +25,12 @@ COMMENT=		The GNU Project's Bourne Again SHell
 LICENSE=		GPLv3
 
 OPTIONS_DEFINE=		IMPLICITCD COLONBREAKSWORDS HELP NLS STATIC SYSLOG DOCS
+OPTIONS_DEFINE+=	IMPORTFUNCTIONS
 OPTIONS_DEFAULT=	IMPLICITCD COLONBREAKSWORDS HELP NLS
 IMPLICITCD_DESC=	Use directory name alone to cd into it
 COLONBREAKSWORDS_DESC=	Colons break words
 HELP_DESC=		Enable builtin help
+IMPORTFUNCTIONS_DESC=	Import function from env without --import-functions
 
 USES=			bison cpe makeinfo
 OPTIONS_SUB=		yes
@@ -36,6 +38,8 @@ CPE_VENDOR=		gnu
 
 IMPLICITCD_EXTRA_PATCHES=	${PATCHDIR}/extrapatch-implicitcd
 COLONBREAKSWORDS_EXTRA_PATCHES=	${PATCHDIR}/extrapatch-colonbreakswords
+# Always apply this for now. The option will modify the default.
+EXTRA_PATCHES+=			${PATCHDIR}/extrapatch-import-functions
 
 HELP_CONFIGURE_ENABLE=	help-builtin
 NLS_CONFIGURE_ENABLE=	nls
@@ -54,6 +58,12 @@ CONFIGURE_ARGS+=	--without-bash-malloc \
 
 .include <bsd.port.options.mk>
 
+.if ${PORT_OPTIONS:MIMPORTFUNCTIONS}
+CFLAGS+=	-DIMPORT_FUNCTIONS_DEF=1
+.else
+CFLAGS+=	-DIMPORT_FUNCTIONS_DEF=0
+.endif
+
 .if ${PORT_OPTIONS:MSTATIC} || defined(NO_DYNAMICROOT) || (defined(NOSHARED) && ${NOSHARED:tl} != "no")
 CONFIGURE_ARGS+=	--enable-static-link
 PKGNAMESUFFIX=		-static
@@ -64,6 +74,9 @@ CONFLICTS+=		bash-static-[0-9]*
 .endif
 
 post-patch:
+# Ensure y.tab.c is regenerated
+	${TOUCH} ${WRKSRC}/parse.y
+	${RM} ${WRKSRC}/y.tab.c
 	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/doc/bash.1
 .if ${PORT_OPTIONS:MSYSLOG}
 	@${REINPLACE_CMD} \

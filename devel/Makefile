@@ -3797,6 +3797,7 @@
     SUBDIR += py-ode
     SUBDIR += py-odfpy
     SUBDIR += py-olefileio_pl
+    SUBDIR += py-oletools
     SUBDIR += py-omnijson
     SUBDIR += py-omniorb
     SUBDIR += py-optik
@@ -4497,9 +4498,11 @@
     SUBDIR += rubygem-shoulda
     SUBDIR += rubygem-shoulda-context
     SUBDIR += rubygem-shoulda-matchers
+    SUBDIR += rubygem-sidekiq
     SUBDIR += rubygem-sigdump
     SUBDIR += rubygem-simple_form
     SUBDIR += rubygem-simplecov
+    SUBDIR += rubygem-slack-notifier
     SUBDIR += rubygem-slim
     SUBDIR += rubygem-slop
     SUBDIR += rubygem-soap4r

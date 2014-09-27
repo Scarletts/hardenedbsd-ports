@@ -1341,7 +1341,9 @@
     SUBDIR += rubygem-multi_xml
     SUBDIR += rubygem-nokogiri
     SUBDIR += rubygem-nokogiri14
+    SUBDIR += rubygem-nokogumbo
     SUBDIR += rubygem-opml
+    SUBDIR += rubygem-org-ruby
     SUBDIR += rubygem-parslet
     SUBDIR += rubygem-phone
     SUBDIR += rubygem-rak
@@ -1353,6 +1355,7 @@
     SUBDIR += rubygem-rich
     SUBDIR += rubygem-rouge
     SUBDIR += rubygem-rttool
+    SUBDIR += rubygem-rubypants
     SUBDIR += rubygem-sanitize
     SUBDIR += rubygem-sass
     SUBDIR += rubygem-sass-rails
@@ -1368,6 +1371,7 @@
     SUBDIR += rubygem-tidy
     SUBDIR += rubygem-unf
     SUBDIR += rubygem-unf_ext
+    SUBDIR += rubygem-version_sorter
     SUBDIR += rubygem-xml-simple
     SUBDIR += rubygem-xslt
     SUBDIR += rubygem-ya2yaml

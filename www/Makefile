@@ -1747,6 +1747,7 @@
     SUBDIR += rubygem-cgi_multipart_eof_fix
     SUBDIR += rubygem-chosen-rails
     SUBDIR += rubygem-cookiejar
+    SUBDIR += rubygem-crass
     SUBDIR += rubygem-cuba
     SUBDIR += rubygem-d3_rails
     SUBDIR += rubygem-davclient
@@ -1768,6 +1769,7 @@
     SUBDIR += rubygem-geminabox
     SUBDIR += rubygem-gitlab-gollum-lib
     SUBDIR += rubygem-gitlab-grack
+    SUBDIR += rubygem-gollum-lib
     SUBDIR += rubygem-gon
     SUBDIR += rubygem-haml
     SUBDIR += rubygem-haml-coderay
@@ -1852,6 +1854,7 @@
     SUBDIR += rubygem-robotex
     SUBDIR += rubygem-robots
     SUBDIR += rubygem-savon
+    SUBDIR += rubygem-sawyer
     SUBDIR += rubygem-scrapi
     SUBDIR += rubygem-select2-rails
     SUBDIR += rubygem-selenium-webdriver
