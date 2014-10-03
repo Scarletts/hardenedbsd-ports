@@ -190,7 +190,6 @@
     SUBDIR += gmetadom
     SUBDIR += gnome-doc-utils
     SUBDIR += gnome-spell
-    SUBDIR += gnome-translate
     SUBDIR += gnugrep
     SUBDIR += go-text
     SUBDIR += go.text
@@ -1310,6 +1309,7 @@
     SUBDIR += rubygem-elasticsearch-api
     SUBDIR += rubygem-elasticsearch-transport
     SUBDIR += rubygem-escape_utils
+    SUBDIR += rubygem-escape_utils-rails4
     SUBDIR += rubygem-ezamar
     SUBDIR += rubygem-fast_xs
     SUBDIR += rubygem-fast_xs073
@@ -1320,6 +1320,7 @@
     SUBDIR += rubygem-github-markdown
     SUBDIR += rubygem-github-markup
     SUBDIR += rubygem-gitlab-grit
+    SUBDIR += rubygem-gitlab-linguist
     SUBDIR += rubygem-heredoc_unindent
     SUBDIR += rubygem-hikidoc
     SUBDIR += rubygem-htmlentities

@@ -1186,10 +1186,10 @@ ARCH!=	${UNAME} -p
 OPSYS!=	${UNAME} -s
 .endif
 
+UNAMER!=${UNAME} -r
+
 # Get the operating system revision
-.if !defined(OSREL)
-OSREL!=	${UNAME} -r | ${SED} -e 's/[-(].*//'
-.endif
+OSREL?=	${UNAMER:C/-.*//}
 
 # Get __FreeBSD_version
 .if !defined(OSVERSION)
@@ -1198,18 +1198,25 @@ OSVERSION!=	${AWK} '/^\#define[[:blank:]]__FreeBSD_version/ {print $$3}' < /usr/
 .elif exists(${SRC_BASE}/sys/sys/param.h)
 OSVERSION!=	${AWK} '/^\#define[[:blank:]]__FreeBSD_version/ {print $$3}' < ${SRC_BASE}/sys/sys/param.h
 .else
-OSVERSION!=	${SYSCTL} -n kern.osreldate
+.error Unable to determine OS version.  Either define OSVERSION, install /usr/include/sys/param.h or define SRC_BASE.
 .endif
+.endif
+
+# Convert OSVERSION to major release number
+_OSVERSION_MAJOR=	${OSVERSION:C/([0-9]?[0-9])([0-9][0-9])[0-9]{3}/\1/}
+# Sanity checks for chroot/jail building.
+.if ${_OSVERSION_MAJOR} != ${UNAMER:R}
+.error UNAME_r (${UNAMER}) and OSVERSION (${OSVERSION}) do not agree on major version number.
+.elif ${_OSVERSION_MAJOR} != ${OSREL:R}
+.error OSREL (${OSREL}) and OSVERSION (${OSVERSION}) do not agree on major version number.
 .endif
 
 # Enable new xorg for FreeBSD versions after Radeon KMS was imported unless
 # WITHOUT_NEW_XORG is set.
-.if (${OSVERSION} >= 902510 && ${OSVERSION} < 1000000) || ${OSVERSION} >= 1000704
-. if !defined(WITHOUT_NEW_XORG)
+.if !defined(WITHOUT_NEW_XORG)
 WITH_NEW_XORG?=	yes
-. else
+.else
 .undef WITH_NEW_XORG
-. endif
 .endif
 
 # Only define tools here (for transition period with between pkg tools)
@@ -1493,11 +1500,13 @@ QA_ENV+=	USESSHAREDMIMEINFO=yes
 
 # Loading features
 .for f in ${USES}
-_f=${f:C/\:.*//g}
-.if ${_f} != ${f}
-${_f}_ARGS:=	${f:C/^[^\:]*\://g}
+_f:=		${f:C/\:.*//}
+.if !defined(${_f}_ARGS)
+${_f}_ARGS:=	${f:C/^[^\:]*(\:|\$)//:S/,/ /g}
 .endif
-.include "${USESDIR}/${_f}.mk"
+.endfor
+.for f in ${USES}
+.include "${USESDIR}/${f:C/\:.*//}.mk"
 .endfor
 
 .if defined(USE_BZIP2)
@@ -1530,6 +1539,11 @@ PKG_ORIGIN?=	ports-mgmt/pkg
 PKGNG_ORIGIN=	${PKG_ORIGIN}
 WITH_PKGNG?=	yes
 WITH_PKG?=	${WITH_PKGNG}
+
+.if defined(BUNDLE_LIBS)
+PKG_NOTES+=	no_provide_shlib
+PKG_NOTE_no_provide_shlib=	yes
+.endif
 
 .endif
 # End of pre-makefile section.
@@ -1918,11 +1932,13 @@ USE_SUBMAKE=	yes
 
 # Loading features
 .for f in ${_USES_POST}
-_f=${f:C/\:.*//g}
-.if ${_f} != ${f}
-${_f}_ARGS:=	${f:C/^[^\:]*\://g}
+_f:=		${f:C/\:.*//}
+.if !defined(${_f}_ARGS)
+${_f}_ARGS:=	${f:C/^[^\:]*(\:|\$)//:S/,/ /g}
 .endif
-.include "${USESDIR}/${_f}.mk"
+.endfor
+.for f in ${_USES_POST}
+.include "${USESDIR}/${f:C/\:.*//}.mk"
 .endfor
 
 .if defined(USE_XORG)

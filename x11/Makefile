@@ -12,7 +12,6 @@
     SUBDIR += arandr
     SUBDIR += aterm
     SUBDIR += avant-window-navigator
-    SUBDIR += avant-window-navigator-gnome
     SUBDIR += babl
     SUBDIR += bbappconf
     SUBDIR += bbdock
@@ -245,6 +244,7 @@
     SUBDIR += qt4-graphicssystems-opengl
     SUBDIR += qt4-inputmethods
     SUBDIR += qt5-qev
+    SUBDIR += qt5-x11extras
     SUBDIR += qxkb
     SUBDIR += randrproto
     SUBDIR += recordproto

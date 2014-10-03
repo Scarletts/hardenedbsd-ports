@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	je
-PORTVERSION=	3.2.76
-PORTREVISION=	1
+PORTVERSION=	6.1.5
 CATEGORIES=	java databases
 MASTER_SITES=	http://download.oracle.com/berkeley-db/	\
 		http://download-east.oracle.com/berkeley-db/	\
@@ -17,7 +16,7 @@ OPTIONS_DEFINE=	DOCS EXAMPLES TEST
 BUILD_DEPENDS=	${JAVALIBDIR}/junit.jar:${PORTSDIR}/java/junit
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.6+
+JAVA_VERSION=	1.7+
 USE_ANT=	yes
 MAKE_ENV+=	JAVALIBDIR="${JAVALIBDIR}"
 MAKE_ARGS+=	-cp ${JAVALIBDIR}/junit.jar

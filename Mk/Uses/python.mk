@@ -238,11 +238,6 @@ _PYTHON_PORTBRANCH=		2.7		# ${_PYTHON_VERSIONS:[1]}
 _PYTHON_BASECMD=		${LOCALBASE}/bin/python
 _PYTHON_RELPORTDIR=		${PORTSDIR}/lang/python
 
-# Check the passed arguments
-.if !defined(python_ARGS)
-python_ARGS=	#empty
-.endif
-
 # COMPAT KNOBS, remove them, once the tree is cleaned
 .undef _PY_COMPAT_OLD
 # We will reuse USE_PYTHON with a different meaning, so make sure that, while
@@ -552,7 +547,7 @@ PYDISTUTILS_EGGINFODIR?=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 add-plist-egginfo:
 .if !defined(_PYTHON_FEATURE_NOEGGINFO) && \
 	!defined(_PYTHON_FEATURE_AUTOPLIST) && \
-	(defined(INSTALLS_EGGINFO) || defined(_PYTHON_FEATURE_DISTUTILS)) && \
+	defined(_PYTHON_FEATURE_DISTUTILS) && \
 	defined(PYTHON_REL)
 . for egginfo in ${PYDISTUTILS_EGGINFO}
 	if [ -d "${PYDISTUTILS_EGGINFODIR}/${egginfo}" ]; then \
