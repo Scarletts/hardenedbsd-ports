@@ -1080,6 +1080,7 @@ MAKE_ENV+=		XDG_DATA_HOME=${WRKDIR} \
 				HOME=${WRKDIR}
 QA_ENV+=	STAGEDIR=${STAGEDIR} \
 			PREFIX=${PREFIX} \
+			LINUXBASE=${LINUXBASE} \
 			LOCALBASE=${LOCALBASE} \
 			"STRIP=${STRIP}" \
 			TMPPLIST=${TMPPLIST}
@@ -1805,9 +1806,6 @@ MAKE_ENV+=	${DESTDIRNAME}=${STAGEDIR}
 .else
 MAKE_ARGS+=	${DESTDIRNAME}=${STAGEDIR}
 .endif
-
-CO_ENV+=	PACKAGE_DEPENDS="${_LIB_RUN_DEPENDS:C,[^:]*:([^:]*):?.*,\1,:C,${PORTSDIR}/,,}" \
-		PKG_QUERY="${PKG_QUERY}"
 
 .if defined(NO_PREFIX_RMDIR)
 CO_ENV+=	NO_PREFIX_RMDIR=1
@@ -2824,12 +2822,6 @@ PLIST_SUB+=	DOCSDIR="${DOCSDIR_REL}" \
 		ETCDIR="${ETCDIR_REL}"
 
 DESKTOPDIR?=		${PREFIX}/share/applications
-_DESKTOPDIR_REL=	${DESKTOPDIR:S,^${PREFIX}/,,}/
-
-.if ${_DESKTOPDIR_REL} == ${DESKTOPDIR}/
-# DESKTOPDIR is not beneath PREFIX
-_DESKTOPDIR_REL=
-.endif
 
 .MAIN: all
 
@@ -3741,9 +3733,6 @@ install-ldconfig-file:
 		> ${STAGEDIR}${LOCALBASE}/${LDCONFIG32_DIR}/${UNIQUENAME}
 	@${ECHO_CMD} ${LOCALBASE}/${LDCONFIG32_DIR}/${UNIQUENAME} >> ${TMPPLIST}
 .endif
-.endif
-.if defined(INSTALLS_SHLIB)
-	@${ECHO_MSG} "INSTALLS_SHLIB is deprecated. Use USE_LDCONFIG instead."
 .endif
 .endif
 .endif
@@ -5167,56 +5156,42 @@ ${TMPPLIST_SORT}: ${TMPPLIST}
 .if !target(add-plist-docs)
 .if defined(PORTDOCS) && !defined(NOPORTDOCS)
 add-plist-docs:
-	@if ${EGREP} -qe '^@cw?d' ${TMPPLIST} && \
-		[ "`${SED} -En -e '/^@cw?d[ 	]*/s,,,p' ${TMPPLIST} | ${TAIL} -n 1`" != "${PREFIX}" ]; then \
-		${ECHO_CMD} "@cwd ${PREFIX}" >> ${TMPPLIST}; \
-	fi
 .for x in ${PORTDOCS}
 	@if ${ECHO_CMD} "${x}"| ${AWK} '$$1 ~ /(\*|\||\[|\]|\?|\{|\}|\$$)/ { exit 1};'; then \
 		if [ ! -e ${STAGEDIR}${DOCSDIR}/${x} ]; then \
-		${ECHO_CMD} ${DOCSDIR_REL}/${x} >> ${TMPPLIST}; \
+		${ECHO_CMD} ${DOCSDIR}/${x} >> ${TMPPLIST}; \
 	fi;fi
 .endfor
 	@${FIND} -P ${PORTDOCS:S/^/${STAGEDIR}${DOCSDIR}\//} ! -type d 2>/dev/null | \
-		${SED} -ne 's,^${STAGEDIR}${PREFIX}/,,p' >> ${TMPPLIST}
+		${SED} -ne 's,^${STAGEDIR},,p' >> ${TMPPLIST}
 .endif
 .endif
 
 .if !target(add-plist-examples)
 .if defined(PORTEXAMPLES) && !defined(NOPORTEXAMPLES)
 add-plist-examples:
-	@if ${EGREP} -qe '^@cw?d' ${TMPPLIST} && \
-		[ "`${SED} -En -e '/^@cw?d[ 	]*/s,,,p' ${TMPPLIST} | ${TAIL} -n 1`" != "${PREFIX}" ]; then \
-		${ECHO_CMD} "@cwd ${PREFIX}" >> ${TMPPLIST}; \
-	fi
 .for x in ${PORTEXAMPLES}
 	@if ${ECHO_CMD} "${x}"| ${AWK} '$$1 ~ /(\*|\||\[|\]|\?|\{|\}|\$$)/ { exit 1};'; then \
 		if [ ! -e ${STAGEDIR}${EXAMPLESDIR}/${x} ]; then \
-		${ECHO_CMD} ${EXAMPLESDIR}/${x} | \
-			${SED} -e 's,^${PREFIX}/,,' >> ${TMPPLIST}; \
+		${ECHO_CMD} ${EXAMPLESDIR}/${x} >> ${TMPPLIST}; \
 	fi;fi
 .endfor
 	@${FIND} -P ${PORTEXAMPLES:S/^/${STAGEDIR}${EXAMPLESDIR}\//} ! -type d 2>/dev/null | \
-		${SED} -ne 's,^${STAGEDIR}${PREFIX}/,,p' >> ${TMPPLIST}
+		${SED} -ne 's,^${STAGEDIR},,p' >> ${TMPPLIST}
 .endif
 .endif
 
 .if !target(add-plist-data)
 .if defined(PORTDATA)
 add-plist-data:
-	@if ${EGREP} -qe '^@cw?d' ${TMPPLIST} && \
-		[ "`${SED} -En -e '/^@cw?d[ 	]*/s,,,p' ${TMPPLIST} | ${TAIL} -n 1`" != "${PREFIX}" ]; then \
-		${ECHO_CMD} "@cwd ${PREFIX}" >> ${TMPPLIST}; \
-	fi
 .for x in ${PORTDATA}
 	@if ${ECHO_CMD} "${x}"| ${AWK} '$$1 ~ /(\*|\||\[|\]|\?|\{|\}|\$$)/ { exit 1};'; then \
 		if [ ! -e ${STAGEDIR}${DATADIR}/${x} ]; then \
-		${ECHO_CMD} ${DATADIR}/${x} | \
-			${SED} -e 's,^${PREFIX}/,,' >> ${TMPPLIST}; \
+		${ECHO_CMD} ${DATADIR}/${x} >> ${TMPPLIST}; \
 	fi;fi
 .endfor
 	@${FIND} -P ${PORTDATA:S/^/${STAGEDIR}${DATADIR}\//} ! -type d 2>/dev/null | \
-		${SED} -ne 's,^${STAGEDIR}${PREFIX}/,,p' >> ${TMPPLIST}
+		${SED} -ne 's,^${STAGEDIR},,p' >> ${TMPPLIST}
 .endif
 .endif
 
@@ -5230,20 +5205,9 @@ add-plist-buildinfo:
 .if !target(add-plist-info)
 .if defined(INFO)
 add-plist-info:
-	@if ${EGREP} -qe '^@cw?d' ${TMPPLIST} && \
-		[ "`${SED} -En -e '/^@cw?d[ 	]*/s,,,p' ${TMPPLIST} | ${TAIL} -n 1`" != "${PREFIX}" ]; then \
-		${ECHO_CMD} "@cwd ${PREFIX}" >> ${TMPPLIST}; \
-	fi
-# Process GNU INFO files at package install/deinstall time
 .for i in ${INFO}
-	@${LS} ${STAGEDIR}${PREFIX}/${INFO_PATH}/$i.info* | ${SED} -e s:${STAGEDIR}${PREFIX}/:@info\ :g >> ${TMPPLIST}
+	@${LS} ${STAGEDIR}${PREFIX}/${INFO_PATH}/$i.info* | ${SED} -e s:${STAGEDIR}:@info\ :g >> ${TMPPLIST}
 .endfor
-.if (${PREFIX} != "/usr")
-	@${ECHO_CMD} "@unexec indexinfo %D/${INFO_PATH}" >> ${TMPPLIST}
-.if (${PREFIX} != ${LOCALBASE} && ${PREFIX} != ${LINUXBASE})
-	@${ECHO_CMD} "@dir ${INFO_PATH}" >> ${TMPPLIST}
-.endif
-.endif
 .endif
 .endif
 
@@ -5262,19 +5226,16 @@ add-plist-post:
 install-rc-script:
 .if defined(USE_RCORDER)
 	@${ECHO_MSG} "===> Staging early rc.d startup script(s)"
-	@${ECHO_CMD} "@cwd /" >> ${TMPPLIST}
 	@for i in ${USE_RCORDER}; do \
 		${INSTALL_SCRIPT} ${WRKDIR}/$${i} ${STAGEDIR}/etc/rc.d/$${i%.sh}; \
-		${ECHO_CMD} "etc/rc.d/$${i%.sh}" >> ${TMPPLIST}; \
+		${ECHO_CMD} "/etc/rc.d/$${i%.sh}" >> ${TMPPLIST}; \
 	done
-	@${ECHO_CMD} "@cwd ${PREFIX}" >> ${TMPPLIST}
 .endif
 .if defined(USE_RC_SUBR) && ${USE_RC_SUBR:tu} != "YES"
 	@${ECHO_MSG} "===> Staging rc.d startup script(s)"
-	@${ECHO_CMD} "@cwd ${PREFIX}" >> ${TMPPLIST}
 	@for i in ${USE_RC_SUBR}; do \
 		${INSTALL_SCRIPT} ${WRKDIR}/$${i} ${STAGEDIR}${PREFIX}/etc/rc.d/$${i%.sh}; \
-		${ECHO_CMD} "etc/rc.d/$${i%.sh}" >> ${TMPPLIST}; \
+		${ECHO_CMD} "${PREFIX}/etc/rc.d/$${i%.sh}" >> ${TMPPLIST}; \
 	done
 .endif
 .endif
@@ -5888,9 +5849,6 @@ check-desktop-entries:
 .if defined(DESKTOP_ENTRIES)
 install-desktop-entries:
 	@set -- ${DESKTOP_ENTRIES} XXX; \
-	if [ -z "${_DESKTOPDIR_REL}" ]; then \
-		${ECHO_CMD} "@cwd ${DESKTOPDIR}" >> ${TMPPLIST}; \
-	fi; \
 	while [ $$# -gt 6 ]; do \
 		filename="`${ECHO_CMD} "$$4" | ${SED} -e 's,^/,,g;s,[/ ],_,g;s,[^_[:alnum:]],,g'`.desktop"; \
 		pathname="${STAGEDIR}${DESKTOPDIR}/$$filename"; \
@@ -5898,7 +5856,7 @@ install-desktop-entries:
 		if [ -z "$$categories" ]; then \
 			categories="`cd ${.CURDIR} && ${MAKE} desktop-categories`"; \
 		fi; \
-		${ECHO_CMD} "${_DESKTOPDIR_REL}$$filename" >> ${TMPPLIST}; \
+		${ECHO_CMD} "${DESKTOPDIR}/$$filename" >> ${TMPPLIST}; \
 		${ECHO_CMD} "[Desktop Entry]" > $$pathname; \
 		${ECHO_CMD} "Type=Application" >> $$pathname; \
 		${ECHO_CMD} "Version=1.0" >> $$pathname; \
@@ -5918,10 +5876,7 @@ install-desktop-entries:
 			${ECHO_CMD} "StartupNotify=$$6" >> $$pathname; \
 		fi; \
 		shift 6; \
-	done; \
-	if [ -z "${_DESKTOPDIR_REL}" ]; then \
-		${ECHO_CMD} "@cwd ${PREFIX}" >> ${TMPPLIST}; \
-	fi
+	done
 .endif
 .endif
 
@@ -5995,7 +5950,7 @@ _PATCH_SEQ=		ask-license patch-message patch-depends pathfix dos2unix fix-sheban
 				pre-patch-script do-patch charsetfix-post-patch post-patch post-patch-script
 _CONFIGURE_DEP=	patch
 _CONFIGURE_SEQ=	build-depends lib-depends configure-message run-autotools-fixup \
-				configure-autotools pre-configure pre-configure-script \
+				pre-configure pre-configure-script \
 				run-autotools do-autoreconf patch-libtool do-configure \
 				post-configure post-configure-script
 _BUILD_DEP=		configure
