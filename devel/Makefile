@@ -394,6 +394,7 @@
     SUBDIR += elfrc
     SUBDIR += elfsh
     SUBDIR += elftoaout
+    SUBDIR += embb
     SUBDIR += epl.el
     SUBDIR += epm
     SUBDIR += epydoc
@@ -1120,6 +1121,7 @@
     SUBDIR += librest
     SUBDIR += librevisa
     SUBDIR += librevisa-vish
+    SUBDIR += librevisa-vxi
     SUBDIR += libruin
     SUBDIR += libs11n
     SUBDIR += libserialport
@@ -2945,6 +2947,7 @@
     SUBDIR += p5-Test-Pod-Coverage
     SUBDIR += p5-Test-Pod-Coverage-Permissive
     SUBDIR += p5-Test-Portability-Files
+    SUBDIR += p5-Test-Prereq
     SUBDIR += p5-Test-RandomResults
     SUBDIR += p5-Test-Refcount
     SUBDIR += p5-Test-Reporter
@@ -3808,7 +3811,7 @@
     SUBDIR += py-ocempgui
     SUBDIR += py-ode
     SUBDIR += py-odfpy
-    SUBDIR += py-olefileio_pl
+    SUBDIR += py-olefile
     SUBDIR += py-oletools
     SUBDIR += py-omnijson
     SUBDIR += py-omniorb
@@ -4452,6 +4455,7 @@
     SUBDIR += rubygem-nori
     SUBDIR += rubygem-notify
     SUBDIR += rubygem-nprogress-rails
+    SUBDIR += rubygem-oj
     SUBDIR += rubygem-open3_backport
     SUBDIR += rubygem-open4
     SUBDIR += rubygem-orm_adapter
@@ -4503,7 +4507,6 @@
     SUBDIR += rubygem-rspec-core
     SUBDIR += rubygem-rspec-expectations
     SUBDIR += rubygem-rspec-mocks
-    SUBDIR += rubygem-rspec-spies
     SUBDIR += rubygem-rspec-support
     SUBDIR += rubygem-rubigen
     SUBDIR += rubygem-ruby-bugzilla
@@ -4539,8 +4542,8 @@
     SUBDIR += rubygem-soap4r
     SUBDIR += rubygem-spring
     SUBDIR += rubygem-sprockets
-    SUBDIR += rubygem-sprockets211
     SUBDIR += rubygem-sprockets-rails
+    SUBDIR += rubygem-sprockets211
     SUBDIR += rubygem-spruz
     SUBDIR += rubygem-state_machine
     SUBDIR += rubygem-statsd

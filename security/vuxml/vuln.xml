@@ -57,6 +57,225 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="0642b064-56c4-11e4-8b87-bcaec565249c">
+    <topic>libxml2 -- Denial of service</topic>
+    <affects>
+      <package>
+	<name>libxml2</name>
+	<range><lt>2.9.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>RedHat reports:</p>
+	<blockquote cite="https://rhn.redhat.com/errata/RHSA-2014-1655.html">
+	  <p>A denial of service flaw was found in libxml2, a library
+	    providing support to read, modify and write XML and HTML
+	    files. A remote attacker could provide a specially crafted
+	    XML file that, when processed by an application using
+	    libxml2, would lead to excessive CPU consumption (denial of
+	    service) based on excessive entity substitutions, even if
+	    entity substitution was disabled, which is the parser default
+	    behavior.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-3660</cvename>
+      <url>https://rhn.redhat.com/errata/RHSA-2014-1655.html</url>
+    </references>
+    <dates>
+      <discovery>2014-10-16</discovery>
+      <entry>2014-10-18</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="6f825fa4-5560-11e4-a4c3-00a0986f28c4">
+    <topic>drupal7 -- SQL injection</topic>
+    <affects>
+      <package>
+	<name>drupal7</name>
+	<range><lt>7.32</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Drupal Security Team reports:</p>
+	<blockquote cite="https://drupal.org/SA-CORE-2013-003">
+	  <p>Drupal 7 includes a database abstraction API to ensure that
+	    queries executed against the database are sanitized to prevent
+	    SQL injection attacks.
+	    A vulnerability in this API allows an attacker to send
+	    specially crafted requests resulting in arbitrary SQL execution.
+	    Depending on the content of the requests this can lead to
+	    privilege escalation, arbitrary PHP execution, or other attacks.
+	    This vulnerability can be exploited by anonymous users.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-3704</cvename>
+      <url>https://www.drupal.org/SA-CORE-2014-005</url>
+      <url>https://www.sektioneins.de/en/blog/14-10-15-drupal-sql-injection-vulnerability.html</url>
+    </references>
+    <dates>
+      <discovery>2014-10-15</discovery>
+      <entry>2014-10-16</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="03175e62-5494-11e4-9cc1-bc5ff4fb5e7b">
+    <topic>OpenSSL -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>openssl</name>
+	<range><ge>1.0.1</ge><lt>1.0.1_16</lt></range>
+      </package>
+      <package>
+	<name>mingw32-openssl</name>
+	<range><ge>1.0.1</ge><lt>1.0.1j</lt></range>
+      </package>
+      <package>
+	<name>linux-c6-openssl</name>
+	<range><lt>1.0.1e_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The OpenSSL Project reports:</p>
+	<blockquote cite="https://www.openssl.org/news/secadv_20141015.txt">
+	  <p>A flaw in the DTLS SRTP extension parsing code allows an
+	    attacker, who sends a carefully crafted handshake message,
+	    to cause OpenSSL to fail to free up to 64k of memory causing
+	    a memory leak. This could be exploited in a Denial Of Service
+	    attack. This issue affects OpenSSL 1.0.1 server implementations
+	    for both SSL/TLS and DTLS regardless of whether SRTP is used
+	    or configured. Implementations of OpenSSL that have been
+	    compiled with OPENSSL_NO_SRTP defined are not affected.
+	    [CVE-2014-3513].</p>
+	  <p>When an OpenSSL SSL/TLS/DTLS server receives a session
+	    ticket the integrity of that ticket is first verified.
+	    In the event of a session ticket integrity check failing,
+	    OpenSSL will fail to free memory causing a memory leak.
+	    By sending a large number of invalid session tickets an
+	    attacker could exploit this issue in a Denial Of Service
+	    attack. [CVE-2014-3567].</p>
+	  <p>OpenSSL has added support for TLS_FALLBACK_SCSV to allow
+	    applications to block the ability for a MITM attacker to
+	    force a protocol downgrade.</p>
+	  <p>Some client applications (such as browsers) will reconnect
+	    using a downgraded protocol to work around interoperability
+	    bugs in older servers. This could be exploited by an active
+	    man-in-the-middle to downgrade connections to SSL 3.0 even
+	    if both sides of the connection support higher protocols.
+	    SSL 3.0 contains a number of weaknesses including POODLE
+	    [CVE-2014-3566].</p>
+	  <p>When OpenSSL is configured with "no-ssl3" as a build option,
+	    servers could accept and complete a SSL 3.0 handshake, and
+	    clients could be configured to send them. [CVE-2014-3568].</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-3513</cvename>
+      <cvename>CVE-2014-3566</cvename>
+      <cvename>CVE-2014-3567</cvename>
+      <cvename>CVE-2014-3568</cvename>
+      <url>https://www.openssl.org/news/secadv_20141015.txt</url>
+    </references>
+    <dates>
+      <discovery>2014-10-15</discovery>
+      <entry>2014-10-15</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="9c1495ac-8d8c-4789-a0f3-8ca6b476619c">
+    <topic>mozilla -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>33.0,1</lt></range>
+      </package>
+      <package>
+	<name>firefox-esr</name>
+	<range><lt>31.2.0,1</lt></range>
+      </package>
+      <package>
+	<name>linux-firefox</name>
+	<range><lt>33.0,1</lt></range>
+      </package>
+      <package>
+	<name>linux-seamonkey</name>
+	<range><lt>2.30</lt></range>
+      </package>
+      <package>
+	<name>linux-thunderbird</name>
+	<range><lt>31.2.0</lt></range>
+      </package>
+      <package>
+	<name>seamonkey</name>
+	<range><lt>2.30</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<range><lt>31.2.0</lt></range>
+      </package>
+      <package>
+	<name>libxul</name>
+	<range><lt>31.2.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Mozilla Project reports:</p>
+	<blockquote cite="http://www.mozilla.org/security/known-vulnerabilities/">
+	  <p>MFSA 2014-74 Miscellaneous memory safety hazards
+	    (rv:33.0 / rv:31.2)</p>
+	  <p>MFSA 2014-75 Buffer overflow during CSS manipulation</p>
+	  <p>MFSA 2014-76 Web Audio memory corruption issues with
+	    custom waveforms</p>
+	  <p>MFSA 2014-77 Out-of-bounds write with WebM video</p>
+	  <p>MFSA 2014-78 Further uninitialized memory use during GIF</p>
+	  <p>MFSA 2014-79 Use-after-free interacting with text
+	    directionality</p>
+	  <p>MFSA 2014-80 Key pinning bypasses</p>
+	  <p>MFSA 2014-81 Inconsistent video sharing within iframe</p>
+	  <p>MFSA 2014-82 Accessing cross-origin objects via the
+	    Alarms API</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-1574</cvename>
+      <cvename>CVE-2014-1575</cvename>
+      <cvename>CVE-2014-1576</cvename>
+      <cvename>CVE-2014-1577</cvename>
+      <cvename>CVE-2014-1578</cvename>
+      <cvename>CVE-2014-1580</cvename>
+      <cvename>CVE-2014-1581</cvename>
+      <cvename>CVE-2014-1582</cvename>
+      <cvename>CVE-2014-1583</cvename>
+      <cvename>CVE-2014-1584</cvename>
+      <cvename>CVE-2014-1585</cvename>
+      <cvename>CVE-2014-1586</cvename>
+      <url>https://www.mozilla.org/security/announce/2014/mfsa2014-74.html</url>
+      <url>https://www.mozilla.org/security/announce/2014/mfsa2014-75.html</url>
+      <url>https://www.mozilla.org/security/announce/2014/mfsa2014-76.html</url>
+      <url>https://www.mozilla.org/security/announce/2014/mfsa2014-77.html</url>
+      <url>https://www.mozilla.org/security/announce/2014/mfsa2014-78.html</url>
+      <url>https://www.mozilla.org/security/announce/2014/mfsa2014-79.html</url>
+      <url>https://www.mozilla.org/security/announce/2014/mfsa2014-80.html</url>
+      <url>https://www.mozilla.org/security/announce/2014/mfsa2014-81.html</url>
+      <url>https://www.mozilla.org/security/announce/2014/mfsa2014-82.html</url>
+      <url>https://www.mozilla.org/security/announce/</url>
+    </references>
+    <dates>
+      <discovery>2014-10-14</discovery>
+      <entry>2014-10-14</entry>
+      <modified>2014-10-16</modified>
+    </dates>
+  </vuln>
+
   <vuln vid="c30c3a2e-4fb1-11e4-b275-14dae9d210b8">
     <topic>foreman-proxy SSL verification issue</topic>
     <affects>

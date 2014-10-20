@@ -98,6 +98,7 @@
     SUBDIR += dictd-database
     SUBDIR += dimes
     SUBDIR += dosdetector
+    SUBDIR += dpdk
     SUBDIR += drawterm
     SUBDIR += dropbox-api-command
     SUBDIR += dropbox-uploader
@@ -916,6 +917,7 @@
     SUBDIR += py-twitter-tools
     SUBDIR += py-txamqp
     SUBDIR += py-urllib3
+    SUBDIR += py-wolframalpha
     SUBDIR += py-xmlrpc
     SUBDIR += py-xmlrpclib
     SUBDIR += py-yadis
@@ -1008,6 +1010,7 @@
     SUBDIR += rubygem-oauth
     SUBDIR += rubygem-oauth2
     SUBDIR += rubygem-octokit
+    SUBDIR += rubygem-omniauth-facebook
     SUBDIR += rubygem-omniauth-github
     SUBDIR += rubygem-omniauth-github-discourse
     SUBDIR += rubygem-omniauth-google-oauth2
@@ -1142,6 +1145,7 @@
     SUBDIR += tcpstat
     SUBDIR += tcptrace
     SUBDIR += tcptraceroute
+    SUBDIR += tcptraceroute-devel
     SUBDIR += tcpview
     SUBDIR += tcpwatch
     SUBDIR += tcpxd

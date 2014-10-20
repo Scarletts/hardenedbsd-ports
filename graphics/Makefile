@@ -226,6 +226,7 @@
     SUBDIR += fyre
     SUBDIR += g2
     SUBDIR += gauche-gl
+    SUBDIR += gbm
     SUBDIR += gcolor
     SUBDIR += gcolor2
     SUBDIR += gd
@@ -460,6 +461,7 @@
     SUBDIR += kolourpaint
     SUBDIR += kphotoalbum-kde4
     SUBDIR += kpovmodeler
+    SUBDIR += kqtquickcharts
     SUBDIR += ksaneplugin
     SUBDIR += ksnapshot
     SUBDIR += kudu
@@ -484,7 +486,6 @@
     SUBDIR += libaux
     SUBDIR += libboard
     SUBDIR += libcaca
-    SUBDIR += libcdr
     SUBDIR += libcdr01
     SUBDIR += libchamplain
     SUBDIR += libdmtx
@@ -497,7 +498,6 @@
     SUBDIR += libexif-gtk
     SUBDIR += libfpx
     SUBDIR += libfreehand
-    SUBDIR += libfreehand00
     SUBDIR += libgaiagraphics
     SUBDIR += libgeotiff
     SUBDIR += libgfx
@@ -518,6 +518,7 @@
     SUBDIR += libkipi-kde4
     SUBDIR += libkipiplugins
     SUBDIR += libksane
+    SUBDIR += libkscreen
     SUBDIR += liblqr-1
     SUBDIR += liblug
     SUBDIR += libmng
