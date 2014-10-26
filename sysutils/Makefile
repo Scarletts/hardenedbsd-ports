@@ -49,6 +49,7 @@
     SUBDIR += autopsy
     SUBDIR += b43-fwcutter
     SUBDIR += backuppc
+    SUBDIR += backuppc-devel
     SUBDIR += bacula-bat
     SUBDIR += bacula-client
     SUBDIR += bacula-client-static
@@ -118,6 +119,7 @@
     SUBDIR += cfengine36-rc
     SUBDIR += chgrep
     SUBDIR += ciso
+    SUBDIR += ciso-maker
     SUBDIR += ck4up
     SUBDIR += clean
     SUBDIR += clockspeed
@@ -850,6 +852,7 @@
     SUBDIR += screenfetch
     SUBDIR += screenie
     SUBDIR += scterc
+    SUBDIR += sd-agent
     SUBDIR += sdd
     SUBDIR += sdparm
     SUBDIR += searchmonkey
@@ -905,6 +908,7 @@
     SUBDIR += syslog-ng-incubator
     SUBDIR += syslog-ng33
     SUBDIR += syslog-ng34
+    SUBDIR += syslog-ng35
     SUBDIR += syslogger
     SUBDIR += sysrc
     SUBDIR += system-tools-backends
