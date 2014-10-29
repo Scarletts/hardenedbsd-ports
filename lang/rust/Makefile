@@ -3,6 +3,7 @@
 
 PORTNAME=	rust
 PORTVERSION=	0.12.0
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://static.rust-lang.org/dist/:src \
 		http://static.rust-lang.org/stage0-snapshots/:bootstrap
@@ -56,8 +57,6 @@ post-extract:
 post-install:
 	@${RM} ${STAGEDIR}${PREFIX}/lib/rustlib/manifest
 	@${STRIP_CMD} `${GREP} -v -e '^@dir' -e '^man' -e 'rlib$$' \
-		${PLIST} | ${SED} 's:^:${STAGEDIR}${PREFIX}/:'`
-	@${STRIP_CMD} `${GREP} -v -e '^@dir' -e '^man' -e 'rlib$$' \
-		-e '\.a$$' ${PLIST} | ${SED} 's:^:${STAGEDIR}${PREFIX}/:g'`
+		-e '^.*\.a$$' ${PLIST} | ${SED} 's:^:${STAGEDIR}${PREFIX}/:'`
 
 .include <bsd.port.post.mk>

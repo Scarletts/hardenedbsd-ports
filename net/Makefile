@@ -62,6 +62,7 @@
     SUBDIR += chrony
     SUBDIR += citrix_ica
     SUBDIR += clamz
+    SUBDIR += cloud-init
     SUBDIR += clusterit
     SUBDIR += cnd
     SUBDIR += coda6_client
@@ -1084,7 +1085,6 @@
     SUBDIR += sixxs-aiccu
     SUBDIR += skstream
     SUBDIR += sl2tps
-    SUBDIR += slirp
     SUBDIR += slurm
     SUBDIR += smb4k-kde4
     SUBDIR += smbldap-tools
