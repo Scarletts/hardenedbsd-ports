@@ -360,6 +360,7 @@
     SUBDIR += morebalance
     SUBDIR += mosh
     SUBDIR += mosquitto
+    SUBDIR += motsognir
     SUBDIR += mpd-l2tp-ipv6pd-client
     SUBDIR += mpd5
     SUBDIR += mpich
@@ -593,6 +594,7 @@
     SUBDIR += p5-Net-NIS
     SUBDIR += p5-Net-NIS-Listgroup
     SUBDIR += p5-Net-Nessus-XMLRPC
+    SUBDIR += p5-Net-Nmsg
     SUBDIR += p5-Net-OAuth
     SUBDIR += p5-Net-OAuth-Simple
     SUBDIR += p5-Net-OAuth2

@@ -256,6 +256,7 @@
     SUBDIR += l0phtcrack
     SUBDIR += l5
     SUBDIR += lasso
+    SUBDIR += lastpass-cli
     SUBDIR += libassuan
     SUBDIR += libbeid
     SUBDIR += libbf
@@ -347,6 +348,7 @@
     SUBDIR += nmap
     SUBDIR += nmapsi4
     SUBDIR += nss
+    SUBDIR += nss_compat_ossl
     SUBDIR += oath-toolkit
     SUBDIR += obfsclient
     SUBDIR += obfsproxy

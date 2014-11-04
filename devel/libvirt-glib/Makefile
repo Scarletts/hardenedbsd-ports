@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	libvirt-glib
-PORTVERSION=	0.1.8
-PORTREVISION=	2
+PORTVERSION=	0.1.9
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://libvirt.org/libvirt/glib/
 

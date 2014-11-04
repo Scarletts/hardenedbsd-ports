@@ -85,6 +85,7 @@
     SUBDIR += clutter
     SUBDIR += clutter-box2d
     SUBDIR += clutter-gtk
+    SUBDIR += code-eli
     SUBDIR += colord
     SUBDIR += colord-gtk
     SUBDIR += comical
@@ -580,6 +581,7 @@
     SUBDIR += luminance-qt5
     SUBDIR += luxrender
     SUBDIR += mahotas
+    SUBDIR += maim
     SUBDIR += makehuman
     SUBDIR += mandelbulber
     SUBDIR += mapnik

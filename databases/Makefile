@@ -163,6 +163,8 @@
     SUBDIR += mariadb-client
     SUBDIR += mariadb-scripts
     SUBDIR += mariadb-server
+    SUBDIR += mariadb100-client
+    SUBDIR += mariadb100-server
     SUBDIR += mariadb55-client
     SUBDIR += mariadb55-server
     SUBDIR += mdbtools
@@ -520,6 +522,7 @@
     SUBDIR += pecl-pdo_user
     SUBDIR += pecl-rrd
     SUBDIR += pecl-tokyo_tyrant
+    SUBDIR += pecl-yac
     SUBDIR += percona-toolkit
     SUBDIR += percona55-client
     SUBDIR += percona55-server
