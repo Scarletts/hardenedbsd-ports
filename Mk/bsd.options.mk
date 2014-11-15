@@ -158,6 +158,11 @@ OPTIONS_WARNINGS_UNSET+=	EXAMPLES
 
 PORT_OPTIONS+=	IPV6
 
+.if defined(WITH_PIE) || defined(WITH_PIE_PORTS)
+OPTIONS_DEFINE+=	PIE
+PIE_DESC=			Compile as Position Independant Executable
+.endif
+
 # Add per arch options
 .for opt in ${OPTIONS_DEFINE_${ARCH}}
 .if empty(OPTIONS_DEFINE:M${opt})

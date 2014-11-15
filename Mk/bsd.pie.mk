@@ -3,10 +3,10 @@
 
 PIE_Include_MAINTAINER=	shawn.webb@hardenedbsd.org
 
-.if !defined(WITHOUT_PIE) && \
-    (${ARCH} == i386 || ${ARCH} == amd64)
-PIE_CFLAGS?=	-fPIE
-CFLAGS+=	${PIE_CFLAGS}
-CXXFLAGS+=	${PIE_CFLAGS}
+.if ${PORT_OPTIONS:MPIE} && \
+	 (${ARCH} == "i386" || ${ARCH} == "amd64")
+PIEFLAG=	-fPIE
+CFLAGS+=	${PIEFLAG}
+CXXFLAGS+=	${PIEFLAG}
 LDFLAGS+=	-pie
 .endif
