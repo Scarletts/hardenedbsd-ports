@@ -159,9 +159,11 @@ OPTIONS_WARNINGS_UNSET+=	EXAMPLES
 PORT_OPTIONS+=	IPV6
 
 .if defined(WITH_PIE) || defined(WITH_PIE_PORTS)
+.if defined(USE_PIE) && ${USE_PIE} != "no"
 OPTIONS_DEFINE_amd64+=	PIE
 OPTIONS_DEFINE_i386+=	PIE
 PIE_DESC=			Compile as Position Independant Executable
+.endif
 .endif
 
 # Add per arch options
