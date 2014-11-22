@@ -20,9 +20,8 @@ GH_PROJECT=	${PORTNAME}
 GH_TAGNAME=	v${DISTVERSION}
 GH_COMMIT=	2b7d0b6
 
-USE_PYTHON=	3.2+
-USE_PYDISTUTILS=yes
-PYDISTUTILS_AUTOPLIST=yes
+USES=		python:3.2+
+USE_PYTHON=	distutils autoplist
 
 CONFLICTS_INSTALL=	py*-rss2email-2.*
 
@@ -36,4 +35,10 @@ post-install:
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}/
 	${INSTALL_MAN} ${WRKSRC}/r2e.1 ${STAGEDIR}${MANPREFIX}/man/man1
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if defined(PACKAGE_BUILDING) && ${PYTHON_VER} != ${PYTHON_DEFAULT}
+IGNORE=	you have python ${PYTHON_DEFAULT} set as the default, and this needs ${PYTHON_VER}
+.endif
+
+.include <bsd.port.post.mk>

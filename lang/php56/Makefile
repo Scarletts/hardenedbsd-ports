@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	php56
-PORTVERSION=	5.6.0
-PORTREVISION?=	1
+PORTVERSION=	5.6.3
+PORTREVISION?=	0
 CATEGORIES?=	lang devel www
 MASTER_SITES=	${MASTER_SITE_PHP}
 MASTER_SITE_SUBDIR=	distributions
@@ -37,14 +37,13 @@ CONFIGURE_ARGS+=--with-layout=GNU \
 
 USE_GNOME=	libxml2
 
-OPTIONS_DEFINE+=CLI CGI FPM FPM_IPV6 EMBED PHPDBG DEBUG DTRACE IPV6 MAILHEAD LINKTHR ZTS
+OPTIONS_DEFINE+=CLI CGI FPM EMBED PHPDBG DEBUG DTRACE IPV6 MAILHEAD LINKTHR ZTS
 OPTIONS_DEFAULT=CLI CGI FPM IPV6 LINKTHR
 OPTIONS_SUB=	yes
 
 CLI_DESC=	Build CLI version
 CGI_DESC=	Build CGI version
 FPM_DESC=	Build FPM version
-FPM_IPV6_DESC=	Enable ipv6 patch for FPM
 EMBED_DESC=	Build embedded library
 DEBUG_DESC=	Enable debug
 DTRACE_DESC=	Enable DTrace support
@@ -87,9 +86,6 @@ USE_RC_SUBR+=	php-fpm
 CONFIGURE_ARGS+=--enable-fpm \
 		--with-fpm-user=${WWWOWN} \
 		--with-fpm-group=${WWWGRP}
-.if ${PORT_OPTIONS:MIPV6} && ${PORT_OPTIONS:MFPM_IPV6}
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-php-fpm-ipv6:-p1
-.endif
 .endif
 
 .if defined(PKGNAMEPREFIX)
@@ -145,6 +141,7 @@ CONFIGURE_ARGS+=--with-zend-vm=GOTO
 
 CONFIGURE_ENV+=	ac_cv_pthreads_lib="" \
 		ac_cv_pthreads_cflags="" \
+		ac_cv_decimal_fp_supported="no" \
 		pthreads_working="yes" \
 		lt_cv_path_SED="sed"
 

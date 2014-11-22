@@ -59,6 +59,7 @@
     SUBDIR += arpack
     SUBDIR += arpack++
     SUBDIR += arpack-ng
+    SUBDIR += arpack-ng-mpich
     SUBDIR += asir2000
     SUBDIR += aspcud
     SUBDIR += asymptote
@@ -104,7 +105,6 @@
     SUBDIR += eigen2
     SUBDIR += eigen3
     SUBDIR += eispack
-    SUBDIR += elmer-umfpack
     SUBDIR += emc2
     SUBDIR += ent
     SUBDIR += entropy
@@ -131,7 +131,6 @@
     SUBDIR += galculator
     SUBDIR += gambit
     SUBDIR += gap
-    SUBDIR += gcalctool
     SUBDIR += gdcalc
     SUBDIR += geg
     SUBDIR += geogebra-i18n
@@ -147,6 +146,7 @@
     SUBDIR += gmm++
     SUBDIR += gmp
     SUBDIR += gmp-ecm
+    SUBDIR += gnome-calculator
     SUBDIR += gnubc
     SUBDIR += gnumeric
     SUBDIR += gnuplot
@@ -219,6 +219,7 @@
     SUBDIR += libneural
     SUBDIR += libocas
     SUBDIR += liborigin
+    SUBDIR += libproj4
     SUBDIR += libqalculate
     SUBDIR += libranlip
     SUBDIR += libtommath
@@ -259,6 +260,7 @@
     SUBDIR += ndiff
     SUBDIR += newmat
     SUBDIR += ngraph
+    SUBDIR += nlopt
     SUBDIR += ntl
     SUBDIR += numdiff
     SUBDIR += nyh-hoc
@@ -346,6 +348,7 @@
     SUBDIR += octave-forge-spline-gcvspl
     SUBDIR += octave-forge-splines
     SUBDIR += octave-forge-statistics
+    SUBDIR += octave-forge-stk
     SUBDIR += octave-forge-strings
     SUBDIR += octave-forge-struct
     SUBDIR += octave-forge-symband
@@ -566,6 +569,7 @@
     SUBDIR += py-probstat
     SUBDIR += py-pybloom
     SUBDIR += py-pycosat
+    SUBDIR += py-pyfst
     SUBDIR += py-pymc
     SUBDIR += py-roman
     SUBDIR += py-scientific

@@ -14,4 +14,9 @@ COMMENT=	API to the Perl weak references
 USES=		perl5
 USE_PERL5=	configure
 
+post-install:
+	${CHMOD} u+w ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/${PERL_ARCH}/auto/WeakRef/WeakRef.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/${PERL_ARCH}/auto/WeakRef/WeakRef.so
+	${CHMOD} u-w ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/${PERL_ARCH}/auto/WeakRef/WeakRef.so
+
 .include <bsd.port.mk>

@@ -12,7 +12,7 @@ DISTFILES=	${PORTNAME}_b${DISTVERSION:S/.//g}${EXTRACT_SUFX} \
 DIST_SUBDIR=	python
 EXTRACT_ONLY=	${PORTNAME}_b${DISTVERSION:S/.//g}${EXTRACT_SUFX}
 
-MAINTAINER=	games@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Platformer game with rotational twist
 
 LICENSE=	GPLv2
@@ -21,9 +21,8 @@ RUN_DEPENDS=	${PYGAME}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USES=		dos2unix zip
+USES=		dos2unix python zip
 DOS2UNIX_REGEX=	.*.[^pt][^nt][^gf]
-USE_PYTHON=	yes
 INSTALLS_ICONS=	yes
 
 PORTDOCS=	README.txt changelog.txt

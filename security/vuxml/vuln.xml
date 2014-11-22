@@ -57,6 +57,1009 @@ Notes:
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="7bfd797c-716d-11e4-b008-001999f8d30b">
+    <topic>asterisk -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>asterisk11</name>
+	<range><lt>11.14.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Asterisk project reports:</p>
+	<blockquote cite="http://www.asterisk.org/downloads/security-advisories">
+	  <p>AST-2014-014 - High call load may result in hung
+	  channels in ConfBridge.</p>
+	  <p>AST-2014-017 - Permission escalation through ConfBridge
+	  actions/dialplan functions.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://downloads.asterisk.org/pub/security/AST-2014-014.html</url>
+      <url>http://downloads.asterisk.org/pub/security/AST-2014-017.html</url>
+    </references>
+    <dates>
+      <discovery>2014-11-21</discovery>
+      <entry>2014-11-21</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="a92ed304-716c-11e4-b008-001999f8d30b">
+    <topic>asterisk -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>asterisk</name>
+	<range><lt>1.8.32.1</lt></range>
+      </package>
+      <package>
+	<name>asterisk11</name>
+	<range><lt>11.14.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Asterisk project reports:</p>
+	<blockquote cite="https://www.asterisk.org/security">
+	  <p>AST-2014-012 - Mixed IP address families in access
+	  control lists may permit unwanted traffic.</p>
+	  <p>AST-2014-018 - AMI permission escalation through DB
+	  dialplan function.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://downloads.asterisk.org/pub/security/AST-2014-012.html</url>
+      <url>http://downloads.asterisk.org/pub/security/AST-2014-018.html</url>
+    </references>
+    <dates>
+      <discovery>2014-11-21</discovery>
+      <entry>2014-11-21</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="a5d4a82a-7153-11e4-88c7-6805ca0b3d42">
+    <topic>phpMyAdmin -- XSS and information disclosure vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>phpMyAdmin</name>
+	<range><ge>4.2.0</ge><lt>4.2.12</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The phpMyAdmin development team reports:</p>
+	<blockquote cite="http://www.phpmyadmin.net/home_page/security/PMASA-2014-13.php">
+	  <ul>
+	    <li>With a crafted database, table or column name it is
+	      possible to trigger an XSS attack in the table browse
+	      page.</li>
+	    <li>With a crafted ENUM value it is possible to trigger
+	      XSS attacks in the table print view and zoom search
+	      pages.</li>
+	    <li>With a crafted value for font size it is possible to
+	      trigger an XSS attack in the home page.</li>
+	  </ul>
+	  <p>These vulnerabilities can be triggered only by someone
+	    who is logged in to phpMyAdmin, as the usual token
+	    protection prevents non-logged-in users from accessing the
+	    required pages. Moreover, exploitation of the XSS
+	    vulnerability related to the font size requires forgery of
+	    the pma_fontsize cookie.</p>
+	</blockquote>
+	<blockquote cite="http://www.phpmyadmin.net/home_page/security/PMASA-2014-14.php">
+	  <p> In the GIS editor feature, a parameter specifying the
+	    geometry type was not correcly validated, opening the door
+	    to a local file inclusion attack.</p>
+	  <p>This vulnerability can be triggered only by someone who
+	    is logged in to phpMyAdmin, as the usual token protection
+	    prevents non-logged-in users from accessing the required
+	    page.</p>
+	</blockquote>
+	<blockquote cite="http://www.phpmyadmin.net/home_page/security/PMASA-2014-15.php">
+	  <p>With a crafted file name it is possible to trigger an
+	    XSS in the error reporting page.</p>
+	  <p>This vulnerability can be triggered only by someone who
+	    is logged in to phpMyAdmin, as the usual token protection
+	    prevents non-logged-in users from accessing the required
+	    page.</p>
+	</blockquote>
+	<blockquote cite="http://www.phpmyadmin.net/home_page/security/PMASA-2014-16.php">
+	  <p>In the error reporting feature, a parameter specifying
+	    the file was not correctly validated, allowing the
+	    attacker to derive the line count of an arbitrary file</p>
+	  <p>This vulnerability can be triggered only by someone who
+	    is logged in to phpMyAdmin, as the usual token protection
+	    prevents non-logged-in users from accessing the required
+	    page.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.phpmyadmin.net/home_page/security/PMASA-2014-13.php</url>
+      <url>http://www.phpmyadmin.net/home_page/security/PMASA-2014-14.php</url>
+      <url>http://www.phpmyadmin.net/home_page/security/PMASA-2014-15.php</url>
+      <url>http://www.phpmyadmin.net/home_page/security/PMASA-2014-16.php</url>
+      <cvename>CVE-2014-8958</cvename>
+      <cvename>CVE-2014-8959</cvename>
+      <cvename>CVE-2014-8960</cvename>
+      <cvename>CVE-2014-8961</cvename>
+    </references>
+    <dates>
+      <discovery>2014-11-20</discovery>
+      <entry>2014-11-21</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="890b6b22-70fa-11e4-91ae-5453ed2e2b49">
+    <topic>kwebkitpart, kde-runtime -- insufficient input validation</topic>
+    <affects>
+      <package>
+	<name>kde-runtime</name>
+	<range><lt>4.14.2_2</lt></range>
+      </package>
+      <package>
+	<name>kwebkitpart</name>
+	<range><lt>1.3.2_4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Albert Aastals Cid reports:</p>
+	<blockquote cite="https://www.kde.org/info/security/advisory-20141113-1.txt">
+	  <p>kwebkitpart and the bookmarks:// io slave were not sanitizing
+	    input correctly allowing to some javascript being executed on the
+	    context of the referenced hostname.</p>
+	  <p>Whilst in most cases, the JavaScript will be executed in an
+	    untrusted context, with the bookmarks IO slave, it will be executed
+	    in the context of the referenced hostname. It should however be
+	    noted that KDE mitigates this risk by attempting to ensure that
+	    such URLs cannot be embedded directly into Internet hosted
+	    content.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://www.kde.org/info/security/advisory-20141113-1.txt</url>
+      <cvename>CVE-2014-8600</cvename>
+    </references>
+    <dates>
+      <discovery>2014-11-13</discovery>
+      <entry>2014-11-20</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="5a35bc56-7027-11e4-a4a3-001999f8d30b">
+    <topic>yii -- Remote arbitrary PHP code execution</topic>
+    <affects>
+      <package>
+	<name>yii</name>
+	<range><lt>1.1.15</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Yii PHP Framework developers report:</p>
+	<blockquote cite="http://www.yiiframework.com/news/78/yii-1-1-15-is-released-security-fix/">
+	  <p>We are releasing Yii 1.1.15 to fix a security issue
+	  found in 1.1.14. We urge all 1.1.14 users to upgrade their
+	  Yii to this latest release. Note that the issue only
+	  affects 1.1.14. All previous releases are not affected.
+	  Upgrading to this release from 1.1.14 is very safe and
+	  will not break your existing code.</p>
+	  <p>The vulnerability is in the CDetailView widget. When
+	  a Yii application uses this widget and configures the
+	  "value" property of a CDetailView attribute using end
+	  user inputs, it may allow attackers to potentially execute
+	  arbitrary PHP scripts on the server. We are not showing
+	  how to exploit it here to allow users to upgrade before
+	  details about the exploit become publicly known. To our
+	  knowledge the details of this issue are only known to
+	  core team members.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-4672</cvename>
+      <url>http://www.yiiframework.com/news/78/yii-1-1-15-is-released-security-fix</url>
+    </references>
+    <dates>
+      <discovery>2014-07-03</discovery>
+      <entry>2014-11-19</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="d395e44f-6f4f-11e4-a444-00262d5ed8ee">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>39.0.2171.65</lt></range>
+      </package>
+      <package>
+	<name>chromium-pulse</name>
+	<range><lt>39.0.2171.65</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Google Chrome Releases reports:</p>
+	<blockquote cite="http://googlechromereleases.blogspot.nl/2014/11/stable-channel-update_18.html">
+	  <p>42 security fixes in this release, including:</p>
+	  <ul>
+	    <li>[389734] High CVE-2014-7899: Address bar spoofing. Credit to
+	      Eli Grey.</li>
+	    <li>[406868] High CVE-2014-7900: Use-after-free in pdfium. Credit
+	      to Atte Kettunen from OUSPG.</li>
+	    <li>[413375] High CVE-2014-7901: Integer overflow in pdfium. Credit
+	      to cloudfuzzer.</li>
+	    <li>[414504] High CVE-2014-7902: Use-after-free in pdfium. Credit
+	      to cloudfuzzer.</li>
+	    <li>[414525] High CVE-2014-7903: Buffer overflow in pdfium. Credit
+	      to cloudfuzzer.</li>
+	    <li>[418161] High CVE-2014-7904: Buffer overflow in Skia. Credit to
+	      Atte Kettunen from OUSPG.</li>
+	    <li>[421817] High CVE-2014-7905: Flaw allowing navigation to
+	      intents that do not have the BROWSABLE category. Credit to
+	      WangTao(neobyte) of Baidu X-Team.</li>
+	    <li>[423030] High CVE-2014-7906: Use-after-free in pepper plugins.
+	      Credit to Chen Zhang (demi6od) of the NSFOCUS Security Team.</li>
+	    <li>[423703] High CVE-2014-0574: Double-free in Flash. Credit to
+	      biloulehibou.</li>
+	    <li>[424453] High CVE-2014-7907: Use-after-free in blink. Credit to
+	      Chen Zhang (demi6od) of the NSFOCUS Security Team.</li>
+	    <li>[425980] High CVE-2014-7908: Integer overflow in media. Credit
+	      to Christoph Diehl.</li>
+	    <li>[391001] Medium CVE-2014-7909: Uninitialized memory read in
+	      Skia. Credit to miaubiz.</li>
+	    <li>CVE-2014-7910: Various fixes from internal audits, fuzzing and
+	      other initiatives.</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-0574</cvename>
+      <cvename>CVE-2014-7899</cvename>
+      <cvename>CVE-2014-7900</cvename>
+      <cvename>CVE-2014-7901</cvename>
+      <cvename>CVE-2014-7902</cvename>
+      <cvename>CVE-2014-7903</cvename>
+      <cvename>CVE-2014-7904</cvename>
+      <cvename>CVE-2014-7905</cvename>
+      <cvename>CVE-2014-7906</cvename>
+      <cvename>CVE-2014-7907</cvename>
+      <cvename>CVE-2014-7908</cvename>
+      <cvename>CVE-2014-7909</cvename>
+      <cvename>CVE-2014-7910</cvename>
+      <url>http://googlechromereleases.blogspot.nl/2014/11/stable-channel-update_18.html</url>
+    </references>
+    <dates>
+      <discovery>2014-11-18</discovery>
+      <entry>2014-11-18</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="dafa13a8-6e9b-11e4-8ef7-5453ed2e2b49">
+    <topic>kde-workspace -- privilege escalation</topic>
+    <affects>
+      <package>
+	<name>kde-workspace</name>
+	<range><lt>4.11.13_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>David Edmundson reports:</p>
+	<blockquote cite="https://www.kde.org/info/security/advisory-20141106-1.txt">
+	  <p>KDE workspace configuration module for setting the date and time
+	    has a helper program which runs as root for performing actions.
+	    This is secured with polkit.</p>
+	  <p>This helper takes the name of the ntp utility to run as an
+	    argument. This allows a hacker to run any arbitrary command as root
+	    under the guise of updating the time.</p>
+	  <p>An application can gain root priveledges from an admin user with
+	    either misleading information or no interaction.</p>
+	  <p>On some systems the user will be shown a prompt to change the
+	    time. However, if the system has policykit-desktop-privileges
+	    installed, the datetime helper will be invoked by an admin user
+	    without any prompts.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-8651</cvename>
+      <mlist>http://seclists.org/oss-sec/2014/q4/520</mlist>
+    </references>
+    <dates>
+      <discovery>2014-11-06</discovery>
+      <entry>2014-11-17</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="c1930f45-6982-11e4-80e1-bcaec565249c">
+    <topic>dbus -- incomplete fix for CVE-2014-3636 part A</topic>
+    <affects>
+      <package>
+	<name>dbus</name>
+	<range><lt>1.8.10</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Simon McVittie reports:</p>
+	<blockquote cite="http://lists.freedesktop.org/archives/dbus/2014-November/016395.html">
+	  <p>The patch issued by the D-Bus maintainers for CVE-2014-3636
+	    was based on incorrect reasoning, and does not fully prevent
+	    the attack described as "CVE-2014-3636 part A", which is
+	    repeated below. Preventing that attack requires raising the
+	    system dbus-daemon's RLIMIT_NOFILE (ulimit -n) to a higher
+	    value. CVE-2014-7824 has been allocated for this
+	    vulnerability.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-7824</cvename>
+      <url>http://lists.freedesktop.org/archives/dbus/2014-November/016395.html</url>
+    </references>
+    <dates>
+      <discovery>2014-11-10</discovery>
+      <entry>2014-11-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="ee7b4f9d-66c8-11e4-9ae1-e8e0b722a85e">
+    <topic>wget -- path traversal vulnerability in recursive FTP mode</topic>
+    <affects>
+      <package>
+	<name>wget</name>
+	<range><lt>1.16</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>MITRE reports:</p>
+	<blockquote cite="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-4877">
+	  <p>Absolute path traversal vulnerability in GNU Wget before
+	  1.16, when recursion is enabled, allows remote FTP servers
+	  to write to arbitrary files, and consequently execute
+	  arbitrary code, via a LIST response that references the same
+	  filename within two entries, one of which indicates that the
+	  filename is for a symlink. </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-4877</cvename>
+      <certvu>685996</certvu>
+    </references>
+    <dates>
+      <discovery>2014-10-27</discovery>
+      <entry>2014-11-08</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="0167f5ad-64ea-11e4-98c1-00269ee29e57">
+    <topic>Konversation -- out-of-bounds read on a heap-allocated array</topic>
+    <affects>
+      <package>
+	<name>konversation</name>
+	<range><lt>1.5.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Konversation developers report:</p>
+	<blockquote cite="https://www.kde.org/info/security/advisory-20141104-1.txt">
+	  <p>Konversation's Blowfish ECB encryption support assumes incoming blocks
+	  to be the expected 12 bytes. The lack of a sanity-check for the actual
+	  size can cause a denial of service and an information leak to the local
+	  user.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-8483</cvename>
+      <url>https://www.kde.org/info/security/advisory-20141104-1.txt</url>
+    </references>
+    <dates>
+      <discovery>2014-11-04</discovery>
+      <entry>2014-11-05</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="21ce1840-6107-11e4-9e84-0022156e8794">
+    <topic>twiki -- remote Perl code execution</topic>
+    <affects>
+      <package>
+	<name>twiki</name>
+	<range><lt>5.1.4_1,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>TWiki developers report:</p>
+	<blockquote cite="http://twiki.org/cgi-bin/view/Codev/SecurityAlert-CVE-2014-7236">
+	  <p>The debugenableplugins request parameter allows arbitrary
+	  Perl code execution.</p>
+	  <p>Using an HTTP GET request towards a TWiki server,
+	  add a specially crafted debugenableplugins request parameter
+	  to TWiki's view script (typically port 80/TCP).
+	  Prior authentication may or may not be necessary.</p>
+	  <p>A remote attacker can execute arbitrary Perl code
+	  to view and modify any file the webserver user has access to.</p>
+	  <p>Example: http://www.example.com/do/view/Main/WebHome?debugenableplugins=BackupRestorePlugin%3bprint("Content-Type:text/html\r\n\r\nVulnerable!")%3bexit</p>
+	  <p>The TWiki site is vulnerable if you see a page with text
+	  "Vulnerable!".</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-7236</cvename>
+      <url>http://twiki.org/cgi-bin/view/Codev/SecurityAlert-CVE-2014-7236</url>
+    </references>
+    <dates>
+      <discovery>2014-10-09</discovery>
+      <entry>2014-10-31</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="0dad9114-60cc-11e4-9e84-0022156e8794">
+    <topic>jenkins -- slave-originated arbitrary code execution on master servers</topic>
+    <affects>
+      <package>
+	<name>jenkins</name>
+	<range><lt>1.587</lt></range>
+      </package>
+      <package>
+	<name>jenkins-lts</name>
+	<range><lt>1.580.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Kohsuke Kawaguchi from Jenkins team reports:</p>
+	<blockquote cite="https://wiki.jenkins-ci.org/display/SECURITY/Jenkins+Security+Advisory+2014-10-30">
+	  <p>Historically, Jenkins master and slaves behaved as if
+	  they altogether form a single distributed process.  This
+	  means a slave can ask a master to do just about anything
+	  within the confinement of the operating system, such as
+	  accessing files on the master or trigger other jobs on
+	  Jenkins.</p>
+	  <p>This has increasingly become problematic, as larger
+	  enterprise deployments have developed more sophisticated
+	  trust separation model, where the administators of a master
+	  might take slaves owned by other teams.  In such an
+	  environment, slaves are less trusted than the master.
+	  Yet the "single distributed process" assumption was not
+	  communicated well to the users, resulting in vulnerabilities
+	  in some deployments.</p>
+	  <p>SECURITY-144 (CVE-2014-3665) introduces a new subsystem
+	  to address this problem.  This feature is off by default for
+	  compatibility reasons.  See Wiki for more details, who should
+	  turn this on, and implications.</p>
+	  <p>CVE-2014-3566 is rated high.  It only affects
+	  installations that accept slaves from less trusted
+	  computers, but this will allow an owner of of such slave to
+	  mount a remote code execution attack on Jenkins.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-3665</cvename>
+      <url>https://wiki.jenkins-ci.org/display/SECURITY/Jenkins+Security+Advisory+2014-10-30</url>
+      <url>https://wiki.jenkins-ci.org/display/JENKINS/Slave+To+Master+Access+Control</url>
+      <url>http://www.cloudbees.com/jenkins-security-advisory-2014-10-30</url>
+    </references>
+    <dates>
+      <discovery>2014-10-30</discovery>
+      <entry>2014-10-31</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="f8c88d50-5fb3-11e4-81bd-5453ed2e2b49">
+    <topic>libssh -- PRNG state reuse on forking servers</topic>
+    <affects>
+      <package>
+	<name>libssh</name>
+	<range><lt>0.6.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Aris Adamantiadis reports:</p>
+	<blockquote cite="http://www.openwall.com/lists/oss-security/2014/03/05/1">
+	  <p>When accepting a new connection, the server forks and the
+	    child process handles the request. The RAND_bytes() function
+	    of openssl doesn't reset its state after the fork, but
+	    simply adds the current process id (getpid) to the PRNG
+	    state, which is not guaranteed to be unique.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-0017</cvename>
+      <mlist>http://www.openwall.com/lists/oss-security/2014/03/05/1</mlist>
+      <url>http://secunia.com/advisories/57407</url>
+    </references>
+    <dates>
+      <discovery>2014-03-05</discovery>
+      <entry>2014-10-29</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="d057c5e6-5b20-11e4-bebd-000c2980a9f3">
+    <topic>libpurple/pidgin -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>libpurple</name>
+	<range><lt>2.10.10</lt></range>
+      </package>
+      <package>
+	<name>pidgin</name>
+	<range><lt>2.10.10</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The pidgin development team reports:</p>
+	<blockquote cite="https://developer.pidgin.im/wiki/ChangeLog">
+	  <p>.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-3694</cvename>
+      <cvename>CVE-2014-3697</cvename>
+      <cvename>CVE-2014-3696</cvename>
+      <cvename>CVE-2014-3695</cvename>
+      <cvename>CVE-2014-3698</cvename>
+      <url>https://developer.pidgin.im/wiki/ChangeLog</url>
+    </references>
+    <dates>
+      <discovery>2014-10-22</discovery>
+      <entry>2014-10-24</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="25b78f04-59c8-11e4-b711-6805ca0b3d42">
+    <topic>phpMyAdmin -- XSS vulnerabilities in SQL debug output and server monitor page.</topic>
+    <affects>
+      <package>
+	<name>phpMyAdmin</name>
+	<range><ge>4.2.0</ge><lt>4.2.10.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The phpMyAdmin development team reports:</p>
+	<blockquote cite="http://www.phpmyadmin.net/home_page/security/PMASA-2014-12.php">
+	  <p>With a crafted database or table name it is possible to
+	    trigger an XSS in SQL debug output when enabled and in
+	    server monitor page when viewing and analysing executed
+	    queries.</p>
+	  <p>This vulnerability can be triggered only by someone who
+	    is logged in to phpMyAdmin, as the usual token protection
+	    prevents non-logged-in users from accessing the required
+	    pages. Moreover, debugging SQL is a developer option which
+	    is disabled by default and expected to be disabled in
+	    production environments.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.phpmyadmin.net/home_page/security/PMASA-2014-12.php</url>
+      <cvename>CVE-2014-8326</cvename>
+    </references>
+    <dates>
+      <discovery>2014-10-21</discovery>
+      <entry>2014-10-22</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="76c7a0f5-5928-11e4-adc7-001999f8d30b">
+    <topic>asterisk -- Asterisk Susceptibility to POODLE Vulnerability</topic>
+    <affects>
+      <package>
+	<name>asterisk</name>
+	<range><lt>1.8.31.1</lt></range>
+      </package>
+      <package>
+	<name>asterisk11</name>
+	<range><lt>11.13.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Asterisk project reports:</p>
+	<blockquote cite="http://www.asterisk.org/downloads/security-advisories">
+	  <p>The POODLE vulnerability is described under CVE-2014-3566.
+	  This advisory describes the Asterisk's project susceptibility
+	  to this vulnerability.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://downloads.asterisk.org/pub/security/AST-2014-011.html</url>
+      <cvename>CVE-2014-3566</cvename>
+    </references>
+    <dates>
+      <discovery>2014-10-20</discovery>
+      <entry>2014-10-21</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="0642b064-56c4-11e4-8b87-bcaec565249c">
+    <topic>libxml2 -- Denial of service</topic>
+    <affects>
+      <package>
+	<name>libxml2</name>
+	<range><lt>2.9.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>RedHat reports:</p>
+	<blockquote cite="https://rhn.redhat.com/errata/RHSA-2014-1655.html">
+	  <p>A denial of service flaw was found in libxml2, a library
+	    providing support to read, modify and write XML and HTML
+	    files. A remote attacker could provide a specially crafted
+	    XML file that, when processed by an application using
+	    libxml2, would lead to excessive CPU consumption (denial of
+	    service) based on excessive entity substitutions, even if
+	    entity substitution was disabled, which is the parser default
+	    behavior.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-3660</cvename>
+      <url>https://rhn.redhat.com/errata/RHSA-2014-1655.html</url>
+    </references>
+    <dates>
+      <discovery>2014-10-16</discovery>
+      <entry>2014-10-18</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="6f825fa4-5560-11e4-a4c3-00a0986f28c4">
+    <topic>drupal7 -- SQL injection</topic>
+    <affects>
+      <package>
+	<name>drupal7</name>
+	<range><lt>7.32</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Drupal Security Team reports:</p>
+	<blockquote cite="https://drupal.org/SA-CORE-2013-003">
+	  <p>Drupal 7 includes a database abstraction API to ensure that
+	    queries executed against the database are sanitized to prevent
+	    SQL injection attacks.
+	    A vulnerability in this API allows an attacker to send
+	    specially crafted requests resulting in arbitrary SQL execution.
+	    Depending on the content of the requests this can lead to
+	    privilege escalation, arbitrary PHP execution, or other attacks.
+	    This vulnerability can be exploited by anonymous users.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-3704</cvename>
+      <url>https://www.drupal.org/SA-CORE-2014-005</url>
+      <url>https://www.sektioneins.de/en/blog/14-10-15-drupal-sql-injection-vulnerability.html</url>
+    </references>
+    <dates>
+      <discovery>2014-10-15</discovery>
+      <entry>2014-10-16</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="03175e62-5494-11e4-9cc1-bc5ff4fb5e7b">
+    <topic>OpenSSL -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>openssl</name>
+	<range><ge>1.0.1</ge><lt>1.0.1_16</lt></range>
+      </package>
+      <package>
+	<name>mingw32-openssl</name>
+	<range><ge>1.0.1</ge><lt>1.0.1j</lt></range>
+      </package>
+      <package>
+	<name>linux-c6-openssl</name>
+	<range><lt>1.0.1e_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The OpenSSL Project reports:</p>
+	<blockquote cite="https://www.openssl.org/news/secadv_20141015.txt">
+	  <p>A flaw in the DTLS SRTP extension parsing code allows an
+	    attacker, who sends a carefully crafted handshake message,
+	    to cause OpenSSL to fail to free up to 64k of memory causing
+	    a memory leak. This could be exploited in a Denial Of Service
+	    attack. This issue affects OpenSSL 1.0.1 server implementations
+	    for both SSL/TLS and DTLS regardless of whether SRTP is used
+	    or configured. Implementations of OpenSSL that have been
+	    compiled with OPENSSL_NO_SRTP defined are not affected.
+	    [CVE-2014-3513].</p>
+	  <p>When an OpenSSL SSL/TLS/DTLS server receives a session
+	    ticket the integrity of that ticket is first verified.
+	    In the event of a session ticket integrity check failing,
+	    OpenSSL will fail to free memory causing a memory leak.
+	    By sending a large number of invalid session tickets an
+	    attacker could exploit this issue in a Denial Of Service
+	    attack. [CVE-2014-3567].</p>
+	  <p>OpenSSL has added support for TLS_FALLBACK_SCSV to allow
+	    applications to block the ability for a MITM attacker to
+	    force a protocol downgrade.</p>
+	  <p>Some client applications (such as browsers) will reconnect
+	    using a downgraded protocol to work around interoperability
+	    bugs in older servers. This could be exploited by an active
+	    man-in-the-middle to downgrade connections to SSL 3.0 even
+	    if both sides of the connection support higher protocols.
+	    SSL 3.0 contains a number of weaknesses including POODLE
+	    [CVE-2014-3566].</p>
+	  <p>When OpenSSL is configured with "no-ssl3" as a build option,
+	    servers could accept and complete a SSL 3.0 handshake, and
+	    clients could be configured to send them. [CVE-2014-3568].</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-3513</cvename>
+      <cvename>CVE-2014-3566</cvename>
+      <cvename>CVE-2014-3567</cvename>
+      <cvename>CVE-2014-3568</cvename>
+      <url>https://www.openssl.org/news/secadv_20141015.txt</url>
+    </references>
+    <dates>
+      <discovery>2014-10-15</discovery>
+      <entry>2014-10-15</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="9c1495ac-8d8c-4789-a0f3-8ca6b476619c">
+    <topic>mozilla -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>33.0,1</lt></range>
+      </package>
+      <package>
+	<name>firefox-esr</name>
+	<range><lt>31.2.0,1</lt></range>
+      </package>
+      <package>
+	<name>linux-firefox</name>
+	<range><lt>33.0,1</lt></range>
+      </package>
+      <package>
+	<name>linux-seamonkey</name>
+	<range><lt>2.30</lt></range>
+      </package>
+      <package>
+	<name>linux-thunderbird</name>
+	<range><lt>31.2.0</lt></range>
+      </package>
+      <package>
+	<name>seamonkey</name>
+	<range><lt>2.30</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<range><lt>31.2.0</lt></range>
+      </package>
+      <package>
+	<name>libxul</name>
+	<range><lt>31.2.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Mozilla Project reports:</p>
+	<blockquote cite="http://www.mozilla.org/security/known-vulnerabilities/">
+	  <p>MFSA 2014-74 Miscellaneous memory safety hazards
+	    (rv:33.0 / rv:31.2)</p>
+	  <p>MFSA 2014-75 Buffer overflow during CSS manipulation</p>
+	  <p>MFSA 2014-76 Web Audio memory corruption issues with
+	    custom waveforms</p>
+	  <p>MFSA 2014-77 Out-of-bounds write with WebM video</p>
+	  <p>MFSA 2014-78 Further uninitialized memory use during GIF</p>
+	  <p>MFSA 2014-79 Use-after-free interacting with text
+	    directionality</p>
+	  <p>MFSA 2014-80 Key pinning bypasses</p>
+	  <p>MFSA 2014-81 Inconsistent video sharing within iframe</p>
+	  <p>MFSA 2014-82 Accessing cross-origin objects via the
+	    Alarms API</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-1574</cvename>
+      <cvename>CVE-2014-1575</cvename>
+      <cvename>CVE-2014-1576</cvename>
+      <cvename>CVE-2014-1577</cvename>
+      <cvename>CVE-2014-1578</cvename>
+      <cvename>CVE-2014-1580</cvename>
+      <cvename>CVE-2014-1581</cvename>
+      <cvename>CVE-2014-1582</cvename>
+      <cvename>CVE-2014-1583</cvename>
+      <cvename>CVE-2014-1584</cvename>
+      <cvename>CVE-2014-1585</cvename>
+      <cvename>CVE-2014-1586</cvename>
+      <url>https://www.mozilla.org/security/announce/2014/mfsa2014-74.html</url>
+      <url>https://www.mozilla.org/security/announce/2014/mfsa2014-75.html</url>
+      <url>https://www.mozilla.org/security/announce/2014/mfsa2014-76.html</url>
+      <url>https://www.mozilla.org/security/announce/2014/mfsa2014-77.html</url>
+      <url>https://www.mozilla.org/security/announce/2014/mfsa2014-78.html</url>
+      <url>https://www.mozilla.org/security/announce/2014/mfsa2014-79.html</url>
+      <url>https://www.mozilla.org/security/announce/2014/mfsa2014-80.html</url>
+      <url>https://www.mozilla.org/security/announce/2014/mfsa2014-81.html</url>
+      <url>https://www.mozilla.org/security/announce/2014/mfsa2014-82.html</url>
+      <url>https://www.mozilla.org/security/announce/</url>
+    </references>
+    <dates>
+      <discovery>2014-10-14</discovery>
+      <entry>2014-10-14</entry>
+      <modified>2014-10-16</modified>
+    </dates>
+  </vuln>
+
+  <vuln vid="c30c3a2e-4fb1-11e4-b275-14dae9d210b8">
+    <topic>foreman-proxy SSL verification issue</topic>
+    <affects>
+      <package>
+	<name>foreman-proxy</name>
+	<range><lt>1.6.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Foreman Security reports:</p>
+	<blockquote cite="http://projects.theforeman.org/issues/7822">
+	  <p>The smart proxy when running in an SSL-secured mode permits incoming
+	    API calls to any endpoint without requiring, or performing any
+	    verification of an SSL client certificate. This permits any client
+	    with access to the API to make requests and perform actions
+	    permitting control of Puppet CA, DHCP, DNS etc.)</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-3691</cvename>
+      <url>https://groups.google.com/forum/#!topic/foreman-announce/LcjZx25Bl7U</url>
+    </references>
+    <dates>
+      <discovery>2014-05-09</discovery>
+      <entry>2014-10-09</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="d2bbcc01-4ec3-11e4-ab3f-00262d5ed8ee">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<name>chromium-pulse</name> <!-- pcbsd only -->
+	<range><lt>38.0.2125.101</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Google Chrome Releases reports:</p>
+	<blockquote cite="http://googlechromereleases.blogspot.nl/2014/10/stable-channel-update.html">
+	  <p>159 security fixes in this release, including 113 found using
+	    MemorySanitizer:</p>
+	  <ul>
+	    <li>[416449] Critical CVE-2014-3188: A special thanks to Jüri Aedla
+	      for a combination of V8 and IPC bugs that can lead to remote code
+	      execution outside of the sandbox.</li>
+	    <li>[398384] High CVE-2014-3189: Out-of-bounds read in PDFium.
+	      Credit to cloudfuzzer.</li>
+	    <li>[400476] High CVE-2014-3190: Use-after-free in Events. Credit
+	      to cloudfuzzer.</li>
+	    <li>[402407] High CVE-2014-3191: Use-after-free in Rendering.
+	      Credit to cloudfuzzer.</li>
+	    <li>[403276] High CVE-2014-3192: Use-after-free in DOM. Credit to
+	      cloudfuzzer.</li>
+	    <li>[399655] High CVE-2014-3193: Type confusion in Session Management.
+	      Credit to miaubiz.</li>
+	    <li>[401115] High CVE-2014-3194: Use-after-free in Web Workers.
+	      Credit to Collin Payne.</li>
+	    <li>[403409] Medium CVE-2014-3195: Information Leak in V8. Credit
+	      to Jüri Aedla.</li>
+	    <li>[338538] Medium CVE-2014-3196: Permissions bypass in Windows
+	      Sandbox. Credit to James Forshaw.</li>
+	    <li>[396544] Medium CVE-2014-3197: Information Leak in XSS Auditor.
+	      Credit to Takeshi Terada.</li>
+	    <li>[415307] Medium CVE-2014-3198: Out-of-bounds read in PDFium.
+	      Credit to Atte Kettunen of OUSPG.</li>
+	    <li>[395411] Low CVE-2014-3199: Release Assert in V8 bindings.
+	      Credit to Collin Payne.</li>
+	    <li>[420899] CVE-2014-3200: Various fixes from internal audits,
+	      fuzzing and other initiatives (Chrome 38).</li>
+	    <li>Multiple vulnerabilities in V8 fixed at the tip of the 3.28
+	      branch (currently 3.28.71.15).</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-3188</cvename>
+      <cvename>CVE-2014-3189</cvename>
+      <cvename>CVE-2014-3190</cvename>
+      <cvename>CVE-2014-3191</cvename>
+      <cvename>CVE-2014-3192</cvename>
+      <cvename>CVE-2014-3193</cvename>
+      <cvename>CVE-2014-3194</cvename>
+      <cvename>CVE-2014-3195</cvename>
+      <cvename>CVE-2014-3196</cvename>
+      <cvename>CVE-2014-3197</cvename>
+      <cvename>CVE-2014-3198</cvename>
+      <cvename>CVE-2014-3199</cvename>
+      <cvename>CVE-2014-3200</cvename>
+      <url>http://googlechromereleases.blogspot.nl/2014/10/stable-channel-update.html</url>
+    </references>
+    <dates>
+      <discovery>2014-10-07</discovery>
+      <entry>2014-10-08</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="b6587341-4d88-11e4-aef9-20cf30e32f6d">
+    <topic>Bugzilla multiple security issues</topic>
+    <affects>
+      <package>
+	<name>bugzilla44</name>
+	<range><lt>4.4.6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Bugzilla Security Advisory</p>
+	<blockquote cite="http://www.bugzilla.org/security/4.0.14/">
+	  <h5>Unauthorized Account Creation</h5>
+	  <p>An attacker creating a new Bugzilla account can override certain
+	    parameters when finalizing the account creation that can lead to the
+	    user being created with a different email address than originally
+	    requested. The overridden login name could be automatically added
+	    to groups based on the group's regular expression setting.</p>
+	  <h5>Cross-Site Scripting</h5>
+	  <p>During an audit of the Bugzilla code base, several places
+	    were found where cross-site scripting exploits could occur which
+	    could allow an attacker to access sensitive information.</p>
+	  <h5>Information Leak</h5>
+	  <p>If a new comment was marked private to the insider group, and a flag
+	    was set in the same transaction, the comment would be visible to
+	    flag recipients even if they were not in the insider group.</p>
+	  <h5>Social Engineering</h5>
+	  <p>Search results can be exported as a CSV file which can then be
+	    imported into external spreadsheet programs. Specially formatted
+	    field values can be interpreted as formulas which can be executed
+	    and used to attack a user's computer.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-1572</cvename>
+      <cvename>CVE-2014-1573</cvename>
+      <cvename>CVE-2014-1571</cvename>
+      <url>https://bugzilla.mozilla.org/show_bug.cgi?id=1074812</url>
+      <url>https://bugzilla.mozilla.org/show_bug.cgi?id=1075578</url>
+      <url>https://bugzilla.mozilla.org/show_bug.cgi?id=1064140</url>
+      <url>https://bugzilla.mozilla.org/show_bug.cgi?id=1054702</url>
+    </references>
+    <dates>
+      <discovery>2014-10-06</discovery>
+      <entry>2014-10-06</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="81e2b308-4a6c-11e4-b711-6805ca0b3d42">
     <topic>rt42 -- vulnerabilities related to shellshock</topic>
     <affects>

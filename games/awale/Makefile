@@ -6,10 +6,11 @@ PORTVERSION=	1.5
 CATEGORIES=	games
 MASTER_SITES=	SAVANNAH
 
-MAINTAINER=	games@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	African board game
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
 USES=		desktop-file-utils tk

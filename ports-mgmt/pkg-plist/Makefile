@@ -11,10 +11,13 @@ COMMENT=	Generate a pkg-plist for a port
 
 LICENSE=	MIT
 
-USE_PYTHON=	yes
+USES=		python
 NO_BUILD=	yes
 
 PLIST_FILES=	bin/pkg-plist man/man1/pkg-plist.1.gz
+
+DEPRECATED=	Generate incorrect plists
+EXPIRATION_DATE=	2014-11-30
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/pkg-plist ${STAGEDIR}${PREFIX}/bin

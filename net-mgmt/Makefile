@@ -26,13 +26,13 @@
     SUBDIR += bwm-ng
     SUBDIR += cacti
     SUBDIR += cacti-spine
+    SUBDIR += ccnet
     SUBDIR += cdpd
     SUBDIR += cdpr
     SUBDIR += centreon-clib
     SUBDIR += check_logfiles
     SUBDIR += check_multi
     SUBDIR += check_mysql_health
-    SUBDIR += check_snmp_pkgvuln
     SUBDIR += chillispot
     SUBDIR += choparp
     SUBDIR += cidr
@@ -108,6 +108,7 @@
     SUBDIR += nagios-check_bacula5
     SUBDIR += nagios-check_clamav
     SUBDIR += nagios-check_cpu_usage
+    SUBDIR += nagios-check_dhcp.pl
     SUBDIR += nagios-check_email_delivery
     SUBDIR += nagios-check_hdd_health
     SUBDIR += nagios-check_hp_bladechassis
@@ -265,6 +266,7 @@
     SUBDIR += qkismet
     SUBDIR += rackmonkey
     SUBDIR += rancid
+    SUBDIR += rancid3
     SUBDIR += rate
     SUBDIR += rcpd
     SUBDIR += remarp
@@ -279,6 +281,8 @@
     SUBDIR += sblim-wbemcli
     SUBDIR += scli
     SUBDIR += sdig
+    SUBDIR += seafile
+    SUBDIR += seafile-gui
     SUBDIR += send
     SUBDIR += sendip
     SUBDIR += sipcalc
@@ -300,10 +304,10 @@
     SUBDIR += torrus
     SUBDIR += unifi2
     SUBDIR += unifi3
+    SUBDIR += unifi4
     SUBDIR += victorops-nagios
     SUBDIR += vidalia
     SUBDIR += virt-viewer
-    SUBDIR += virtinst
     SUBDIR += wdiag
     SUBDIR += weathermap
     SUBDIR += weplab
@@ -321,5 +325,9 @@
     SUBDIR += zabbix22-frontend
     SUBDIR += zabbix22-proxy
     SUBDIR += zabbix22-server
+    SUBDIR += zabbix24-agent
+    SUBDIR += zabbix24-frontend
+    SUBDIR += zabbix24-proxy
+    SUBDIR += zabbix24-server
 
 .include <bsd.port.subdir.mk>

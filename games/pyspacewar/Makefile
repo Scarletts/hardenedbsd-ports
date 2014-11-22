@@ -9,16 +9,16 @@ MASTER_SITES=	http://mg.pov.lt/${PORTNAME}/\
 		LOCAL/beech
 DIST_SUBDIR=	python
 
-MAINTAINER=	games@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Two ships duel in a gravity field
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/GPL.txt
 
 RUN_DEPENDS=	${PYGAME}
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python
+USE_PYTHON=	distutils autoplist
 
 PLIST_FILES=	share/icons/hicolor/16x16/apps/pyspacewar.png \
 		share/icons/hicolor/22x22/apps/pyspacewar.png \

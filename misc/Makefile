@@ -10,6 +10,7 @@
     SUBDIR += amanda-server
     SUBDIR += amfm
     SUBDIR += apparix
+    SUBDIR += artikulate
     SUBDIR += asbutton
     SUBDIR += asr-manpages
     SUBDIR += astrolog
@@ -33,6 +34,7 @@
     SUBDIR += chef
     SUBDIR += chmlib
     SUBDIR += chord2html
+    SUBDIR += cinnamon-translations
     SUBDIR += clex
     SUBDIR += cloc
     SUBDIR += clpbar
@@ -145,7 +147,6 @@
     SUBDIR += gnome-mime-data
     SUBDIR += gnome-osd
     SUBDIR += gnome-user-docs
-    SUBDIR += gnome2-reference
     SUBDIR += gnomehier
     SUBDIR += gnu-watch
     SUBDIR += gnuit
@@ -202,6 +203,7 @@
     SUBDIR += kde4-l10n-hi
     SUBDIR += kde4-l10n-hr
     SUBDIR += kde4-l10n-ia
+    SUBDIR += kde4-l10n-id
     SUBDIR += kde4-l10n-is
     SUBDIR += kde4-l10n-it
     SUBDIR += kde4-l10n-kk
@@ -467,7 +469,6 @@
     SUBDIR += xgas
     SUBDIR += xiphos
     SUBDIR += xless
-    SUBDIR += xmonad-log-applet
     SUBDIR += xosd
     SUBDIR += xpns
     SUBDIR += xsw

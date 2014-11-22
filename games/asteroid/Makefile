@@ -6,10 +6,11 @@ PORTVERSION=	1.2.1
 PORTREVISION=	2
 CATEGORIES=	games
 
-MAINTAINER=	games@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Modern version of the arcade classic Asteroid
 
 LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	chazomaticus

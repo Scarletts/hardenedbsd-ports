@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pianobar
-PORTVERSION=	2014.06.08
+PORTVERSION=	2014.09.28
 CATEGORIES=	audio
 MASTER_SITES=	http://6xq.net/projects/${PORTNAME}/
 
@@ -22,7 +22,7 @@ LIB_DEPENDS=	libao.so:${PORTSDIR}/audio/libao \
 PLIST_FILES=	bin/pianobar \
 		man/man1/pianobar.1.gz
 
-USES=		tar:bzip2 gmake pkgconfig
+USES=		alias gmake pkgconfig tar:bzip2
 MAKE_ARGS+=	CC="${CC}" PREFIX="${PREFIX}"
 
 CFLAGS+=	-I${LOCALBASE}/include -std=c99

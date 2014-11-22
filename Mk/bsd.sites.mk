@@ -253,7 +253,7 @@ MASTER_SITE_EXIM+= \
 .if !defined(IGNORE_MASTER_SITE_CENTOS_LINUX)
 MASTER_SITE_CENTOS_LINUX+= \
 	http://mirror.centos.org/centos/6/os/i386/Packages/ \
-	http://vault.centos.org/6.5/os/Source/SPackages/ \
+	http://vault.centos.org/6.6/os/Source/SPackages/ \
 	http://mirror.centos.org/%SUBDIR%/ \
 	http://vault.centos.org/%SUBDIR%/
 
@@ -262,7 +262,7 @@ MASTER_SITE_CENTOS_LINUX+= \
 .if !defined(IGNORE_MASTER_SITE_CENTOS_LINUX)
 MASTER_SITE_CENTOS_LINUX_UPDATES+= \
 	http://mirror.centos.org/centos/6/updates/i386/Packages/ \
-	http://vault.centos.org/6.5/updates/Source/SPackages/
+	http://vault.centos.org/${LINUX_DIST_VER}/updates/Source/SPackages/
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_EPEL)
@@ -748,6 +748,11 @@ MASTER_SITE_KDE+= \
 	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,X/kde/&,} \
 	ftp://ftp.funet.fi/pub/mirrors/ftp.kde.org/pub/kde/%SUBDIR%/ \
 	http://ftp.funet.fi/pub/mirrors/ftp.kde.org/pub/kde/%SUBDIR%/
+.endif
+
+.if !defined(IGNORE_MASTER_SITE_LIBREOFFICE_DEV)
+MASTER_SITE_LIBREOFFICE_DEV+= \
+	http://dev-www.libreoffice.org/src/%SUBDIR%/
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_LOGILAB)
@@ -1501,6 +1506,7 @@ MASTER_SITE_KERNEL_ORG+= \
 MASTER_SITES_ABBREVS=	CPAN:PERL_CPAN \
 			GH:GITHUB \
 			GHC:GITHUB_CLOUD \
+			LODEV:LIBREOFFICE_DEV \
 			NL:NETLIB \
 			SF:SOURCEFORGE \
 			SFJP:SOURCEFORGE_JP \
@@ -1520,6 +1526,7 @@ MASTER_SITES_SUBDIRS=	APACHE_JAKARTA:${PORTNAME:S,-,/,}/source \
 			GNU_ALPHA:${PORTNAME} \
 			HORDE:${PORTNAME} \
 			LOGILAB:${PORTNAME} \
+			LIBREOFFICE_DEV:${PORTNAME} \
 			MATE:${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/} \
 			MOZDEV:${PORTNAME:tl} \
 			NETLIB:${PORTNAME} \

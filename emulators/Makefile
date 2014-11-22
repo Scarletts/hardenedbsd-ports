@@ -37,6 +37,7 @@
     SUBDIR += fmsx
     SUBDIR += frodo
     SUBDIR += fs-uae
+    SUBDIR += fs-uae-launcher
     SUBDIR += fuse
     SUBDIR += fuse-roms
     SUBDIR += fuse-utils
@@ -53,6 +54,7 @@
     SUBDIR += hercules
     SUBDIR += higan
     SUBDIR += hugo
+    SUBDIR += hyperv-is
     SUBDIR += i386-wine
     SUBDIR += i386-wine-compholio
     SUBDIR += i386-wine-devel
@@ -151,7 +153,6 @@
     SUBDIR += vxtools
     SUBDIR += wine
     SUBDIR += wine-devel
-    SUBDIR += wine-doors
     SUBDIR += wine-compholio
     SUBDIR += wine-gecko
     SUBDIR += wine-gecko-devel

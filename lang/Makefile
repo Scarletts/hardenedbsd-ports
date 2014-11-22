@@ -29,6 +29,7 @@
     SUBDIR += cfortran
     SUBDIR += chicken
     SUBDIR += cint
+    SUBDIR += cjs
     SUBDIR += clang-cheri
     SUBDIR += clang-devel
     SUBDIR += clang32
@@ -125,7 +126,6 @@
     SUBDIR += js_of_ocaml
     SUBDIR += jython
     SUBDIR += kawa
-    SUBDIR += kroc
     SUBDIR += kturtle
     SUBDIR += lafontaine
     SUBDIR += libhx
@@ -289,6 +289,7 @@
     SUBDIR += sketchy
     SUBDIR += slib
     SUBDIR += slib-guile
+    SUBDIR += slib-guile2
     SUBDIR += slisp
     SUBDIR += smalltalk
     SUBDIR += smlnj
@@ -321,7 +322,6 @@
     SUBDIR += v8
     SUBDIR += v8-devel
     SUBDIR += vala
-    SUBDIR += vala-vapigen
     SUBDIR += visualworks
     SUBDIR += whitespace
     SUBDIR += x10

@@ -9,13 +9,14 @@ MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Inclued gives you a Clue for PHP inclusion check
 
 LICENSE=	PHP301
 
 USE_PHP=	yes
 USE_PHPEXT=	yes
+IGNORE_WITH_PHP=	55 56
 
 CONFIGURE_ARGS=	--enable-inclued
 

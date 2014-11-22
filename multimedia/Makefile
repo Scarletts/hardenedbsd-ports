@@ -23,6 +23,7 @@
     SUBDIR += avidemux26-plugins
     SUBDIR += avidemux26-qt4
     SUBDIR += avinfo
+    SUBDIR += baka-mplayer
     SUBDIR += bangarang
     SUBDIR += banshee
     SUBDIR += bino
@@ -57,6 +58,7 @@
     SUBDIR += emovix
     SUBDIR += ffmpeg
     SUBDIR += ffmpeg0
+    SUBDIR += ffmpeg24
     SUBDIR += ffmpeg2theora
     SUBDIR += ffmpegthumbnailer
     SUBDIR += flvmeta
@@ -79,6 +81,7 @@
     SUBDIR += gmerlin
     SUBDIR += gmerlin-avdecoder
     SUBDIR += gmimms
+    SUBDIR += gmp-api
     SUBDIR += gmtk
     SUBDIR += gnome-mplayer
     SUBDIR += gnome-subtitles
@@ -137,6 +140,7 @@
     SUBDIR += gstreamer1-plugins-v4l2
     SUBDIR += gstreamer1-plugins-vpx
     SUBDIR += gstreamer1-plugins-x264
+    SUBDIR += gstreamer1-qt4
     SUBDIR += gstreamer1-vaapi
     SUBDIR += gstreamermm
     SUBDIR += gtk-recordmydesktop
@@ -173,6 +177,7 @@
     SUBDIR += libfame
     SUBDIR += libkate
     SUBDIR += libmatroska
+    SUBDIR += libmediaart
     SUBDIR += libmediainfo
     SUBDIR += libmovtar
     SUBDIR += libmpeg2
@@ -194,6 +199,7 @@
     SUBDIR += libva-vdpau-driver
     SUBDIR += libvdpau
     SUBDIR += libvpx
+    SUBDIR += libx264
     SUBDIR += libxine
     SUBDIR += libxspf
     SUBDIR += libzen
@@ -211,6 +217,7 @@
     SUBDIR += lxdvdrip
     SUBDIR += m2tstoavi
     SUBDIR += m2vrequantiser
+    SUBDIR += mediabrowser
     SUBDIR += mediadownloader
     SUBDIR += mediainfo
     SUBDIR += mencoder
@@ -254,6 +261,7 @@
     SUBDIR += ogmrip
     SUBDIR += ogmtools
     SUBDIR += opencinematools
+    SUBDIR += openh264
     SUBDIR += openquicktime
     SUBDIR += openshot
     SUBDIR += oqtencoder
@@ -333,6 +341,7 @@
     SUBDIR += smplayer-themes
     SUBDIR += sms1xxx-kmod
     SUBDIR += smtube
+    SUBDIR += snappy
     SUBDIR += spigot
     SUBDIR += spook
     SUBDIR += spotify-websocket-api

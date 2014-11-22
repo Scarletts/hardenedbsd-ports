@@ -44,6 +44,7 @@
     SUBDIR += apngdis
     SUBDIR += apvlv
     SUBDIR += aqsis
+    SUBDIR += argyllcms
     SUBDIR += asciio
     SUBDIR += atril
     SUBDIR += autopano-sift-c
@@ -85,6 +86,10 @@
     SUBDIR += clutter
     SUBDIR += clutter-box2d
     SUBDIR += clutter-gtk
+    SUBDIR += clutter-gtk3
+    SUBDIR += cluttermm
+    SUBDIR += code-eli
+    SUBDIR += cogl
     SUBDIR += colord
     SUBDIR += colord-gtk
     SUBDIR += comical
@@ -226,6 +231,7 @@
     SUBDIR += fyre
     SUBDIR += g2
     SUBDIR += gauche-gl
+    SUBDIR += gbm
     SUBDIR += gcolor
     SUBDIR += gcolor2
     SUBDIR += gd
@@ -234,6 +240,7 @@
     SUBDIR += gdchart
     SUBDIR += gdk-pixbuf
     SUBDIR += gdk-pixbuf2
+    SUBDIR += gdtclft
     SUBDIR += geeqie
     SUBDIR += gegl
     SUBDIR += generic_image_decoder
@@ -287,6 +294,8 @@
     SUBDIR += gmt
     SUBDIR += gnash
     SUBDIR += gnofract4d
+    SUBDIR += gnome-color-manager
+    SUBDIR += gnome-video-effects
     SUBDIR += gnustep-slideshow
     SUBDIR += gnustep-slideshowkit
     SUBDIR += gocr
@@ -460,6 +469,7 @@
     SUBDIR += kolourpaint
     SUBDIR += kphotoalbum-kde4
     SUBDIR += kpovmodeler
+    SUBDIR += kqtquickcharts
     SUBDIR += ksaneplugin
     SUBDIR += ksnapshot
     SUBDIR += kudu
@@ -484,28 +494,31 @@
     SUBDIR += libaux
     SUBDIR += libboard
     SUBDIR += libcaca
-    SUBDIR += libcdr
+    SUBDIR += libcdr01
     SUBDIR += libchamplain
     SUBDIR += libdmtx
     SUBDIR += libdrm
     SUBDIR += libecwj2
     SUBDIR += libemf
+    SUBDIR += libepoxy
     SUBDIR += libetonyek
+    SUBDIR += libetonyek01
     SUBDIR += libexif
     SUBDIR += libexif-gtk
     SUBDIR += libfpx
     SUBDIR += libfreehand
-    SUBDIR += libfreehand00
     SUBDIR += libgaiagraphics
     SUBDIR += libgeotiff
     SUBDIR += libgfx
     SUBDIR += libglapi
     SUBDIR += libglesv2
     SUBDIR += libgltext
+    SUBDIR += libgltf
     SUBDIR += libgnomecanvas
     SUBDIR += libgnomecanvas-reference
     SUBDIR += libgnomecanvasmm26
     SUBDIR += libgphoto2
+    SUBDIR += libgxps
     SUBDIR += libimg
     SUBDIR += libiptcdata
     SUBDIR += libjpeg-turbo
@@ -515,6 +528,7 @@
     SUBDIR += libkipi-kde4
     SUBDIR += libkipiplugins
     SUBDIR += libksane
+    SUBDIR += libkscreen
     SUBDIR += liblqr-1
     SUBDIR += liblug
     SUBDIR += libmng
@@ -543,6 +557,7 @@
     SUBDIR += libwmf
     SUBDIR += libwmf-nox11
     SUBDIR += libwpg
+    SUBDIR += libwpg03
     SUBDIR += linplasma
     SUBDIR += linux-XnViewMP
     SUBDIR += linux-adobesvg
@@ -550,7 +565,10 @@
     SUBDIR += linux-c6-sdl_ttf
     SUBDIR += linux-c6-dri
     SUBDIR += linux-c6-dri-compat
+    SUBDIR += linux-c6-gdk-pixbuf
+    SUBDIR += linux-c6-glx-utils
     SUBDIR += linux-c6-jpeg
+    SUBDIR += linux-c6-libGLU
     SUBDIR += linux-c6-tiff
     SUBDIR += linux-c6-cairo
     SUBDIR += linux-c6-png
@@ -573,6 +591,7 @@
     SUBDIR += luminance-qt5
     SUBDIR += luxrender
     SUBDIR += mahotas
+    SUBDIR += maim
     SUBDIR += makehuman
     SUBDIR += mandelbulber
     SUBDIR += mapnik
@@ -773,6 +792,7 @@
     SUBDIR += picviz
     SUBDIR += piddle
     SUBDIR += pinpoint
+    SUBDIR += pinta
     SUBDIR += pixelize
     SUBDIR += pixen
     SUBDIR += pixie
@@ -920,6 +940,7 @@
     SUBDIR += rubygem-exifr
     SUBDIR += rubygem-ezprint
     SUBDIR += rubygem-fastimage
+    SUBDIR += rubygem-flamegraph
     SUBDIR += rubygem-gd2
     SUBDIR += rubygem-gdk_pixbuf2
     SUBDIR += rubygem-geokit
@@ -959,6 +980,7 @@
     SUBDIR += seejpeg
     SUBDIR += separate
     SUBDIR += seq2gif
+    SUBDIR += shared-color-profiles
     SUBDIR += sharpconstruct
     SUBDIR += shiva-collections
     SUBDIR += shotwell
@@ -1052,7 +1074,6 @@
     SUBDIR += xv
     SUBDIR += xv-m17n
     SUBDIR += xwpick
-    SUBDIR += xzgv
     SUBDIR += yafray
     SUBDIR += yagf
     SUBDIR += yed

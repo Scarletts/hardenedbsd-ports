@@ -3,7 +3,7 @@
 
 PORTNAME=	ocrfeeder
 PORTVERSION=	0.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	GNOME
 
@@ -13,7 +13,7 @@ COMMENT=	Document layout analysis and optical character recognition
 LICENSE=	GPLv3
 
 BUILD_DEPENDS=	goocanvas2>0:${PORTSDIR}/graphics/goocanvas2 \
-		${PYTHON_PKGNAMEPREFIX}imaging>0:${PORTSDIR}/graphics/py-imaging \
+		${PYTHON_PKGNAMEPREFIX}pillow>0:${PORTSDIR}/graphics/py-pillow \
 		${PYTHON_PKGNAMEPREFIX}sane>0:${PORTSDIR}/graphics/py-sane \
 		${PYTHON_PKGNAMEPREFIX}reportlab2>0:${PORTSDIR}/print/py-reportlab2 \
 		${PYTHON_PKGNAMEPREFIX}enchant>0:${PORTSDIR}/textproc/py-enchant
@@ -23,10 +23,9 @@ RUN_DEPENDS:=	${PYTHON_PKGNAMEPREFIX}lxml>0:${PORTSDIR}/devel/py-lxml \
 		gtkspell3>0:${PORTSDIR}/textproc/gtkspell3 \
 		${BUILD_DEPENDS}
 
-USES=		desktop-file-utils gettext gmake pkgconfig tar:xz
+USES=		desktop-file-utils gettext gmake pkgconfig python tar:xz
 USE_GNOME=	gnomedocutils gnomehier gtk30 librsvg2 pygobject3
 USE_GHOSTSCRIPT=yes
-USE_PYTHON=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-silent-rules
 CPPFLAGS+=	-I${LOCALBASE}/include

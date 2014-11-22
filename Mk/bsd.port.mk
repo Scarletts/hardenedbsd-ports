@@ -317,8 +317,9 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #
 # WITH_DEBUG_PORTS		- A list of origins for which WITH_DEBUG will be set
 #
-# WITH_SSP_PORTS
-# 				- If set, SSP_FLAGS (defaults to -fstack-protector)
+# WITHOUT_SSP	- Disable SSP.
+#
+# SSP_CFLAGS	- Defaults to -fstack-protector. This value
 #				  is added to CFLAGS and the necessary flags
 #				  are added to LDFLAGS. Note that SSP_UNSAFE
 #				  can be used in Makefiles by port maintainers
@@ -1080,6 +1081,7 @@ MAKE_ENV+=		XDG_DATA_HOME=${WRKDIR} \
 				HOME=${WRKDIR}
 QA_ENV+=	STAGEDIR=${STAGEDIR} \
 			PREFIX=${PREFIX} \
+			LINUXBASE=${LINUXBASE} \
 			LOCALBASE=${LOCALBASE} \
 			"STRIP=${STRIP}" \
 			TMPPLIST=${TMPPLIST}
@@ -1146,21 +1148,39 @@ STRIPBIN=	${STRIP_CMD}
 
 .else
 
-# Look for ${PATCH_WRKSRC}/.../*.orig files, and (re-)create
-# ${FILEDIR}/patch-* files from them.
+# Look for files named "*.orig" under ${PATCH_WRKSRC} and (re-)generate
+# ${FILESDIR}/patch-* files from them.  By popular demand, we currently
+# use '_' (underscore) to replace path separators in patch file names.
+#
+# If a file name happens to contain character which is also a separator
+# replacement character, it will be doubled in the resulting patch name.
+#
+# To minimize gratuitous patch renames, newly generated patches will be
+# written under existing file names when they use any of the previously
+# common path separators ([-+_]) or legacy double underscore (__).
 
 .if !target(makepatch)
+PATCH_PATH_SEPARATOR=	_
 makepatch:
 	@${MKDIR} ${FILESDIR}
 	@(cd ${PATCH_WRKSRC}; \
-		for f in `${FIND} . -type f -name '*.orig'`; do \
+		for f in `${FIND} -s . -type f -name '*.orig'`; do \
 			ORIG=$${f#./}; \
 			NEW=$${ORIG%.orig}; \
 			cmp -s $${ORIG} $${NEW} && continue; \
-			PATCH=`${ECHO} $${NEW} | ${SED} -e 's|/|__|g'`; \
+			! for _lps in `${ECHO} _ - + | ${SED} -e \
+				's|${PATCH_PATH_SEPARATOR}|__|'`; do \
+					PATCH=`${ECHO} $${NEW} | ${SED} -e "s|/|$${_lps}|g"`; \
+					test -f "${FILESDIR}/patch-$${PATCH}" && break; \
+			done || ${ECHO} $${_SEEN} | ${GREP} -q /$${PATCH} && { \
+				PATCH=`${ECHO} $${NEW} | ${SED} -e \
+					's|${PATCH_PATH_SEPARATOR}|&&|g' -e \
+					's|/|${PATCH_PATH_SEPARATOR}|g'`; \
+				_SEEN=$${_SEEN}/$${PATCH}; \
+			}; \
 			OUT=${FILESDIR}/patch-$${PATCH}; \
-			${ECHO} ${DIFF} -ud $${ORIG} $${NEW} '>' $${OUT}; \
-			TZ=UTC ${DIFF} -ud $${ORIG} $${NEW} | ${SED} -e \
+			${ECHO} ${DIFF} -udp $${ORIG} $${NEW} '>' $${OUT}; \
+			TZ=UTC ${DIFF} -udp $${ORIG} $${NEW} | ${SED} -e \
 				'/^---/s|\.[0-9]* +0000$$| UTC|' -e \
 				'/^+++/s|\([[:blank:]][-0-9:.+]*\)*$$||' \
 					> $${OUT} || ${TRUE}; \
@@ -1617,7 +1637,7 @@ INSTALL_TARGET:=	${INSTALL_TARGET:S/^install-strip$/install/g}
 .endif
 .endif
 
-.if defined(WITH_SSP) || defined(WITH_SSP_PORTS)
+.if !defined(WITHOUT_SSP)
 .include "${PORTSDIR}/Mk/bsd.ssp.mk"
 .endif
 
@@ -1773,6 +1793,7 @@ RUN_DEPENDS+=	${LINUX_BASE_PORT}
 
 PKG_IGNORE_DEPENDS?=		'this_port_does_not_exist'
 
+_GL_gbm_LIB_DEPENDS=		libgbm.so:${PORTSDIR}/graphics/gbm
 _GL_glesv2_LIB_DEPENDS=		libGLESv2.so:${PORTSDIR}/graphics/libglesv2
 _GL_egl_LIB_DEPENDS=		libEGL.so:${PORTSDIR}/graphics/libEGL
 _GL_gl_LIB_DEPENDS=		libGL.so:${PORTSDIR}/graphics/libGL
@@ -1805,9 +1826,6 @@ MAKE_ENV+=	${DESTDIRNAME}=${STAGEDIR}
 .else
 MAKE_ARGS+=	${DESTDIRNAME}=${STAGEDIR}
 .endif
-
-CO_ENV+=	PACKAGE_DEPENDS="${_LIB_RUN_DEPENDS:C,[^:]*:([^:]*):?.*,\1,:C,${PORTSDIR}/,,}" \
-		PKG_QUERY="${PKG_QUERY}"
 
 .if defined(NO_PREFIX_RMDIR)
 CO_ENV+=	NO_PREFIX_RMDIR=1
@@ -2041,7 +2059,7 @@ MAKE_ENV+=		PREFIX=${PREFIX} \
 # a lot of ports.
 .if !defined(WITHOUT_NO_STRICT_ALIASING)
 .if ${CC} != "icc"
-.if !empty(CFLAGS:M-O[23s]) && empty(CFLAGS:M-fno-strict-aliasing)
+.if empty(CFLAGS:M-fno-strict-aliasing)
 CFLAGS+=       -fno-strict-aliasing
 .endif
 .endif
@@ -2076,46 +2094,7 @@ _MAKE_JOBS?=		-j${MAKE_JOBS_NUMBER}
 BUILD_FAIL_MESSAGE+=	Try to set MAKE_JOBS_UNSAFE=yes and rebuild before reporting the failure to the maintainer.
 .endif
 
-# ccache support
-
-# Try to set a default CCACHE_DIR to workaround HOME=/dev/null and
-# HOME=${WRKDIR}/* staging fixes
-.if defined(WITH_CCACHE_BUILD) && !defined(CCACHE_DIR) && \
-    (!defined(HOME) || ${HOME} == /dev/null || ${HOME:S/^${WRKDIR}//} != ${HOME})
-.  if defined(USER) && ${USER} == root
-CCACHE_DIR=	/root/.ccache
-.  else
-NO_CCACHE=	yes
-WARNING+=	WITH_CCACHE_BUILD support disabled, please set CCACHE_DIR.
-.  endif
-.endif
-
-# Support NO_CCACHE for common setups, require WITH_CCACHE_BUILD, and
-# don't use if ccache already set in CC
-.if !defined(NO_CCACHE) && defined(WITH_CCACHE_BUILD) && !${CC:M*ccache*} && \
-  !defined(NO_BUILD) && !defined(NOCCACHE)
-# Avoid depends loops between pkg and ccache
-.	if !${.CURDIR:M*/devel/ccache} && !${.CURDIR:M*/ports-mgmt/pkg}
-BUILD_DEPENDS+=		${LOCALBASE}/bin/ccache:${PORTSDIR}/devel/ccache
-.	endif
-
-_CCACHE_PATH=	${LOCALBASE}/libexec/ccache
-
-# Prepend the ccache dir into the PATH and setup ccache env
-PATH:=	${_CCACHE_PATH}:${PATH}
-#.MAKEFLAGS:		PATH=${PATH}
-.if !${MAKE_ENV:MPATH=*} && !${CONFIGURE_ENV:MPATH=*}
-MAKE_ENV+=			PATH=${PATH}
-CONFIGURE_ENV+=		PATH=${PATH}
-.endif
-
-# Ensure this is always in subchild environments
-.	if defined(CCACHE_DIR)
-#.MAKEFLAGS:		CCACHE_DIR=${CCACHE_DIR}
-MAKE_ENV+=		CCACHE_DIR="${CCACHE_DIR}"
-CONFIGURE_ENV+=	CCACHE_DIR="${CCACHE_DIR}"
-.	endif
-.endif
+.include "${PORTSDIR}/Mk/bsd.ccache.mk"
 
 PTHREAD_CFLAGS?=
 PTHREAD_LIBS?=		-pthread
@@ -2824,12 +2803,6 @@ PLIST_SUB+=	DOCSDIR="${DOCSDIR_REL}" \
 		ETCDIR="${ETCDIR_REL}"
 
 DESKTOPDIR?=		${PREFIX}/share/applications
-_DESKTOPDIR_REL=	${DESKTOPDIR:S,^${PREFIX}/,,}/
-
-.if ${_DESKTOPDIR_REL} == ${DESKTOPDIR}/
-# DESKTOPDIR is not beneath PREFIX
-_DESKTOPDIR_REL=
-.endif
 
 .MAIN: all
 
@@ -3741,9 +3714,6 @@ install-ldconfig-file:
 		> ${STAGEDIR}${LOCALBASE}/${LDCONFIG32_DIR}/${UNIQUENAME}
 	@${ECHO_CMD} ${LOCALBASE}/${LDCONFIG32_DIR}/${UNIQUENAME} >> ${TMPPLIST}
 .endif
-.endif
-.if defined(INSTALLS_SHLIB)
-	@${ECHO_MSG} "INSTALLS_SHLIB is deprecated. Use USE_LDCONFIG instead."
 .endif
 .endif
 .endif
@@ -5167,56 +5137,42 @@ ${TMPPLIST_SORT}: ${TMPPLIST}
 .if !target(add-plist-docs)
 .if defined(PORTDOCS) && !defined(NOPORTDOCS)
 add-plist-docs:
-	@if ${EGREP} -qe '^@cw?d' ${TMPPLIST} && \
-		[ "`${SED} -En -e '/^@cw?d[ 	]*/s,,,p' ${TMPPLIST} | ${TAIL} -n 1`" != "${PREFIX}" ]; then \
-		${ECHO_CMD} "@cwd ${PREFIX}" >> ${TMPPLIST}; \
-	fi
 .for x in ${PORTDOCS}
 	@if ${ECHO_CMD} "${x}"| ${AWK} '$$1 ~ /(\*|\||\[|\]|\?|\{|\}|\$$)/ { exit 1};'; then \
 		if [ ! -e ${STAGEDIR}${DOCSDIR}/${x} ]; then \
-		${ECHO_CMD} ${DOCSDIR_REL}/${x} >> ${TMPPLIST}; \
+		${ECHO_CMD} ${DOCSDIR}/${x} >> ${TMPPLIST}; \
 	fi;fi
 .endfor
 	@${FIND} -P ${PORTDOCS:S/^/${STAGEDIR}${DOCSDIR}\//} ! -type d 2>/dev/null | \
-		${SED} -ne 's,^${STAGEDIR}${PREFIX}/,,p' >> ${TMPPLIST}
+		${SED} -ne 's,^${STAGEDIR},,p' >> ${TMPPLIST}
 .endif
 .endif
 
 .if !target(add-plist-examples)
 .if defined(PORTEXAMPLES) && !defined(NOPORTEXAMPLES)
 add-plist-examples:
-	@if ${EGREP} -qe '^@cw?d' ${TMPPLIST} && \
-		[ "`${SED} -En -e '/^@cw?d[ 	]*/s,,,p' ${TMPPLIST} | ${TAIL} -n 1`" != "${PREFIX}" ]; then \
-		${ECHO_CMD} "@cwd ${PREFIX}" >> ${TMPPLIST}; \
-	fi
 .for x in ${PORTEXAMPLES}
 	@if ${ECHO_CMD} "${x}"| ${AWK} '$$1 ~ /(\*|\||\[|\]|\?|\{|\}|\$$)/ { exit 1};'; then \
 		if [ ! -e ${STAGEDIR}${EXAMPLESDIR}/${x} ]; then \
-		${ECHO_CMD} ${EXAMPLESDIR}/${x} | \
-			${SED} -e 's,^${PREFIX}/,,' >> ${TMPPLIST}; \
+		${ECHO_CMD} ${EXAMPLESDIR}/${x} >> ${TMPPLIST}; \
 	fi;fi
 .endfor
 	@${FIND} -P ${PORTEXAMPLES:S/^/${STAGEDIR}${EXAMPLESDIR}\//} ! -type d 2>/dev/null | \
-		${SED} -ne 's,^${STAGEDIR}${PREFIX}/,,p' >> ${TMPPLIST}
+		${SED} -ne 's,^${STAGEDIR},,p' >> ${TMPPLIST}
 .endif
 .endif
 
 .if !target(add-plist-data)
 .if defined(PORTDATA)
 add-plist-data:
-	@if ${EGREP} -qe '^@cw?d' ${TMPPLIST} && \
-		[ "`${SED} -En -e '/^@cw?d[ 	]*/s,,,p' ${TMPPLIST} | ${TAIL} -n 1`" != "${PREFIX}" ]; then \
-		${ECHO_CMD} "@cwd ${PREFIX}" >> ${TMPPLIST}; \
-	fi
 .for x in ${PORTDATA}
 	@if ${ECHO_CMD} "${x}"| ${AWK} '$$1 ~ /(\*|\||\[|\]|\?|\{|\}|\$$)/ { exit 1};'; then \
 		if [ ! -e ${STAGEDIR}${DATADIR}/${x} ]; then \
-		${ECHO_CMD} ${DATADIR}/${x} | \
-			${SED} -e 's,^${PREFIX}/,,' >> ${TMPPLIST}; \
+		${ECHO_CMD} ${DATADIR}/${x} >> ${TMPPLIST}; \
 	fi;fi
 .endfor
 	@${FIND} -P ${PORTDATA:S/^/${STAGEDIR}${DATADIR}\//} ! -type d 2>/dev/null | \
-		${SED} -ne 's,^${STAGEDIR}${PREFIX}/,,p' >> ${TMPPLIST}
+		${SED} -ne 's,^${STAGEDIR},,p' >> ${TMPPLIST}
 .endif
 .endif
 
@@ -5230,20 +5186,9 @@ add-plist-buildinfo:
 .if !target(add-plist-info)
 .if defined(INFO)
 add-plist-info:
-	@if ${EGREP} -qe '^@cw?d' ${TMPPLIST} && \
-		[ "`${SED} -En -e '/^@cw?d[ 	]*/s,,,p' ${TMPPLIST} | ${TAIL} -n 1`" != "${PREFIX}" ]; then \
-		${ECHO_CMD} "@cwd ${PREFIX}" >> ${TMPPLIST}; \
-	fi
-# Process GNU INFO files at package install/deinstall time
 .for i in ${INFO}
-	@${LS} ${STAGEDIR}${PREFIX}/${INFO_PATH}/$i.info* | ${SED} -e s:${STAGEDIR}${PREFIX}/:@info\ :g >> ${TMPPLIST}
+	@${LS} ${STAGEDIR}${PREFIX}/${INFO_PATH}/$i.info* | ${SED} -e s:${STAGEDIR}:@info\ :g >> ${TMPPLIST}
 .endfor
-.if (${PREFIX} != "/usr")
-	@${ECHO_CMD} "@unexec indexinfo %D/${INFO_PATH}" >> ${TMPPLIST}
-.if (${PREFIX} != ${LOCALBASE} && ${PREFIX} != ${LINUXBASE})
-	@${ECHO_CMD} "@dir ${INFO_PATH}" >> ${TMPPLIST}
-.endif
-.endif
 .endif
 .endif
 
@@ -5262,22 +5207,37 @@ add-plist-post:
 install-rc-script:
 .if defined(USE_RCORDER)
 	@${ECHO_MSG} "===> Staging early rc.d startup script(s)"
-	@${ECHO_CMD} "@cwd /" >> ${TMPPLIST}
 	@for i in ${USE_RCORDER}; do \
 		${INSTALL_SCRIPT} ${WRKDIR}/$${i} ${STAGEDIR}/etc/rc.d/$${i%.sh}; \
-		${ECHO_CMD} "etc/rc.d/$${i%.sh}" >> ${TMPPLIST}; \
+		${ECHO_CMD} "/etc/rc.d/$${i%.sh}" >> ${TMPPLIST}; \
 	done
-	@${ECHO_CMD} "@cwd ${PREFIX}" >> ${TMPPLIST}
 .endif
 .if defined(USE_RC_SUBR) && ${USE_RC_SUBR:tu} != "YES"
 	@${ECHO_MSG} "===> Staging rc.d startup script(s)"
-	@${ECHO_CMD} "@cwd ${PREFIX}" >> ${TMPPLIST}
 	@for i in ${USE_RC_SUBR}; do \
 		${INSTALL_SCRIPT} ${WRKDIR}/$${i} ${STAGEDIR}${PREFIX}/etc/rc.d/$${i%.sh}; \
-		${ECHO_CMD} "etc/rc.d/$${i%.sh}" >> ${TMPPLIST}; \
+		${ECHO_CMD} "${PREFIX}/etc/rc.d/$${i%.sh}" >> ${TMPPLIST}; \
 	done
 .endif
 .endif
+.endif
+
+.if !target(check-man)
+check-man: stage
+	@${ECHO_MSG} "====> Checking man pages (check-man)"
+	@mdirs= ; \
+	for dir in ${MANDIRS:S/^/${STAGEDIR}/} ; do \
+		[ -d $$dir ] && mdirs="$$mdirs $$dir" ;\
+	done ; \
+	err=0 ; \
+	for dir in $$mdirs; do \
+		for f in $$(find $$dir -name "*.gz"); do \
+			${ECHO_CMD} "===> Checking $${f##*/}" ; \
+			gunzip -c $$f | mandoc -Tlint -Werror && continue ; \
+			err=1 ; \
+		done ; \
+	done ; \
+	exit $$err
 .endif
 
 # Compress all manpage not already compressed which are not hardlinks
@@ -5888,9 +5848,6 @@ check-desktop-entries:
 .if defined(DESKTOP_ENTRIES)
 install-desktop-entries:
 	@set -- ${DESKTOP_ENTRIES} XXX; \
-	if [ -z "${_DESKTOPDIR_REL}" ]; then \
-		${ECHO_CMD} "@cwd ${DESKTOPDIR}" >> ${TMPPLIST}; \
-	fi; \
 	while [ $$# -gt 6 ]; do \
 		filename="`${ECHO_CMD} "$$4" | ${SED} -e 's,^/,,g;s,[/ ],_,g;s,[^_[:alnum:]],,g'`.desktop"; \
 		pathname="${STAGEDIR}${DESKTOPDIR}/$$filename"; \
@@ -5898,7 +5855,7 @@ install-desktop-entries:
 		if [ -z "$$categories" ]; then \
 			categories="`cd ${.CURDIR} && ${MAKE} desktop-categories`"; \
 		fi; \
-		${ECHO_CMD} "${_DESKTOPDIR_REL}$$filename" >> ${TMPPLIST}; \
+		${ECHO_CMD} "${DESKTOPDIR}/$$filename" >> ${TMPPLIST}; \
 		${ECHO_CMD} "[Desktop Entry]" > $$pathname; \
 		${ECHO_CMD} "Type=Application" >> $$pathname; \
 		${ECHO_CMD} "Version=1.0" >> $$pathname; \
@@ -5918,10 +5875,7 @@ install-desktop-entries:
 			${ECHO_CMD} "StartupNotify=$$6" >> $$pathname; \
 		fi; \
 		shift 6; \
-	done; \
-	if [ -z "${_DESKTOPDIR_REL}" ]; then \
-		${ECHO_CMD} "@cwd ${PREFIX}" >> ${TMPPLIST}; \
-	fi
+	done
 .endif
 .endif
 
@@ -5995,7 +5949,7 @@ _PATCH_SEQ=		ask-license patch-message patch-depends pathfix dos2unix fix-sheban
 				pre-patch-script do-patch charsetfix-post-patch post-patch post-patch-script
 _CONFIGURE_DEP=	patch
 _CONFIGURE_SEQ=	build-depends lib-depends configure-message run-autotools-fixup \
-				configure-autotools pre-configure pre-configure-script \
+				pre-configure pre-configure-script \
 				run-autotools do-autoreconf patch-libtool do-configure \
 				post-configure post-configure-script
 _BUILD_DEP=		configure

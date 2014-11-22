@@ -89,6 +89,7 @@
     SUBDIR += hbase
     SUBDIR += hiredis
     SUBDIR += hs-esqueleto
+    SUBDIR += hs-hedis
     SUBDIR += hs-mysql
     SUBDIR += hs-persistent
     SUBDIR += hs-persistent-sqlite
@@ -163,6 +164,8 @@
     SUBDIR += mariadb-client
     SUBDIR += mariadb-scripts
     SUBDIR += mariadb-server
+    SUBDIR += mariadb100-client
+    SUBDIR += mariadb100-server
     SUBDIR += mariadb55-client
     SUBDIR += mariadb55-server
     SUBDIR += mdbtools
@@ -394,6 +397,7 @@
     SUBDIR += p5-Dancer-Plugin-Database-Core
     SUBDIR += p5-Dancer-Plugin-Redis
     SUBDIR += p5-Dancer-Session-Memcached
+    SUBDIR += p5-Dancer2-Plugin-Database
     SUBDIR += p5-Dancer2-Plugin-DBIC
     SUBDIR += p5-Data-Page
     SUBDIR += p5-Data-Pageset
@@ -623,6 +627,7 @@
     SUBDIR += php56-pdo_pgsql
     SUBDIR += php56-pdo_sqlite
     SUBDIR += php56-pgsql
+    SUBDIR += php56-redis
     SUBDIR += php56-sqlite3
     SUBDIR += php56-sybase_ct
     SUBDIR += phpminiadmin
@@ -680,6 +685,7 @@
     SUBDIR += postgresql93-plperl
     SUBDIR += postgresql93-plpython
     SUBDIR += postgresql93-pltcl
+    SUBDIR += postgresql93-plv8js
     SUBDIR += postgresql93-server
     SUBDIR += postgresql94-client
     SUBDIR += postgresql94-contrib
@@ -735,6 +741,7 @@
     SUBDIR += py-memcached
     SUBDIR += py-mssql
     SUBDIR += py-mysql-connector-python
+    SUBDIR += py-mysql-connector-python2
     SUBDIR += py-mysql2pgsql
     SUBDIR += py-odbc
     SUBDIR += py-oops
@@ -861,12 +868,14 @@
     SUBDIR += rubygem-do_postgres
     SUBDIR += rubygem-do_sqlite3
     SUBDIR += rubygem-familia
+    SUBDIR += rubygem-hiredis
     SUBDIR += rubygem-jdbc-mysql
     SUBDIR += rubygem-leo_manager_client
     SUBDIR += rubygem-memcache
     SUBDIR += rubygem-memcache-client
     SUBDIR += rubygem-mysql
     SUBDIR += rubygem-mysql2
+    SUBDIR += rubygem-openid-redis-store
     SUBDIR += rubygem-pg
     SUBDIR += rubygem-rbase
     SUBDIR += rubygem-redis
@@ -884,6 +893,7 @@
     SUBDIR += soci
     SUBDIR += spatialite
     SUBDIR += spatialite_gui
+    SUBDIR += speedtables
     SUBDIR += sqlbuddy
     SUBDIR += sqlcached
     SUBDIR += sqlcipher

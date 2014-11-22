@@ -14,6 +14,9 @@ COMMENT=	FUSE allows filesystem implementation in userspace
 
 OPTIONS_DEFINE=	DOCS
 
+LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/COPYING.LIB
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	MOUNT_FUSE_PATH=${PREFIX}/sbin
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
@@ -29,4 +32,10 @@ post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/libs
 	${INSTALL_DATA} ${WRKSRC}/doc/how-fuse-works ${WRKSRC}/doc/kernel.txt ${STAGEDIR}${DOCSDIR}/libs
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == DragonFly
+IGNORE=	fusefs has not been implemented on DragonFly
+.endif
+
+.include <bsd.port.post.mk>

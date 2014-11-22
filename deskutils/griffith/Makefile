@@ -3,7 +3,7 @@
 
 PORTNAME=	griffith
 PORTVERSION=	0.13
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	deskutils
 MASTER_SITES=	http://launchpadlibrarian.net/87859599/
 
@@ -15,15 +15,15 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>=0:${PORTSDIR}/databases/py-sqlite3 \
 		${PYTHON_PKGNAMEPREFIX}sqlalchemy06>=0.5:${PORTSDIR}/databases/py-sqlalchemy06 \
-		${PYTHON_PKGNAMEPREFIX}imaging>=0:${PORTSDIR}/graphics/py-imaging \
+		${PYTHON_PKGNAMEPREFIX}pillow>=0:${PORTSDIR}/graphics/py-pillow \
 		${PYXML}
 
 USE_GNOME=	pygtk2
-USE_PYTHON=	yes
-USES=		gmake gettext tar:xz
+USES=		gmake gettext python tar:xz
 NO_BUILD=	yes
 
-OPTIONS_DEFINE=	CHARDET LXML PYGNOMEEXTRAS REPORTLAB2    
+OPTIONS_DEFINE=		CHARDET LXML PYGNOMEEXTRAS REPORTLAB2
+OPTIONS_DEFAULT=	LXML
 
 CHARDET_DESC=		chardet support
 CHARDET_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}chardet>=0:${PORTSDIR}/textproc/py-chardet
@@ -51,10 +51,11 @@ post-patch:
 		 /^PREFIX/s|?=|=|g ; s|/usr|${PREFIX}|; /ln -s/d; \
 		 /^ETCDIR/s|=.*|= $$(PREFIX)/etc|g' ${WRKSRC}/${file}
 .endfor
-.for file in docs/en/Makefile docs/pl/Makefile docs/pt/Makefile
+.for f in docs/en/Makefile docs/pl/Makefile docs/pt/Makefile
 	@${REINPLACE_CMD} -e \
 		'/^PREFIX/s|?=|=|g ; s|/usr|${PREFIX}|; \
-		 /^MANDIR/s|=.*|=${STAGEDIR}${MANPREFIX}/man|g' ${WRKSRC}/${file}
+		 /^MANDIR/s|=.*|=${STAGEDIR}${MANPREFIX}/man|g' \
+		 ${WRKSRC}/${f}
 .endfor
 
 pre-install:

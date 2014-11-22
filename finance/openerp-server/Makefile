@@ -14,7 +14,7 @@ COMMENT=	Open source application ERP & CRM in Python using Postgresql
 
 BROKEN=		Non-functional as shipped (Operational Error)(PR: 186262)
 
-BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/PIL/__init__.py:${PORTSDIR}/graphics/py-imaging \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pillow>0:${PORTSDIR}/graphics/py-pillow \
 		${PYTHON_SITELIBDIR}/libxml2.py:${PORTSDIR}/textproc/py-libxml2 \
 		${PYTHON_PKGNAMEPREFIX}pytz>0:${PORTSDIR}/devel/py-pytz \
 		${PYTHON_SITELIBDIR}/mx/__init__.py:${PORTSDIR}/lang/py-mx-base \
@@ -39,10 +39,8 @@ USE_RC_SUBR=	openerpd
 SUB_FILES=	openerp-server.conf pkg-message
 SUB_LIST=	PYTHON_SITELIBDIR=${PYTHON_SITELIBDIR}
 
-USE_PYTHON=			yes
-USE_PYDISTUTILS=		yes
-PYDISTUTILS_NOEGGINFO=		yes
-PYDISTUTILS_AUTOPLIST=		yes
+USES=		python
+USE_PYTHON=	distutils autoplist noegginfo
 
 USERS=		openerpd
 GROUPS=		openerpd

@@ -9,6 +9,7 @@
     SUBDIR += R-cran-digest
     SUBDIR += aescrypt
     SUBDIR += aespipe
+    SUBDIR += afl
     SUBDIR += afterglow
     SUBDIR += aide
     SUBDIR += aimsniff
@@ -141,6 +142,7 @@
     SUBDIR += fwlogwatch
     SUBDIR += gag
     SUBDIR += gcipher
+    SUBDIR += gcr
     SUBDIR += gnome-gpg
     SUBDIR += gnome-keyring
     SUBDIR += gnome-keyring-sharp
@@ -149,6 +151,7 @@
     SUBDIR += gnomint
     SUBDIR += gnupg
     SUBDIR += gnupg1
+    SUBDIR += gnupg20
     SUBDIR += gnutls
     SUBDIR += go.crypto
     SUBDIR += goptlib
@@ -247,14 +250,16 @@
     SUBDIR += kpcli
     SUBDIR += kqoauth
     SUBDIR += krb5
+    SUBDIR += krb5-111
+    SUBDIR += krb5-112
     SUBDIR += krb5-appl
-    SUBDIR += krb5-maint
     SUBDIR += kripp
     SUBDIR += kwalletmanager
     SUBDIR += l0pht-watch
     SUBDIR += l0phtcrack
     SUBDIR += l5
     SUBDIR += lasso
+    SUBDIR += lastpass-cli
     SUBDIR += libassuan
     SUBDIR += libbeid
     SUBDIR += libbf
@@ -346,6 +351,7 @@
     SUBDIR += nmap
     SUBDIR += nmapsi4
     SUBDIR += nss
+    SUBDIR += nss_compat_ossl
     SUBDIR += oath-toolkit
     SUBDIR += obfsclient
     SUBDIR += obfsproxy
@@ -368,6 +374,7 @@
     SUBDIR += openscep
     SUBDIR += openssh-askpass
     SUBDIR += openssh-portable
+    SUBDIR += openssh-portable66
     SUBDIR += openssh-portable-base
     SUBDIR += openssl
     SUBDIR += openssl_tpm_engine
@@ -527,6 +534,8 @@
     SUBDIR += p5-Dancer-Plugin-Auth-Extensible
     SUBDIR += p5-Dancer-Plugin-Auth-Extensible-Provider-Usergroup
     SUBDIR += p5-Dancer-Plugin-Passphrase
+    SUBDIR += p5-Dancer2-Plugin-Auth-Extensible
+    SUBDIR += p5-Dancer2-Plugin-Passphrase
     SUBDIR += p5-Data-Entropy
     SUBDIR += p5-Data-Password
     SUBDIR += p5-Digest
@@ -713,7 +722,6 @@
     SUBDIR += pidgin-otr
     SUBDIR += pinentry
     SUBDIR += pinentry-curses
-    SUBDIR += pinentry-gtk
     SUBDIR += pinentry-gtk2
     SUBDIR += pinentry-qt4
     SUBDIR += pkcrack
@@ -774,6 +782,7 @@
     SUBDIR += py-m2crypto
     SUBDIR += py-mcrypt
     SUBDIR += py-mhash
+    SUBDIR += py-oauth2client
     SUBDIR += py-oauthlib
     SUBDIR += py-openid
     SUBDIR += py-openssl
@@ -795,6 +804,7 @@
     SUBDIR += py-pyptlib
     SUBDIR += py-pysha3
     SUBDIR += py-python-registry
+    SUBDIR += py-rekall
     SUBDIR += py-rsa
     SUBDIR += py-service_identity
     SUBDIR += py-slowaes
@@ -901,7 +911,6 @@
     SUBDIR += scanssh
     SUBDIR += scrypt
     SUBDIR += seahorse
-    SUBDIR += seahorse-plugins
     SUBDIR += seccure
     SUBDIR += secpanel
     SUBDIR += sectok
@@ -953,6 +962,7 @@
     SUBDIR += ssl-admin
     SUBDIR += sslscan
     SUBDIR += sslsniffer
+    SUBDIR += sslsplit
     SUBDIR += sslwrap
     SUBDIR += sssd
     SUBDIR += ssss
@@ -975,6 +985,7 @@
     SUBDIR += switzerland
     SUBDIR += symbion-sslproxy
     SUBDIR += tclsasl
+    SUBDIR += tcpcrypt
     SUBDIR += tinc
     SUBDIR += tinyca
     SUBDIR += tlswrap
@@ -1009,6 +1020,7 @@
     SUBDIR += webshag
     SUBDIR += whatweb
     SUBDIR += wipe
+    SUBDIR += wpa_supplicant
     SUBDIR += xca
     SUBDIR += xinetd
     SUBDIR += xml-security

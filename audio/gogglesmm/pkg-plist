@@ -4,10 +4,8 @@ lib/gogglesmm/libgap_oss.so
 %%PULSEAUDIO%%lib/gogglesmm/libgap_pulse.so
 lib/gogglesmm/libgap_wav.so
 man/man1/gogglesmm.1.gz
+share/appdata/gogglesmm.appdata.xml
 share/applications/gogglesmm.desktop
-%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/README
 %%DATADIR%%/utils/import_banshee_stats.py
 %%DATADIR%%/utils/import_gogglesmm12.py
 %%DATADIR%%/utils/import_gogglesmm12_stats.py
@@ -23,7 +21,3 @@ share/icons/hicolor/scalable/apps/gogglesmm.svg
 %%NLS%%share/locale/hu/LC_MESSAGES/gogglesmm.mo
 %%NLS%%share/locale/pt/LC_MESSAGES/gogglesmm.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/gogglesmm.mo
-@dirrm %%DATADIR%%/utils
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm lib/gogglesmm

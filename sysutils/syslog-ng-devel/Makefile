@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	syslog-ng
-PORTVERSION=	3.6.0r1
+PORTVERSION=	3.7.0a1
 PKGNAMESUFFIX=	-devel
 CATEGORIES=	sysutils
 DISTVERSION=	$(PORTVERSION:S/a/alpha/:S/b/beta/:S/r/rc/)
-DISTFILES=	syslog-ng_${DISTVERSION}.tar.gz
-MASTER_SITES=	http://www.balabit.com/downloads/files/syslog-ng/open-source-edition/${DISTVERSION}/source/
+DISTFILES=	syslog-ng-${DISTVERSION}.tar.gz
+MASTER_SITES=	https://github.com/balabit/syslog-ng/releases/download/syslog-ng-${DISTVERSION}/
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Powerful syslogd replacement
@@ -24,7 +24,7 @@ MAKE_JOBS_UNSAFE=	yes
 OPTIONS_RADIO=	SSL
 OPTIONS_RADIO_SSL=	SYS_SSL PORTS_SSL
 OPTIONS_DEFINE=	TCP_WRAPPERS SQL SPOOF IPV6 SMTP JSON GEOIP DOCS REDIS
-OPTIONS_DEFAULT=	PORTS_SSL
+OPTIONS_DEFAULT=	PORTS_SSL JSON
 SYS_SSL_DESC=		Build with OpenSSL support (from system)
 PORTS_SSL_DESC=		Build with OpenSSL support (from ports)
 TCP_WRAPPERS_DESC=	Build with TCP Wrappers
@@ -125,7 +125,7 @@ CONFIGURE_ARGS+=	--disable-sql
 .endif
 
 .if ${PORT_OPTIONS:MJSON}
-LIB_DEPENDS+=		libjson.so:${PORTSDIR}/devel/json-c
+LIB_DEPENDS+=		libjson-c.so:${PORTSDIR}/devel/json-c
 CONFIGURE_ARGS+=	--enable-json
 PLIST_FILES+= 		lib/syslog-ng/libjson-plugin.so
 .else

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	RT-Extension-MandatoryOnTransition
-DISTVERSION=	0.06
+DISTVERSION=	0.09
 CATEGORIES=	www net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -11,6 +11,8 @@ MAINTAINER=	matthew@FreeBSD.org
 COMMENT=	Extension to require core and ticket custom fields on status changes
 
 LICENSE=	GPLv2
+
+NEED_ROOT=	yes
 
 OPTIONS_SINGLE=                 RTVERSION
 OPTIONS_SINGLE_RTVERSION=       RT40 RT42

@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	swift
-PORTVERSION=	2.1.0
+PORTVERSION=	2.2.0
 CATEGORIES=	databases python
-MASTER_SITES=	http://launchpadlibrarian.net/183705187/
+MASTER_SITES=	http://launchpadlibrarian.net/187486124/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	trociny@FreeBSD.org
@@ -27,9 +27,8 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}PasteDeploy>0:${PORTSDIR}/www/py-pastedeplo
 		memcached>=0:${PORTSDIR}/databases/memcached \
 		rsync>=3.0:${PORTSDIR}/net/rsync
 
-USE_PYTHON=	2
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python:2
+USE_PYTHON=	distutils autoplist
 USE_RC_SUBR=	swift
 USERS=		swift
 GROUPS=		swift

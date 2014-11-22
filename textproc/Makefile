@@ -118,6 +118,7 @@
     SUBDIR += docbook-xsl
     SUBDIR += docbook-xsl-ns
     SUBDIR += docbook2X
+    SUBDIR += docbook2mdoc
     SUBDIR += docbook2odf
     SUBDIR += docbookide.el
     SUBDIR += docdiff
@@ -362,9 +363,10 @@
     SUBDIR += liblrdf
     SUBDIR += libmrss
     SUBDIR += libmrss-php
-    SUBDIR += libmwaw
+    SUBDIR += libmwaw03
     SUBDIR += libnxml
     SUBDIR += libodfgen
+    SUBDIR += libodfgen01
     SUBDIR += libparsifal
     SUBDIR += librevenge
     SUBDIR += libroxml
@@ -380,8 +382,11 @@
     SUBDIR += libunibreak
     SUBDIR += libuninameslist
     SUBDIR += libvisio
+    SUBDIR += libvisio01
     SUBDIR += libwpd
+    SUBDIR += libwpd010
     SUBDIR += libwps
+    SUBDIR += libwps03
     SUBDIR += libxdiff
     SUBDIR += libxml++26
     SUBDIR += libxml++26-reference
@@ -460,6 +465,7 @@
     SUBDIR += ocaml-tyxml
     SUBDIR += odt2txt
     SUBDIR += openfts
+    SUBDIR += opengrm-ngram
     SUBDIR += openjade
     SUBDIR += opensched
     SUBDIR += opensp
@@ -509,6 +515,7 @@
     SUBDIR += p5-Geo-Parse-OSM
     SUBDIR += p5-Getopt-Lucid
     SUBDIR += p5-Google-Data-JSON
+    SUBDIR += p5-Groonga-API
     SUBDIR += p5-HTML-CTPP2
     SUBDIR += p5-HTML-Copy
     SUBDIR += p5-HTML-Entities-ImodePictogram
@@ -1354,6 +1361,7 @@
     SUBDIR += rubygem-redcarpet
     SUBDIR += rubygem-ri_cal
     SUBDIR += rubygem-rich
+    SUBDIR += rubygem-rmmseg-cpp
     SUBDIR += rubygem-rouge
     SUBDIR += rubygem-rttool
     SUBDIR += rubygem-rubypants
@@ -1369,6 +1377,7 @@
     SUBDIR += rubygem-syntax
     SUBDIR += rubygem-termcolor
     SUBDIR += rubygem-terminal-table
+    SUBDIR += rubygem-text
     SUBDIR += rubygem-tidy
     SUBDIR += rubygem-unf
     SUBDIR += rubygem-unf_ext

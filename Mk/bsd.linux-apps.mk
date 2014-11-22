@@ -59,7 +59,7 @@ WEB_AUTH=			nvu
 
 # Non-version specific components
 _LINUX_APPS_ALL=	allegro alsalib alsa-plugins-oss alsa-plugins-pulseaudio \
-					arts aspell atk cairo cups-libs curl dri devtools esound expat \
+					arts aspell atk avahi-libs cairo cups-libs curl dri devtools esound expat \
 					flac fontconfig freealut gdkpixbuf gnutls gtk2 hicontheme imlib jpeg libaudiofile \
 					libasyncns libg2c libgcrypt libglade2 libglu libgpg-error libmng libogg \
 					libpciaccess libsigcpp20 libsndfile libtasn1 libtheora libvorbis libxml2 mikmod \
@@ -120,6 +120,10 @@ atk_f10_FILE=		${LINUXBASE}/usr/lib/libatk-1.0.so.0.2409.1
 atk_c6_FILE=		${LINUXBASE}/usr/lib/libatk-1.0.so.0.3009.1
 atk_DETECT=			${atk${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
 atk_PORT=			${PORTSDIR}/accessibility/linux${LINUX_DIST_SUFFIX}-atk
+
+avahi-libs_c6_FILE=	${LINUXBASE}/usr/lib/libavahi-client.so.3.2.5
+avahi-libs_DETECT=	${avahi-libs${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
+avahi-libs_PORT=	${PORTSDIR}/net/linux${LINUX_DIST_SUFFIX}-avahi-libs
 
 blt_f10_FILE=		${LINUXBASE}/usr/lib/libBLT24.so # FIXME: deprecated, merged into tcl/tk85
 blt_DETECT=		${blt${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
@@ -198,6 +202,7 @@ freealut_PORT=		${PORTSDIR}/audio/linux${LINUX_DIST_SUFFIX}-freealut
 freealut_DEPENDS=	openal
 
 gdkpixbuf_f10_FILE=	${LINUXBASE}/usr/lib/libgdk_pixbuf.so.2
+gdkpixbuf_c6_FILE=	${LINUXBASE}/usr/lib/libgdk_pixbuf-2.0.so.0
 gdkpixbuf_DETECT=	${gdkpixbuf${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
 gdkpixbuf_PORT=		${PORTSDIR}/graphics/linux${LINUX_DIST_SUFFIX}-gdk-pixbuf
 
@@ -208,7 +213,7 @@ gnutls_PORT=		${PORTSDIR}/security/linux${LINUX_DIST_SUFFIX}-gnutls
 gnutls_DEPENDS=		libtasn1 libgcrypt libgpg-error
 
 gtk2_f10_FILE=		${LINUXBASE}/usr/lib/libgtk-x11-2.0.so.0.1400.7
-gtk2_c6_FILE=		${LINUXBASE}/usr/lib/libgtk-x11-2.0.so.0.2000.1
+gtk2_c6_FILE=		${LINUXBASE}/usr/lib/libgtk-x11-2.0.so.0.2400.23
 gtk2_DETECT=		${gtk2${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
 gtk2_PORT=			${PORTSDIR}/x11-toolkits/linux${LINUX_DIST_SUFFIX}-gtk2
 gtk2_DEPENDS=		atk jpeg png pango tiff xorglibs
@@ -252,6 +257,7 @@ libglade2_DETECT=	${libglade2${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
 libglade2_PORT=		${PORTSDIR}/devel/linux${LINUX_DIST_SUFFIX}-libglade2
 
 libglu_f10_FILE=	${LINUXBASE}/usr/lib/libGLU.so.1
+libglu_c6_FILE=		${LINUXBASE}/usr/lib/libGLU.so.1
 libglu_DETECT=		${libglu${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
 libglu_PORT=		${PORTSDIR}/graphics/linux${LINUX_DIST_SUFFIX}-libGLU
 
@@ -279,6 +285,7 @@ libpciaccess_DETECT=		${libogg${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
 libpciaccess_PORT=		${PORTSDIR}/devel/linux${LINUX_DIST_SUFFIX}-libpciaccess
 
 libsigcpp20_f10_FILE=	${LINUXBASE}/usr/lib/libsigc-2.0.so.0
+libsigcpp20_c6_FILE=	${LINUXBASE}/usr/lib/libsigc-2.0.so.0
 libsigcpp20_DETECT=	${libsigcpp20${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
 libsigcpp20_PORT=	${PORTSDIR}/devel/linux${LINUX_DIST_SUFFIX}-libsigc++20
 
@@ -330,7 +337,7 @@ naslibs_PORT=		${PORTSDIR}/audio/linux${LINUX_DIST_SUFFIX}-nas-libs
 naslibs_DEPENDS=	xorglibs
 
 openldap_f10_FILE=	${LINUXBASE}/usr/lib/libldap-2.4.so.2.2.0
-openldap_c6_FILE=	${LINUXBASE}/lib/libldap-2.4.so.2.5.6
+openldap_c6_FILE=	${LINUXBASE}/lib/libldap-2.4.so.2.10.2
 openldap_DETECT=	${openldap${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
 openldap_PORT=		${PORTSDIR}/net/linux${LINUX_DIST_SUFFIX}-openldap
 

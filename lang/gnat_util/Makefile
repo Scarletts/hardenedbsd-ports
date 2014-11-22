@@ -3,7 +3,7 @@
 
 PORTNAME=	gnat_util
 PORTVERSION=	${SNAPSHOT}
-PORTREVISION=	2
+PORTREVISION=	${UTIL_PR}
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_GCC}
 MASTER_SITE_SUBDIR= ${MS_SUBDIR}
@@ -38,11 +38,7 @@ post-install:
 	# impunit is needed for GPS menus, just provide the source files
 	${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/gcc/ada/impunit.* \
 		${STAGEDIR}${PREFIX}/include/gnat_util
-	@cd ${STAGEDIR}${PREFIX}; ${FIND} * \( -type f -or -type l \) | \
-	   ${SORT} >> ${TMPPLIST}
-	@cd ${STAGEDIR}${PREFIX}; ${FIND} * -type d | ${AWK} '/\//' | \
-	   ${SORT} -r | ${SED} -e '/lib\/gnat$$/d' -e 's/^/@dirrm /g' \
-	   >> ${TMPPLIST}
-	@echo "@unexec rmdir %D/lib/gnat 2>/dev/null || true" >> ${TMPPLIST}
+	@(cd ${STAGEDIR}${PREFIX}; ${FIND} * \( -type f -or -type l \) | \
+		${SORT} >> ${TMPPLIST})
 
 .include <bsd.port.mk>

@@ -9,13 +9,14 @@ PKGNAMEPREFIX=	pecl-
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	PECL
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dump the internal representation of PHP scripts
 
 LICENSE=	BSD
 
 USE_PHP=	yes
 USE_PHPEXT=	yes
+IGNORE_WITH_PHP=	56
 
 CONFIGURE_ARGS=	--enable-vld
 

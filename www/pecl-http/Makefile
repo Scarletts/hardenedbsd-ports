@@ -9,13 +9,14 @@ PKGNAMEPREFIX=	pecl-
 DISTNAME=	pecl_${PORTNAME}-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extended HTTP Support
 
 LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
 
 USE_PHP=	yes
 USE_PHPEXT=	yes
+IGNORE_WITH_PHP=	56
 
 CONFIGURE_ARGS+=	--with-http-curl-requests \
 			--with-http-zlib-compression \

@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# Copyright 2013 iXsystems (Kris Moore)
+# Copyright 2014 iXsystems (Kris Moore)
 # All rights reserved
 #
 # Redistribution and use in source and binary forms, with or without
@@ -31,6 +31,26 @@ ROOTFS=`mount | awk '/ \/ / {print $1}'`
 BEDS="$( echo ${ROOTFS} | awk -F '/' '{print $2}' )"
 if [ "$BEDS" = "dev" ] ; then BEDS="ROOT"; fi
 
+serial=0;
+console=0;
+for x in ${GRUB_TERMINAL_OUTPUT}; do
+    if [ xserial = "x$x" ]; then
+        serial=1;
+    fi
+    if [ xgfxterm = "x$x" ]; then
+        console=1;
+    fi
+    if [ xconsole = "x$x" ]; then
+        console=1;
+    fi
+done
+if [ "x$serial" = "x1" ]; then
+    if [ "x$console" = "x1" ]; then
+        out="-Dh"
+    else
+        out="-h"
+    fi
+fi
 
 display_loaderopts()
 {
@@ -90,6 +110,9 @@ display_loaderopts()
      rm /tmp/.sObjs.$$
   done
 
+  # Using GELI encryption?
+  haveGELI="false"
+
   # Now lets echo out the modules to load
   if [ "$haveObjs" = "1" ] ; then
     while read line
@@ -108,11 +131,22 @@ display_loaderopts()
         echo "$line" >> /tmp/.lSysCtls.$$
         continue
       fi
+
+      # Are we loading GELI module?
+      if [ "$module" = "geom_eli" ] ; then haveGELI="true" ; fi
+
       echo "    kfreebsd_module_elf ${loadPrefix}/@/boot/${mPath}/${module}.ko"
     done < /tmp/.lRObjs.$$
   fi
 
-  # Any sysctls to set?
+  # Add our compat kenv lines
+  echo "    set kFreeBSD.bootfile=\"kernel\""
+  echo "    set kFreeBSD.kernel=\"kernel\""
+  echo "    set kFreeBSD.kernel_options=\"\""
+  echo "    set kFreeBSD.kernelname=\"/boot/kernel/kernel\""
+  echo "    set kFreeBSD.module_path=\"/boot/kernel;/boot/modules\""
+
+  # Any kenv to set?
   if [ "$haveSysCtls" = "1" ] ; then
     while read line
     do
@@ -120,8 +154,11 @@ display_loaderopts()
       echo "$line" | grep -q "vfs.root.mountfrom"
       if [ $? -eq 0 ] ; then continue ; fi
 
-      val="`echo $line | sed 's|"||g'`"
-      echo "    set kFreeBSD.${val}"
+      line="`echo $line | sed 's|"||g'`"
+      key="`echo $line | cut -d '=' -f 1`"
+      val="`echo $line | cut -d '=' -f 2`"
+      if [ -z "$key" -o -z "$val" ] ; then continue ; fi
+      echo "    set kFreeBSD.${key}=\"${val}\""
     done < /tmp/.lSysCtls.$$
   fi
 
@@ -130,6 +167,14 @@ display_loaderopts()
   if [ -n "$1" ] ; then
      umount /mnt.$$ >/dev/null
      rmdir /mnt.$$ >/dev/null
+  fi
+
+  # Set the grub.platform kenv variable
+  echo "    set kFreeBSD.grub.platform=\"\$grub_platform\""
+
+  # See if we need to do GELI passphrase passthrough
+  if [ "$haveGELI" = "true" ] ; then
+    echo "    set kFreeBSD.kern.geom.eli.passphrase=\"\$pass\""
   fi
 }
 
@@ -201,7 +246,7 @@ EOF
 EOF
   # Get the dataset guts
   cat /tmp/.grubdataset.$$.1
-  echo "    kfreebsd ${shortdataset}/@/boot/kernel/kernel"
+  echo "    kfreebsd ${shortdataset}/@/boot/kernel/kernel ${out}"
   echo "    kfreebsd_loadenv ${shortdataset}@/boot/device.hints"
   cat /tmp/.grubdataset.$$.2
 
@@ -217,7 +262,7 @@ EOF
 EOF
   # Get the dataset guts
   cat /tmp/.grubdataset.$$.1
-  echo "    kfreebsd ${shortdataset}/@/boot/kernel/kernel -s"
+  echo "    kfreebsd ${shortdataset}/@/boot/kernel/kernel ${out} -s"
   echo "    kfreebsd_loadenv ${shortdataset}@/boot/device.hints"
   cat /tmp/.grubdataset.$$.2
 
@@ -233,7 +278,7 @@ EOF
 EOF
   # Get the dataset guts
   cat /tmp/.grubdataset.$$.1
-  echo "    kfreebsd ${shortdataset}/@/boot/kernel/kernel -v"
+  echo "    kfreebsd ${shortdataset}/@/boot/kernel/kernel ${out} -v"
   echo "    kfreebsd_loadenv ${shortdataset}@/boot/device.hints"
   cat /tmp/.grubdataset.$$.2
 

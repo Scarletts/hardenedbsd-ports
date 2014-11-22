@@ -2,9 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	mono
-PORTVERSION=	3.6.0
+PORTVERSION=	3.10.0
+PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	http://download.mono-project.com/sources/${PORTNAME}/
+
+PATCHFILES=	fb3468e61c943790ddad0f8cfb3e0cb0e3a00d0d.patch
+PATCH_SITES=	https://github.com/mono/mono/commit/
+PATCH_DIST_STRIP=-p1
 
 MAINTAINER=	mono@FreeBSD.org
 COMMENT=	Open source implementation of .NET Development Framework
@@ -36,10 +41,6 @@ MAKE_ENV=	MONO_SHARED_DIR="${MONO_SHARED_DIR}" \
 ONLY_FOR_ARCHS=	i386 amd64 powerpc
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|^#!/bin/bash|#!/bin/sh|g' \
-		${WRKSRC}/mcs/class/Managed.Windows.Forms/build-csproj \
-		${WRKSRC}/mcs/class/Managed.Windows.Forms/build-csproj2k5 \
-		${WRKSRC}/mcs/class/Mono.WebBrowser/build-csproj2k5
 	@${REINPLACE_CMD} -e 's|^#!/bin/bash|#!/usr/bin/env bash|g' \
 		${WRKSRC}/scripts/mono-find-provides.in \
 		${WRKSRC}/scripts/mono-find-requires.in \

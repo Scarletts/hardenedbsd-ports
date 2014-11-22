@@ -3,7 +3,7 @@
 
 PORTNAME=	kdelibs
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	5
+PORTREVISION=	1
 CATEGORIES=	x11 kde
 MASTER_SITES=	KDE/${KDE4_BRANCH}/${PORTVERSION}/src
 DIST_SUBDIR=	KDE/${PORTVERSION}
@@ -35,7 +35,7 @@ RUN_DEPENDS=	${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicol
 		${LOCALBASE}/share/xsl/docbook/html/docbook.xsl:${PORTSDIR}/textproc/docbook-xsl
 
 USE_GNOME=	libxml2 libxslt
-USE_KDE4=	kdehier kdeprefix oxygen \
+USE_KDE4=	kdeprefix oxygen \
 		attica automoc4 ontologies soprano strigi
 USES=		cmake:outsource fam gettext perl5 shared-mime-info shebangfix tar:xz
 USE_OPENSSL=	yes
@@ -61,13 +61,9 @@ SHEBANG_FILES=	kdecore/kconfig_compiler/checkkcfg.pl \
 		kdeui/preparetips \
 		khtml/bindings/scripts/generate-bindings.pl \
 		kio/misc/fileshareset \
+		kio/useragent.pl \
+		kio/proxytype.pl \
 		kioslave/http/kcookiejar/kcookiescfg.pl
-
-OPTIONS_DEFAULT=	MDNSRESPONDER
-OPTIONS_SINGLE=		ZEROCONF
-OPTIONS_SINGLE_ZEROCONF=	AVAHI MDNSRESPONDER
-AVAHI_LIB_DEPENDS=	libdns_sd.so:${PORTSDIR}/net/avahi-libdns
-MDNSRESPONDER_LIB_DEPENDS=	libdns_sd.so:${PORTSDIR}/net/mDNSResponder
 
 .include <bsd.port.pre.mk>
 

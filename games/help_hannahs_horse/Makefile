@@ -11,11 +11,13 @@ DISTFILES=	hhh-${DISTVERSION}${EXTRACT_SUFX} \
 		${PORTNAME}_icons.tar.gz:icons
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	games@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Pacman with a fast food twist
 
 LICENSE=	GPLv2 OFL11
-LICENSE_COMB=	dual
+LICENSE_COMB=	multi
+LICENSE_FILE_GPLv2=	${WRKSRC}/gpl.txt
+#LICENSE_FILE_OFL11=	${WRKSRC}/StansHandOFL.txt ${WRKSRC}/Ray_Dittmeier_Fonts.txt # framework doesn't support multiple files
 
 WRKSRC=		${WRKDIR}/hhh-2008-03-29
 

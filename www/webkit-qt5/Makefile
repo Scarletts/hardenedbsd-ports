@@ -2,7 +2,7 @@
 
 PORTNAME=	webkit
 DISTVERSION=	${QT5_VERSION}
-PORTREVISION=	5
+PORTREVISION=	1
 CATEGORIES=	www
 PKGNAMEPREFIX=	qt5-
 
@@ -19,7 +19,6 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex
 USE_GL=		gl
 USE_GNOME=	libxml2 libxslt
 USE_PERL5=	build
-USE_PYTHON_BUILD=	yes
 USE_QT5=	core gui network opengl printsupport qml quick sql \
 		testlib widgets buildtools_build
 QT_DIST=	${PORTNAME}
@@ -27,12 +26,11 @@ USE_RUBY=	yes
 RUBY_NO_RUN_DEPENDS=	yes
 USE_SQLITE=	3
 USE_XORG=	x11 xcomposite xrender
-USES=		bison:build gmake perl5 pkgconfig qmake:outsource
-# Keep make(1) from descending into obj/ subdirectories during tests.
-CONFIGURE_ENV=	MAKEOBJDIR=.
+USES=		bison gmake gperf perl5 pkgconfig python:build qmake:outsource
 # Use flex(1) from ports.
 MAKE_ENV=	PATH="${LOCALBASE}/bin:${PATH}"
-# Probably required.
+# "all" builds many more targets. The default one is called "first" in
+# QtWebKit, and is invoked by default when make is called without arguments.
 ALL_TARGET=	first
 USE_LDCONFIG=	${PREFIX}/${QT_LIBDIR_REL}
 
@@ -64,14 +62,6 @@ post-patch:
 		${WRKSRC}/Tools/qmake/mkspecs/features/configure.prf
 
 pre-configure:
-# Write a clean installation procedure to avoid the installation of
-# the file during the build stage.
-	@${REINPLACE_CMD} -e 's|\[QT_INSTALL_PLUGINS]|{ROOT_BUILD_DIR}/plugins|' \
-		${WRKSRC}/Source/WebKit/qt/examples/platformplugin/platformplugin.pro
-	@${ECHO_CMD} "target.path = ${PREFIX}/${QT_PLUGINDIR_REL}/webkit" \
-		>> ${WRKSRC}/Source/WebKit/qt/examples/platformplugin/platformplugin.pro
-	@${ECHO_CMD} "INSTALLS += target" \
-		>> ${WRKSRC}/Source/WebKit/qt/examples/platformplugin/platformplugin.pro
 	@${REINPLACE_CMD} -Ee 's|linux-?\*|unix|g' \
 		${WRKSRC}/Source/JavaScriptCore/DerivedSources.pri \
 		${WRKSRC}/Source/JavaScriptCore/JavaScriptCore.pri \

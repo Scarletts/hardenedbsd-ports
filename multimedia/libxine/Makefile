@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xine
-PORTVERSION=	1.2.4
-PORTREVISION=	15
+PORTVERSION=	1.2.6
 CATEGORIES=	multimedia ipv6
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-lib/${PORTVERSION}
 PKGNAMEPREFIX=	lib
@@ -37,9 +36,10 @@ LIB_DEPENDS=	libFLAC.so:${PORTSDIR}/audio/flac \
 LIB_DEPENDS+=	libdvdcss.so.2:${PORTSDIR}/multimedia/libdvdcss
 .endif
 
-USES=		compiler gmake iconv libtool:keepla pathfix perl5 pkgconfig tar:xz
+USES=		compiler gmake iconv libtool:keepla pathfix perl5 pkgconfig \
+		execinfo tar:xz
 GNU_CONFIGURE=	yes
-USE_XORG=	x11 xv xinerama
+USE_XORG=	x11 xv xinerama xext sm ice
 USE_GL=		gl glu
 USE_PERL5=	build
 USE_SDL=	sdl
@@ -65,7 +65,7 @@ OPTIONS_DEFINE=	CACA ESOUND JACK GNOMEVFS2 PULSEAUDIO XVMC SMB AALIB \
 DOCSDIR=	${PREFIX}/share/doc/xine-lib
 # Please sync with XINE_PLUGINSDIR in multimedia/xine
 # and multimedia/vdr-plugin-xineliboutput
-PLUGINSDIR=	lib/xine/plugins/2.3
+PLUGINSDIR=	lib/xine/plugins/2.5
 PLIST_SUB=	PLUGINSDIR="${PLUGINSDIR}"
 
 .include <bsd.port.options.mk>
@@ -156,7 +156,7 @@ CONFIGURE_ARGS+=	--disable-aalib --disable-aalibtest
 .endif
 
 .if ${PORT_OPTIONS:MIMAGEMAGICK}
-LIB_DEPENDS+=	libMagickWand-6.Q*.so:${PORTSDIR}/graphics/ImageMagick
+LIB_DEPENDS+=	libMagickWand-6.Q16.so:${PORTSDIR}/graphics/ImageMagick
 PLIST_SUB+=	WITH_IMAGEMAGICK=""
 .else
 PLIST_SUB+=	WITH_IMAGEMAGICK="@comment "

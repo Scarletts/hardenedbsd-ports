@@ -10,7 +10,7 @@ MASTER_SITE_SUBDIR=	${PYPORTNAME}/${PYPORTNAME}/${DISTNAME}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	${PYPORTNAME}-${PORTVERSION}
 
-MAINTAINER=	pclin@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python interface to Sendmail milter API
 
 LICENSE=	GPLv2
@@ -22,8 +22,7 @@ LIB_DEPENDS=	libmilter.so:${PORTSDIR}/mail/sendmail
 PYPORTNAME=	${PKGNAMEPREFIX:C/[0-9]+-//}${PORTNAME}
 
 DIST_SUBDIR=	python
-USE_PYTHON=	2
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_AUTOPLIST=	yes
+USES=		python:2
+USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

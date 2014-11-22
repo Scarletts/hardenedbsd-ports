@@ -11,10 +11,11 @@ DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} \
 		${PORTNAME}.png:icons
 EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	games@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	One- or two-player maze game based on the Entombed
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/docs/COPYING.txt
 
 USES=		gmake
 USE_SDL=	image mixer sdl

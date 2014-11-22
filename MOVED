@@ -130,7 +130,6 @@ misc/kde3-i18n-id||2008-04-25|Has expired: Distfile no longer available, outdate
 net/dhcp-agent||2008-04-25|Has expired: Dhcp-agent has not been updated since 2003, it does not build with guile-1.8, and it is unmaintained
 net/ocaml-netclient||2008-04-25|Has expired: is part of ocaml-net
 graphics/entice||2008-04-25|Has expired: Broken and unmaintained
-security/wpa_supplicant||2008-04-26|Obsolete, newer version in base
 games/glpuzzle|games/jigzo|2008-04-28|Project renamed
 ftp/greed||2008-04-29|Has expired: No longer maintained
 x11-themes/gnome-industrial-theme||2008-04-29|Has expired: gnome-themes-extras no longer has industrial engine
@@ -4451,7 +4450,6 @@ audio/xmms-kde||2013-07-26|Has expired: Depends on Qt 3.x
 audio/yammi||2013-07-26|Has expired: Depends on Qt 3.x
 biology/xdrawchem||2013-07-26|Has expired: Depends on Qt 3.x
 cad/opencascade-tutorial||2013-07-26|Has expired: Depends on Qt 3.x
-cad/qucs||2013-07-26|Has expired: Depends on Qt 3.x
 cad/vipec||2013-07-26|Has expired: Depends on Qt 3.x
 chinese/kde3-i18n-zh_CN||2013-07-26|Has expired: Depends on Qt 3.x
 chinese/kde3-i18n-zh_TW||2013-07-26|Has expired: Depends on Qt 3.x
@@ -4912,7 +4910,6 @@ misc/kde4-l10n-csb||2013-09-10|No longer part of KDE4
 misc/kde4-l10n-eo||2013-09-10|No longer part of KDE4
 misc/kde4-l10n-fy||2013-09-10|No longer part of KDE4
 misc/kde4-l10n-gu||2013-09-10|No longer part of KDE4
-misc/kde4-l10n-id||2013-09-10|No longer part of KDE4
 misc/kde4-l10n-kn||2013-09-10|No longer part of KDE4
 misc/kde4-l10n-mai||2013-09-10|No longer part of KDE4
 misc/kde4-l10n-mk||2013-09-10|No longer part of KDE4
@@ -6484,7 +6481,6 @@ print/latex-aa||2014-08-22|Has expired: Broken for more than 6 months
 textproc/rast||2014-08-22|Has expired: Broken for more than 6 months
 www/abyssws||2014-08-22|Has expired: Broken for more than 6 months
 www/docebo||2014-08-22|Has expired: Not maintained upstream
-www/rejik||2014-08-22|Has expired: Broken for more than 6 months and depends on www/squid which reached EOL 2 years ago
 devel/rubygem-railsless-deploy||2014-08-22|Removed: Obsolete, Capistrano 3 does not ship with any Railsisms and is better than Capistrano 2 and railsless-deploy
 lang/gcc410|lang/gcc5|2014-08-22|Renamed to GCC 5 upstream
 security/pam_abl||2014-08-24|Has expired: Newer version requires large number of hacks, not worth the effort
@@ -6600,7 +6596,6 @@ editors/color-mate||2014-09-01|Not staged
 editors/gnuserv||2014-09-01|Not staged
 editors/jext||2014-09-01|Not staged
 editors/komodo-ide||2014-09-01|Not staged
-editors/psgml||2014-09-01|Not staged
 editors/setedit||2014-09-01|Not staged
 editors/softmaker-office||2014-09-01|Not staged
 editors/textedit||2014-09-01|Not staged
@@ -6627,7 +6622,6 @@ graphics/linux_glide||2014-09-01|Not staged
 graphics/mingplot||2014-09-01|Not staged
 graphics/orca||2014-09-01|Not staged
 graphics/php5-chartdirector||2014-09-01|Not staged
-graphics/pinta||2014-09-01|Not staged
 graphics/ruby-rmagick||2014-09-01|Not staged
 graphics/sane-epkowa||2014-09-01|Not staged
 graphics/uDrawGraph||2014-09-01|Not staged
@@ -6672,7 +6666,6 @@ mail/emh||2014-09-01|Not staged
 mail/extmail||2014-09-01|Not staged
 mail/extman||2014-09-01|Not staged
 mail/ezmlm-web||2014-09-01|Not staged
-mail/filtermail||2014-09-01|Not staged
 mail/firemime||2014-09-01|Not staged
 mail/firepay||2014-09-01|Not staged
 mail/ftrack||2014-09-01|Not staged
@@ -6804,7 +6797,6 @@ net/mknbi||2014-09-01|Not staged
 net/mmucl||2014-09-01|Not staged
 net/ncplib||2014-09-01|Not staged
 net/ng_daphne||2014-09-01|Not staged
-net/ng_mikrotik_eoip||2014-09-01|Not staged
 net/openam||2014-09-01|Not staged
 net/openmcu||2014-09-01|Not staged
 net/openser||2014-09-01|Not staged
@@ -6821,7 +6813,6 @@ net/silc-server||2014-09-01|Not staged
 net/skyfish||2014-09-01|Not staged
 net/skystar2||2014-09-01|Not staged
 net/tac_plus-libradius||2014-09-01|Not staged
-net/tcptraceroute-devel||2014-09-01|Not staged
 net/ushare||2014-09-01|Not staged
 net/v6eval||2014-09-01|Not staged
 net/vchat||2014-09-01|Not staged
@@ -6892,7 +6883,6 @@ sysutils/clockspeed-conf||2014-09-01|Not staged
 sysutils/comconsole||2014-09-01|Not staged
 sysutils/comiccron||2014-09-01|Not staged
 sysutils/contool||2014-09-01|Not staged
-sysutils/createrepo||2014-09-01|Not staged
 sysutils/cromwell||2014-09-01|Not staged
 sysutils/cvsweb-converters||2014-09-01|Not staged
 sysutils/eroaster||2014-09-01|Not staged
@@ -7115,13 +7105,13 @@ devel/ruby-fastri||2014-09-20|Has expired: RubyForge shutdown May 15 2014
 devel/ri-emacs||2014-09-20|Has expired: RubyForge shutdown May 15 2014
 security/p5-openxpki-client-html-mason||2014-09-20|Has expired: security/p5-openxpki-0.15+ abandoned Mason UI technology in favor of FastCGI
 math/ruby-narray_miss||2014-09-20|Removed, depended on deleted math/ruby-narray
-games/gnomechess|games/gnome-chess|2014-09-20|Renamed to match port name.
+games/gnomechess|games/gnome-chess|2014-09-20|Renamed to match port name
 www/ruby-fcgi||2014-09-20|Has expired: RubyForge shutdown May 15 2014
 databases/ruby-dbi|databases/rubygem-dbi|2014-09-21|Replaced by rubygem-dbi
 databases/ruby-dbd_mysql|databases/rubygem-dbd-mysql|2014-09-21|Replaced by rubygem-dbd-mysql
 databases/ruby-dbd_pg|databases/rubygem-dbd-pg|2014-09-21|Replaced by rubygem-dbd-pg
 databases/ruby-dbd_sqlite|databases/rubygem-dbd-sqlite3|2014-09-21|Replaced by rubygem-dbd-sqlite3
-textproc/ruby-amatch/textproc/rubygem-amatch||2014-09-21|Replaced by textproc/rubygem-amatch
+textproc/ruby-amatch|textproc/rubygem-amatch|2014-09-21|Replaced by textproc/rubygem-amatch
 graphics/libggi||2014-09-22|Has expired: Unmaintained upstream
 devel/libgii||2014-09-22|Has expired: Unmaintained upstream
 graphics/fpc-ggi||2014-09-22|Has expired: Unmaintained upstream
@@ -7157,3 +7147,93 @@ deskutils/gnome-main-menu||2014-10-03|Removed, because x11-toolkits/eel was remo
 editors/mlview||2014-10-03|Removed, because x11-toolkits/eel was removed
 textproc/gnome-translate||2014-10-03|Removed, because x11-toolkits/eel was removed
 x11/avant-window-navigator-gnome||2014-10-03|Removed doesn't build with update gnome-desktop
+www/moodle25||2014-10-05|Has expired: Upstream support ended
+ports-mgmt/portaudit||2014-10-13|portaudit expired when pkg_tools did, use pkg audit
+ports-mgmt/portaudit-db||2014-10-13|portaudit expired
+ports-mgmt/kports-qt4||2014-10-13|portaudit expired
+net-mgmt/check_snmp_pkgvuln||2014-10-13|portaudit expired
+mail/p5-Email-Stuff|mail/p5-Email-Stuffer|2014-10-15|Has expired: Deprecated in favour of mail/p5-Email-Stuffer
+security/krb5-maint|security/krb5-111|2014-10-16|MIT now supports two maintenance releases of which 1.11 is the older of the two
+devel/rubygem-rspec-spies||2014-10-17|Has expired: Same syntax available in rspec 2.14 and later
+graphics/libfreehand00|graphics/libfreehand|2014-10-17|Replaced by newer version
+graphics/libcdr|graphics/libcdr01|2014-10-17|Replaced by newer version
+print/libmspub|print/libmspub01|2014-10-17|Replaced by newer version
+devel/py-olefileio_pl|devel/py-olefile|2014-10-17|Upstream name change
+audio/mad||2014-10-20|Directly use audio/libmad or audio/madplay
+mail/dspam-devel|mail/dspam|2014-10-20|Merged into mail/dspam
+dns/bind98|dns/bind99|2014-10-21|BIND 9.8 EOL
+dns/powerdns-devel|dns/powerdns|2014-10-24|Older than dns/powerdns and no longer needed
+www/mod_authz_unixgroup|www/mod_authz_unixgroup22|2014-10-26|Reflect Apache version in portsdir
+lang/kroc||2014-10-28|Has expired: Broken for more than 6 months
+net/slirp||2014-10-28|Has expired: Broken for more than 6 months
+www/typo347||2014-10-30|Has expired: Upgrade to www/typo3 or www/typo3-lts
+deskutils/babytrans||2014-10-31|Has expired: Abandonware, dictionaries unavailable
+www/rt38||2014-10-31|Has expired: Has expired: End of Life March 2014
+textproc/libmwaw|textproc/libmwaw03|2014-10-31|Replaced by newer version
+databases/pecl-yac|devel/pecl-yac|2014-11-04|Duplicate port
+devel/qt5-qmldevtools||2014-11-05|Merged into lang/qt5-qml
+math/elmer-umfpack|cad/elmerfem|2014-11-07|Has expired: Obsoleted by cad/elmerfem
+science/elmer-eio|cad/elmerfem|2014-11-07|Has expired: Obsoleted by cad/elmerfem
+science/elmer-matc|cad/elmerfem|2014-11-07|Has expired: Obsoleted by cad/elmerfem
+science/elmer-meshgen2d|cad/elmerfem|2014-11-07|Has expired: Obsoleted by cad/elmerfem
+science/elmergrid|cad/elmerfem|2014-11-07|Has expired: Obsoleted by cad/elmerfem
+security/pinentry-gtk||2014-11-13|Removed: upstream ended support for GTK+ 1
+audio/cuberok||2014-11-15|Has expired: Upstream development has stalled
+sysutils/cfengine36-rc|sysutils/cfengine36|2014-11-18|Has gone GA
+deskutils/gdesklets||2014-11-19|Depends on removed x11-toolkits/py-gnome-extra
+deskutils/gdesklets-recentlyused||2014-11-19|Depends on removed x11-toolkits/py-gnome-extra
+deskutils/gdesklets-starterbar||2014-11-19|Depends on removed x11-toolkits/py-gnome-extra
+deskutils/global-menu||2014-11-19|Depends on removed gnome-panel and incompatible with updated gnome-desktop
+deskutils/labyrinth||2014-11-19|Is not compatible with updated gnome-desktop
+deskutils/libopensync-plugin-evolution2||2014-11-19|Is not compatible with updated evolution
+deskutils/libopensync-plugin-evolution2-devel||2014-11-19|Is not compatible with updated evolution
+devel/bug-buddy||2014-11-19|No longer used in GNOME
+devel/gnome2-hacker-tools||2014-11-19|GNOME 2 was removed
+editors/gnome2-office||2014-11-19|GNOME 2 was removed
+games/gnomesudoku|games/gnome-sudoku|2014-11-19|Renamed to what the actualy name
+lang/vala-vapigen|lang/vala|2014-11-19|vapigen merged into vala
+mail/evolution-exchange|mail/evolution-ews|2014-11-19|Replaced by evolution-ews
+mail/gmail-notify||2014-11-19|Depends on removed x11-toolkits/py-gnome-extras
+math/gcalctool|math/gnome-calculator|2014-11-19|Project renamed
+misc/gnome2-reference||2014-11-19|GNOME 2 was removed
+misc/xmonad-log-applet||2014-11-19|Depends on removed gnome-panel
+net/gnome-netstatus||2014-11-19|Depends on removed gnome-panel
+security/seahorse-plugins||2014-11-19|Removed, not used in GNOME 3
+sysutils/gnome-system-tools||2014-11-19|Depends on removed nautilus2
+sysutils/tacker-client|sysutils/tracker|2014-11-19|Merged into sysutils/tracker
+sysutils/tracker-gnome|sysutils/tracker|2014-11-19|Merged into sysutils/tracker
+sysutils/tracker-libtrackergtk|sysutils/tracker|2014-11-19|Merged into sysutils/tracker
+www/epiphany-extensions||2014-11-19|Removed, not used in GNOME 3
+www/evolution-webcal||2014-11-19|Not compatible with evolution 3
+x11-clocks/gdesklets-clock||2014-11-19|Depends on removed x11-toolkits/py-gnome-extra
+x11-clocks/gdesklets-countdown||2014-11-19|Depends on removed x11-toolkits/py-gnome-extra
+x11-clocks/gdesklets-ebichuclock||2014-11-19|Depends on removed x11-toolkits/py-gnome-extra
+x11-toolkits/libpanelappletmm||2014-11-19|Depends on removed GNOME 2 ports
+x11-toolkits/py-gnome-desktop||2014-11-19|Depends on removed GNOME 2 ports
+x11-toolkits/py-gnome-extras||2014-11-19|Depends on removed GNOME 2 ports
+x11/gdesklets-tasklist||2014-11-19|Depends on removed x11-toolkits/py-gnome-extra
+x11/gnome-applets||2014-11-19|GNOME 2 was removed
+x11/gnome-panel||2014-11-19|GNOME 2 was removed
+x11/gnome-panel-reference||2014-11-19|GNOME 2 was removed
+x11/gnome-pie||2014-11-19|Is not compatible with updated gnome-menus
+x11/gnome-screensaver||2014-11-19|Is not compatible with updated gnome-desktop
+x11/gnome-swallow||2014-11-19|Removed, depends on removed gnome-panel
+x11/gnome2||2014-11-19|GNOME 2 was removed
+x11/gnome2-fifth-toe||2014-11-19|GNOME 2 was removed
+x11/gnome2-lite||2014-11-19|GNOME 2 was removed
+x11/gnome2-power-tools||2014-11-19|GNOME 2 was removed
+x11/xfce4-xfapplet-plugin||2014-11-19|Depends on removed gnome-panel
+net-im/telegram-cli||2014-11-19|Duplicate of net-im/tg
+emulation/wine-doors||2014-11-19|Abandonware, depends on non existing USE_GNOME components
+x11/gtstarter||2014-11-19|Abandonware, depends on non existing USE_GNOME components
+sysutils/serpentine||2014-11-19|Abandonware, depends on non existing USE_GNOME components
+sysutils/pessulus||2014-11-19|Abandonware, depends on non existing USE_GNOME components
+x11-toolkits/libzvt||2014-11-19|Abandonware, not depended on anymore
+net-p2p/gtkhx||2014-11-19|Does not work anymore
+korean/ami||2014-11-19|Does not work anymore
+graphics/xzgv||2014-11-19|Abandonware since at least 2008
+deskutils/gtkjournal||2014-11-19|Abandonware, not working anymore
+deskutils/splashsetter||2014-11-19|Abandonware, useless without gnome2
+editors/emacs23|editors/emacs|2014-11-19|Has expired: Unmaintained upstream, use editors/emacs
+net-im/tg|net-im/telegram|2014-11-20|Renamed to more specific name
+net-mgmt/virtinst|deskutils/virt-manager|2014-11-20|Obsoleted by deskutils/virt-manager

@@ -2,6 +2,7 @@
 
 PORTNAME=	bind
 PORTVERSION=	${ISCVERSION:S/-P/P/}
+PORTREVISION=	1
 CATEGORIES=	dns net ipv6
 MASTER_SITES=	ISC/bind9/${ISCVERSION}
 PKGNAMESUFFIX=	99
@@ -152,6 +153,10 @@ CONFIGURE_ARGS+=	--disable-threads
 .if ${PORT_OPTIONS:MREPLACE_BASE}
 .if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000100
 IGNORE=		REPLACE_BASE option is not supported on this release
+.else # >= 10.0
+# Move to BROKEN after expiration.
+DEPRECATED=		REPLACE_BASE option will be removed.  There is no real need for foot-shooting.
+EXPIRATION_DATE=	2015-01-01
 .endif # >= 10.0
 PKGNAMESUFFIX=	-base
 PREFIX=		/usr
@@ -173,6 +178,7 @@ PKGDEINSTALL=	${PKGINSTALL}
 CONFIGURE_ARGS+=	--prefix=${PREFIX} \
 			--sysconfdir=${BIND_DESTETC}
 SUB_LIST+=	BIND_DESTETC="${BIND_DESTETC}"
+PLIST_SUB+=	BIND_DESTETC="${BIND_DESTETC}"
 
 PORTDOCS=	*
 
@@ -193,19 +199,11 @@ WITH_OPENSSL_PORT=	yes
 post-patch:
 .for FILE in check/named-checkconf.8 named/named.8 nsupdate/nsupdate.1 \
 	rndc/rndc.8
-	@${MV} ${WRKSRC}/bin/${FILE} ${WRKSRC}/bin/${FILE}.Dist
-	@${SED} -e 's#/etc/named.conf#${BIND_DESTETC}/named.conf#g' \
+	@${REINPLACE_CMD} -e 's#/etc/named.conf#${BIND_DESTETC}/named.conf#g' \
 		-e 's#/etc/rndc.conf#${BIND_DESTETC}/rndc.conf#g' \
 		-e "s#/var\/run\/named\/named.pid#/var/run/named/pid#" \
-		${WRKSRC}/bin/${FILE}.Dist > ${WRKSRC}/bin/${FILE}
+		${WRKSRC}/bin/${FILE}
 .endfor
-	@${MV} ${WRKSRC}/Makefile.in ${WRKSRC}/Makefile.in.Dist
-	@${SED} -e 's#.*bind\.keys.*##' ${WRKSRC}/Makefile.in.Dist > \
-		${WRKSRC}/Makefile.in
-	@${MV} ${WRKSRC}/bin/named/Makefile.in ${WRKSRC}/bin/named/Makefile.in.Dist
-	@${SED} -e 's/$${PERL}/#/' -e 's/bind.keys.h/#/g' -e 's/bind9.xsl.h/#/g' \
-		${WRKSRC}/bin/named/Makefile.in.Dist > \
-		${WRKSRC}/bin/named/Makefile.in
 
 post-configure:
 	@${REINPLACE_CMD} -e '/^SO_LDFLAGS/s/-Wl,-rpath,/-rpath /' ${WRKSRC}/bin/tests/system/dlzexternal/Makefile

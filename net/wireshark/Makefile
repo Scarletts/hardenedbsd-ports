@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME?=	wireshark
-PORTVERSION=	1.12.1
+PORTVERSION=	1.12.2
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.wireshark.org/download/src/ \
 		http://ftp.uni-kl.de/pub/wireshark/src/ \
@@ -20,8 +20,8 @@ COMMENT?=	Powerful network analyzer/capture tool
 DATADIR_NAME=	wireshark
 
 USE_PERL5=	build
-USES=		iconv gettext pkgconfig gmake perl5 tar:bzip2 libtool \
-    		python:build
+USES=		alias gettext gmake iconv libtool perl5 pkgconfig \
+		python:build tar:bzip2
 WANT_GNOME=	yes
 USE_OPENSSL=	yes
 CONFIGURE_ARGS+=	--program-transform-name="" \

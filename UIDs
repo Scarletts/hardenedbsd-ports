@@ -1,5 +1,7 @@
 # $FreeBSD$
 # Please keep this file sorted by UID!
+# Please pick an empty slot when available and also consider base values from
+# /usr/src/etc/master.passwd
 operator:*:2:5::0:0:System &:/:/usr/sbin/nologin
 ftp:*:14:14::0:0:Anonymous FTP:/var/ftp:/nonexistent
 smmsp:*:25:25::0:0:Sendmail Submission User:/var/spool/clientmqueue:/usr/sbin/nologin
@@ -71,7 +73,7 @@ _ntp:*:123:123::0:0:NTP Daemon:/var/empty:/usr/sbin/nologin
 fetchmail:*:124:124::0:0:Fetchmail mail-retrieval daemon:/nonexistent:/usr/sbin/nologin
 postfix:*:125:125::0:0:Postfix Mail System:/var/spool/postfix:/usr/sbin/nologin
 navcron:*:127:127::0:0:Network Administration Visualized:/usr/local/nav:/usr/sbin/nologin
-vchat:*:128:128::0:0:VChat Conferencing System:/nonexistent:/usr/sbin/nologin
+sd-agent:*:128:128::0:0:ServerDensity Agent:/nonexistent:/usr/sbin/nologin
 _bgpd:*:130:130::0:0:BGP Daemon:/var/empty:/usr/sbin/nologin
 _ospfd:*:131:131::0:0:OSPF Daemon:/var/empty:/usr/sbin/nologin
 _spamd:*:132:132::0:0:Spam Daemon:/var/empty:/usr/sbin/nologin
@@ -157,6 +159,7 @@ spread:*:282:282::0:0:Spread user:/nonexistent:/usr/sbin/nologin
 devmon:*:283:283::0:0:devmon monitor:/nonexistent:/usr/sbin/nologin
 vnstat:*:284:284::0:0:vnStat Network Monitor:/nonexistent:/usr/sbin/nologin
 exaddos:*:285:285::0:0:exaddos daemon user:/nonexistent:/usr/sbin/nologin
+rancid:*:286:286::0:0:RANCID daemon user:/usr/local/var/rancid:/bin/sh
 backuppc:*:300:300::0:0:BackupPC pseudo-user:/nonexistent:/usr/sbin/nologin
 _sphinx:*:312:312::0:0:Sphinxsearch Owner:/nonexistent:/usr/sbin/nologin
 dkfilter:*:325:325::0:0:DK Filter Owner:/nonexistent:/usr/sbin/nologin
@@ -226,6 +229,7 @@ dotlrn:*:821:821::0:0:.LRN Daemon User:/nonexistent:/usr/sbin/nologin
 polw:*:825:825::0:0:Policyd-weight Cache Owner:/nonexistent:/sbin/nologin
 statsd:*:826:826::0:0:Statsd Daemon:/nonexistent:/sbin/nologin
 netdisco:*:840:840::0:0:netdisco daemon:/nonexistent:/usr/sbin/nologin
+tcpcryptd:*:841:841::0:0:tcpcrypt daemon:/nonexistent:/usr/sbin/nologin
 munin:*:842:842::0:0:Munin:/var/munin:/usr/sbin/nologin
 fossy:*:901:901::0:0:FOSSology user:/usr/local/share/fossology:/usr/local/bin/bash
 scanlogd:*:902:902::0:0:scanlogd user:/nonexistent:/usr/sbin/nologin
@@ -264,10 +268,8 @@ teamspeak:*:942:942::0:0:TeamSpeak user:/nonexistent:/usr/sbin/nologin
 dnetfold:*:943:943::0:0:& user:/nonexistent:/usr/sbin/nologin
 bbs:*:944:944::0:0:& user:/nonexistent:/usr/sbin/nologin
 dbxml:*:945:945::0:0:& user:/nonexistent:/usr/sbin/nologin
-sybase:*:946:946::0:0:& user:/usr/local/sybase-ase:/usr/sbin/nologin
 mapred:*:947:955::0:0:Hadoop MapReduce user:/nonexistent:/usr/sbin/nologin
 dnrd:*:948:948::0:0:& user:/nonexistent:/usr/sbin/nologin
-zenoss:*:949:949::0:0:& user:/usr/local/zenoss:/bin/sh
 openerpd:*:951:951::0:0:Openerpd user:/nonexistent:/usr/sbin/nologin
 bitten-slave:*:952:952:daemon:0:0:Bitten slave user:/var/lib/bitten-slave:/usr/sbin/nologin
 _neubot:*:953:953::0:0:neubot daemon:/nonexistent:/usr/sbin/nologin
@@ -306,4 +308,6 @@ tvheadend:*:984:984::0:0:TV Headend:/usr/local/etc/tvheadend:/bin/sh
 puppetdb:*:985:985::0:0:PuppetDB Daemon pseudo-user:/nonexistent:/usr/sbin/nologin
 kamailio:*:986:986::0:0:kamailio daemon:/nonexistent:/usr/sbin/nologin
 spark:*:987:987::0:0:Apache Spark user:/nonexistent:/usr/sbin/nologin
+toxdht:*:988:65534::0:0:Tox DHT bootstrap user:/nonexistent:/usr/sbin/nologin
+mediabrowser:*:989:989::0:0:MediaBrowser:/nonexistent:/usr/sbin/nologin
 nobody:*:65534:65534::0:0:Unprivileged user:/nonexistent:/usr/sbin/nologin

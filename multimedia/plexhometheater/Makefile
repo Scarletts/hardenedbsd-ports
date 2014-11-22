@@ -2,7 +2,7 @@
 
 PORTNAME=	plexhometheater
 PORTVERSION=	1.2.2
-PORTREVISION=	1
+PORTREVISION=	4
 CATEGORIES=	multimedia
 
 MAINTAINER=	woodsb02@gmail.com
@@ -60,7 +60,7 @@ LIB_DEPENDS=	libass.so:${PORTSDIR}/multimedia/libass \
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3 \
 		glxinfo:${PORTSDIR}/graphics/mesa-demos \
-		${PYTHON_PKGNAMEPREFIX}imaging>0:${PORTSDIR}/graphics/py-imaging \
+		${PYTHON_PKGNAMEPREFIX}pillow>0:${PORTSDIR}/graphics/py-pillow \
 		xdpyinfo:${PORTSDIR}/x11/xdpyinfo
 
 USE_GITHUB=	yes
@@ -69,7 +69,7 @@ GH_PROJECT=	plex-home-theater-public
 GH_COMMIT=	2d6426d
 GH_TAGNAME=	pht-v1.2.2
 
-USES=		cmake:outsource iconv pkgconfig python:2
+USES=		cmake:outsource iconv:wchar_t pkgconfig python:2
 CMAKE_ARGS+=	-DENABLE_AUTOUPDATE:BOOL=false
 CMAKE_ARGS+=	-DENABLE_DUMP_SYMBOLS:BOOL=false
 CMAKE_ARGS+=	-DENABLE_PYTHON:BOOL=false
@@ -126,6 +126,8 @@ post-patch:
 		${WRKSRC}/lib/ffmpeg/common.mak \
 		${WRKSRC}/lib/ffmpeg/configure \
 		${WRKSRC}/lib/ffmpeg/libavcodec/Makefile
+	@${REINPLACE_CMD} 's/iconv_open/libiconv_open/' \
+		${WRKSRC}/plex/CMakeModules/FindIconv.cmake
 
 post-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.sh ${STAGEDIR}${PREFIX}/bin

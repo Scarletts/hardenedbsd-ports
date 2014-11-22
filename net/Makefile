@@ -62,6 +62,7 @@
     SUBDIR += chrony
     SUBDIR += citrix_ica
     SUBDIR += clamz
+    SUBDIR += cloud-init
     SUBDIR += clusterit
     SUBDIR += cnd
     SUBDIR += coda6_client
@@ -98,6 +99,7 @@
     SUBDIR += dictd-database
     SUBDIR += dimes
     SUBDIR += dosdetector
+    SUBDIR += dpdk
     SUBDIR += drawterm
     SUBDIR += dropbox-api-command
     SUBDIR += dropbox-uploader
@@ -131,16 +133,20 @@
     SUBDIR += fspclient
     SUBDIR += fsplib
     SUBDIR += g2ipmsg
+    SUBDIR += geoclue
+    SUBDIR += geocode-glib
     SUBDIR += geoipupdate
     SUBDIR += get_iplayer
+    SUBDIR += gfbgraph
     SUBDIR += gini
     SUBDIR += gkrellmwireless2
     SUBDIR += glflow
     SUBDIR += glib-networking
     SUBDIR += gnet2
     SUBDIR += gnetcat
-    SUBDIR += gnome-netstatus
     SUBDIR += gnome-nettool
+    SUBDIR += gnome-online-accounts
+    SUBDIR += gnome-online-miners
     SUBDIR += gnu-dico
     SUBDIR += gnu-radius
     SUBDIR += go-cs
@@ -155,6 +161,8 @@
     SUBDIR += gpxe
     SUBDIR += gq
     SUBDIR += grdesktop
+    SUBDIR += grilo-plugins
+    SUBDIR += grilo
     SUBDIR += grive
     SUBDIR += grsync
     SUBDIR += gsk
@@ -276,6 +284,7 @@
     SUBDIR += libbgpdump
     SUBDIR += libcapn
     SUBDIR += libcmis
+    SUBDIR += libdmapsharing
     SUBDIR += libdnet
     SUBDIR += libexosip2
     SUBDIR += libfb
@@ -318,6 +327,7 @@
     SUBDIR += libunp
     SUBDIR += libutp
     SUBDIR += libvncserver
+    SUBDIR += libzapojit
     SUBDIR += libzmq2
     SUBDIR += libzmq3
     SUBDIR += libzmq4
@@ -326,6 +336,7 @@
     SUBDIR += linc-reference
     SUBDIR += linknx
     SUBDIR += linphone
+    SUBDIR += linux-c6-avahi-libs
     SUBDIR += linux-c6-openldap
     SUBDIR += linux-c6-tcp_wrappers-libs
     SUBDIR += linux-f10-nss_ldap
@@ -338,6 +349,7 @@
     SUBDIR += luasocket
     SUBDIR += lvwimax
     SUBDIR += mDNSResponder
+    SUBDIR += macchanger
     SUBDIR += mad_fcl
     SUBDIR += mcast-tools
     SUBDIR += mediastreamer
@@ -356,6 +368,7 @@
     SUBDIR += morebalance
     SUBDIR += mosh
     SUBDIR += mosquitto
+    SUBDIR += motsognir
     SUBDIR += mpd-l2tp-ipv6pd-client
     SUBDIR += mpd5
     SUBDIR += mpich
@@ -390,6 +403,7 @@
     SUBDIR += netwib
     SUBDIR += neubot
     SUBDIR += nfsshell
+    SUBDIR += ng_mikrotik_eoip
     SUBDIR += ngrep
     SUBDIR += nifmon
     SUBDIR += nload
@@ -588,6 +602,7 @@
     SUBDIR += p5-Net-NIS
     SUBDIR += p5-Net-NIS-Listgroup
     SUBDIR += p5-Net-Nessus-XMLRPC
+    SUBDIR += p5-Net-Nmsg
     SUBDIR += p5-Net-OAuth
     SUBDIR += p5-Net-OAuth-Simple
     SUBDIR += p5-Net-OAuth2
@@ -915,6 +930,7 @@
     SUBDIR += py-twitter-tools
     SUBDIR += py-txamqp
     SUBDIR += py-urllib3
+    SUBDIR += py-wolframalpha
     SUBDIR += py-xmlrpc
     SUBDIR += py-xmlrpclib
     SUBDIR += py-yadis
@@ -1007,10 +1023,13 @@
     SUBDIR += rubygem-oauth
     SUBDIR += rubygem-oauth2
     SUBDIR += rubygem-octokit
+    SUBDIR += rubygem-omniauth-facebook
     SUBDIR += rubygem-omniauth-github
+    SUBDIR += rubygem-omniauth-github-discourse
     SUBDIR += rubygem-omniauth-google-oauth2
     SUBDIR += rubygem-omniauth-oauth
     SUBDIR += rubygem-omniauth-oauth2
+    SUBDIR += rubygem-omniauth-openid
     SUBDIR += rubygem-omniauth-twitter
     SUBDIR += rubygem-open-uri-cached
     SUBDIR += rubygem-openid
@@ -1076,7 +1095,6 @@
     SUBDIR += sixxs-aiccu
     SUBDIR += skstream
     SUBDIR += sl2tps
-    SUBDIR += slirp
     SUBDIR += slurm
     SUBDIR += smb4k-kde4
     SUBDIR += smbldap-tools
@@ -1139,6 +1157,7 @@
     SUBDIR += tcpstat
     SUBDIR += tcptrace
     SUBDIR += tcptraceroute
+    SUBDIR += tcptraceroute-devel
     SUBDIR += tcpview
     SUBDIR += tcpwatch
     SUBDIR += tcpxd
@@ -1177,6 +1196,7 @@
     SUBDIR += udpxy
     SUBDIR += udt
     SUBDIR += uget
+    SUBDIR += uhttpmock
     SUBDIR += ulxmlrpcpp
     SUBDIR += unfs3
     SUBDIR += unison

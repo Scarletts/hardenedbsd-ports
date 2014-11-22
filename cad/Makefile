@@ -21,6 +21,7 @@
     SUBDIR += dxf2fig
     SUBDIR += electric
     SUBDIR += electric-ng
+    SUBDIR += elmerfem
     SUBDIR += feappv
     SUBDIR += fidocadj
     SUBDIR += findhier
@@ -75,6 +76,7 @@
     SUBDIR += qelectrotech
     SUBDIR += qfsm
     SUBDIR += qmls
+    SUBDIR += qucs
     SUBDIR += repsnapper
     SUBDIR += sceptre
     SUBDIR += scotch

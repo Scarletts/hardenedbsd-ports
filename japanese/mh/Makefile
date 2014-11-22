@@ -3,7 +3,7 @@
 
 PORTNAME=	mh
 PORTVERSION=	${VERSION}.j${JP_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese mail
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		ftp://ftp.laic.u-hyogo.ac.jp/pub/net/mh/
@@ -21,7 +21,8 @@ JP_VERSION=	3.05
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-batchmode \
-		--enable-apop=${PREFIX}/etc/pop.auth --enable-rpop
+		--enable-apop=${PREFIX}/etc/pop.auth \
+		--enable-jmandir=${MANPREFIX}/man/ja
 MAKE_JOBS_UNSAFE=	yes
 CFLAGS+=	-Wno-return-type
 
@@ -40,10 +41,15 @@ OPTIONS_DEFINE=	DOCS
 post-patch:
 	${REINPLACE_CMD} -e "s/-O /${CFLAGS} /g" ${WRKSRC}/configure
 
-.if ${PORT_OPTIONS:MDOCS}
 post-install:
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC}/doc-JP && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
 .endif
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/*
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libmh.so.3
+.for i in ap conflict dp fmtdump install-mh mhl post rcvdist rcvpack rcvstore rcvtty slocal spost
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/mh/${i}
+.endfor
 
 .include <bsd.port.mk>

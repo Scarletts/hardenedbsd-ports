@@ -19,6 +19,7 @@
     SUBDIR += emesene
     SUBDIR += empathy
     SUBDIR += farsight2
+    SUBDIR += farstream
     SUBDIR += finch
     SUBDIR += folks
     SUBDIR += folks04
@@ -53,6 +54,8 @@
     SUBDIR += ktp-send-file
     SUBDIR += ktp-text-ui
     SUBDIR += libjreen
+    SUBDIR += libnice-gst010
+    SUBDIR += libnice-gst1
     SUBDIR += libnice
     SUBDIR += libpurple
     SUBDIR += libtelepathy
@@ -118,6 +121,7 @@
     SUBDIR += py-jabber
     SUBDIR += py-jabberbot
     SUBDIR += py-libturpial
+    SUBDIR += py-nbxmpp
     SUBDIR += py-punjab
     SUBDIR += py-pyxmpp
     SUBDIR += py-skype4py
@@ -125,6 +129,7 @@
     SUBDIR += py-xmpppy
     SUBDIR += py-xmpppy-irc
     SUBDIR += py-xmpppy-yahoo
+    SUBDIR += qTox
     SUBDIR += qq
     SUBDIR += qwit
     SUBDIR += qwit-devel
@@ -136,11 +141,14 @@
     SUBDIR += rubygem-termtter
     SUBDIR += rubygem-tinder
     SUBDIR += sendxmpp
+    SUBDIR += sigram
     SUBDIR += skype
     SUBDIR += skype-devel
     SUBDIR += skype4
+    SUBDIR += telegram
     SUBDIR += telepathy-butterfly
     SUBDIR += telepathy-farsight
+    SUBDIR += telepathy-farstream
     SUBDIR += telepathy-gabble
     SUBDIR += telepathy-glib
     SUBDIR += telepathy-haze
@@ -150,9 +158,9 @@
     SUBDIR += telepathy-mission-control
     SUBDIR += telepathy-python
     SUBDIR += telepathy-qt4
+    SUBDIR += telepathy-rakia
     SUBDIR += telepathy-salut
     SUBDIR += telepathy-sofiasip
-    SUBDIR += tg
     SUBDIR += tkabber
     SUBDIR += tkabber-plugins
     SUBDIR += tkabbur

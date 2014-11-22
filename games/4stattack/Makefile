@@ -8,14 +8,14 @@ CATEGORIES=	games
 MASTER_SITES=	SF/forcedattack/4stAttack/${PORTVERSION}/
 DISTNAME=	4stAttack-${PORTVERSION}
 
-MAINTAINER=	games@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Connect four stones in a straight line
 
 LICENSE=	GPLv2
 
 RUN_DEPENDS=	${PYGAME}
 
-USE_PYTHON=	yes
+USES=		python
 
 PORTDOCS=	changelog.txt credits.txt
 OPTIONS_DEFINE=	DOCS

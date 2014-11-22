@@ -9,7 +9,10 @@ MASTER_SITES=	SF/${PORTNAME:S/eb/e-b/}/${PORTNAME:S/eb/e-b/}/${PORTVERSION}/ \
 		http://www.users.on.net/~mipearson/
 DISTNAME=	gnome-breakout-${PORTVERSION}
 
-MAINTAINER=	games@FreeBSD.org
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNOME version of the classic breakout game
 
 USES=		pathfix pkgconfig

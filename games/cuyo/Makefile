@@ -8,10 +8,11 @@ PORTEPOCH=	1
 CATEGORIES=	games
 MASTER_SITES=	SAVANNAH
 
-MAINTAINER=	games@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Nice, innovative, challenging Tetris-like game
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2 # or later
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libaa.so:${PORTSDIR}/graphics/aalib \
 		libmikmod.so:${PORTSDIR}/audio/libmikmod

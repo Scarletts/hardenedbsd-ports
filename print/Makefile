@@ -111,7 +111,7 @@
     SUBDIR += libgnomeprintmm
     SUBDIR += libharu
     SUBDIR += libijs
-    SUBDIR += libmspub
+    SUBDIR += libmspub01
     SUBDIR += libotf
     SUBDIR += libpaper
     SUBDIR += libppd

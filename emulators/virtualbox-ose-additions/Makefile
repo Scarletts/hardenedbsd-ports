@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	virtualbox-ose
-DISTVERSION=	4.3.16
-PORTREVISION=	1
+DISTVERSION=	4.3.18
 CATEGORIES=	emulators
 MASTER_SITES=	http://download.virtualbox.org/virtualbox/${DISTVERSION}/ \
 		http://tmp.chruetertee.ch/ \
@@ -27,9 +26,8 @@ UNIQUENAME=	${PORTNAME}${PKGNAMESUFFIX}
 PATCHDIR=	${.CURDIR}/../${PORTNAME}/files
 WRKSRC=		${WRKDIR}/VirtualBox-${PORTVERSION}
 USE_RC_SUBR=	vboxguest vboxservice
-USES=		compiler:features cpe iconv kmod tar:bzip2
+USES=		compiler:features cpe iconv kmod python:build tar:bzip2
 ONLY_FOR_ARCHS=	i386 amd64
-USE_PYTHON_BUILD=	yes
 MAKE_JOBS_UNSAFE=	yes
 
 HAS_CONFIGURE=	yes

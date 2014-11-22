@@ -104,8 +104,8 @@
     SUBDIR += dracmail
     SUBDIR += dsbl-testers
     SUBDIR += dspam
-    SUBDIR += dspam-devel
     SUBDIR += ecartis
+    SUBDIR += elm
     SUBDIR += elmo
     SUBDIR += elmo-devel
     SUBDIR += emil
@@ -114,7 +114,7 @@
     SUBDIR += epstools
     SUBDIR += esmtp
     SUBDIR += evolution
-    SUBDIR += evolution-exchange
+    SUBDIR += evolution-ews
     SUBDIR += evolution-mapi
     SUBDIR += exact
     SUBDIR += exilog
@@ -137,13 +137,14 @@
     SUBDIR += fastforward
     SUBDIR += fdm
     SUBDIR += fetchmail
+    SUBDIR += filtermail
     SUBDIR += findmaildirs
     SUBDIR += gbuffy
+    SUBDIR += geary
     SUBDIR += gensig
     SUBDIR += getmail
     SUBDIR += gkrellmmailwatch2
     SUBDIR += gld
-    SUBDIR += gmail-notify
     SUBDIR += gmime2
     SUBDIR += gmime2-sharp
     SUBDIR += gmime24
@@ -318,10 +319,10 @@
     SUBDIR += p5-Email-Send
     SUBDIR += p5-Email-Sender
     SUBDIR += p5-Email-Sender-Transport-SMTP-TLS
+    SUBDIR += p5-Email-Sender-Transport-SMTPS
     SUBDIR += p5-Email-Sender-Transport-SQLite
     SUBDIR += p5-Email-Simple
     SUBDIR += p5-Email-Simple-FromHandle
-    SUBDIR += p5-Email-Stuff
     SUBDIR += p5-Email-Stuffer
     SUBDIR += p5-Email-Valid
     SUBDIR += p5-Email-Valid-Loose
@@ -569,6 +570,7 @@
     SUBDIR += ruby-rmail
     SUBDIR += rubygem-actionmailer
     SUBDIR += rubygem-actionmailer4
+    SUBDIR += rubygem-email_reply_parser-discourse
     SUBDIR += rubygem-exception_notification
     SUBDIR += rubygem-larch
     SUBDIR += rubygem-mail

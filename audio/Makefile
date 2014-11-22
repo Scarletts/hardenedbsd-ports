@@ -85,7 +85,6 @@
     SUBDIR += csound
     SUBDIR += csound6
     SUBDIR += ctronome
-    SUBDIR += cuberok
     SUBDIR += cue2toc
     SUBDIR += cueplayer
     SUBDIR += cuetools
@@ -200,6 +199,7 @@
     SUBDIR += gnaural
     SUBDIR += gnome-audio
     SUBDIR += gnome-media
+    SUBDIR += gnome-music
     SUBDIR += gnomoradio
     SUBDIR += gnormalize
     SUBDIR += gnuitar
@@ -436,7 +436,6 @@
     SUBDIR += lv2core
     SUBDIR += lxmusic
     SUBDIR += mac
-    SUBDIR += mad
     SUBDIR += madfufw
     SUBDIR += madplay
     SUBDIR += malint
@@ -600,6 +599,7 @@
     SUBDIR += py-eyed3
     SUBDIR += py-eyed3-06
     SUBDIR += py-fastaudio
+    SUBDIR += py-gmusicapi
     SUBDIR += py-id3
     SUBDIR += py-karaoke
     SUBDIR += py-mad

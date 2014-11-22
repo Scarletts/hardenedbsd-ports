@@ -17,9 +17,8 @@ LIB_DEPENDS=	libwnck-1.so:${PORTSDIR}/x11-toolkits/libwnck \
 		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
 
 GNU_CONFIGURE=	yes
-USES=		gettext gmake libtool pathfix pkgconfig
+USES=		gettext gmake libtool pathfix pkgconfig python
 USE_GNOME=	glib20 gtk20 pygtk2
-USE_PYTHON=	yes
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
 USE_XORG=	x11 xproto xcomposite xrender
@@ -28,13 +27,7 @@ LIBS+=		-L${LOCALBASE}/lib
 
 AWN_DESKTOP?=	agnostic
 
-.if ${AWN_DESKTOP} == "gnome"
-USE_GNOME+=	gnomedesktop libgnomeui
-CONFIGURE_ARGS+=	--with-desktop=gnome
-CONFLICTS=	${PORTNAME}-xfce4-[0-9]* ${PORTNAME}-[0-9]*
-WITH_GCONF=	yes
-PKGNAMESUFFIX=	-gnome
-.elif ${AWN_DESKTOP} == "xfce4"
+.if ${AWN_DESKTOP} == "xfce4"
 OPTIONS_DEFINE=	GCONF
 USE_XFCE+=	thunar
 CONFIGURE_ARGS+=	--with-desktop=xfce4

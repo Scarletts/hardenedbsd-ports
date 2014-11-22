@@ -2,26 +2,29 @@
 # $FreeBSD$
 
 PORTNAME=	postfix
-PORTVERSION=	2.10.3
-PORTREVISION=	5
+PORTVERSION=	2.10.5
 PORTEPOCH=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/official/ \
+		http://cdn.postfix.johnriley.me/mirrors/postfix-release/official/ \
 		ftp://ftp.tux.org/pub/net/postfix/official/ \
-		ftp://ftp.utoronto.ca/mirror/packages/postfix/official/ \
-		ftp://ftp.samurai.com/pub/postfix/official/ \
-		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/mail/postfix/official/&,}
+		#${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/mail/postfix/official/&,}
 MASTER_SITE_SUBDIR=	. old related/postfix
 PKGNAMESUFFIX=	210
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	Secure alternative to widely-used Sendmail
+
+DEPRECATED=	Use mail/postfix instead.
+EXPIRATION_DATE=2015-01-31
 
 LICENSE=	IPL10
 LICENSE_NAME=	IBM PUBLIC LICENSE VERSION 1.0
 LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+
+PORTSCOUT=	limit:^2\.10\.
 
 VDAVERSION=	2.10.0
 CONFLICTS=	courier-0.* postfix-1.* postfix2[789]-* \
@@ -188,7 +191,7 @@ POSTFIX_AUXLIBS+=	-L${LOCALBASE}/lib -lsqlite3
 
 .if ${PORT_OPTIONS:MOPENLDAP}
 USE_OPENLDAP=		yes
-.if ${PORT_OPTIONS:MOPENLDAP_VER}
+.if defined(WITH_OPENLDAP_VER)
 WANT_OPENLDAP_VER=	${WITH_OPENLDAP_VER}
 .endif
 POSTFIX_CCARGS+=	-DHAS_LDAP -I${LOCALBASE}/include
@@ -343,5 +346,12 @@ do-install:
 .for f in ${MANTEST}
 	${INSTALL_MAN} ${WRKSRC}/man/man1/${f} ${STAGEDIR}${MAN1PREFIX}/man/man1
 .endfor
+.if ${STRIP_CMD:M*/strip}
+	${FILE} ${STAGEDIR}${PREFIX}/bin/* ${STAGEDIR}${PREFIX}/sbin/* \
+		${STAGEDIR}${DAEMONDIR}/* \
+	| LC_ALL=C ${GREP} 'not stripped' \
+	| ${CUT} -f1 -d\: \
+	| ${XARGS} ${STRIP_CMD}
+.endif
 
 .include <bsd.port.mk>
