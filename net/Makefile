@@ -52,6 +52,7 @@
     SUBDIR += boinc-client
     SUBDIR += boinc_curses
     SUBDIR += bounce
+    SUBDIR += bsdec2-image-upload
     SUBDIR += bsdproxy
     SUBDIR += bwi-firmware-kmod
     SUBDIR += bwn-firmware-kmod
@@ -722,7 +723,6 @@
     SUBDIR += p5-SOAP-Data-Builder
     SUBDIR += p5-SOAP-Lite
     SUBDIR += p5-SOAP-MySOAP
-    SUBDIR += p5-SOAP-Transport-TCP
     SUBDIR += p5-Samba-LDAP
     SUBDIR += p5-Server-Starter
     SUBDIR += p5-Socket
