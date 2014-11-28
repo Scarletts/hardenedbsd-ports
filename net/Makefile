@@ -109,7 +109,6 @@
     SUBDIR += e169-stats
     SUBDIR += easysoap
     SUBDIR += echoping
-    SUBDIR += ecore-con
     SUBDIR += empty
     SUBDIR += enet
     SUBDIR += erlang_xmlrpc
@@ -352,6 +351,7 @@
     SUBDIR += mDNSResponder
     SUBDIR += macchanger
     SUBDIR += mad_fcl
+    SUBDIR += malo-firmware-kmod
     SUBDIR += mcast-tools
     SUBDIR += mediastreamer
     SUBDIR += mediatomb
@@ -1007,7 +1007,12 @@
     SUBDIR += rubygem-connection_pool
     SUBDIR += rubygem-domain_name
     SUBDIR += rubygem-dropbox-sdk
+    SUBDIR += rubygem-fog-profitbricks
+    SUBDIR += rubygem-fog-radosgw
+    SUBDIR += rubygem-fog-sakuracloud
     SUBDIR += rubygem-fog-softlayer
+    SUBDIR += rubygem-fog-terremark
+    SUBDIR += rubygem-fog-voxel
     SUBDIR += rubygem-geoip
     SUBDIR += rubygem-gitlab_omniauth-ldap
     SUBDIR += rubygem-http_parser.rb

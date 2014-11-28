@@ -3,6 +3,7 @@
 
 PORTNAME=	MooseX-App-Cmd
 PORTVERSION=	0.27
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -35,8 +36,8 @@ post-install:
 	${RM} \
 		${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/MouseX/App/Cmd.pm \
 		${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/MouseX/App/Cmd/Command.pm \
-		${STAGEDIR}${PREFIX}/${SITE_MAN3_REL}/MouseX::App::Cmd.3 \
-		${STAGEDIR}${PREFIX}/${SITE_MAN3_REL}/MouseX::App::Cmd::Command.3
+		${STAGEDIR}${MAN3PREFIX}/man/man3/MouseX::App::Cmd.3 \
+		${STAGEDIR}${MAN3PREFIX}/man/man3/MouseX::App::Cmd::Command.3
 	${RMDIR} -p ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/MouseX/App/Cmd 2>/dev/null || :
 
 .include <bsd.port.mk>
