@@ -1,5 +1,5 @@
 PORTNAME=	testpie
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 CATEGORIES=	hardenedbsd
 MAINTAINER=	shawn.webb@hardenedbsd.org
 MASTER_SITES=	http://hardenedbsd.org/distfiles/
