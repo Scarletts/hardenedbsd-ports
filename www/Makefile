@@ -120,7 +120,6 @@
     SUBDIR += dotclear
     SUBDIR += dotproject
     SUBDIR += download-gemist
-    SUBDIR += dpsearch
     SUBDIR += drood
     SUBDIR += drraw
     SUBDIR += drupal6
@@ -400,6 +399,7 @@
     SUBDIR += mediawiki119
     SUBDIR += mediawiki122
     SUBDIR += mediawiki123
+    SUBDIR += mediawiki124
     SUBDIR += mergelog
     SUBDIR += mgstat
     SUBDIR += mhonarc
@@ -1306,6 +1306,7 @@
     SUBDIR += p5-WebService-NoPaste
     SUBDIR += p5-WebService-Pushover
     SUBDIR += p5-WebService-Rakuten
+    SUBDIR += p5-WebService-Redmine
     SUBDIR += p5-WebService-Simple
     SUBDIR += p5-WebService-Technorati
     SUBDIR += p5-WebService-YouTube

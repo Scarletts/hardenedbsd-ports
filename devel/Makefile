@@ -52,6 +52,9 @@
     SUBDIR += allegro
     SUBDIR += allegro-devel
     SUBDIR += alog
+    SUBDIR += amd64-binutils
+    SUBDIR += amd64-gcc
+    SUBDIR += amd64-xtoolchain-gcc
     SUBDIR += android-tools-adb
     SUBDIR += anjuta
     SUBDIR += anjuta-extras
@@ -273,7 +276,6 @@
     SUBDIR += cppunit
     SUBDIR += cproto
     SUBDIR += cpuflags
-    SUBDIR += creduce
     SUBDIR += critcl
     SUBDIR += cross-binutils
     SUBDIR += cscope
@@ -466,7 +468,6 @@
     SUBDIR += frama-c
     SUBDIR += freeocl
     SUBDIR += frink
-    SUBDIR += fsmgenerator
     SUBDIR += ftjam
     SUBDIR += ftnchek
     SUBDIR += fuel
@@ -533,6 +534,8 @@
     SUBDIR += gettext
     SUBDIR += gettext-lint
     SUBDIR += gettext-msghack
+    SUBDIR += gettext-runtime
+    SUBDIR += gettext-tools
     SUBDIR += gflags
     SUBDIR += giggle
     SUBDIR += gindent
@@ -4334,7 +4337,6 @@
     SUBDIR += rubygem-default_value_for
     SUBDIR += rubygem-delayed_job
     SUBDIR += rubygem-delayer
-    SUBDIR += rubygem-dep_selector
     SUBDIR += rubygem-deprecated
     SUBDIR += rubygem-deprecated2
     SUBDIR += rubygem-descendants_tracker
