@@ -21,7 +21,7 @@ DATADIR=	${PREFIX}/share/cpucontrol
 USE_RC_SUBR=	microcode_update
 
 post-extract:
-	${CP} -p ${FILESDIR}/Makefile ${FILESDIR}/ucode-tool.c ${WRKSRC}
+	${CP} ${FILESDIR}/Makefile ${FILESDIR}/ucode-tool.c ${WRKSRC}
 
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}/

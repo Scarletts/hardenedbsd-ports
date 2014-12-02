@@ -21,6 +21,6 @@ procmap_files := procmap.c procmap.8
 
 post-extract:
 	cd ${FILESDIR} ; \
-		${CP} -p ${procmap_files} ${WRKSRC}
+		${CP} ${procmap_files} ${WRKSRC}
 
 .include <bsd.port.mk>

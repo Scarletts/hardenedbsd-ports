@@ -99,7 +99,7 @@ USES+=		gettext iconv
 post-extract:
 .for i in config.guess config.sub
 .for j in autoconf conf cdda2wav
-	@${CP} -fp ${PORTSDIR}/Templates/${i} ${WRKSRC}/${j}
+	@${CP} -f ${PORTSDIR}/Templates/${i} ${WRKSRC}/${j}
 .endfor
 .endfor
 .if ${CDRTLSTARGET} != "i386-freebsd-cc"

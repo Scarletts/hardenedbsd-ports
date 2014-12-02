@@ -26,7 +26,7 @@ DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 SUB_FILES=	${PORTNAME}.sh ${PORTNAME}-root
 
 post-extract:
-	@(cd ${WRKSRC}/content/ && ${CP} -a ${PORTNAME}.desktop \
+	@(cd ${WRKSRC}/content/ && ${CP} -RP ${PORTNAME}.desktop \
 		${PORTNAME}-root.desktop)
 
 post-patch:

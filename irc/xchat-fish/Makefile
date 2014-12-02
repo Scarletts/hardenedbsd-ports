@@ -34,7 +34,7 @@ OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	${RM} -f ${WRKSRC}/mir*
-	${CP} -pf ${FILESDIR}/Makefile ${WRKSRC}/
+	${CP} -f ${FILESDIR}/Makefile ${WRKSRC}/
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/xchat/plugins

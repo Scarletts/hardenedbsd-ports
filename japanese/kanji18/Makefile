@@ -41,7 +41,7 @@ OPTIONS_DEFINE=	DOCS
 
 post-extract:
 	@(cd $(WRKSRC); ${CAT} ${DISTNAME}.?? | uudecode)
-	@${CP} -p ${FILESDIR}/Makefile.in ${WRKDIR}/Makefile
+	@${CP} ${FILESDIR}/Makefile.in ${WRKDIR}/Makefile
 	@${GUNZIP_CMD} ${WRKDIR}/*.Z
 
 post-patch:

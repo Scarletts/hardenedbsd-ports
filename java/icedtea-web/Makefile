@@ -93,7 +93,7 @@ pre-extract:
 post-patch:
 	${REINPLACE_CMD} -e 's|^Icon=javaws|Icon=itweb-javaws|' \
 	    ${WRKSRC}/*.desktop.in
-	${CP} -fp ${FILESDIR}/*.html \
+	${CP} -f ${FILESDIR}/*.html \
 	    ${WRKSRC}/netx/net/sourceforge/jnlp/resources
 
 .if ${PORT_OPTIONS:MTEST}

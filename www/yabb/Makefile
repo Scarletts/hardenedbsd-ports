@@ -65,7 +65,7 @@ do-install:
 		>>${TMPPLIST}
 	@${CHMOD} a=rx ${STAGEDIR}${DIR}
 	@${ECHO_CMD} '@exec ${CHMOD} a=rx ${DIR}' >>${TMPPLIST}
-	@${CP} -fpR ${FILESDIR}/checksum.sha256 ${STAGEDIR}${DIR}/
+	@${CP} -fR ${FILESDIR}/checksum.sha256 ${STAGEDIR}${DIR}/
 
 pre-clean:
 	@${CHMOD} -Rf +rwX ${WRKDIR}/* 2>/dev/null || true

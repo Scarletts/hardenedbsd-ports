@@ -38,7 +38,7 @@ SUB_FILES=	zenmap-root
 
 post-extract:
 	@${RM} -f ${WRKSRC}/install_scripts/unix/su-to-zenmap.sh
-	@${CP} -a ${FILESDIR}/pc-su ${WRKSRC}/install_scripts/unix/su-to-zenmap.sh
+	@${CP} -RP ${FILESDIR}/pc-su ${WRKSRC}/install_scripts/unix/su-to-zenmap.sh
 
 post-patch:
 	@${FIND} ${WRKSRC} -name '*.py' -or -name '*.pyw' | ${XARGS} \
