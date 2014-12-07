@@ -1011,6 +1011,7 @@
     SUBDIR += rubygem-fog-sakuracloud
     SUBDIR += rubygem-fog-softlayer
     SUBDIR += rubygem-fog-terremark
+    SUBDIR += rubygem-fog-vmfusion
     SUBDIR += rubygem-fog-voxel
     SUBDIR += rubygem-geoip
     SUBDIR += rubygem-gitlab_omniauth-ldap
@@ -1037,9 +1038,11 @@
     SUBDIR += rubygem-omniauth-twitter
     SUBDIR += rubygem-open-uri-cached
     SUBDIR += rubygem-openid
+    SUBDIR += rubygem-opennebula
     SUBDIR += rubygem-packetfu
     SUBDIR += rubygem-pcaprub
     SUBDIR += rubygem-rabbiter
+    SUBDIR += rubygem-rbvmomi
     SUBDIR += rubygem-rightaws
     SUBDIR += rubygem-rightflexiscale
     SUBDIR += rubygem-rightgogrid

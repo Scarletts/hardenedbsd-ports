@@ -536,8 +536,10 @@
     SUBDIR += pgadmin3
     SUBDIR += pgagent
     SUBDIR += pgbadger
+    SUBDIR += pgbarman
     SUBDIR += pgbouncer
     SUBDIR += pgdbf
+    SUBDIR += pgespresso
     SUBDIR += pgfouine
     SUBDIR += pglesslog
     SUBDIR += pgloader
@@ -684,7 +686,6 @@
     SUBDIR += postgresql93-plperl
     SUBDIR += postgresql93-plpython
     SUBDIR += postgresql93-pltcl
-    SUBDIR += postgresql93-plv8js
     SUBDIR += postgresql93-server
     SUBDIR += postgresql94-client
     SUBDIR += postgresql94-contrib
@@ -832,6 +833,7 @@
     SUBDIR += rubygem-activerecord-mysql-adapter
     SUBDIR += rubygem-amalgalite
     SUBDIR += rubygem-arel
+    SUBDIR += rubygem-arel-helpers
     SUBDIR += rubygem-arel3
     SUBDIR += rubygem-awesome_nested_set
     SUBDIR += rubygem-bdb1

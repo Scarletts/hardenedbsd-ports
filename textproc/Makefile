@@ -365,7 +365,6 @@
     SUBDIR += libmrss-php
     SUBDIR += libmwaw03
     SUBDIR += libnxml
-    SUBDIR += libodfgen
     SUBDIR += libodfgen01
     SUBDIR += libparsifal
     SUBDIR += librevenge
@@ -416,6 +415,7 @@
     SUBDIR += luaexpat
     SUBDIR += lucene
     SUBDIR += lucene4
+    SUBDIR += luceneplusplus
     SUBDIR += lv-aspell
     SUBDIR += m17n-im-config
     SUBDIR += makefaq
@@ -1501,6 +1501,7 @@
     SUBDIR += txt2html
     SUBDIR += txt2man
     SUBDIR += txt2tags
+    SUBDIR += uchardet
     SUBDIR += uim
     SUBDIR += uim-el
     SUBDIR += uim-gtk
