@@ -39,6 +39,7 @@
     SUBDIR += ace+tao-doc
     SUBDIR += acme
     SUBDIR += activitymail
+    SUBDIR += actor-framework
     SUBDIR += adabooch
     SUBDIR += adacurses
     SUBDIR += adime
@@ -547,6 +548,7 @@
     SUBDIR += git-subversion
     SUBDIR += gitg
     SUBDIR += gitg0
+    SUBDIR += gitinspector
     SUBDIR += gitolite
     SUBDIR += gitolite2
     SUBDIR += gitphp
@@ -574,6 +576,7 @@
     SUBDIR += gnome-vfs-monikers
     SUBDIR += gnome-vfs-reference
     SUBDIR += gnome-vfsmm
+    SUBDIR += gnu-efi
     SUBDIR += gnucflow
     SUBDIR += gnulib
     SUBDIR += gnulibiberty
@@ -583,6 +586,7 @@
     SUBDIR += go-hashicorp-logutils
     SUBDIR += go-json-rest
     SUBDIR += go-pretty
+    SUBDIR += go-raw
     SUBDIR += go-runewidth
     SUBDIR += go-sql-driver
     SUBDIR += go-termbox
@@ -1525,6 +1529,7 @@
     SUBDIR += p5-Badger
     SUBDIR += p5-Benchmark-Timer
     SUBDIR += p5-Best
+    SUBDIR += p5-Brannigan
     SUBDIR += p5-Bread-Board
     SUBDIR += p5-Bread-Board-Declare
     SUBDIR += p5-Bundle-Perl6
@@ -2103,6 +2108,7 @@
     SUBDIR += p5-File-Sync
     SUBDIR += p5-File-Tail
     SUBDIR += p5-File-Tail-Dir
+    SUBDIR += p5-File-Tail-Multi
     SUBDIR += p5-File-Tail-Scribe
     SUBDIR += p5-File-Temp
     SUBDIR += p5-File-Tempdir
@@ -2231,6 +2237,7 @@
     SUBDIR += p5-IPC-Mmap
     SUBDIR += p5-IPC-Mmap-Share
     SUBDIR += p5-IPC-Open3-Simple
+    SUBDIR += p5-IPC-PerlSSH
     SUBDIR += p5-IPC-PubSub
     SUBDIR += p5-IPC-Run
     SUBDIR += p5-IPC-Run-SafeHandles
@@ -2338,6 +2345,7 @@
     SUBDIR += p5-Log-Message-Simple
     SUBDIR += p5-Log-Minimal
     SUBDIR += p5-Log-Report
+    SUBDIR += p5-Log-Report-Optional
     SUBDIR += p5-Log-Simple
     SUBDIR += p5-Log-Trace
     SUBDIR += p5-Log-TraceMessages
@@ -3434,8 +3442,10 @@
     SUBDIR += pecl-operator
     SUBDIR += pecl-params
     SUBDIR += pecl-parsekit
+    SUBDIR += pecl-propro
     SUBDIR += pecl-pthreads
     SUBDIR += pecl-qb
+    SUBDIR += pecl-raphf
     SUBDIR += pecl-runkit
     SUBDIR += pecl-scream
     SUBDIR += pecl-shape
@@ -4313,6 +4323,7 @@
     SUBDIR += rubygem-bioruby
     SUBDIR += rubygem-blankslate
     SUBDIR += rubygem-blockenspiel
+    SUBDIR += rubygem-bones
     SUBDIR += rubygem-bson
     SUBDIR += rubygem-bson1
     SUBDIR += rubygem-buftok
@@ -4459,7 +4470,7 @@
     SUBDIR += rubygem-librarian
     SUBDIR += rubygem-libyajl2
     SUBDIR += rubygem-listen
-    SUBDIR += rubygem-little_plugger
+    SUBDIR += rubygem-little-plugger
     SUBDIR += rubygem-locale
     SUBDIR += rubygem-lockfile
     SUBDIR += rubygem-logging
@@ -4505,6 +4516,7 @@
     SUBDIR += rubygem-nice-ffi
     SUBDIR += rubygem-nio4r
     SUBDIR += rubygem-nori
+    SUBDIR += rubygem-notiffany
     SUBDIR += rubygem-notify
     SUBDIR += rubygem-nprogress-rails
     SUBDIR += rubygem-oj
@@ -4551,6 +4563,7 @@
     SUBDIR += rubygem-ref
     SUBDIR += rubygem-request_store
     SUBDIR += rubygem-require_all
+    SUBDIR += rubygem-retryable
     SUBDIR += rubygem-rgl
     SUBDIR += rubygem-rr
     SUBDIR += rubygem-rrd-ffi
@@ -4803,6 +4816,7 @@
     SUBDIR += tradcpp
     SUBDIR += trio
     SUBDIR += truc
+    SUBDIR += ua_parser-core
     SUBDIR += uatraits
     SUBDIR += uboot-mkimage
     SUBDIR += uclmmbase

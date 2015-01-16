@@ -140,7 +140,10 @@
     SUBDIR += el-aspell
     SUBDIR += el-hyphen
     SUBDIR += elasticsearch
+    SUBDIR += elasticsearch-plugin-head
+    SUBDIR += elasticsearch-plugin-hq
     SUBDIR += elasticsearch-plugin-marvel
+    SUBDIR += elasticsearch-river-rabbitmq
     SUBDIR += emacs-wiki
     SUBDIR += en-aspell
     SUBDIR += en-hunspell
@@ -731,6 +734,7 @@
     SUBDIR += p5-String-Fraction
     SUBDIR += p5-String-HexConvert
     SUBDIR += p5-String-Koremutake
+    SUBDIR += p5-String-Print
     SUBDIR += p5-String-RewritePrefix
     SUBDIR += p5-String-Scanf
     SUBDIR += p5-String-ShellQuote
@@ -792,6 +796,7 @@
     SUBDIR += p5-Text-DoubleMetaphone
     SUBDIR += p5-Text-Emoticon
     SUBDIR += p5-Text-Emoticon-GoogleTalk
+    SUBDIR += p5-Text-Emoticon-MSN
     SUBDIR += p5-Text-EtText
     SUBDIR += p5-Text-Extract-Word
     SUBDIR += p5-Text-ExtractWords
@@ -1194,6 +1199,7 @@
     SUBDIR += py-pss
     SUBDIR += py-pyctpp2
     SUBDIR += py-pyelasticsearch
+    SUBDIR += py-pyes
     SUBDIR += py-pygments
     SUBDIR += py-pygtail
     SUBDIR += py-pyscss

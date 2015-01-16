@@ -832,6 +832,7 @@
     SUBDIR += rubygem-ohai
     SUBDIR += rubygem-parallel
     SUBDIR += rubygem-rubyipmi
+    SUBDIR += rubygem-shellany
     SUBDIR += rubygem-smart_proxy_salt
     SUBDIR += rubygem-sys-admin
     SUBDIR += rubygem-sys-cpu
@@ -853,6 +854,7 @@
     SUBDIR += sas2ircu
     SUBDIR += savelogs
     SUBDIR += sb16config
+    SUBDIR += sbsigntool
     SUBDIR += scalpel
     SUBDIR += scan_ffs
     SUBDIR += scanbuttond
@@ -874,6 +876,7 @@
     SUBDIR += setquota
     SUBDIR += sformat
     SUBDIR += sg3_utils
+    SUBDIR += shim
     SUBDIR += shlock
     SUBDIR += shmcat
     SUBDIR += sievelog
