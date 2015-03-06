@@ -839,6 +839,7 @@
     SUBDIR += pecl-radius
     SUBDIR += pecl-yaz
     SUBDIR += pecl-yp
+    SUBDIR += pecl-zmq
     SUBDIR += pen
     SUBDIR += pfinger
     SUBDIR += phamm
@@ -1184,6 +1185,7 @@
     SUBDIR += tcpick
     SUBDIR += tcpillust
     SUBDIR += tcping
+    SUBDIR += tcpkali
     SUBDIR += tcpmssd
     SUBDIR += tcpproxy
     SUBDIR += tcpreen
