@@ -1,5 +1,6 @@
     COMMENT = HardenedBSD projects
 
+SUBDIR += secadm
 SUBDIR += testpie
 SUBDIR += testmprotect
 
