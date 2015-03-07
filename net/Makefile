@@ -516,6 +516,7 @@
     SUBDIR += p5-JavaScript-RPC
     SUBDIR += p5-MaxMind-DB-Common
     SUBDIR += p5-MaxMind-DB-Reader
+    SUBDIR += p5-MaxMind-DB-Writer
     SUBDIR += p5-Net
     SUBDIR += p5-Net-AMQP
     SUBDIR += p5-Net-APNS
@@ -1068,7 +1069,6 @@
     SUBDIR += rubygem-omniauth-openid
     SUBDIR += rubygem-omniauth-twitter
     SUBDIR += rubygem-open-uri-cached
-    SUBDIR += rubygem-openid
     SUBDIR += rubygem-opennebula
     SUBDIR += rubygem-packetfu
     SUBDIR += rubygem-pcaprub
@@ -1080,6 +1080,7 @@
     SUBDIR += rubygem-righthttpconnection
     SUBDIR += rubygem-rightslicehost
     SUBDIR += rubygem-ruby-growl
+    SUBDIR += rubygem-ruby-openid
     SUBDIR += rubygem-rubyntlm
     SUBDIR += rubygem-rubyntlm01
     SUBDIR += rubygem-rubytter
