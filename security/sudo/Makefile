@@ -14,7 +14,7 @@ LICENSE_NAME=	Sudo license
 LICENSE_FILE=	${WRKSRC}/doc/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-USES=		libtool
+USES=		libtool pie
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-lgcc
