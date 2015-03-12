@@ -15,7 +15,7 @@ LIB_DEPENDS=	libglib-2.0.so:${PORTSDIR}/devel/glib20
 
 CONFLICTS=	irssi-devel-[0-9]* zh-irssi-[0-9]*
 
-USES=		gmake libtool ncurses pkgconfig tar:bzip2
+USES=		gmake libtool ncurses pkgconfig tar:bzip2 pie
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-ncurses=${NCURSESBASE}
 INSTALL_TARGET=	install-strip
