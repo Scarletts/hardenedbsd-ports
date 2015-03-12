@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	secadm
-PORTVERSION=	0.2.c26a5fd
+PORTVERSION=	0.2.c7f1b4f
 CATEGORIES=	hardenedbsd
 
 MAINTAINER=	shawn.webb@hardenedbsd.org
@@ -13,7 +13,7 @@ LIB_DEPENDS=	libucl.so:${PORTSDIR}/textproc/libucl
 USE_GITHUB=	yes
 GH_ACCOUNT=	HardenedBSD
 GH_PROJECT=	secadm
-GH_COMMIT=	c26a5fd
+GH_COMMIT=	c7f1b4f
 GH_TAGNAME=	${GH_COMMIT}
 
 LIBDIR?=	${PREFIX}/lib
