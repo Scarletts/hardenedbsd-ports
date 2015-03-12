@@ -36,7 +36,7 @@ CONFIGURE_ENV+=	LOCALBASE=${LOCALBASE}
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_PERL5=	build
-USES=		libtool pathfix perl5 tar:lzma
+USES=		libtool pathfix perl5 tar:lzma pie
 
 .if !defined(BUILDING_HIPHOP)
 USE_LDCONFIG=	yes
