@@ -12,7 +12,7 @@ COMMENT=	Terminal Multiplexer
 
 LICENSE=	BSD2CLAUSE
 
-USES=		pkgconfig shebangfix ncurses
+USES=		pkgconfig shebangfix ncurses pie
 SHEBANG_FILES=	examples/tmux_backup.sh
 
 GNU_CONFIGURE=	yes
