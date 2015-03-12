@@ -8,6 +8,7 @@ CONFLICTS_INSTALL=	subversion-1.[^8].[0-9]* \
 			subversion1[^8]-1.[^8].[0-9]*
 
 USE_RC_SUBR=	svnserve
+USES+=	pie
 
 PORTDOCS=	BUGS CHANGES COMMITTERS INSTALL README
 
