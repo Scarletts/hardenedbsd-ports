@@ -1618,9 +1618,6 @@ INSTALL_TARGET:=	${INSTALL_TARGET:S/^install-strip$/install/g}
 .include "${PORTSDIR}/Mk/bsd.ssp.mk"
 .endif
 
-# XXX PIE support to be added here
-MAKE_ENV+=	NO_PIE=yes
-
 .if defined(NOPORTDOCS)
 PLIST_SUB+=		PORTDOCS="@comment "
 .else
