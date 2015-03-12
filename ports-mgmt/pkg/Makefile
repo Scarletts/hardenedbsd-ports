@@ -18,7 +18,7 @@ LICENSE=	BSD2CLAUSE
 # With no dependency at all
 NO_CCACHE=	yes
 USE_LDCONFIG=	yes
-USES=		libtool tar:xz
+USES=		libtool tar:xz pie
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-maintainer-mode
 INSTALL_TARGET=	install-strip
