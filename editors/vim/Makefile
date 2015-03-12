@@ -38,7 +38,7 @@ MAKE_ARGS+=	VIMRUNTIMEDIR=${PREFIX}/share/vim/${VIM_VER} VIMRCLOC=${ETCDIR}
 PATCH=		${LOCALBASE}/bin/gpatch
 PATCH_DIST_ARGS=--batch --directory ${WRKSRC} --forward --quiet --remove-empty-files ${PATCH_DIST_STRIP}
 REINPLACE_ARGS=	-i ''
-USES=		cpe iconv pkgconfig shebangfix tar:bzip2
+USES=		cpe iconv pkgconfig shebangfix tar:bzip2 pie
 WANT_GNOME=	yes
 
 PATCHLEVEL=	648
