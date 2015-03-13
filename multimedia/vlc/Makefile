@@ -24,7 +24,7 @@ BUILD_DEPENDS=	ffmpeg>=2.0:${PORTSDIR}/multimedia/ffmpeg
 RUN_DEPENDS=	ffmpeg>=2.0:${PORTSDIR}/multimedia/ffmpeg
 
 USES=		compiler:c11 desktop-file-utils gmake iconv libtool pathfix \
-		pkgconfig tar:xz
+		pkgconfig tar:xz pie
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
