@@ -27,7 +27,7 @@ RUN_DEPENDS=	p5-IPC-Run>=0:${PORTSDIR}/devel/p5-IPC-Run \
 		p5-AnyEvent-I3>=0:${PORTSDIR}/devel/p5-AnyEvent-I3
 
 USE_XORG=	xcb
-USES=		pkgconfig iconv gmake perl5 tar:bzip2
+USES=		pkgconfig iconv gmake perl5 tar:bzip2 pie
 USE_PERL5=	run
 LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}
 MAKE_JOBS_UNSAFE=	yes
