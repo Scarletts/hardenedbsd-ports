@@ -24,7 +24,7 @@ CONFLICTS_INSTALL=	kdepim44-4.*
 USE_GNOME=	libxml2 libxslt:build
 USE_KDE4=	kdelibs kdeprefix pimlibs kactivities \
 		akonadi automoc4 soprano nepomuk-widgets baloo
-USES=		cmake:outsource gmake iconv tar:xz
+USES=		cmake:outsource gmake iconv tar:xz pie
 USE_OPENLDAP=	yes
 USE_QT4=	corelib dbus declarative designer_build gui network opengl \
 		qt3support script sql webkit xml \
