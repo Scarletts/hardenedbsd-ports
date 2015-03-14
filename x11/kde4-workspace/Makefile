@@ -45,7 +45,7 @@ USE_GNOME=	glib20
 USE_KDE4=	kactivities kdelibs kdeprefix nepomuk-core oxygen \
 		pimlibs akonadi automoc4 ontologies qimageblitz soprano strigi
 USES=		cmake:outsource compiler:c++11-lib gettext gmake iconv \
-		pkgconfig tar:xz
+		pkgconfig tar:xz pie
 USE_QT4=	corelib dbus declarative designer_build gui network \
 		opengl phonon qtestlib script sql webkit xml \
 		moc_build qmake_build rcc_build uic_build
