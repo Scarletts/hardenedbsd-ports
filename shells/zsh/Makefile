@@ -21,7 +21,7 @@ MAKE_JOBS_UNSAFE=	yes
 
 ZSH_VER=	${PORTVERSION}
 
-USES=		iconv ncurses tar:bzip2
+USES=		iconv ncurses tar:bzip2 pie
 GNU_CONFIGURE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include -DBOOL_DEFINED
