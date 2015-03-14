@@ -26,7 +26,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev2.h:${PORTSDIR}/multimedia/v4l
 		${LOCALBASE}/lib/mediastreamer/plugins/libmsilbc.so:${PORTSDIR}/audio/msilbc
 RUN_DEPENDS=	${LOCALBASE}/lib/mediastreamer/plugins/libmsilbc.so:${PORTSDIR}/audio/msilbc
 
-USES=		cmake:outsource pkgconfig shebangfix tar:xz webplugin:native
+USES=		cmake:outsource pkgconfig shebangfix tar:xz webplugin:native pie
 USE_GNOME=	libxml2 libxslt
 USE_KDE4=	kdelibs kdeprefix pimlibs \
 		automoc4 qimageblitz
