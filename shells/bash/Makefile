@@ -32,7 +32,7 @@ COLONBREAKSWORDS_DESC=	Colons break words
 HELP_DESC=		Enable builtin help
 IMPORTFUNCTIONS_DESC=	Import function from env without --import-functions
 
-USES=			bison cpe makeinfo
+USES=			bison cpe makeinfo pie
 OPTIONS_SUB=		yes
 CPE_VENDOR=		gnu
 
