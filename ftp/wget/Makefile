@@ -13,7 +13,7 @@ COMMENT=	Retrieve files from the Net via HTTP(S) and FTP
 LICENSE=	GPLv3 # or later
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		charsetfix gmake makeinfo perl5 tar:xz
+USES=		charsetfix gmake makeinfo perl5 tar:xz pie
 USE_PERL5=	build
 GNU_CONFIGURE=	yes
 OPTIONS_SUB=	yes
