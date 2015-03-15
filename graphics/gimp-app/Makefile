@@ -27,7 +27,7 @@ RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-co
 
 GNU_CONFIGURE=	yes
 USES+=		desktop-file-utils gettext gmake libtool pathfix \
-		pkgconfig tar:bzip2
+		pkgconfig tar:bzip2 pie
 USE_XORG=	xpm xmu xext
 USE_GNOME+=	intlhack gtk20
 USE_LDCONFIG=	yes
