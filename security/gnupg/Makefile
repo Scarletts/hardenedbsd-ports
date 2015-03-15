@@ -24,7 +24,7 @@ BUILD_DEPENDS=	libgpg-error>=1.16:${PORTSDIR}/security/libgpg-error
 RUN_DEPENDS=	pinentry>0:${PORTSDIR}/security/pinentry
 
 GNU_CONFIGURE=	YES
-USES=		gmake iconv pkgconfig tar:bzip2
+USES=		gmake iconv pkgconfig tar:bzip2 pie
 USE_LDCONFIG=	YES
 CONFIGURE_ARGS+=	--disable-ntbtls --enable-symcryptrun
 CONFLICTS=	gnupg-2.0.* dirmngr-*
