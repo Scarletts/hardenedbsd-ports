@@ -12,7 +12,7 @@ COMMENT=	KDE frontend for your remote controls
 RUN_DEPENDS=	lircd:${PORTSDIR}/comms/lirc
 
 USE_KDE4=	kdeprefix automoc4 kdelibs
-USES=		cmake:outsource tar:xz
+USES=		cmake:outsource tar:xz pie
 USE_QT4=	corelib script xmlpatterns \
 		qmake_build moc_build rcc_build uic_build
 USE_LDCONFIG=	yes
