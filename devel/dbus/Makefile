@@ -15,7 +15,7 @@ LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
 PORTSCOUT=	limitw:1,even
 
 USE_GNOME=	# empty but we need it for USE_GNOME_SUBR
-USES=		cpe gmake libtool pathfix
+USES=		cpe gmake libtool pathfix pie
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=--localstatedir=/var \
