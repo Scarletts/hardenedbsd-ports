@@ -35,7 +35,7 @@ OPTIONS_EXCLUDE_sparc64=	HAL
 
 .include <bsd.port.options.mk>
 
-USES=		gmake libtool perl5 tar:bzip2
+USES=		gmake libtool perl5 tar:bzip2 pie
 USE_PERL5=	build
 USE_GL=		gl
 USE_XORG?=	xf86driproto glproto xdmcp x11 xkbfile xxf86misc xxf86vm xaw7 \
