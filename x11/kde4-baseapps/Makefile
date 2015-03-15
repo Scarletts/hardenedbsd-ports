@@ -14,7 +14,7 @@ LIB_DEPENDS=	libtidy.so:${PORTSDIR}/www/tidy-lib
 USE_GNOME=	glib20
 USE_KDE4=	kdelibs kdeprefix baloo baloo-widgets libkonq \
 		automoc4 kactivities
-USES=		cmake:outsource gettext tar:xz
+USES=		cmake:outsource gettext tar:xz pie
 USE_QT4=	corelib dbus gui script xml \
 		moc_build qmake_build rcc_build uic_build
 USE_XORG=	x11 xt
