@@ -2,7 +2,7 @@
 
 PORTNAME=	cyrus-imapd
 PORTVERSION=	2.5.0
-#PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.cyrusimap.org/cyrus-imapd/ \
 		http://cyrusimap.org/releases/
@@ -39,10 +39,10 @@ CONFIGURE_ENV+=	LIBS="-L${LOCALBASE}/lib"
 CPPFLAGS+=	-I${LOCALBASE}/include
 MAKE_JOBS_UNSAFE=	yes
 
-OPTIONS_DEFINE=		AUTOCREATE BDB CLAMAV HTTP IDLED LDAP MURDER MYSQL \
+OPTIONS_DEFINE=		AUTOCREATE BDB HTTP IDLED LDAP MURDER MYSQL \
 			NETSCAPEHACK NNTP PGSQL REPLICATION SNMP SQLITE DOCS \
 			EXAMPLES
-#OPTIONS_DEFINE+=	DRAC
+#OPTIONS_DEFINE+=	CLAMAV DRAC
 OPTIONS_DEFAULT=	BDB IDLED
 OPTIONS_SUB=		yes
 AUTOCREATE_DESC=	Enable autocreate support
@@ -51,17 +51,18 @@ BDB_USE=		BDB=yes
 BDB_CONFIGURE_ON=	--with-bdb-incdir=${BDB_INCLUDE_DIR} \
 			--with-bdb-libdir=${LOCALBASE}/lib
 CLAMAV_DESC=		Use ClamAV
-CLAMAV_CONFIGURE_ON=	--with-clamav=${LOCALBASE}
-CLAMAV_CONFIGURE_OFF=	--with-clamav=no
+CLAMAV_CONFIGURE_WITH=	clamav
 CLAMAV_LIB_DEPENDS=	libclamav.so:${PORTSDIR}/security/clamav
 DRAC_DESC=		Enable DRAC support
 DRAC_CONFIGURE_ON=	--with-drac=${LOCALBASE}
 DRAC_BUILD_DEPENDS=	${LOCALBASE}/lib/libdrac.a:${PORTSDIR}/mail/drac
-HTTP_DESC=		Enable HTTP
+# XXX: Does not install vzic for now.
+# Only vzic depends upon glib.
+HTTP_DESC=		Enable HTTP (beta quality)
 HTTP_CONFIGURE_ENABLE=	http
 HTTP_LIB_DEPENDS=	libjansson.so:${PORTSDIR}/devel/jansson \
 			libical.so:${PORTSDIR}/devel/libical
-HTTP_USE=		GNOME=libxml2 SQLITE=yes
+HTTP_USE=		GNOME=libxml2,glib20 SQLITE=yes
 IDLED_DESC=		Enable IMAP idled support
 IDLED_CONFIGURE_ENABLE=	idled
 LDAP_DESC=		Enable LDAP support (experimental)
@@ -100,10 +101,7 @@ BDB_LIB_NAME=	no
 .if ${PORT_OPTIONS:MCLAMAV}
 IGNORE=		CLAMAV is not available yet
 .endif
-
-.if ${PORT_OPTIONS:MHTTP}
-IGNORE=		HTTP is not available yet
-.endif
+PLIST_SUB+=	CLAMAV="@comment "
 
 .if ${PORT_OPTIONS:MDRAC}
 IGNORE=		DRAC is not available
@@ -130,15 +128,16 @@ MAN_MAN1=	cyradm.1 imtest.1 installsieve.1 lmtptest.1 mupdatetest.1 \
 		nntptest.1 pop3test.1 sieveshell.1 sivtest.1 smtptest.1
 MAN_MAN3=	imclient.3
 MAN_MAN5=	cyrus.conf.5 imapd.conf.5 krb.equiv.5
-CYRUS_MAN3=	Cyrus::IMAP.3 Cyrus::IMAP::Admin.3 Cyrus::IMAP::IMSP.3 \
+CYRUS_MAN3=	Cyrus::Annotator::Daemon.3 Cyrus::Annotator::Message.3 \
+		Cyrus::IMAP.3 Cyrus::IMAP::Admin.3 Cyrus::IMAP::IMSP.3 \
 		Cyrus::IMAP::Shell.3 Cyrus::SIEVE::managesieve.3
 CYRUS_MAN8=	arbitron.8 chk_cyrus.8 ctl_cyrusdb.8 ctl_deliver.8 \
-		ctl_mboxlist.8 cvt_cyrusdb.8 cyr_dbtool.8 cyr_df.8 \
-		cyr_expire.8 cyr_synclog.8 deliver.8 fud.8 idled.8 imapd.8 \
-		ipurge.8 lmtpd.8 master.8 mbexamine.8 mbpath.8 notifyd.8 \
-		pop3d.8 quota.8 reconstruct.8 rmnews.8 smmapd.8 squatter.8 \
-		sync_client.8 sync_reset.8 sync_server.8 timsieved.8 \
-		tls_prune.8 unexpunge.8
+		ctl_mboxlist.8 cvt_cyrusdb.8 cyr_dbtool.8 cyr_deny.8 cyr_df.8 \
+		cyr_expire.8 cyr_info.8 cyr_synclog.8 deliver.8 fud.8 idled.8 \
+		imapd.8 ipurge.8 lmtpd.8 master.8 mbexamine.8 mbpath.8 \
+		notifyd.8 pop3d.8 quota.8 reconstruct.8 rmnews.8 smmapd.8 \
+		squatter.8 sync_client.8 sync_reset.8 sync_server.8 \
+		timsieved.8 tls_prune.8 unexpunge.8
 .if ${PORT_OPTIONS:MHTTP}
 CYRUS_MAN8+=	ctl_zoneinfo.8 httpd.8
 .endif
@@ -183,7 +182,9 @@ post-patch:
 	@${REINPLACE_CMD} -e "s|/etc/|${PREFIX}/etc/|g" \
 			  -e "s|/usr/sieve|/var/imap/sieve|g" \
 		${WRKSRC}/tools/masssievec
-	@${REINPLACE_CMD} -e 's|$$(mandir)/\(man[8]\)|${PREFIX}/cyrus/man/\1|g' \
+	${REINPLACE_CMD} \
+		-e 's|$$(libdir)/\(pkgconfig\)|${PREFIX}/libdata/\1|g' \
+		-e 's|$$(mandir)/\(man[8]\)|${PREFIX}/cyrus/man/\1|g' \
 		${WRKSRC}/Makefile.in
 	@${SED} -e "s|%%PREFIX%%|${PREFIX}|g;" \
 		${FILESDIR}/cyrus-imapd-man.conf \
