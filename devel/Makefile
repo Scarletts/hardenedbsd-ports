@@ -1797,6 +1797,7 @@
     SUBDIR += p5-Data-JavaScript-Anon
     SUBDIR += p5-Data-Lazy
     SUBDIR += p5-Data-Localize
+    SUBDIR += p5-Data-Lock
     SUBDIR += p5-Data-MessagePack
     SUBDIR += p5-Data-MessagePack-Stream
     SUBDIR += p5-Data-Miscellany
@@ -2399,6 +2400,7 @@
     SUBDIR += p5-Metabase-Fact
     SUBDIR += p5-Method-Alias
     SUBDIR += p5-Method-Signatures-Simple
+    SUBDIR += p5-Minion
     SUBDIR += p5-Mixin-Linewise
     SUBDIR += p5-Mknod
     SUBDIR += p5-Mo
