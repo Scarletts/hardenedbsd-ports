@@ -14,7 +14,7 @@ COMMENT=	Terminal emulator for the X Window System
 
 CONFLICTS=	x11iraf-[0-9]*
 
-USES=		tar:tgz
+USES=		tar:tgz pie
 USE_XORG=	xft
 GNU_CONFIGURE=	yes
 
