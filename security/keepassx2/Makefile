@@ -19,7 +19,7 @@ CONFLICTS_INSTALL=	keepassx-0.*
 DATADIR=	${PREFIX}/share/${PORTNAME:tl}
 WRKSRC=		${WRKDIR}/${DISTNAME:tl}
 
-USES=		cmake
+USES=		cmake pie
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
 USE_QT4=	corelib gui xml qtestlib dbus uic_build moc_build \
