@@ -43,7 +43,7 @@ USE_XCB=		x11extras wm
 USE_LDCONFIG=	yes
 USE_QT5=	core gui network svg linguist multimedia imageformats \
 		buildtools x11extras
-USES=		qmake tar:bzip2
+USES=		qmake tar:bzip2 pie
 
 WRKSRC=		${WRKDIR}/lumina
 
