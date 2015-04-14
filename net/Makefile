@@ -392,6 +392,7 @@
     SUBDIR += mtr
     SUBDIR += mtr-nox11
     SUBDIR += nakenchat
+    SUBDIR += nanomsg
     SUBDIR += nast
     SUBDIR += nbd-server
     SUBDIR += nc
@@ -759,6 +760,8 @@
     SUBDIR += p5-URI-Template
     SUBDIR += p5-URI-Template-Restrict
     SUBDIR += p5-URI-ws
+    SUBDIR += p5-VM-EC2
+    SUBDIR += p5-VM-EC2-Security-CredentialCache
     SUBDIR += p5-Validate-Net
     SUBDIR += p5-WebService-Dropbox
     SUBDIR += p5-WebService-Prowl
@@ -860,8 +863,8 @@
     SUBDIR += php55-soap
     SUBDIR += php55-sockets
     SUBDIR += php55-xmlrpc
-    SUBDIR += php56-ldap  
-    SUBDIR += php56-soap  
+    SUBDIR += php56-ldap
+    SUBDIR += php56-soap
     SUBDIR += php56-sockets
     SUBDIR += php56-xmlrpc
     SUBDIR += phpldapadmin

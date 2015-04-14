@@ -140,13 +140,13 @@ MASTER_SITES+=	https://github.com/compholio/wine-compholio-daily/archive/:cho
 COMP_DIST=	v${DISTVERSION}.tar.gz
 DISTFILES+=	${COMP_DIST}:cho
 
-BUILD_DEPENDS+=	bash:${PORTSDIR}/shells/bash \
+EXTRACT_DEPENDS=bash:${PORTSDIR}/shells/bash \
 		git:${PORTSDIR}/devel/git
 
 CONFIGURE_ARGS+=--without-pulse
 USE_AUTOTOOLS=	autoconf
 
-pre-configure:
+post-extract:
 	cd ${WRKSRC} && ${TAR} xf ${DISTDIR}/${COMP_DIST} --strip-components 1
 	cd ${WRKSRC} && bash ./patches/patchinstall.sh --backend=patch DESTDIR=${WRKSRC} --all
 .endif
