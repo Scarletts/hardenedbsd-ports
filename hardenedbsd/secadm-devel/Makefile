@@ -2,7 +2,7 @@
 
 PORTNAME=	secadm-devel
 PORTVERSION=	0.2
-PORTREVISION?=  1
+PORTREVISION?=  2
 CATEGORIES=	hardenedbsd
 
 MAINTAINER=	shawn.webb@hardenedbsd.org
@@ -16,7 +16,7 @@ CONFLICTS_INSTALL=	secadm-[0-9a-f]*
 USE_GITHUB=	yes
 GH_ACCOUNT=	HardenedBSD
 GH_PROJECT=	secadm
-GH_COMMIT=	accf73b
+GH_COMMIT=	15201fe
 GH_TAGNAME=	${GH_COMMIT}
 
 LIBDIR?=	${PREFIX}/lib
