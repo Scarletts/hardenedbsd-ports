@@ -1325,7 +1325,11 @@
     SUBDIR += mingw32-pthreads
     SUBDIR += mingw32-zlib
     SUBDIR += mips-binutils
+    SUBDIR += mips-gcc
+    SUBDIR += mips-xtoolchain-gcc
     SUBDIR += mips64-binutils
+    SUBDIR += mips64-gcc
+    SUBDIR += mips64-xtoolchain-gcc
     SUBDIR += mk
     SUBDIR += mk-configure
     SUBDIR += mkcmd
@@ -1988,7 +1992,6 @@
     SUBDIR += p5-Devel-PatchPerl
     SUBDIR += p5-Devel-Pointer
     SUBDIR += p5-Devel-Profile
-    SUBDIR += p5-Devel-Profiler
     SUBDIR += p5-Devel-REPL
     SUBDIR += p5-Devel-Refactor
     SUBDIR += p5-Devel-Refcount
@@ -4522,7 +4525,6 @@
     SUBDIR += rubygem-ice_nine
     SUBDIR += rubygem-igraph
     SUBDIR += rubygem-inflecto
-    SUBDIR += rubygem-inline
     SUBDIR += rubygem-interact
     SUBDIR += rubygem-io-like
     SUBDIR += rubygem-iobuffer
@@ -4656,6 +4658,7 @@
     SUBDIR += rubygem-ruby_parser
     SUBDIR += rubygem-rubygame
     SUBDIR += rubygem-rubygems-tasks
+    SUBDIR += rubygem-rubyinline
     SUBDIR += rubygem-rubyinlineaccel
     SUBDIR += rubygem-rubytree
     SUBDIR += rubygem-rufus-scheduler
@@ -4749,7 +4752,6 @@
     SUBDIR += sabre
     SUBDIR += safe-iop
     SUBDIR += sbt
-    SUBDIR += scala-ide
     SUBDIR += scalatest
     SUBDIR += scandoc
     SUBDIR += scons
@@ -4818,7 +4820,6 @@
     SUBDIR += stringencoders
     SUBDIR += stxxl
     SUBDIR += styx
-    SUBDIR += subclipse
     SUBDIR += subcommander2
     SUBDIR += subversion
     SUBDIR += subversion-book
