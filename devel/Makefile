@@ -3232,7 +3232,6 @@
     SUBDIR += p5-autodie
     SUBDIR += p5-autovivification
     SUBDIR += p5-bareword-filehandles
-    SUBDIR += p5-base
     SUBDIR += p5-boolean
     SUBDIR += p5-capitalization
     SUBDIR += p5-carton
@@ -3946,6 +3945,7 @@
     SUBDIR += py-parsedatetime
     SUBDIR += py-parsing
     SUBDIR += py-path.py
+    SUBDIR += py-pathlib
     SUBDIR += py-pathtools
     SUBDIR += py-paver
     SUBDIR += py-pbr
