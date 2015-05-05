@@ -878,6 +878,7 @@
     SUBDIR += qt5-opengl
     SUBDIR += qt5-pixeltool
     SUBDIR += qt5-svg
+    SUBDIR += qtawesome
     SUBDIR += qtgtl
     SUBDIR += quat
     SUBDIR += quat-gui
@@ -916,7 +917,6 @@
     SUBDIR += rubygem-geokit
     SUBDIR += rubygem-gitlab_emoji
     SUBDIR += rubygem-goocanvas
-    SUBDIR += rubygem-graphviz
     SUBDIR += rubygem-gruff
     SUBDIR += rubygem-image_science
     SUBDIR += rubygem-imagesize
@@ -927,6 +927,7 @@
     SUBDIR += rubygem-railroad
     SUBDIR += rubygem-rmagick
     SUBDIR += rubygem-rsvg2
+    SUBDIR += rubygem-ruby-graphviz
     SUBDIR += rubygem-scruffy
     SUBDIR += rubyphoto
     SUBDIR += s10sh
