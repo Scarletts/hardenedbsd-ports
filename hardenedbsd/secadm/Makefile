@@ -2,7 +2,7 @@
 
 PORTNAME=	secadm
 PORTVERSION=	0.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	hardenedbsd
 
 MAINTAINER=	shawn.webb@hardenedbsd.org
@@ -19,6 +19,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	HardenedBSD
 GH_PROJECT=	secadm
 GH_COMMIT=	3871d88
+GH_COMMIT=	b983c4f
 GH_TAGNAME=	${GH_COMMIT}
 
 .include <bsd.port.mk>
