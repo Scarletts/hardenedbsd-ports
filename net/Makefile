@@ -64,6 +64,7 @@
     SUBDIR += c3270
     SUBDIR += cagibi
     SUBDIR += ccxstream
+    SUBDIR += cf
     SUBDIR += chrony
     SUBDIR += citrix_ica
     SUBDIR += clamz
@@ -868,6 +869,7 @@
     SUBDIR += pimdd
     SUBDIR += pipsecd
     SUBDIR += pjsip
+    SUBDIR += pjsip-extsrtp
     SUBDIR += pktanon
     SUBDIR += pload
     SUBDIR += plugdaemon
@@ -1044,6 +1046,7 @@
     SUBDIR += rubygem-fog-atmos
     SUBDIR += rubygem-fog-aws
     SUBDIR += rubygem-fog-ecloud
+    SUBDIR += rubygem-fog-google
     SUBDIR += rubygem-fog-local
     SUBDIR += rubygem-fog-powerdns
     SUBDIR += rubygem-fog-profitbricks

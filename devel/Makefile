@@ -239,6 +239,7 @@
     SUBDIR += clanlib1
     SUBDIR += clanlib22
     SUBDIR += cld
+    SUBDIR += cld2
     SUBDIR += clewn
     SUBDIR += clig
     SUBDIR += clisp-hyperspec
@@ -272,6 +273,7 @@
     SUBDIR += cowlib
     SUBDIR += cpan-upload
     SUBDIR += cpan-upload-http
+    SUBDIR += cpp-netlib
     SUBDIR += cppcheck
     SUBDIR += cppi
     SUBDIR += cpptest
@@ -407,6 +409,8 @@
     SUBDIR += eric4
     SUBDIR += eric6
     SUBDIR += eris
+    SUBDIR += erlang-msgpack
+    SUBDIR += erlang-protobuffs
     SUBDIR += esdl
     SUBDIR += etcd
     SUBDIR += etcdctl
@@ -483,6 +487,7 @@
     SUBDIR += gauche-readline
     SUBDIR += gaul
     SUBDIR += gazpacho
+    SUBDIR += gb
     SUBDIR += gcc-arm-embedded
     SUBDIR += gccmakedep
     SUBDIR += gconf2
@@ -593,6 +598,7 @@
     SUBDIR += gnulibiberty
     SUBDIR += gnustep
     SUBDIR += gnustep-make
+    SUBDIR += go-bindata
     SUBDIR += go-flags
     SUBDIR += go-hashicorp-logutils
     SUBDIR += go-json-rest
@@ -1074,6 +1080,7 @@
     SUBDIR += libical
     SUBDIR += libical-glib
     SUBDIR += libinotify
+    SUBDIR += libiomp5-devel
     SUBDIR += libiqxmlrpc
     SUBDIR += libisofs
     SUBDIR += libixp
@@ -3600,6 +3607,7 @@
     SUBDIR += poco-devel
     SUBDIR += poco-ssl
     SUBDIR += ponscripter-sekai
+    SUBDIR += poolboy
     SUBDIR += popt
     SUBDIR += poslib
     SUBDIR += powerpc64-binutils
@@ -4354,7 +4362,6 @@
     SUBDIR += ruby-date2
     SUBDIR += ruby-dialogs
     SUBDIR += ruby-event-loop
-    SUBDIR += ruby-flexmock
     SUBDIR += ruby-gems
     SUBDIR += ruby-intl
     SUBDIR += ruby-korundum
@@ -4484,6 +4491,7 @@
     SUBDIR += rubygem-ffi-compiler
     SUBDIR += rubygem-ffi-yajl
     SUBDIR += rubygem-file-tail
+    SUBDIR += rubygem-flexmock
     SUBDIR += rubygem-fluent-logger
     SUBDIR += rubygem-fog
     SUBDIR += rubygem-fog-brightbox
@@ -4501,6 +4509,7 @@
     SUBDIR += rubygem-generator_spec
     SUBDIR += rubygem-generator_spec-rails4
     SUBDIR += rubygem-georuby
+    SUBDIR += rubygem-get_process_mem
     SUBDIR += rubygem-getopt
     SUBDIR += rubygem-gettext
     SUBDIR += rubygem-gh
@@ -4593,6 +4602,7 @@
     SUBDIR += rubygem-needle
     SUBDIR += rubygem-nenv
     SUBDIR += rubygem-nesty
+    SUBDIR += rubygem-newrelic_rpm
     SUBDIR += rubygem-nice-ffi
     SUBDIR += rubygem-nio4r
     SUBDIR += rubygem-nori
