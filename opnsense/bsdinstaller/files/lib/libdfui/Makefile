@@ -12,7 +12,7 @@ OBJS=	encode.o decode.o conn_tcp.o \
 	form.o dump.o system.o lang.o
 
 CFLAGS+=	${EXTRA_CFLAGS} ${WARNS} -fPIC -I../libaura
-LDFLAGS+=	../libaura/libaura.a
+LDFLAGS+=	../libaura/libaura.a -Wl,-soname,${SONAME}
 
 # Default target:
 
@@ -34,8 +34,8 @@ strip: ${SONAME}
 clean:
 	rm -rf *.o *.so *.so.* *.So *.a
 
-distribution: all
-	mkdir -p ${DESTDIR}/lib
-	cp ${SONAME} ${DESTDIR}/lib/
-	ln -sf ${SONAME} ${DESTDIR}/lib/${SOLINK}
-	cp ${ANAME} ${DESTDIR}/lib/
+install: all
+	mkdir -p ${DESTDIR}${PREFIX}/lib
+	cp ${SONAME} ${DESTDIR}${PREFIX}/lib
+	ln -sf ${SONAME} ${DESTDIR}${PREFIX}/lib/${SOLINK}
+	cp ${ANAME} ${DESTDIR}${PREFIX}/lib

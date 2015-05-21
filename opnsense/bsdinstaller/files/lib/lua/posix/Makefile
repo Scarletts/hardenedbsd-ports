@@ -4,22 +4,19 @@ BASE?=../../..
 include ${BASE}/Config
 
 # change these to reflect your Lua installation
-LUA= ../../../platform/lua
+LUA= ../../../lua
 LUAINC= $(LUA)/include
 LUALIB= $(LUA)/lib
 LUABIN= $(LUA)/bin
 
 COMPAT=../compat-5.1
-COMPATOBJ=$(COMPAT)/compat-5.1.o
 
 MYNAME= posix
 MYLIB= l$(MYNAME)
 
 # no need to change anything below here
-INCS= -I$(LUAINC)
-WARN= -pedantic -Wall
-CFLAGS+= $(EXTRA_CFLAGS) -fPIC $(INCS) $(WARN) -O2
-LDFLAGS+=-L$(LUALIB) -L/usr/local/lib -L/usr/pkg/lib -llua50 -llualib50
+CFLAGS+= -fPIC -O2 -pedantic -Wall -I$(LUAINC)
+LDFLAGS+=-L$(LUALIB) -L/usr/local/lib -llua50 -llualib50
 
 OBJS= $(MYLIB).o
 
@@ -33,8 +30,8 @@ strip:	$T
 test:	$T
 	$(LUABIN)/lua -l$(MYNAME) test.lua
 
-$T:	$(OBJS) $(COMPATOBJ)
-	$(CC) -fPIC $(OBJS) $(COMPATOBJ) -shared $(LDFLAGS) -o $@
+$T:	$(OBJS)
+	$(CC) -fPIC $(OBJS) $(COMPAT)/compat-5.1.o -shared $(LDFLAGS) -o $@
 
 $(OBJS): modemuncher.c
 
@@ -54,8 +51,10 @@ xx:
 
 # distribution
 
-distribution: strip
-	mkdir -p $(DESTDIR)/lib/lua/5.0
-	cp $T $(DESTDIR)/lib/lua/5.0
+install: strip
+	mkdir -p $(DESTDIR)${PREFIX}/lib/lua/5.0
+	cp $T $(DESTDIR)${PREFIX}/lib/lua/5.0
+	mkdir -p ${DESTDIR}${PREFIX}/share/lua/5.0
+	cp posix.lua ${DESTDIR}${PREFIX}/share/lua/5.0
 
 # eof

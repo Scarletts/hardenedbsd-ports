@@ -12,7 +12,7 @@
 # in that file; see the comments in that file for settings that you might
 # want to tweak in here.
 #
-include ${BASE}/platform/lua/config
+include ${BASE}/lua/config
 
 #
 # Locations/names of build tools.
@@ -44,18 +44,6 @@ SOLINK=	lib${LIB}.so
 # For 'make distribution'
 #
 DESTDIR?=/tmp/bsdinstaller/
-
-#
-# NLS settings.  If not using NLS, you can comment out the following lines.
-#
-#LOCALEDIR?=	/usr/local/share/locale
-#NLS_CFLAGS?=	-DLOCALEDIR=\"${LOCALEDIR}\" -DPACKAGE=\"${PACKAGE}\" -DENABLE_NLS
-
-#
-# If your system's NLS is built-in, you might not need these.
-#
-#NLS_CFLAGS+=	-I/usr/local/include -I/usr/pkg/include
-#NLS_LDFLAGS?=	-L/usr/local/lib -L/usr/pkg/lib -lintl
 
 #
 # For systems that don't support strlcpy:

@@ -4,28 +4,23 @@
 BASE?=../../..
 include ${BASE}/Config
 
-LUA=../../../platform/lua
+LUA=../../../lua
 
 COMPAT?=../compat-5.1
-COMPATOBJ=${COMPAT}/compat-5.1.o
 
 LIB=	ldfui.so
 OBJS=	common.o dfui.o progress.o
 
-CFLAGS+=	${WARNS} -fPIC
+CFLAGS+=	${WARNS} -fPIC -I/usr/local/include
 CFLAGS+=	-I${LUA}/include -I${COMPAT} -I../../libdfui
-CFLAGS+=	-I/usr/local/include -I/usr/pkg/include
 CFLAGS+=	${EXTRA_CFLAGS}
 LDFLAGS+=	-L../../libdfui -L${LUA}/lib/
 LDFLAGS+=	-ldfui -lm -llua50 -llualib50
 
 all: ${LIB}
 
-${LIB}: ${OBJS} ${COMPATOBJ}
-	${CC} ${OBJS} ${COMPATOBJ} -shared ${LDFLAGS} -o ${LIB}
-
-${COMPATOBJ}:
-	${CC} ${CFLAGS} -I${COMPAT} -c ${COMPAT}/compat-5.1.c -o ${COMPATOBJ}
+${LIB}: ${OBJS}
+	${CC} ${OBJS} ${COMPAT}/compat-5.1.o -shared ${LDFLAGS} -o ${LIB}
 
 strip: ${LIB}
 	${STRIP} ${LIB}
@@ -33,6 +28,8 @@ strip: ${LIB}
 clean:
 	rm -f *.o *.so
 
-distribution: strip
-	mkdir -p ${DESTDIR}/lib/lua/5.0
-	cp ${LIB} ${DESTDIR}/lib/lua/5.0
+install: strip
+	mkdir -p ${DESTDIR}${PREFIX}/lib/lua/5.0
+	cp ${LIB} ${DESTDIR}${PREFIX}/lib/lua/5.0
+	mkdir -p ${DESTDIR}${PREFIX}/share/lua/5.0
+	cp dfui.lua ${DESTDIR}${PREFIX}/share/lua/5.0

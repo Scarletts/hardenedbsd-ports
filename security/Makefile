@@ -173,6 +173,7 @@
     SUBDIR += hackbot
     SUBDIR += hamachi
     SUBDIR += heimdal
+    SUBDIR += hitch
     SUBDIR += hlfl
     SUBDIR += hmap
     SUBDIR += honggfuzz
@@ -241,6 +242,7 @@
     SUBDIR += john
     SUBDIR += kc
     SUBDIR += kedpm
+    SUBDIR += keepass
     SUBDIR += keepassx
     SUBDIR += keepassx2
     SUBDIR += keybase
@@ -920,6 +922,8 @@
     SUBDIR += rubygem-omniauth
     SUBDIR += rubygem-omniauth-bitbucket
     SUBDIR += rubygem-omniauth-gitlab
+    SUBDIR += rubygem-omniauth-multipassword
+    SUBDIR += rubygem-omniauth-shibboleth
     SUBDIR += rubygem-origami
     SUBDIR += rubygem-pyu-ruby-sasl
     SUBDIR += rubygem-razorback-scriptNugget
@@ -1020,6 +1024,7 @@
     SUBDIR += tinc
     SUBDIR += tinyca
     SUBDIR += tlswrap
+    SUBDIR += tmux-cssh
     SUBDIR += tor
     SUBDIR += tor-devel
     SUBDIR += tpm-tools

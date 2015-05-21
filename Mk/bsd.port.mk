@@ -3174,7 +3174,11 @@ do-fetch:
 	${_PATCH_SITES_ENV} ; \
 	for _file in ${PATCHFILES}; do \
 		file=`${ECHO_CMD} $$_file | ${SED} -E -e 's/:[^-:][^:]*$$//'` ; \
-		select=`${ECHO_CMD} $${_file#$${file}} | ${SED} -e 's/^://' -e 's/,/ /g'` ; \
+		if [ $$_file = $$file ]; then	\
+			select='';	\
+		else	\
+			select=`${ECHO_CMD} $${_file##*:} | ${SED} -e 's/,/ /g'` ;	\
+		fi;	\
 		file=`${ECHO_CMD} $$file | ${SED} -E -e 's/:-[^:]+$$//'` ; \
 		force_fetch=false; \
 		filebasename=$${file##*/}; \
@@ -3994,7 +3998,11 @@ fetch-list:
 	 ${_MASTER_SITES_ENV} ; \
 	 for _file in ${DISTFILES}; do \
 		file=`${ECHO_CMD} $$_file | ${SED} -E -e 's/:[^:]+$$//'` ; \
-		select=`${ECHO_CMD} $${_file#$${file}} | ${SED} -e 's/^://' -e 's/,/ /g'` ; \
+		if [ $$_file = $$file ]; then	\
+			select='';	\
+		else	\
+			select=`${ECHO_CMD} $${_file##*:} | ${SED} -e 's/,/ /g'` ;	\
+		fi;	\
 		if [ ! -f $$file -a ! -f $${file##*/} ]; then \
 			if [ ! -z "$$select" ] ; then \
 				__MASTER_SITES_TMP= ; \
@@ -4031,7 +4039,11 @@ fetch-list:
 	 ${_PATCH_SITES_ENV} ; \
 	 for _file in ${PATCHFILES}; do \
 		file=`${ECHO_CMD} $$_file | ${SED} -E -e 's/:[^-:][^:]*$$//'` ; \
-		select=`${ECHO_CMD} $${_file#$${file}} | ${SED} -e 's/^://' -e 's/,/ /g'` ; \
+		if [ $$_file = $$file ]; then	\
+			select='';	\
+		else	\
+			select=`${ECHO_CMD} $${_file##*:} | ${SED} -e 's/,/ /g'` ;	\
+		fi;	\
 		file=`${ECHO_CMD} $$file | ${SED} -E -e 's/:-[^:]+$$//'` ; \
 		if [ ! -f $$file -a ! -f $${file##*/} ]; then \
 			if [ ! -z "$$select" ] ; then \
@@ -4069,7 +4081,11 @@ fetch-url-list-int:
 	for _file in ${DISTFILES}; do \
 		file=`${ECHO_CMD} $$_file | ${SED} -E -e 's/:[^:]+$$//'` ; \
 			fileptn=`${ECHO_CMD} $$file | ${SED} 's|/|\\\\/|g;s/\./\\\\./g;s/\+/\\\\+/g;s/\?/\\\\?/g'` ; \
-		select=`${ECHO_CMD} $${_file#$${file}} | ${SED} -e 's/^://' -e 's/,/ /g'` ; \
+		if [ $$_file = $$file ]; then	\
+			select='';	\
+		else	\
+			select=`${ECHO_CMD} $${_file##*:} | ${SED} -e 's/,/ /g'` ;	\
+		fi;	\
 		if [ ! -z "${LISTALL}" -o ! -f $$file -a ! -f $${file##*/} ]; then \
 			if [ ! -z "$$select" ] ; then \
 				__MASTER_SITES_TMP= ; \
@@ -4098,7 +4114,11 @@ fetch-url-list-int:
 	${_PATCH_SITES_ENV} ; \
 	for _file in ${PATCHFILES}; do \
 		file=`${ECHO_CMD} $$_file | ${SED} -E -e 's/:[^-:][^:]*$$//'` ; \
-		select=`${ECHO_CMD} $${_file#$${file}} | ${SED} -e 's/^://' -e 's/,/ /g'` ; \
+		if [ $$_file = $$file ]; then	\
+			select='';	\
+		else	\
+			select=`${ECHO_CMD} $${_file##*:} | ${SED} -e 's/,/ /g'` ;	\
+		fi;	\
 		file=`${ECHO_CMD} $$file | ${SED} -E -e 's/:-[^:]+$$//'` ; \
 		fileptn=`${ECHO_CMD} $$file | ${SED} 's|/|\\\\/|g;s/\./\\\\./g;s/\+/\\\\+/g;s/\?/\\\\?/g'` ; \
 		if [ ! -z "${LISTALL}" -o ! -f $$file -a ! -f $${file##*/} ]; then \

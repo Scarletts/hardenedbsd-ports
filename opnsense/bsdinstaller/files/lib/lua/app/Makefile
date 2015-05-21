@@ -9,6 +9,6 @@ all:
 clean:
 	@echo "No cleaning required."
 
-distribution:
-	mkdir -p ${DESTDIR}/share/lua/5.0/
-	cp app.lua ${DESTDIR}/share/lua/5.0/
+install:
+	mkdir -p ${DESTDIR}${PREFIX}/share/lua/5.0
+	cp app.lua ${DESTDIR}${PREFIX}/share/lua/5.0
