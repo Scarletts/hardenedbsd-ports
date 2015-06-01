@@ -3,7 +3,7 @@
 
 PORTNAME=		openvpn
 DISTVERSION=		2.3.6
-PORTREVISION=		4
+PORTREVISION=		5
 CATEGORIES=		security net
 MASTER_SITES=		http://swupdate.openvpn.net/community/releases/ \
 			http://build.openvpn.net/downloads/releases/
@@ -28,8 +28,8 @@ LDFLAGS+=		-L${LOCALBASE}/lib
 # set PLUGIN_LIBDIR so that unqualified plugin paths are found:
 CPPFLAGS+=		-DPLUGIN_LIBDIR=\\\"${PREFIX}/lib/openvpn/plugins\\\"
 
-OPTIONS_DEFINE=		PW_SAVE PKCS11 EASYRSA DOCS EXAMPLES \
-			X509ALTUSERNAME ENGINEFIX2 TXP
+OPTIONS_DEFINE=		PW_SAVE PKCS11 EASYRSA DOCS EXAMPLES X509ALTUSERNAME \
+			ENGINEFIX2 SUBNETFIX TXP
 OPTIONS_DEFAULT=	EASYRSA OPENSSL
 OPTIONS_SINGLE=		SSL
 OPTIONS_SINGLE_SSL=	OPENSSL POLARSSL
@@ -40,6 +40,7 @@ POLARSSL_DESC=		SSL/TLS support via PolarSSL
 TXP_DESC=		Tunnelblick XOR scramble patch
 X509ALTUSERNAME_DESC=	Enable --x509-username-field (only with OpenSSL)
 ENGINEFIX2_DESC=	New EXPERIMENTAL patchset for SSL engine use (OpenSSL)
+SUBNETFIX_DESC=		EXPERIMENTAL patch to fix subnet mode (tkt \#481)
 
 EASYRSA_RUN_DEPENDS=	easy-rsa>=0:${PORTSDIR}/security/easy-rsa
 
@@ -61,6 +62,11 @@ EXTRA_PATCHES+=		${FILESDIR}/EF1.patch:-p1 \
 			${FILESDIR}/EF3.patch:-p1
 .endif
 
+# patch to fix PR 194745, https://community.openvpn.net/openvpn/ticket/481
+.if ${PORT_OPTIONS:MSUBNETFIX}
+EXTRA_PATCHES+=		${FILESDIR}/EF-subnet.patch:-p1
+.endif
+
 .if ${PORT_OPTIONS:MPOLARSSL}
 . if ${PORT_OPTIONS:MX509ALTUSERNAME}
 BROKEN=	OpenVPN ${DISTVERSION} cannot use --x509-username-field with PolarSSL. Disable X509ALTUSERNAME, or use OpenSSL instead
@@ -68,7 +74,9 @@ BROKEN=	OpenVPN ${DISTVERSION} cannot use --x509-username-field with PolarSSL. D
 LIB_DEPENDS+=		libpolarssl.so:${PORTSDIR}/security/polarssl
 CONFIGURE_ARGS+=	--with-crypto-library=polarssl
 . endif
-.else
+.endif
+
+.if ${PORT_OPTIONS:MOPENSSL}
 USE_OPENSSL=		yes
 CONFIGURE_ARGS+=	--with-crypto-library=openssl
 .endif
