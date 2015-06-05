@@ -14,7 +14,7 @@ LICENSE=	GPLv2
 
 NO_BUILD=	yes
 
-USES=		perl5 tar:bzip2
+USES=		perl5 tar:bzip2 pie
 USE_PERL5=	run
 
 USE_RC_SUBR=	${PORTNAME}

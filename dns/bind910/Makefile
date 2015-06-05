@@ -25,7 +25,7 @@ ISCVERSION=	9.10.2
 
 MAKE_JOBS_UNSAFE=	yes
 
-USES=	cpe
+USES=	cpe pie
 
 CPE_VENDOR=	isc
 CPE_VERSION=	${ISCVERSION:C/-.*//}

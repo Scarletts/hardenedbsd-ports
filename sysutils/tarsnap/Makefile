@@ -12,7 +12,7 @@ MAINTAINER=	cperciva@tarsnap.com
 COMMENT=	Online encrypted backup service (client)
 
 GNU_CONFIGURE=	yes
-USES=		gmake tar:tgz
+USES=		gmake tar:tgz pie
 
 OPTIONS_DEFINE=	SSE2
 SSE2_DESC=	Use SSE2-optimized code

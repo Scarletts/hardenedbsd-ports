@@ -34,7 +34,7 @@ NLS_DESC=	IDN+NLS: Int'l Domain Names & National Language support
 IDN_DESC=	IDN: Int'l Domain Names WITHOUT full NLS
 LUA_DESC=	Support lease-change scripts written in Lua
 DNSSEC_DESC=	Enable DNSSEC caching and validation
-USES=		cpe shebangfix tar:xz
+USES=		cpe shebangfix tar:xz pie
 SHEBANG_FILES=	contrib/dynamic-dnsmasq/dynamic-dnsmasq.pl \
 		contrib/dnslist/dnslist.pl
 CPE_VENDOR=	thekelleys

@@ -26,7 +26,7 @@ COMMENT=	HTTP Caching Proxy
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		compiler cpe perl5 shebangfix tar:xz
+USES=		compiler cpe perl5 shebangfix tar:xz pie
 CPE_VENDOR=	squid-cache
 SHEBANG_FILES=	scripts/*.pl contrib/*.pl src/*.pl tools/*.pl \
 		helpers/ssl/cert_valid.pl

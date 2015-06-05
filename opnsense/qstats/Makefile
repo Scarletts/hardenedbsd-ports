@@ -9,6 +9,7 @@ EXTRACT_ONLY=	# empty
 MAINTAINER?=	franco@opnsense.org
 COMMENT?=	read QoS data
 
+USES=		pie
 CFLAGS+=	-lsbuf
 PLIST_FILES=    sbin/qstats
 

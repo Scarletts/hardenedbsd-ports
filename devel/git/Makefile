@@ -24,7 +24,7 @@ GROUPS=		git_daemon
 SUB_FILES=	pkg-message
 
 GNU_CONFIGURE=	yes
-USES=		gmake shebangfix tar:xz
+USES=		gmake shebangfix tar:xz pie
 CPPFLAGS+=	-isystem${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 MAKE_ENV+=	V=1

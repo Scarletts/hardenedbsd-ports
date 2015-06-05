@@ -8,6 +8,7 @@ EXTRACT_ONLY=	# empty
 MAINTAINER?=	eri@pfsense.org
 COMMENT?=	filterdns
 
+USES=		pie
 WHERE=		sbin
 PLIST_FILES=    ${WHERE}/${PORTNAME}
 

@@ -19,7 +19,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
 
-USES=		tar:bzip2 gmake cpe compiler
+USES=		tar:bzip2 gmake cpe compiler pie
 GNU_CONFIGURE=	yes
 
 OPTIONS_SUB=	yes

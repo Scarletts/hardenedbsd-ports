@@ -13,7 +13,7 @@ LIB_DEPENDS=	libdaemon.so:${PORTSDIR}/devel/libdaemon
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-transform-name=
-USES=		pkgconfig gmake
+USES=		pkgconfig gmake pie
 USE_RC_SUBR=	radvd
 
 PORTDOCS=	CHANGES COPYRIGHT INTRO.html README TODO

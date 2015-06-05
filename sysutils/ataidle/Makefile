@@ -11,6 +11,7 @@ COMMENT=	Utility to spin down ATA drives
 
 LICENSE=	BSD3CLAUSE
 
+USES=		pie
 USE_RC_SUBR=	${PORTNAME}
 PORTDOCS=	Changelog README
 PLIST_FILES=	sbin/ataidle \

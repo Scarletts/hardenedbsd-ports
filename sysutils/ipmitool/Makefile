@@ -13,7 +13,7 @@ COMMENT=	CLI to manage IPMI systems
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cpe tar:bzip2 gmake readline
+USES=		cpe tar:bzip2 gmake readline pie
 CPE_VENDOR=	sun
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes

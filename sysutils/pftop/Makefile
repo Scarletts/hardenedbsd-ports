@@ -10,6 +10,8 @@ MASTER_SITES=	http://www.eee.metu.edu.tr/~canacar/
 MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	Utility for real-time display of statistics for pf
 
+USES=		pie
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 1100000

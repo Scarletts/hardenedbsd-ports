@@ -9,6 +9,8 @@ EXTRACT_ONLY=	# empty
 MAINTAINER=	franco@opnsense.org
 COMMENT=	Automatically block IPs with failed SSH logins using pf(4)
 
+USES=		pie
+
 PLIST_FILES=    sbin/sshlockout_pf
 
 do-extract:

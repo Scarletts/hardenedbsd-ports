@@ -7,6 +7,8 @@ PORTREVISION=	1
 CATEGORIES=	comms
 DISTFILES=
 
+USES=pie
+
 MAINTAINER=	franco@opnsense.org
 COMMENT=	3G status
 

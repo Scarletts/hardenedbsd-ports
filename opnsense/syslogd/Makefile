@@ -18,6 +18,8 @@ RUN_DEPENDS=	clog:${PORTSDIR}/opnsense/clog
 EXTRA_PATCHES+=	${PATCHDIR}/clog-support.diff
 EXTRA_PATCHES+=	${PATCHDIR}/zmq-support.diff
 
+USES=		pie
+
 do-extract:
 	cp -r ${FILESDIR}/src ${WRKSRC}
 

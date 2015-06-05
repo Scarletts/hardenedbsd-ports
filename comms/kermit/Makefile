@@ -13,6 +13,7 @@ COMMENT=	Portable scriptable network and serial communication program
 
 LICENSE=	BSD3CLAUSE
 
+USES=		pie
 USE_OPENSSL=	yes
 NO_WRKSUBDIR=	yes
 MAKEFILE=	makefile

@@ -11,5 +11,6 @@ MAINTAINER=	cris@gufi.org
 COMMENT=	Utility to remove entries from the pf(4) table based on their age
 
 USE_RC_SUBR=	expiretable
+USES=		pie
 
 .include <bsd.port.mk>

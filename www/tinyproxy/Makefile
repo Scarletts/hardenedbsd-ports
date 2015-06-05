@@ -25,7 +25,7 @@ CONFIGURE_ARGS=	--bindir=${PREFIX}/sbin \
 		--program-transform-name=""
 GNU_CONFIGURE=	yes
 USE_RC_SUBR=	${PORTNAME}
-USES=		gmake
+USES=		gmake pie
 
 REVERSE_CONFIGURE_ENABLE=	reverse
 TRANSPARENT_CONFIGURE_ENABLE=	transparent

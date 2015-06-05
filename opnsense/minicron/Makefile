@@ -15,6 +15,7 @@ EXTRACT_ONLY=	# empty
 MAINTAINER?=	jebc@c4solutions.net
 COMMENT?=	very small cron
 
+USES=		pie
 WHERE=		bin
 PLIST_FILES=    ${WHERE}/${PORTNAME}
 

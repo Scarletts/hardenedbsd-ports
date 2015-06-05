@@ -16,7 +16,7 @@ BUILD_DEPENDS=	rst2man:${PORTSDIR}/textproc/py-docutils
 LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
 
 USE_GITHUB=	yes
-USES=		iconv pkgconfig
+USES=		iconv pkgconfig pie
 USE_RC_SUBR=	e2guardian
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var \

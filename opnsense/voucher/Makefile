@@ -14,6 +14,8 @@ USE_OPENSSL=	yes
 CFLAGS+=	-I${OPENSSLINC}
 LDFLAGS+=	-L${OPENSSLLIB}
 
+USES=		pie
+
 do-extract:
 	${CP} -r ${FILESDIR} ${WRKSRC}
 

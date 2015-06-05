@@ -12,6 +12,7 @@ COMMENT=	Simple proxy arp daemon
 
 LICENSE=	BSD3CLAUSE
 
+USES=		pie
 USE_RC_SUBR=	choparp
 
 PLIST_FILES=	sbin/choparp man/man8/choparp.8.gz

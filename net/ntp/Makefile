@@ -17,7 +17,7 @@ CONFLICTS=	ntp-rc-* ntp-devel-*
 
 GNU_CONFIGURE=	yes
 OPTIONS_SUB=	yes
-USES=		cpe pathfix shebangfix libtool pkgconfig
+USES=		cpe pathfix shebangfix libtool pkgconfig pie
 LIB_DEPENDS=	libevent.so:${PORTSDIR}/devel/libevent2
 
 SHEBANG_FILES=	scripts/ntptrace/ntptrace.in \

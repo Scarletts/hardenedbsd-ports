@@ -19,7 +19,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser
 
 GROUPS=		${PORTNAME}
-USES=		gettext gmake libtool pathfix pkgconfig tar:bzip2
+USES=		gettext gmake libtool pathfix pkgconfig tar:bzip2 pie
 USE_LDCONFIG=	yes
 USE_CSTD=	gnu89
 USE_GNOME=	intltool

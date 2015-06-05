@@ -12,6 +12,7 @@ COMMENT=	read dhpcd.lease file and add it to hosts file
 CONFLICTS=	dhcpleases6-*
 
 WHERE=		sbin
+USES=		pie
 
 do-extract:
 	mkdir -p ${WRKSRC}

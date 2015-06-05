@@ -18,7 +18,7 @@ COMMENT=	Network file distribution/synchronization utility
 
 LICENSE=	GPLv3
 
-USES=		cpe
+USES=		cpe pie
 
 CPE_VENDOR=	samba
 CPE_PRODUCT=	rsync

@@ -11,6 +11,7 @@ EXTRACT_ONLY=	# empty
 
 MAINTAINER=	franco@opnsense.org
 COMMENT=	Interface statistics reader
+USES=		pie
 
 do-extract:
 	${CP} -r ${FILESDIR} ${WRKSRC}

@@ -10,6 +10,7 @@ EXTRACT_ONLY=	# empty
 
 MAINTAINER=	franco@opnsense.org
 COMMENT=	Parse pflog(4) output
+USES=		pie
 
 do-extract:
 	${MKDIR} ${WRKSRC}

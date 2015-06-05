@@ -19,7 +19,7 @@ CONFLICTS=	openbgpd-[0-9]* openospfd-[0-9]* zebra-0* quagga-re-[0-9]*
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-exampledir=${PREFIX}/share/examples/quagga
 INSTALL_TARGET=	install-strip
-USES=		gmake libtool makeinfo perl5 readline compiler:c11 tar:xz autoreconf cpe
+USES=		gmake libtool makeinfo perl5 readline compiler:c11 tar:xz autoreconf cpe pie
 USE_LDCONFIG=	yes
 USE_PERL5=	build
 

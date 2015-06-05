@@ -19,7 +19,7 @@ SUB_FILES=	pkg-message
 
 OPTIONS_DEFINE=	IPV6
 
-USES=		bison
+USES=		bison pie
 
 .include <bsd.port.options.mk>
 

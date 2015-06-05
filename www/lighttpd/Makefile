@@ -18,7 +18,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS+=	libpcre.so:${PORTSDIR}/devel/pcre
 
 GNU_CONFIGURE=	yes
-USES=		gmake libtool pkgconfig tar:xz
+USES=		gmake libtool pkgconfig tar:xz pie
 
 .if !defined(_BUILDING_LIGHTTPD_MODULE)
 USES+=	cpe

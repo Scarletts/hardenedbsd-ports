@@ -16,7 +16,7 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/doc/LICENSE
 
 USE_RC_SUBR=	sixxs-aiccu
-USES=		gmake
+USES=		gmake pie
 
 CFLAGS+=	-D_REENTRANT -I${LOCALBASE}/include
 LDFLAGS+=	-lpthread -L${LOCALBASE}/lib

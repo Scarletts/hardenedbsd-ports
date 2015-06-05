@@ -17,6 +17,7 @@ NG_IPACCT_DESC=	Use ng_ipacct kernel module from port
 HAS_CONFIGURE=	YES
 CONFIGURE_WRKSRC=	"${WRKSRC}/src"
 
+USES=		pie
 USE_OPENSSL=	yes
 
 .include <bsd.port.options.mk>

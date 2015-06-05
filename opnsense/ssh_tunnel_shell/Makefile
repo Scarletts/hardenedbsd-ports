@@ -9,6 +9,8 @@ EXTRACT_ONLY=	# empty
 MAINTAINER=	franco@opnsense.org
 COMMENT=	SSH Tunneling Shell
 
+USES=		pie
+
 do-extract:
 	mkdir -p ${WRKSRC}
 

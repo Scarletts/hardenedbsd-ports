@@ -15,6 +15,7 @@ COMMENT=	GNU watch command
 LICENSE=	GPLv2
 
 LDFLAGS+=	-lncurses
+USES=		pie
 
 PLIST_FILES=	bin/${UNIQUENAME} man/man1/gnu-watch.1.gz
 

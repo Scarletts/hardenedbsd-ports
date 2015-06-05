@@ -12,7 +12,7 @@ LICENSE=	ISCL
 
 GH_ACCOUNT=	mmatuska
 
-USES=		uidfix
+USES=		uidfix pie
 USE_GITHUB=	yes
 USE_OPENSSL=	yes
 USE_RC_SUBR=	relayd

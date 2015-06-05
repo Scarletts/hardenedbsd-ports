@@ -10,7 +10,7 @@ MASTER_SITES=	SF/ahh/OldFiles
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool to wake up Wake-On-LAN compliant computers
 
-USES=		perl5
+USES=		perl5 pie
 GNU_CONFIGURE=	yes
 USE_PERL5=	build
 CPPFLAGS+=	-I${LOCALBASE}/include

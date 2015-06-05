@@ -19,6 +19,7 @@ CONFIGURE_ARGS=	--sysconfdir=${LOCALBASE}/etc \
 		--with-localdbdir=/var/db
 USE_RC_SUBR=	dhcp6c dhcp6relay dhcp6s
 PORTDOCS=	README
+USES=		pie
 
 OPTIONS_DEFINE=	DOCS
 
