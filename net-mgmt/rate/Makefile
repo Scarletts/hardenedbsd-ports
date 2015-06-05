@@ -9,8 +9,6 @@ MASTER_SITES=	http://s-tech.elsat.net.pl/bmtools/
 MAINTAINER=	mich@FreeBSD.org
 COMMENT=	Traffic analysis command-line utility
 
-USES=		pie
-
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
 LDFLAGS+=	-lcompat
 CFLAGS+=	-DOPEN_BSD=1 -DHAVE_REGEX -DSTREAM_ANALYZER -DIOCTL_GETWINSIZE -DAUTOSENSE_DLH
