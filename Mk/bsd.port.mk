@@ -3918,12 +3918,6 @@ deinstall-all:
 
 .if !target(do-clean)
 do-clean:
-.if defined(NEED_ROOT) && ${UID} != 0 && !defined(INSTALL_AS_USER) && exists(${STAGE_COOKIE})
-	@${ECHO_MSG} "===>  Switching to root credentials for '${.TARGET}' target"
-	@cd ${.CURDIR} && \
-		${SU_CMD} "${MAKE} ${.TARGET}"
-	@${ECHO_MSG} "===>  Returning to user credentials"
-.else
 	@if [ -d ${WRKDIR} ]; then \
 		if [ -w ${WRKDIR} ]; then \
 			${RM} -rf ${WRKDIR}; \
@@ -3931,7 +3925,6 @@ do-clean:
 			${ECHO_MSG} "===>   ${WRKDIR} not writable, skipping"; \
 		fi; \
 	fi
-.endif
 .endif
 
 .if !target(clean)
@@ -5920,19 +5913,6 @@ _STAGE_DEP=		build
 _STAGE_SEQ=		stage-message stage-dir run-depends lib-depends apply-slist pre-install generate-plist \
 				pre-su-install
 # ${POST_PLIST} must be after anything that modifies TMPPLIST
-.if defined(NEED_ROOT)
-_STAGE_SUSEQ=	create-users-groups do-install \
-				kmod-post-install fix-perl-things \
-				webplugin-post-install post-install post-install-script \
-				move-uniquefiles patch-lafiles post-stage compress-man \
-				install-rc-script install-ldconfig-file install-license \
-				install-desktop-entries add-plist-info add-plist-docs \
-				add-plist-examples add-plist-data add-plist-post \
-				move-uniquefiles-plist ${POST_PLIST}
-.if defined(DEVELOPER)
-_STAGE_SUSEQ+=	stage-qa
-.endif
-.else
 _STAGE_SEQ+=	create-users-groups do-install \
 				kmod-post-install fix-perl-things \
 				webplugin-post-install post-install post-install-script \
@@ -5943,7 +5923,6 @@ _STAGE_SEQ+=	create-users-groups do-install \
 				move-uniquefiles-plist ${POST_PLIST}
 .if defined(DEVELOPER)
 _STAGE_SEQ+=	stage-qa
-.endif
 .endif
 _INSTALL_DEP=	stage
 _INSTALL_SEQ=	install-message run-depends lib-depends check-already-installed
