@@ -36,8 +36,8 @@ fi
 rm -rf /tmp/opnsense-update.*
 
 MARKER="/usr/local/opnsense/version/os-update"
-MIRROR="http://pkg.opnsense.org/sets"
-MY_RELEASE="15.1.11"
+MIRROR="http://hardenedbsd.org/opnsense-hbsd/distsets"
+MY_RELEASE="15.1-hbsd-exp-01"
 ARCH=$(uname -m)
 
 if [ -f ${MARKER} ]; then
