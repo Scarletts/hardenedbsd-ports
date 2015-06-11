@@ -57,6 +57,7 @@
     SUBDIR += amd64-gcc
     SUBDIR += amd64-xtoolchain-gcc
     SUBDIR += android-tools-adb
+    SUBDIR += android-tools-fastboot
     SUBDIR += anjuta
     SUBDIR += anjuta-extras
     SUBDIR += antlr
@@ -1637,6 +1638,7 @@
     SUBDIR += p5-Cairo-GObject
     SUBDIR += p5-Calendar-Simple
     SUBDIR += p5-Callback-Frame
+    SUBDIR += p5-Canary-Stability
     SUBDIR += p5-Capture-Tiny
     SUBDIR += p5-Carp
     SUBDIR += p5-Carp-Always
@@ -4426,6 +4428,7 @@
     SUBDIR += rubygem-actionpack-action_caching
     SUBDIR += rubygem-actionview
     SUBDIR += rubygem-active_scaffold
+    SUBDIR += rubygem-activejob
     SUBDIR += rubygem-activemessaging
     SUBDIR += rubygem-activesupport
     SUBDIR += rubygem-activesupport4
@@ -4445,16 +4448,23 @@
     SUBDIR += rubygem-attr_required
     SUBDIR += rubygem-authlogic
     SUBDIR += rubygem-awesome_print
+    SUBDIR += rubygem-aws-sdk
+    SUBDIR += rubygem-aws-sdk-core
+    SUBDIR += rubygem-aws-sdk-resources
+    SUBDIR += rubygem-aws-sdk-v1
     SUBDIR += rubygem-axiom-types
     SUBDIR += rubygem-backports
     SUBDIR += rubygem-bacon
     SUBDIR += rubygem-benelux
     SUBDIR += rubygem-bin_utils
     SUBDIR += rubygem-bindata
+    SUBDIR += rubygem-binding_of_caller
     SUBDIR += rubygem-bio
     SUBDIR += rubygem-blankslate
+    SUBDIR += rubygem-blobstore_client
     SUBDIR += rubygem-blockenspiel
     SUBDIR += rubygem-bones
+    SUBDIR += rubygem-bosh_common
     SUBDIR += rubygem-bson
     SUBDIR += rubygem-bson1
     SUBDIR += rubygem-buftok
@@ -4468,6 +4478,7 @@
     SUBDIR += rubygem-capybara
     SUBDIR += rubygem-celluloid
     SUBDIR += rubygem-celluloid-io
+    SUBDIR += rubygem-cf-uaa-lib
     SUBDIR += rubygem-childprocess
     SUBDIR += rubygem-chronic
     SUBDIR += rubygem-clamp
@@ -4494,6 +4505,7 @@
     SUBDIR += rubygem-cucumber-core
     SUBDIR += rubygem-daemon_controller
     SUBDIR += rubygem-daemons
+    SUBDIR += rubygem-debug_inspector
     SUBDIR += rubygem-debugger
     SUBDIR += rubygem-debugger-linecache
     SUBDIR += rubygem-debugger-xml
@@ -4592,6 +4604,7 @@
     SUBDIR += rubygem-jbuilder
     SUBDIR += rubygem-jekyll-coffeescript
     SUBDIR += rubygem-jeweler
+    SUBDIR += rubygem-jmespath
     SUBDIR += rubygem-jquery-ui-themes
     SUBDIR += rubygem-jruby-jars
     SUBDIR += rubygem-json
@@ -4602,6 +4615,7 @@
     SUBDIR += rubygem-launchy
     SUBDIR += rubygem-launchy22
     SUBDIR += rubygem-librarian
+    SUBDIR += rubygem-librarianp
     SUBDIR += rubygem-libyajl2
     SUBDIR += rubygem-listen
     SUBDIR += rubygem-little-plugger
@@ -4645,6 +4659,7 @@
     SUBDIR += rubygem-needle
     SUBDIR += rubygem-nenv
     SUBDIR += rubygem-nesty
+    SUBDIR += rubygem-netaddr
     SUBDIR += rubygem-newrelic_rpm
     SUBDIR += rubygem-nice-ffi
     SUBDIR += rubygem-nio4r
@@ -4667,6 +4682,7 @@
     SUBDIR += rubygem-posix-spawn
     SUBDIR += rubygem-power_assert
     SUBDIR += rubygem-powerbar
+    SUBDIR += rubygem-progressbar
     SUBDIR += rubygem-prototype-rails
     SUBDIR += rubygem-pry
     SUBDIR += rubygem-pry-rails
@@ -4677,6 +4693,7 @@
     SUBDIR += rubygem-racc
     SUBDIR += rubygem-rack-mini-profiler
     SUBDIR += rubygem-rack-raw-upload
+    SUBDIR += rubygem-rails-deprecated_sanitizer
     SUBDIR += rubygem-rails-observers
     SUBDIR += rubygem-rainbow
     SUBDIR += rubygem-rake
@@ -4708,6 +4725,7 @@
     SUBDIR += rubygem-rspec-mocks
     SUBDIR += rubygem-rspec-support
     SUBDIR += rubygem-rubigen
+    SUBDIR += rubygem-ruby-atmos-pure
     SUBDIR += rubygem-ruby-bugzilla
     SUBDIR += rubygem-ruby-filemagic
     SUBDIR += rubygem-ruby-ole
@@ -4728,6 +4746,7 @@
     SUBDIR += rubygem-ruport
     SUBDIR += rubygem-safe_yaml
     SUBDIR += rubygem-sdoc
+    SUBDIR += rubygem-semi_semantic
     SUBDIR += rubygem-sequel
     SUBDIR += rubygem-sequel3
     SUBDIR += rubygem-settingslogic
@@ -4750,6 +4769,7 @@
     SUBDIR += rubygem-sprockets-sass
     SUBDIR += rubygem-sprockets211
     SUBDIR += rubygem-sprockets22
+    SUBDIR += rubygem-sprockets3
     SUBDIR += rubygem-spruz
     SUBDIR += rubygem-state_machine
     SUBDIR += rubygem-statsd
@@ -4801,6 +4821,7 @@
     SUBDIR += rubygem-warbler
     SUBDIR += rubygem-warden
     SUBDIR += rubygem-wdm
+    SUBDIR += rubygem-web-console
     SUBDIR += rubygem-webby
     SUBDIR += rubygem-wmi-lite
     SUBDIR += rubygem-xpath

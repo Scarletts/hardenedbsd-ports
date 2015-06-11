@@ -257,7 +257,9 @@ CONFIGURE_ARGS+=	--enable-auth-basic="${basic_auth}" \
 			--enable-auth-ntlm="${ntlm_auth}"
 
 .if ${PORT_OPTIONS:MECAP}
-BROKEN=			It needs eCAP 1.0 lib, which isn't in ports tree now
+. if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000000
+BROKEN=			Squid with eCAP enabled can't be compiled by clang
+. endif
 .endif
 
 # Storage schemes:

@@ -44,17 +44,18 @@ if [ -f ${MARKER} ]; then
 	INSTALLED=$(cat ${MARKER})
 fi
 
-NOKERNEL=
-NOBASE=
-FORCE=
+DO_RELEASE=
+DO_MIRROR=
+DO_KERNEL=
+DO_FORCE=
+DO_BASE=
+DO_PKGS=
 DIRTY=
 
-while getopts bcfkm:r:v OPT; do
+while getopts bcfkm:pr:v OPT; do
 	case ${OPT} in
 	b)
-		DIRTY="-base"
-		NOKERNEL=1
-		NOBASE=
+		DO_BASE="-b"
 		;;
 	c)
 		if [ "${MY_RELEASE}-${ARCH}" = "${INSTALLED}" ]; then
@@ -63,29 +64,54 @@ while getopts bcfkm:r:v OPT; do
 		exit 0
 		;;
 	f)
-		FORCE=1
+		DO_FORCE="-f"
 		;;
 	k)
-		DIRTY="-kernel"
-		NOKERNEL=
-		NOBASE=1
+		DO_KERNEL="-k"
 		;;
 	m)
+		DO_MIRROR="-m ${OPTARG}"
 		MIRROR=${OPTARG}
 		;;
+	p)
+		DO_PKGS="-p"
+		;;
 	r)
+		DO_RELEASE="-r ${OPTARG}"
 		RELEASE=${OPTARG}
+		DIRTY="dirty"
 		;;
 	v)
 		echo ${MY_RELEASE}-${ARCH}
 		exit 0
 		;;
 	*)
-		echo "Usage: opnsense-update [-bcfkv] [-m mirror] [-r release]" >&2
+		echo "Usage: opnsense-update [-bcfkpv] [-m mirror] [-r release]" >&2
 		exit 1
 		;;
 	esac
 done
+
+if [ -z "${DO_KERNEL}${DO_BASE}${DO_PKGS}" ]; then
+	# default is enable all
+	DO_KERNEL="-k"
+	DO_BASE="-b"
+	DO_PKGS="-p"
+fi
+
+if [ -n "${DO_PKGS}" ]; then
+	pkg update ${DO_FORCE}
+	pkg upgrade -y ${DO_FORCE}
+	pkg autoremove -y
+	pkg clean -y
+	if [ -n "${DO_BASE}${DO_KERNEL}" ]; then
+		# script may have changed, relaunch...
+		opnsense-update ${DO_BASE} ${DO_KERNEL} \
+		    ${DO_FORCE} ${DO_RELEASE} ${DO_MIRROR}
+	fi
+	# stop here to prevent the second pass
+	exit 0
+fi
 
 # if no release was selected we use the embedded defaults
 if [ -z "${RELEASE}" ]; then
@@ -105,10 +131,17 @@ if [ -z "${RELEASE}" ]; then
 	fi
 fi
 
-if [ "${RELEASE}-${ARCH}" = "${INSTALLED}" -a -z "${FORCE}" ]; then
+if [ "${RELEASE}-${ARCH}" = "${INSTALLED}" -a -z "${DO_FORCE}" ]; then
 	echo "Your system is up to date."
 	exit 0
 fi
+
+echo
+echo "!!!!!!!!!!!! ATTENTION !!!!!!!!!!!!!!"
+echo "A kernel/base upgrade is in progress."
+echo "Please do not turn off the system."
+echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+echo
 
 OBSOLETESET=base-${RELEASE}-${ARCH}.obsolete
 KERNELSET=kernel-${RELEASE}-${ARCH}.txz
@@ -153,8 +186,7 @@ apply_base()
 
 	chflags -R noschg /bin /sbin /lib /libexec \
 	    /usr/bin /usr/sbin /usr/lib && \
-	    tar -C/ -xjpf ${WORKDIR}/${BASESET} \
-	    --exclude="./etc/pkg/FreeBSD.conf" \
+	    tar -C/ -xpf ${WORKDIR}/${BASESET} \
 	    --exclude="./etc/group" \
 	    --exclude="./etc/master.passwd" \
 	    --exclude="./etc/passwd" \
@@ -179,20 +211,20 @@ apply_obsolete()
 	echo "ok"
 }
 
-if [ -z "${NOKERNEL}" ]; then
+if [ -n "${DO_KERNEL}" ]; then
 	fetch_set ${KERNELSET} ${KERNELSHA}
 fi
 
-if [ -z "${NOBASE}" ]; then
+if [ -n "${DO_BASE}" ]; then
 	fetch_set ${BASESET} ${BASESHA}
 	fetch_set ${OBSOLETESET} ${OBSOLETESHA}
 fi
 
-if [ -z "${NOKERNEL}" ]; then
+if [ -n "${DO_KERNEL}" ]; then
 	apply_kernel
 fi
 
-if [ -z "${NOBASE}" ]; then
+if [ -n "${DO_BASE}" ]; then
 	apply_base
 	apply_obsolete
 fi
