@@ -118,13 +118,12 @@ if [ -z "${RELEASE}" ]; then
 	RELEASE=${MY_RELEASE}
 
 	if [ ${ARCH} = "amd64" ]; then
-		OBSOLETESHA="34f7479276c3b43c73468686dcf6f402c5be4f1d7c1d5761e22d6b52a3d4c174"
-		KERNELSHA="eab75491a4857d6a7ea8e4dbd406a1c5da4765184d8709fb1113faa63e8fb5da"
-		BASESHA="4d6182b090ca269f472e0aedc3bc3ae903b11eadbe15aa80f9d2370a934402b7"
+		OBSOLETESHA=""
+		KERNELSHA="582b5f79be4f7d84bbe709a06f318b8f5678b885727239c5f73c97b060f0379f"
+		BASESHA="463dbe6400787986f57772f7c84b7e19287b682f334e5acb06897999d6ba3c53"
 	elif [ ${ARCH} = "i386" ]; then
-		OBSOLETESHA="aefeb0f249ac98948dbaed1d8d4907987b9201f9268fb0498138e3bfe1142b65"
-		KERNELSHA="b10e6ac3309446518ae9e413489fbe82c2e966b51cc8c47f6d19816e62e38607"
-		BASESHA="83e2a5a1fff18e0f8e77ce7f4213569eaab149859b478cf7d5f95165c7a522e1"
+		echo "OPNSense + HardenedBSD is currently only supported on amd64."
+		exit 1
 	else
 		echo "Unknown architecture ${ARCH}" >&2
 		exit 1
@@ -143,7 +142,7 @@ echo "Please do not turn off the system."
 echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
 echo
 
-OBSOLETESET=base-${RELEASE}-${ARCH}.obsolete
+OBSOLETESET=
 KERNELSET=kernel-${RELEASE}-${ARCH}.txz
 BASESET=base-${RELEASE}-${ARCH}.txz
 WORKDIR=/tmp/opnsense-update.${$}
@@ -217,7 +216,9 @@ fi
 
 if [ -n "${DO_BASE}" ]; then
 	fetch_set ${BASESET} ${BASESHA}
-	fetch_set ${OBSOLETESET} ${OBSOLETESHA}
+	if [ -n "${OBSOLETESET}" ]; then
+		fetch_set ${OBSOLETESET} ${OBSOLETESHA}
+	fi
 fi
 
 if [ -n "${DO_KERNEL}" ]; then
@@ -226,7 +227,9 @@ fi
 
 if [ -n "${DO_BASE}" ]; then
 	apply_base
-	apply_obsolete
+	if [ -n "${OBSOLETESET}" ]; then
+		apply_obsolete
+	fi
 fi
 
 mkdir -p $(dirname ${MARKER})
