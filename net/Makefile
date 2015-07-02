@@ -117,7 +117,8 @@
     SUBDIR += echoping
     SUBDIR += empty
     SUBDIR += enet
-    SUBDIR += erlang_xmlrpc
+    SUBDIR += erlang-ranch
+    SUBDIR += erlang-xmlrpc
     SUBDIR += etrace
     SUBDIR += exabgp
     SUBDIR += exaddos
@@ -440,7 +441,6 @@
     SUBDIR += ntopng
     SUBDIR += ntp
     SUBDIR += ntp-devel
-    SUBDIR += ntp-rc
     SUBDIR += ntraceroute
     SUBDIR += nusoap
     SUBDIR += nxproxy
@@ -997,7 +997,6 @@
     SUBDIR += radsecproxy
     SUBDIR += radvd
     SUBDIR += raggle
-    SUBDIR += ranch
     SUBDIR += rdapper
     SUBDIR += rdesktop
     SUBDIR += rdist6
@@ -1041,7 +1040,6 @@
     SUBDIR += rubygem-aws-s3
     SUBDIR += rubygem-aws-ses
     SUBDIR += rubygem-bunny
-    SUBDIR += rubygem-bunny060
     SUBDIR += rubygem-connection_pool
     SUBDIR += rubygem-dogapi
     SUBDIR += rubygem-domain_name
