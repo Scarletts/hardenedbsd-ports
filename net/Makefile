@@ -890,7 +890,6 @@
     SUBDIR += proxychains-ng
     SUBDIR += prtunnel
     SUBDIR += ptpd2
-    SUBDIR += ptpd2-devel
     SUBDIR += ptunnel
     SUBDIR += pure-sockets
     SUBDIR += pvm
@@ -908,7 +907,6 @@
     SUBDIR += py-ec2-cli-tools
     SUBDIR += py-eventlet
     SUBDIR += py-gntp
-    SUBDIR += py-google
     SUBDIR += py-gspread
     SUBDIR += py-gspreadsheet
     SUBDIR += py-impacket
@@ -933,6 +931,7 @@
     SUBDIR += py-novaclient
     SUBDIR += py-oauth
     SUBDIR += py-oauth2
+    SUBDIR += py-paho-mqtt
     SUBDIR += py-pcap
     SUBDIR += py-pcapy
     SUBDIR += py-pcs
