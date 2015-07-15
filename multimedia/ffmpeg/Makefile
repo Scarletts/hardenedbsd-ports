@@ -19,7 +19,7 @@ BUILD_DEPENDS=	yasm:${PORTSDIR}/devel/yasm \
 
 HAS_CONFIGURE=	yes
 CONFIGURE_LOG=	config.err
-USES=		cpe gmake pkgconfig perl5 tar:bzip2 pie
+USES=		compiler cpe gmake perl5 pkgconfig tar:bzip2
 USE_LDCONFIG=	yes
 USE_PERL5=	build
 WANT_SDL=	yes
@@ -45,6 +45,8 @@ LIBV4L_DESC=	Video for Linux support
 X11GRAB_DESC=	Enable x11 grabbing
 
 OPTIONS_SUB=	yes
+
+USES+=	pie
 
 # aacplus
 AACPLUS_LIB_DEPENDS=	libaacplus.so:${PORTSDIR}/audio/libaacplus
@@ -245,7 +247,9 @@ CONFIGURE_ARGS+=	--enable-memalign-hack
 .endif
 
 .if ${ARCH} == "armv6"
+.if ${CHOSEN_COMPILER_TYPE} == "clang"
 CONFIGURE_ENV+=	ASFLAGS=-no-integrated-as
+.endif
 .endif
 
 DATADIR=	${PREFIX}/share/${PORTNAME}${PKGNAMESUFFIX}

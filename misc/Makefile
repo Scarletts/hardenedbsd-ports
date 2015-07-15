@@ -74,6 +74,7 @@
     SUBDIR += dvorakng
     SUBDIR += e2fsprogs-libblkid
     SUBDIR += e2fsprogs-libuuid
+    SUBDIR += elixir-uuid
     SUBDIR += elscreen
     SUBDIR += esniper
     SUBDIR += estic
@@ -370,6 +371,7 @@
     SUBDIR += py-osd
     SUBDIR += py-pexpect
     SUBDIR += py-progressbar
+    SUBDIR += py-progressbar231
     SUBDIR += py-qt4-demo
     SUBDIR += py-qt4-doc
     SUBDIR += py-yolk
