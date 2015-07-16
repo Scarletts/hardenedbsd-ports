@@ -4927,7 +4927,6 @@ www/py-Products.kupu||2013-09-23|This port is not required since Plone 4.3
 www/py-plone.app.kss||2013-09-23|This port is not required since Plone 4.3
 devel/py-archetypes.kss||2013-09-23|This port is not required since Plone 4.3
 devel/py-kss-core||2013-09-23|This port is not required since Plone 4.3
-cad/tkgate||2013-09-24|Removed
 x11/libXtrans||2013-09-26|Has expired: Project is obsoleted, use x11/xtrans instead
 sysutils/libpcbsd||2013-09-26|Obsolete: Use sysutils/pcbsd-utils-qt4 instead
 sysutils/pbreg||2013-09-26|Obsolete: Use sysutils/pcbsd-utils instead
@@ -5593,7 +5592,6 @@ graphics/enfle||2014-03-08|Has expired: No more public distfiles
 audio/oggsplit||2014-03-08|Has expired: No more public distfiles
 devel/picasm||2014-03-08|Has expired: No more public distfiles
 databases/mysql-udf-preg||2014-03-08|Has expired: No more public distfiles
-devel/py-gitpython||2014-03-08|Has expired: No more public distfiles
 net/mars_nwe||2014-03-08|Has expired: No more public distfiles
 audio/fmio||2014-03-08|Has expired: No more public distfiles
 audio/libmtp|multimedia/libmtp|2014-03-09|Moved from audio to multimedia
@@ -6268,7 +6266,6 @@ print/latex-feynmf|print/texlive-texmf|2014-07-23|Has been incorporated in TeXLi
 print/latex-chapterfolder|print/texlive-texmf|2014-07-23|Has been incorporated in TeXLive
 print/latex-cjk|print/texlive-base|2014-07-23|Has been incorporated in TeXLive
 print/latex-aastex|print/texlive-texmf|2014-07-23|Has been incorporated in TeXLive
-print/latex-beamer|print/texlive-texmf|2014-07-23|Has been incorporated in TeXLive
 print/latex-biblatex|print/texlive-texmf|2014-07-23|Has been incorporated in TeXLive
 print/latex-biblist|print/texlive-texmf|2014-07-23|Has been incorporated in TeXLive
 print/latex-bytefield|print/texlive-texmf|2014-07-23|Has been incorporated in TeXLive
@@ -6304,7 +6301,6 @@ misc/c-hey||2014-07-24|Has expired: Fails to build with new utmpx
 misc/wminfo||2014-07-24|Has expired: Fails to build with new utmpx
 net/sendfile||2014-07-24|Has expired: Fails to build with new utmpx
 net-im/centericq||2014-07-24|Has expired: Fails to build with new utmpx
-security/chkrootkit||2014-07-24|Has expired: Fails to build with new utmpx
 security/openfwtk||2014-07-24|Has expired: Fails to build with new utmpx
 security/pam_alreadyloggedin||2014-07-24|Has expired: Fails to build with new utmpx
 security/srp||2014-07-24|Has expired: Fails to build with new utmpx
@@ -6827,7 +6823,6 @@ print/scribus-devel||2014-09-01|Not staged
 russian/libcyrillic||2014-09-01|Not staged
 russian/prawda||2014-09-01|Not staged
 russian/pscyr||2014-09-01|Not staged
-russian/rux||2014-09-01|Not staged
 russian/tac+ia||2014-09-01|Not staged
 science/2dhf||2014-09-01|Not staged
 science/abinit||2014-09-01|Not staged
@@ -6866,7 +6861,6 @@ sysutils/cromwell||2014-09-01|Not staged
 sysutils/cvsweb-converters||2014-09-01|Not staged
 sysutils/eroaster||2014-09-01|Not staged
 sysutils/freqsdwn||2014-09-01|Not staged
-sysutils/ganglia-webfrontend||2014-09-01|Not staged
 sysutils/gnomebaker||2014-09-01|Not staged
 sysutils/ispman||2014-09-01|Not staged
 sysutils/jailadmin||2014-09-01|Not staged
@@ -7635,3 +7629,66 @@ print/gnome-specimen||2015-06-10|Has expired: Broken since update to gnome3
 x11-themes/gtk-aqualightblue-theme||2015-06-10|Has expired: Upstream disappeared
 x11-themes/gtk-flat-theme2||2015-06-10|Has expired: Upstream disappeared
 databases/postgresql84-server||2015-06-10|Has expired: "EOL was reached in July 2014"
+ftp/ncftp1||2015-06-12|Unfetchable
+multimedia/avidemux2||2015-06-13|Branch no longer maintained upstream, use multimedia/avidemux26
+multimedia/avidemux26|multimedia/avidemux|2015-06-13|Renamed
+editors/zim|deskutils/zim|2015-06-18|Move to more appropriate category
+net/py-ldap2|net/py-ldap|2015-06-18|Rename to better match upstream name
+devel/erlang-mustache|devel/erlang-bbmustache|2015-06-21|Renamed upstream
+security/py-backports.ssl_match_hostname||2015-06-23|This functionality was backported to python 2.7.9
+dns/maradns1|dns/maradns|2015-06-23|Has expired: MaraDNS 1 end-of-life: June 21, 2015, use dns/maradns
+net/py-soappy-devel||2015-06-25|Please use net/py-soappy instead. It's fresher than -devel
+devel/armv6-freebsd10.0-xdev||2015-06-27|Not usable for the purpose it has been intended for
+devel/bear|devel/erlang-bear|2015-06-27|Renamed with erlang- prefix
+devel/common_lib|devel/erlang-common_lib|2015-06-27|Renamed with erlang- prefix
+devel/cowlib|devel/erlang-cowlib|2015-06-27|Renamed with erlang- prefix
+devel/cuttlefish|devel/erlang-cuttlefish|2015-06-27|Renamed with erlang- prefix
+devel/esdl|devel/erlang-esdl|2015-06-27|Renamed with erlang- prefix
+devel/folsom|devel/erlang-folsom|2015-06-27|Renamed with erlang- prefix
+devel/goldrush|devel/erlang-goldrush|2015-06-27|Renamed with erlang- prefix
+devel/lager_syslog|devel/erlang-lager_syslog|2015-06-27|Renamed with erlang- prefix
+devel/lager|devel/erlang-lager|2015-06-27|Renamed with erlang- prefix
+devel/meck|devel/erlang-meck|2015-06-27|Renamed with erlang- prefix
+devel/neotoma|devel/erlang-neotoma|2015-06-27|Renamed with erlang- prefix
+devel/oserl|devel/erlang-oserl|2015-06-27|Renamed with erlang- prefix
+devel/poolboy|devel/erlang-poolboy|2015-06-27|Renamed with erlang- prefix
+net/erlang_xmlrpc|net/erlang-xmlrpc|2015-06-27|Renamed with erlang- prefix
+net/ranch|net/erlang-ranch|2015-06-27|Renamed with erlang- prefix
+www/cowboy|www/erlang-cowboy|2015-06-27|Renamed with erlang- prefix
+www/mochiweb-basho|www/erlang-mochiweb-basho|2015-06-27|Renamed with erlang- prefix
+www/mochiweb|www/erlang-mochiweb|2015-06-27|Renamed with erlang- prefix
+www/webmachine|www/erlang-webmachine|2015-06-27|Renamed with erlang- prefix
+textproc/exmpp|devel/erlang-exmpp|2015-06-27|Moved to devel category, with erlang- prefix
+databases/eredis|databases/erlang-eredis|2015-06-27|Renamed with erlang- prefix
+databases/epgsql|databases/erlang-epgsql|2015-06-27|Renamed with erlang- prefix
+www/varnish|www/varnish4|2015-06-28|Has expired: EOL was reached in April 2015, use www/varnish4
+audio/padevchooser||2015-06-29|Has expired: Broken for more than 6 months
+devel/xtla||2015-06-29|Has expired: Broken for more than 6 months
+mail/mail-notification||2015-06-29|Has expired: Broken for more than 6 months
+ports-mgmt/gnome-packagekit||2015-06-29|Has expired: Broken for more than 6 months
+sysutils/py-salt-api||2015-06-29|Has expired: Broken for more than 6 months
+devel/rubygem-mash|devel/rubgem-hashie|2015-06-30|Has expired: Deprecated by upstream. Use devel/rubygem-hashie instead
+net/rubygem-bunny060|net/rubygem-bunny|2015-06-30|Has expired: Use net/rubygem-bunny instead
+security/rubygem-hmac|security/rubygem-ruby-hmac|2015-06-30|Has expired: Duplicate of security/rubygem-ruby-hmac
+www/ruby-amazon|www/ruby-aws|2015-06-30|Has expired: Rendered obsolete by upstream since Amazon shut down access to AWS API v3 (2008-03-31). Use www/ruby-aws instead
+net/ntp-rc||2015-06-30|Has gone GA
+net/ptpd2-devel|net/ptpd2|2015-07-02|Development version no longer necessary
+devel/erlang-cowlib|www/erlang-cowlib|2015-07-03|Move to www where it belongs
+net/py-google||2015-07-03|Google no longer supports the SOAP API for search
+devel/erlang-ibrowse|www/erlang-ibrowse|2015-07-05|Move to www where it belongs
+multimedia/ffmpeg23|multimedia/ffmpeg|2015-07-05|Obsolete since recent upstream upgrade of main ffmpeg port. Use multimedia/ffmpeg instead.
+multimedia/ffmpeg26|multimedia/ffmpeg|2015-07-05|Obsolete since recent upstream upgrade of main ffmpeg port. Use multimedia/ffmpeg instead.
+x11/docker|x11/docker-tray|2015-07-06|Renamed
+sysutils/docker|sysutils/docker-freebsd|2015-07-07|Renamed
+graphics/fli2gif||2015-07-07|Has expired: No public distfiles
+net-im/tkabbur||2015-07-07|Has expired: Upstream development ceased since 2008
+www/mod_wsgi3|www/mod_wsgi4|2015-07-12|Renamed to reflect new version
+archivers/pear-PHP_Archiv|archivers/pear-PHP_Archive|2015-07-12|Fix path
+devel/p5-Test-TempDir|devel/p5-Test-TempDir-Tiny|2015-07-14|Has expired: Use devel/p5-Test-TempDir-Tiny instead
+x11-toolkits/fpc-gtk1||2015-07-14|Development has been discontinued
+graphics/fpc-fpgtk||2015-07-14|Development has been discontinued
+editors/lazarus-lcl-gtk||2015-07-14|Development has been discontinued
+x11/gmessage||2015-07-14|Upstream has disappeared and development ceased
+security/ssh-guid||2015-07-14|Development ceased, broken with modern ssh
+textproc/gdict||2015-07-14|Development ceased, unusable
+print/pup||2015-07-14|Development ceased, unusable

@@ -26,7 +26,9 @@
     SUBDIR += buzhug
     SUBDIR += c3p0
     SUBDIR += cassandra
+    SUBDIR += cassandra-cpp-driver
     SUBDIR += cassandra2
+    SUBDIR += casstcl
     SUBDIR += cdb
     SUBDIR += cego
     SUBDIR += cegobridge
@@ -50,9 +52,15 @@
     SUBDIR += dbow
     SUBDIR += dbtool
     SUBDIR += dbview
+    SUBDIR += elixir-calecto
+    SUBDIR += elixir-ecto
+    SUBDIR += elixir-mariaex
+    SUBDIR += elixir-mongo
+    SUBDIR += elixir-postgrex
+    SUBDIR += elixir-timex_ecto
     SUBDIR += emma
-    SUBDIR += epgsql
-    SUBDIR += eredis
+    SUBDIR += erlang-epgsql
+    SUBDIR += erlang-eredis
     SUBDIR += erlang-mysql
     SUBDIR += evolution-data-server
     SUBDIR += fastdb
@@ -97,6 +105,7 @@
     SUBDIR += hs-persistent-sqlite
     SUBDIR += hs-persistent-template
     SUBDIR += hsqldb
+    SUBDIR += influxdb
     SUBDIR += innotop
     SUBDIR += ip4r
     SUBDIR += ipa_sdb
@@ -179,6 +188,7 @@
     SUBDIR += monetdb
     SUBDIR += mongodb
     SUBDIR += mrtg-mysql-load
+    SUBDIR += mtools-mongodb
     SUBDIR += mtop
     SUBDIR += mydbf2mysql
     SUBDIR += mydumper
@@ -416,6 +426,7 @@
     SUBDIR += p5-Iterator-DBI
     SUBDIR += p5-Jifty-DBI
     SUBDIR += p5-KyotoCabinet
+    SUBDIR += p5-LMDB_File
     SUBDIR += p5-MLDBM
     SUBDIR += p5-MLDBM-Sync
     SUBDIR += p5-MR-Tarantool
@@ -735,9 +746,9 @@
     SUBDIR += py-pgxnclient
     SUBDIR += py-pickledb
     SUBDIR += py-postgresql
+    SUBDIR += py-psycogreen
     SUBDIR += py-psycopg
     SUBDIR += py-psycopg2
-    SUBDIR += py-psycogreen
     SUBDIR += py-pyPgSQL
     SUBDIR += py-pyhs
     SUBDIR += py-pylibmc
@@ -855,9 +866,9 @@
     SUBDIR += rubygem-do_postgres
     SUBDIR += rubygem-do_sqlite3
     SUBDIR += rubygem-familia
+    SUBDIR += rubygem-globalid
     SUBDIR += rubygem-her
     SUBDIR += rubygem-hiredis
-    SUBDIR += rubygem-globalid
     SUBDIR += rubygem-jdbc-mysql
     SUBDIR += rubygem-leo_manager_client
     SUBDIR += rubygem-memcache

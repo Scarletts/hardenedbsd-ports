@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	squid
-PORTVERSION=	3.5.3
-PORTREVISION=	1
+PORTVERSION=	3.5.6
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://www.squid-cache.org/Versions/v3/${PORTVERSION:R}/ \
 		http://www2.us.squid-cache.org/Versions/v3/${PORTVERSION:R}/ \
@@ -356,7 +355,6 @@ post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC} && ${INSTALL_DATA} ${MYDOCS} ${STAGEDIR}${DOCSDIR})
 	${MKDIR} ${STAGEDIR}/var/squid/logs
-	${RMDIR} ${STAGEDIR}/var/run/squid
 
 .include <bsd.port.pre.mk>
 

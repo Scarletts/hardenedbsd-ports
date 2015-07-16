@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ghostscript
-PORTVERSION=	9.15
-PORTREVISION=	1
+PORTVERSION=	9.16
 CATEGORIES=	print
 MASTER_SITES=	http://downloads.ghostscript.com/public/:gs_srcs \
 		SF/ghostscript/GPL%20Ghostscript/${PORTVERSION}:gs_srcs \
@@ -22,7 +21,6 @@ LICENSE=	AGPLv3
 LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2 \
 		libidn.so:${PORTSDIR}/dns/libidn \
 		libjbig2dec.so:${PORTSDIR}/graphics/jbig2dec \
-		libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libpng.so:${PORTSDIR}/graphics/png \
 		libtiff.so:${PORTSDIR}/graphics/tiff \
 		liblcms2.so:${PORTSDIR}/graphics/lcms2 \
@@ -34,10 +32,9 @@ CONFLICTS_INSTALL= \
 		ghostscript[789]-[0-9]* \
 		ghostscript[789]-nox11-[0-9]*
 
-USES=		gmake pkgconfig:build tar:bzip2
+USES=		gmake jpeg pkgconfig:build autoreconf tar:bzip2
 WANT_GNOME=	yes
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	autoconf
 GNU_CONFIGURE=	yes
 
 MAKE_ENV=	CFLAGS_STANDARD="${CFLAGS}" \

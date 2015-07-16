@@ -3,7 +3,7 @@
 
 PORTNAME=	merkaartor
 PORTVERSION=	0.18.1
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	astro
 MASTER_SITES=	http://merkaartor.be/attachments/download/301/ \
 		https://secure.ohos.nl/downloads/
@@ -15,6 +15,8 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libgdal.so:${PORTSDIR}/graphics/gdal \
 		libproj.so:${PORTSDIR}/graphics/proj
+
+BROKEN=		does not build with GDAL 2.0
 
 USES=		qmake tar:bzip2
 USE_LDCONFIG=	yes

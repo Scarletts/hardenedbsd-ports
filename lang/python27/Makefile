@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	python27
-PORTVERSION=	2.7.9
-PORTREVISION=	1
+PORTVERSION=	2.7.10
 CATEGORIES=	lang python ipv6
 MASTER_SITES=	PYTHON/ftp/python/${PORTVERSION}
 DISTNAME=	Python-${PORTVERSION}
@@ -83,7 +82,7 @@ PLIST_SUB+=	X86_ONLY=""
 PLIST_SUB+=	X86_ONLY="@comment "
 .endif
 
-.if ${ARCH} == amd64 || ${ARCH} == ia64 || ${ARCH} == sparc64 || ${ARCH} == powerpc64 || ${ARCH} == mips64
+.if ${ARCH} == aarch64 || ${ARCH} == amd64 || ${ARCH} == ia64 || ${ARCH} == sparc64 || ${ARCH} == powerpc64 || ${ARCH} == mips64
 PLIST_SUB+=	32BIT_ONLY="@comment "
 .else
 PLIST_SUB+=	32BIT_ONLY=""
@@ -102,10 +101,6 @@ CFLAGS+=	-DPYTHON_DEFAULT_RECURSION_LIMIT=900
 PLIST_SUB+=	NO_NIS="@comment "
 .else
 PLIST_SUB+=	NO_NIS=""
-.endif
-
-.if defined(WITH_OPENSSL_PORT)
-CONFIGURE_ARGS+=	CPPFLAGS=-I/usr/local/include LDFLAGS=-L/usr/local/lib
 .endif
 
 post-patch:

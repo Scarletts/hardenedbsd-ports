@@ -18,14 +18,14 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS+=	libpcre.so:${PORTSDIR}/devel/pcre
 
 GNU_CONFIGURE=	yes
-USES=		gmake libtool pkgconfig tar:xz pie
+USES=		autoreconf gmake libtool pkgconfig tar:xz
+
+USES += pie
 
 .if !defined(_BUILDING_LIGHTTPD_MODULE)
 USES+=	cpe
 .endif
 
-USE_AUTOTOOLS=	autoconf autoheader aclocal automake
-AUTOMAKE_ARGS=	-a -c -f
 CONFIGURE_ARGS+=	--libdir=${PREFIX}/lib/lighttpd
 INSTALL_TARGET=	install-strip
 

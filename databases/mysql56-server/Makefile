@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME?=	mysql
-PORTVERSION=	5.6.24
+PORTVERSION=	5.6.25
 PORTREVISION?=	0
 CATEGORIES=	databases ipv6
 MASTER_SITES=	MYSQL/MySQL-5.6
@@ -64,7 +64,8 @@ MMAN1=		my_print_defaults.1 myisam_ftdump.1 myisamchk.1 myisamlog.1 myisampack.1
 
 CMAKE_ARGS+=	-DWITH_EMBEDDED_SERVER="ON"
 .else
-USES+=		readline
+BUILD_DEPENDS+=	libedit>=0:${PORTSDIR}/devel/libedit
+RUN_DEPENDS+=	libedit>=0:${PORTSDIR}/devel/libedit
 .endif
 
 post-patch:

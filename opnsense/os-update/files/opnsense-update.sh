@@ -36,31 +36,42 @@ fi
 rm -rf /tmp/opnsense-update.*
 
 MARKER="/usr/local/opnsense/version/os-update"
+ORIGIN="/usr/local/etc/pkg/repos/origin.conf"
 MY_RELEASE="15.1-hbsd-exp-02"
 MIRROR="http://hardenedbsd.org/opnsense-hbsd/distsets/${MY_RELEASE}"
 ARCH=$(uname -m)
 
-if [ -f ${MARKER} ]; then
-	INSTALLED=$(cat ${MARKER})
+INSTALLED_BASE=
+if [ -f ${MARKER}.base ]; then
+	INSTALLED_BASE=$(cat ${MARKER}.base)
+fi
+
+INSTALLED_KERNEL=
+if [ -f ${MARKER}.kernel ]; then
+	INSTALLED_KERNEL=$(cat ${MARKER}.kernel)
 fi
 
 DO_RELEASE=
+DO_FLAVOUR=
 DO_MIRROR=
 DO_KERNEL=
 DO_FORCE=
 DO_BASE=
 DO_PKGS=
-DIRTY=
 
-while getopts bcfkm:pr:v OPT; do
+while getopts bcfkm:n:pr:v OPT; do
 	case ${OPT} in
 	b)
 		DO_BASE="-b"
 		;;
 	c)
-		if [ "${MY_RELEASE}-${ARCH}" = "${INSTALLED}" ]; then
+		# -c only ever checks the embedded version string
+		if [ "${MY_RELEASE}-${ARCH}" = "${INSTALLED_KERNEL}" -a \
+		    "${MY_RELEASE}-${ARCH}" = "${INSTALLED_BASE}" ]; then
+			echo "Your system is up to date."
 			exit 1
 		fi
+		echo "There are updates available."
 		exit 0
 		;;
 	f)
@@ -73,13 +84,16 @@ while getopts bcfkm:pr:v OPT; do
 		DO_MIRROR="-m ${OPTARG}"
 		MIRROR=${OPTARG}
 		;;
+	n)
+		DO_FLAVOUR="-n ${OPTARG}"
+		FLAVOUR=${OPTARG}
+		;;
 	p)
 		DO_PKGS="-p"
 		;;
 	r)
 		DO_RELEASE="-r ${OPTARG}"
 		RELEASE=${OPTARG}
-		DIRTY="dirty"
 		;;
 	v)
 		echo ${MY_RELEASE}-${ARCH}
@@ -97,6 +111,11 @@ if [ -z "${DO_KERNEL}${DO_BASE}${DO_PKGS}" ]; then
 	DO_KERNEL="-k"
 	DO_BASE="-b"
 	DO_PKGS="-p"
+fi
+
+if [ -n "${DO_FLAVOUR}" ]; then
+	# replace the package repo name
+	sed -i '' "/url:/s/\${ABI}.*/\${ABI}\/${FLAVOUR}\",/" ${ORIGIN}
 fi
 
 if [ -n "${DO_PKGS}" ]; then
@@ -130,17 +149,30 @@ if [ -z "${RELEASE}" ]; then
 	fi
 fi
 
-if [ "${RELEASE}-${ARCH}" = "${INSTALLED}" -a -z "${DO_FORCE}" ]; then
-	echo "Your system is up to date."
-	exit 0
+if [ -z "${DO_FORCE}" ]; then
+	# disable kernel update if up-to-date
+	if [ "${RELEASE}-${ARCH}" = "${INSTALLED_KERNEL}" -a \
+	    -n "${DO_KERNEL}" ]; then
+		DO_KERNEL=
+	fi
+
+	# disable base update if up-to-date
+	if [ "${RELEASE}-${ARCH}" = "${INSTALLED_BASE}" -a \
+	    -n "${DO_BASE}" ]; then
+		DO_BASE=
+	fi
+
+	# nothing to do
+	if [ -z "${DO_KERNEL}${DO_BASE}" ]; then
+		echo "Your system is up to date."
+		exit 0
+	fi
 fi
 
-echo
-echo "!!!!!!!!!!!! ATTENTION !!!!!!!!!!!!!!"
-echo "A kernel/base upgrade is in progress."
-echo "Please do not turn off the system."
-echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-echo
+echo "!!!!!!!!!!!!! ATTENTION !!!!!!!!!!!!!!!!!"
+echo "! A kernel/base upgrade is in progress. !"
+echo "!  Please do not turn off the system.   !"
+echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
 
 OBSOLETESET=
 KERNELSET=kernel-${RELEASE}-${ARCH}.txz
@@ -167,7 +199,7 @@ apply_kernel()
 
 	rm -rf ${KERNELDIR}.old && \
 	    mv ${KERNELDIR} ${KERNELDIR}.old && \
-	    tar -C/ -xjpf ${WORKDIR}/${KERNELSET} && \
+	    tar -C/ -xpf ${WORKDIR}/${KERNELSET} && \
 	    kldxref ${KERNELDIR} && \
 	    echo "ok" && return
 
@@ -232,9 +264,19 @@ if [ -n "${DO_BASE}" ]; then
 	fi
 fi
 
+# bootstrap the directory  if needed
 mkdir -p $(dirname ${MARKER})
-echo ${RELEASE}-${ARCH}${DIRTY} > ${MARKER}
+# remove the file previously used
+rm -f ${MARKER}
 
-rm -r ${WORKDIR}
+if [ -n "${DO_KERNEL}" ]; then
+	echo ${RELEASE}-${ARCH} > ${MARKER}.kernel
+fi
+
+if [ -n "${DO_BASE}" ]; then
+	echo ${RELEASE}-${ARCH} > ${MARKER}.base
+fi
+
+rm -rf ${WORKDIR}
 
 echo "Please reboot."

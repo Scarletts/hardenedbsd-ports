@@ -2,9 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	chromium
-PORTVERSION=	43.0.2357.124
+PORTVERSION=	43.0.2357.132
 CATEGORIES=	www
 MASTER_SITES=	http://commondatastorage.googleapis.com/chromium-browser-official/
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} # default, but needed to get distinfo correct if TEST is on
 
 MAINTAINER=	chromium@FreeBSD.org
 COMMENT=	Google web browser based on WebKit
@@ -39,7 +40,6 @@ LIB_DEPENDS=	libcairo.so:${PORTSDIR}/graphics/cairo \
 		libpci.so:${PORTSDIR}/devel/libpci \
 		libdrm.so:${PORTSDIR}/graphics/libdrm \
 		libicuuc.so:${PORTSDIR}/devel/icu \
-		libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libjsoncpp.so:${PORTSDIR}/devel/jsoncpp \
 		libnspr4.so:${PORTSDIR}/devel/nspr \
 		libpng.so:${PORTSDIR}/graphics/png \
@@ -55,7 +55,7 @@ RUN_DEPENDS=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:${PORTSDIR}/a
 		xdg-open:${PORTSDIR}/devel/xdg-utils
 
 ONLY_FOR_ARCHS=	i386 amd64
-USES=		bison compiler:c++11-lib cpe desktop-file-utils pkgconfig \
+USES=		bison compiler:c++11-lib cpe desktop-file-utils jpeg pkgconfig \
 		perl5 shebangfix ninja tar:xz python:2,build execinfo
 CPE_VENDOR=	google
 CPE_PRODUCT=	chrome
@@ -127,7 +127,7 @@ GYP_DEFINES+=	google_api_key=AIzaSyBsp9n41JLW8jCokwn7vhoaMejDFRd1mp8 \
 SUB_FILES=	chromium-browser.desktop chrome
 SUB_LIST+=	COMMENT="${COMMENT}"
 
-OPTIONS_DEFINE=	CODECS GCONF PULSEAUDIO KERBEROS DEBUG #TEST
+OPTIONS_DEFINE=	CODECS GCONF PULSEAUDIO TEST KERBEROS DEBUG
 CODECS_DESC=	Compile and enable patented codecs like H.264
 
 OPTIONS_DEFAULT=	CODECS GCONF KERBEROS
@@ -136,6 +136,8 @@ GCONF_USE=	GNOME=gconf2
 PULSEAUDIO_LIB_DEPENDS=	libpulse.so:${PORTSDIR}/audio/pulseaudio
 
 TEST_DISTFILES=	${PORTNAME}-${DISTVERSION}-testdata${EXTRACT_SUFX}
+
+BROKEN_FreeBSD_8=	Does not compile, missing locale
 
 .include <bsd.port.options.mk>
 
@@ -180,7 +182,6 @@ ALL_TARGET+=	${TEST_TARGETS}
 
 DEBUG_MAKE_ENV=	V=1
 .if ${PORT_OPTIONS:MDEBUG}
-BROKEN=		Produces empty binary
 BUILDTYPE=	Debug
 .else
 BUILDTYPE=	Release

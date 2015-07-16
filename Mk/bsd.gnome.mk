@@ -61,10 +61,11 @@ Gnome_Pre_Include=			bsd.gnome.mk
 #				file and add apropriate @exec/@unexec directives for
 #				each .omf file found to track OMF registration database.
 #
-# INSTALLS_ICONS	- If your port installs Freedesktop-style icons to
+# INSTALLS_ICONS	- If a GTK+ port installs Freedesktop-style icons to
 #				${LOCALBASE}/share/icons, then you should use this
-#				macro. If the icons are not cached, they will not be
-#				displayed.
+#				macro. Using this macro ensures that icons are cached
+#				and will display correctly. This macro isn't needed
+#				for QT based applications, which use a different method.
 #
 
 # non-version specific components
@@ -215,7 +216,9 @@ atk_LIB_DEPENDS=	libatk-1.0.so:${PORTSDIR}/accessibility/atk
 atk_DETECT=		${LOCALBASE}/libdata/pkgconfig/atk.pc
 atk_USE_GNOME_IMPL=	glib20
 
+dconf_BUILD_DEPENDS=	dconf:${PORTSDIR}/devel/dconf
 dconf_LIB_DEPENDS=	libdconf.so:${PORTSDIR}/devel/dconf
+dconf_RUN_DEPENDS=	dconf:${PORTSDIR}/devel/dconf
 dconf_DETECT=		${LOCALBASE}/libdata/pkgconfig/dconf.pc
 dconf_USE_GNOME_IMPL=	glib20
 
@@ -497,9 +500,7 @@ gvfs_RUN_DEPENDS=	gvfs>=0:${PORTSDIR}/devel/gvfs
 gvfs_USE_GNOME_IMPL=	glib20
 
 .if defined(MARCUSCOM_CVS)
-. if exists(${PORTSDIR}/Mk/bsd.gnome-experimental.mk)
-.include "${PORTSDIR}/Mk/bsd.gnome-experimental.mk"
-. endif
+.sinclude "${PORTSDIR}/Mk/bsd.gnome-experimental.mk"
 .endif
 
 .if defined(INSTALLS_ICONS)

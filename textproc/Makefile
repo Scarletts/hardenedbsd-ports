@@ -6,6 +6,7 @@
     SUBDIR += 2bsd-diff
     SUBDIR += R-cran-R2HTML
     SUBDIR += R-cran-XML
+    SUBDIR += R-cran-pystr
     SUBDIR += R-cran-stringi
     SUBDIR += R-cran-stringr
     SUBDIR += R-cran-xtable
@@ -30,6 +31,7 @@
     SUBDIR += archmage
     SUBDIR += artha
     SUBDIR += asciidoc
+    SUBDIR += asciinema
     SUBDIR += asm-xml
     SUBDIR += asm2html
     SUBDIR += aspell
@@ -147,6 +149,10 @@
     SUBDIR += elasticsearch-plugin-marvel
     SUBDIR += elasticsearch-plugin-sql
     SUBDIR += elasticsearch-river-rabbitmq
+    SUBDIR += elixir-earmark
+    SUBDIR += elixir-ex_doc
+    SUBDIR += elixir-funnel
+    SUBDIR += elixir-sweet_xml
     SUBDIR += emacs-wiki
     SUBDIR += en-aspell
     SUBDIR += en-hunspell
@@ -154,6 +160,8 @@
     SUBDIR += enchant
     SUBDIR += eo-aspell
     SUBDIR += eqe
+    SUBDIR += erlang-edown
+    SUBDIR += erlang-yamerl
     SUBDIR += es-aspell
     SUBDIR += es-hunspell
     SUBDIR += es-hyphen
@@ -161,7 +169,6 @@
     SUBDIR += estraier
     SUBDIR += et-aspell
     SUBDIR += exempi
-    SUBDIR += exmpp
     SUBDIR += expat2
     SUBDIR += exslt
     SUBDIR += extract_url
@@ -187,7 +194,6 @@
     SUBDIR += ga-aspell
     SUBDIR += gastex
     SUBDIR += gd-aspell
-    SUBDIR += gdict
     SUBDIR += gdome2
     SUBDIR += gl-aspell
     SUBDIR += gladtex
@@ -391,6 +397,7 @@
     SUBDIR += libwpd
     SUBDIR += libwpd010
     SUBDIR += libwps
+    SUBDIR += libwps02
     SUBDIR += libwps03
     SUBDIR += libxdiff
     SUBDIR += libxml++26
@@ -1165,12 +1172,14 @@
     SUBDIR += py-MarkupSafe
     SUBDIR += py-Tempita
     SUBDIR += py-acora
+    SUBDIR += py-alabaster
     SUBDIR += py-asciinema
     SUBDIR += py-asv
     SUBDIR += py-bugzillatools
     SUBDIR += py-chardet
     SUBDIR += py-cloud_sptheme
     SUBDIR += py-creole
+    SUBDIR += py-diff-match-patch
     SUBDIR += py-docutils
     SUBDIR += py-dsv
     SUBDIR += py-elasticsearch-py
@@ -1224,6 +1233,7 @@
     SUBDIR += py-rstyoutube
     SUBDIR += py-rxp
     SUBDIR += py-sgrep
+    SUBDIR += py-snowballstemmer
     SUBDIR += py-sparqlwrapper
     SUBDIR += py-sphinx
     SUBDIR += py-sphinx-intl
@@ -1243,6 +1253,7 @@
     SUBDIR += py-whoosh
     SUBDIR += py-wicked
     SUBDIR += py-wordnet
+    SUBDIR += py-wstools
     SUBDIR += py-wtforms
     SUBDIR += py-xlrd
     SUBDIR += py-xlutils
@@ -1474,9 +1485,9 @@
     SUBDIR += source-highlight
     SUBDIR += sowing
     SUBDIR += spellutils
-    SUBDIR += spiff
     SUBDIR += sphinxsearch
     SUBDIR += sphinxsearch-devel
+    SUBDIR += spiff
     SUBDIR += sq-hunspell
     SUBDIR += sr-aspell
     SUBDIR += sr-hunspell
@@ -1531,6 +1542,7 @@
     SUBDIR += translate-toolkit
     SUBDIR += ts-hunspell
     SUBDIR += tth
+    SUBDIR += turboxsl
     SUBDIR += txt2html
     SUBDIR += txt2man
     SUBDIR += txt2tags

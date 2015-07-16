@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	handbrake
-PORTVERSION=	0.10.1
-PORTREVISION=	3
+PORTVERSION=	0.10.2
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://download.handbrake.fr/releases/${PORTVERSION}/ \
 		http://download.handbrake.fr/handbrake/contrib/:contrib \
@@ -92,6 +92,13 @@ LIB_DEPENDS+=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
 USES+=		gettext
 USE_GNOME+=	gtk30
 PLIST_FILES+=	bin/HandBrake
+
+DESKTOP_ENTRIES="HandBrake" \
+		"${COMMENT}" \
+		"" \
+		"HandBrake" \
+		"AudioVideo;" \
+		false
 .else
 CONFIGURE_ARGS+=	--disable-gtk
 .endif

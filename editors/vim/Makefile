@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	vim
-PORTVERSION=	7.4.729
+DISTVERSIONPREFIX=	v
+DISTVERSION=	7-4-778
 CATEGORIES?=	editors
 
 MAINTAINER?=	sunpoet@FreeBSD.org
@@ -20,6 +21,8 @@ EXUBERANT_CTAGS_DESC=	Use exctags instead of ctags
 UI_DESC=		User interface
 XTERM_SAVE_DESC=	Restore xterm screen after exit
 
+PORTSCOUT=	site:https://github.com/vim/vim/releases
+
 ALL_TARGET=	# empty
 MAKE_ARGS+=	CC="${CC}" CONF_ARGS="--prefix=${PREFIX} ${CSCOPE_ARG}" STRIP="${STRIP_CMD}" CONF_OPT_MULTIBYTE=--enable-multibyte CONF_TERM_LIB=--with-tlib=termlib
 MAKE_ARGS+=	VIMRUNTIMEDIR=${PREFIX}/share/vim/${VIM_VER} VIMRCLOC=${ETCDIR}
@@ -30,9 +33,8 @@ WANT_GNOME=	yes
 PLIST_SUB=	VIM_VER=${VIM_VER}
 PORTDATA=	${VIM_VER}
 
-VIM_VER=	${PORTNAME}${PORTVERSION:R:S/.//g}
+VIM_VER=	${PORTNAME}${PORTVERSION:R:S|.||g}
 
-GH_TAGNAME=	db9bc0b
 USE_GITHUB=	yes
 
 CPE_VERSION=	${PORTVERSION:R}
@@ -150,16 +152,18 @@ post-install:
 	${TEST} -e ${STAGEDIR}${PREFIX}/bin/${file} || ${LN} -fs vim ${STAGEDIR}${PREFIX}/bin/${file}
 .endfor
 .endif
-.if ${PORT_OPTIONS:MDEFAULT_VIMRC}
+
+post-install-DEFAULT_VIMRC-on:
 	${MKDIR} ${STAGEDIR}${ETCDIR}
 	${INSTALL_DATA} ${FILESDIR}/vimrc ${STAGEDIR}${ETCDIR}/gvimrc.sample
 	${INSTALL_DATA} ${FILESDIR}/vimrc ${STAGEDIR}${ETCDIR}/vimrc.sample
-.endif
-.if !${PORT_OPTIONS:MNLS}
+
+post-install-NLS-off:
 	${MKDIR} ${STAGEDIR}${DATADIR}/${VIM_VER}/keymap/
 	${INSTALL_DATA} ${WRKSRC}/runtime/keymap/* ${STAGEDIR}${DATADIR}/${VIM_VER}/keymap/
-.endif
 	${INSTALL_DATA} ${FILESDIR}/vietnamese_viscii.vim ${STAGEDIR}${DATADIR}/${VIM_VER}/keymap/
-	${TOUCH} ${STAGEDIR}${DATADIR}/${VIM_VER}/lang/.keepme
+
+post-install-NLS-on:
+	${INSTALL_DATA} ${FILESDIR}/vietnamese_viscii.vim ${STAGEDIR}${DATADIR}/${VIM_VER}/keymap/
 
 .include <bsd.port.post.mk>

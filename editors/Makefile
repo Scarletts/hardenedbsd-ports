@@ -90,7 +90,6 @@
     SUBDIR += komodo-edit
     SUBDIR += latexila
     SUBDIR += lazarus
-    SUBDIR += lazarus-lcl-gtk
     SUBDIR += lazarus-lcl-gtk2
     SUBDIR += lazarus-lcl-nogui
     SUBDIR += lazarus-lcl-qt
@@ -251,6 +250,7 @@
     SUBDIR += tweak
     SUBDIR += uemacs
     SUBDIR += uzap
+    SUBDIR += vanubi
     SUBDIR += vigor
     SUBDIR += vile
     SUBDIR += vim
@@ -266,7 +266,6 @@
     SUBDIR += yui
     SUBDIR += yzis
     SUBDIR += zile
-    SUBDIR += zim
     SUBDIR += zoinks
 
 .include <bsd.port.subdir.mk>
