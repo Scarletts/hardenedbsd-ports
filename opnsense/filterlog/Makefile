@@ -3,7 +3,7 @@
 
 PORTNAME=	filterlog
 PORTVERSION=	0.2
-CATEGORIES?=	sysutils
+CATEGORIES=	sysutils
 MASTER_SITES=	# empty
 DISTFILES=	# none
 EXTRACT_ONLY=	# empty
@@ -13,7 +13,6 @@ COMMENT=	Parse pflog(4) output
 USES=		pie
 
 do-extract:
-	${MKDIR} ${WRKSRC}
-	${CP} ${FILESDIR}/* ${WRKSRC}
+	${CP} -r ${FILESDIR} ${WRKSRC}
 
 .include <bsd.port.mk>

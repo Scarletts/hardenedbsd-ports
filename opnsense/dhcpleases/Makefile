@@ -1,18 +1,14 @@
 PORTNAME=	dhcpleases
 PORTVERSION=	0.2
-PORTREVISION=	0
 CATEGORIES=	sysutils
 MASTER_SITES=	# empty
 DISTFILES=	# none
 EXTRACT_ONLY=	# empty
 
 MAINTAINER=	franco@opnsense.org
-COMMENT=	read dhpcd.lease file and add it to hosts file
+COMMENT=	Read dhpcd.lease file and add it to hosts file
 
-CONFLICTS=	dhcpleases6-*
-
-WHERE=		sbin
-USES=		pie
+USES=	pie
 
 do-extract:
 	mkdir -p ${WRKSRC}
