@@ -13,6 +13,7 @@
     SUBDIR += abgx360
     SUBDIR += abgx360gui
     SUBDIR += accountsservice
+    SUBDIR += acerhdf-kmod
     SUBDIR += acpi_call
     SUBDIR += acpica-tools
     SUBDIR += acts
@@ -123,6 +124,7 @@
     SUBDIR += cfengine34
     SUBDIR += cfengine35
     SUBDIR += cfengine36
+    SUBDIR += cfengine37
     SUBDIR += chgrep
     SUBDIR += cinnamon-control-center
     SUBDIR += cinnamon-settings-daemon
@@ -877,6 +879,7 @@
     SUBDIR += rubygem-sys-uptime
     SUBDIR += rubygem-teamocil
     SUBDIR += rubygem-winrm
+    SUBDIR += rubygem-winrm-fs
     SUBDIR += rubygem-yell
     SUBDIR += rundeck
     SUBDIR += runit
@@ -921,7 +924,7 @@
     SUBDIR += sleuthkit
     SUBDIR += sloth
     SUBDIR += slst
-    SUBDIR += slurm-hpc
+    SUBDIR += slurm-wlm
     SUBDIR += smartmontools
     SUBDIR += smp_utils
     SUBDIR += snap
