@@ -3,7 +3,7 @@
 
 PORTNAME=	zsh
 PORTVERSION=	5.0.8
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	shells
 MASTER_SITES=	\
 		SF/${PORTNAME}/${PORTNAME}/${PORTVERSION} \
@@ -24,8 +24,20 @@ MAKE_JOBS_UNSAFE=	yes
 
 ZSH_VER=	${PORTVERSION}
 
-USES=		iconv ncurses tar:bzip2 pie
+USES=		iconv ncurses shebangfix tar:bzip2
+SHEBANG_FILES=	Functions/Calendar/calendar_add \
+		Functions/Misc/checkmail \
+		Functions/Misc/run-help \
+		Functions/Misc/sticky-note \
+		Functions/Misc/zcalc \
+		Functions/Misc/zed \
+		Functions/Misc/zkbd
+SHEBANG_LANG=	zsh
+zsh_OLD_CMD=	/bin/zsh
+zsh_CMD=	${PREFIX}/bin/zsh
 GNU_CONFIGURE=	yes
+
+USES+=		pie
 
 CPPFLAGS+=	-I${LOCALBASE}/include -DBOOL_DEFINED
 LDFLAGS+=	-L${LOCALBASE}/lib -Wl,--as-needed
@@ -76,6 +88,7 @@ CONFIGURE_ENV+=	ac_cv_lib_iconv_libiconv=no
 .endif
 
 post-patch:
+	@${REINPLACE_CMD} -i '' -e '1s|zsh|${zsh_CMD}|' ${WRKSRC}/Functions/Misc/run-help-ip
 	@${REINPLACE_CMD} -e '/LIBS/s/-lrt//' ${WRKSRC}/configure
 	@${SED} -i "" -e "s,link=dynamic,link=either," \
 		${WRKSRC}/Src/Modules/*.mdd
