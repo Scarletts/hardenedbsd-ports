@@ -10,12 +10,16 @@
     SUBDIR += ORBit2-reference
     SUBDIR += R-cran-Defaults
     SUBDIR += R-cran-Hmisc
+    SUBDIR += R-cran-R6
     SUBDIR += R-cran-RUnit
     SUBDIR += R-cran-Rcpp
+    SUBDIR += R-cran-bit
+    SUBDIR += R-cran-bit64
     SUBDIR += R-cran-bitops
     SUBDIR += R-cran-caTools
     SUBDIR += R-cran-caret
     SUBDIR += R-cran-chron
+    SUBDIR += R-cran-evaluate
     SUBDIR += R-cran-foreach
     SUBDIR += R-cran-gbm
     SUBDIR += R-cran-gdata
@@ -27,9 +31,11 @@
     SUBDIR += R-cran-magrittr
     SUBDIR += R-cran-memoise
     SUBDIR += R-cran-microbenchmark
+    SUBDIR += R-cran-pkgmaker
     SUBDIR += R-cran-plyr
     SUBDIR += R-cran-proto
     SUBDIR += R-cran-randomForest
+    SUBDIR += R-cran-registry
     SUBDIR += R-cran-reshape
     SUBDIR += R-cran-reshape2
     SUBDIR += SpecTcl
@@ -64,7 +70,6 @@
     SUBDIR += apache-ant
     SUBDIR += api-sanity-autotest
     SUBDIR += apiextractor
-    SUBDIR += appdata-tools
     SUBDIR += appstream-glib
     SUBDIR += apr1
     SUBDIR += apr2
@@ -80,6 +85,7 @@
     SUBDIR += arm-gnueabi-binutils
     SUBDIR += arm-none-eabi-binutils
     SUBDIR += arm-none-eabi-gcc
+    SUBDIR += arm-none-eabi-gcc492
     SUBDIR += aros-sdk
     SUBDIR += art
     SUBDIR += as31
@@ -986,7 +992,6 @@
     SUBDIR += jam
     SUBDIR += jansson
     SUBDIR += java-findbugs
-    SUBDIR += java-util-concurrent
     SUBDIR += javolution
     SUBDIR += jclassinfo
     SUBDIR += jcmdline
@@ -1457,6 +1462,7 @@
     SUBDIR += noweb
     SUBDIR += npth
     SUBDIR += nspr
+    SUBDIR += nuitka
     SUBDIR += nxt-python
     SUBDIR += obby
     SUBDIR += obfuscatejs
@@ -1485,6 +1491,7 @@
     SUBDIR += ocaml-pcre
     SUBDIR += ocaml-pomap
     SUBDIR += ocaml-ppx-tools
+    SUBDIR += ocaml-re
     SUBDIR += ocaml-react
     SUBDIR += ocaml-res
     SUBDIR += ocaml-sdl
@@ -1492,6 +1499,7 @@
     SUBDIR += ocaml-sexplib
     SUBDIR += ocaml-typeconv
     SUBDIR += ocaml-ulex
+    SUBDIR += ocaml-uutf
     SUBDIR += ocaml-xstr
     SUBDIR += ocaml-xstrp4
     SUBDIR += ocfpcsc
@@ -4069,6 +4077,7 @@
     SUBDIR += py-period
     SUBDIR += py-pex
     SUBDIR += py-phabricator
+    SUBDIR += py-phonenumbers
     SUBDIR += py-phpserialize
     SUBDIR += py-pika
     SUBDIR += py-pip
@@ -4110,7 +4119,6 @@
     SUBDIR += py-pymarc
     SUBDIR += py-pympler
     SUBDIR += py-pymtbl
-    SUBDIR += py-pyparsing15
     SUBDIR += py-pyrfc3339
     SUBDIR += py-pyro
     SUBDIR += py-pyshapelib
@@ -4508,11 +4516,13 @@
     SUBDIR += rubygem-abstract
     SUBDIR += rubygem-actionpack-action_caching
     SUBDIR += rubygem-actionview
+    SUBDIR += rubygem-actionview41
     SUBDIR += rubygem-active_scaffold
     SUBDIR += rubygem-activejob
     SUBDIR += rubygem-activemessaging
     SUBDIR += rubygem-activesupport
     SUBDIR += rubygem-activesupport4
+    SUBDIR += rubygem-activesupport41
     SUBDIR += rubygem-algorithms
     SUBDIR += rubygem-allison
     SUBDIR += rubygem-analogger
@@ -4577,6 +4587,7 @@
     SUBDIR += rubygem-coercible
     SUBDIR += rubygem-coffee-rails
     SUBDIR += rubygem-coffee-rails4
+    SUBDIR += rubygem-coffee-rails41
     SUBDIR += rubygem-coffee-script
     SUBDIR += rubygem-coffee-script-source
     SUBDIR += rubygem-colorize
@@ -4686,6 +4697,7 @@
     SUBDIR += rubygem-holidays
     SUBDIR += rubygem-i18n
     SUBDIR += rubygem-icalendar
+    SUBDIR += rubygem-ice_cube
     SUBDIR += rubygem-ice_nine
     SUBDIR += rubygem-igraph
     SUBDIR += rubygem-inflecto
@@ -4694,6 +4706,7 @@
     SUBDIR += rubygem-iobuffer
     SUBDIR += rubygem-jammit
     SUBDIR += rubygem-jbuilder
+    SUBDIR += rubygem-jbuilder-rails41
     SUBDIR += rubygem-jekyll-coffeescript
     SUBDIR += rubygem-jeweler
     SUBDIR += rubygem-jmespath
@@ -4809,6 +4822,7 @@
     SUBDIR += rubygem-retryable
     SUBDIR += rubygem-rgl
     SUBDIR += rubygem-rodzilla
+    SUBDIR += rubygem-rotp
     SUBDIR += rubygem-rr
     SUBDIR += rubygem-rrd-ffi
     SUBDIR += rubygem-rscm
@@ -4850,6 +4864,7 @@
     SUBDIR += rubygem-shoulda-context
     SUBDIR += rubygem-shoulda-matchers
     SUBDIR += rubygem-sidekiq
+    SUBDIR += rubygem-sidetiq
     SUBDIR += rubygem-sigdump
     SUBDIR += rubygem-simple_form
     SUBDIR += rubygem-simplecov
@@ -4861,6 +4876,7 @@
     SUBDIR += rubygem-sprockets
     SUBDIR += rubygem-sprockets-helpers
     SUBDIR += rubygem-sprockets-rails
+    SUBDIR += rubygem-sprockets-rails-rails41
     SUBDIR += rubygem-sprockets-sass
     SUBDIR += rubygem-sprockets211
     SUBDIR += rubygem-sprockets22
@@ -4963,6 +4979,7 @@
     SUBDIR += silentbob
     SUBDIR += simgear
     SUBDIR += simian
+    SUBDIR += simple_components
     SUBDIR += simpletest
     SUBDIR += skalibs
     SUBDIR += slf4j
