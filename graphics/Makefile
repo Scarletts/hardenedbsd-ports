@@ -21,6 +21,7 @@
     SUBDIR += R-cran-diagram
     SUBDIR += R-cran-dichromat
     SUBDIR += R-cran-ggplot2
+    SUBDIR += R-cran-gridBase
     SUBDIR += R-cran-munsell
     SUBDIR += R-cran-pixmap
     SUBDIR += R-cran-png
@@ -974,7 +975,6 @@
     SUBDIR += simpleviewer
     SUBDIR += sk1libs
     SUBDIR += skanlite
-    SUBDIR += skencil
     SUBDIR += sketch
     SUBDIR += springgraph
     SUBDIR += squish
