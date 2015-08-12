@@ -19,7 +19,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	HardenedBSD
 GH_PROJECT=	secadm
 #GH_COMMIT=	ace6559
-GH_TAGNAME=	v0.2.3
+GH_COMMIT=	d493197
+GH_TAGNAME=	${GH_COMMIT}
 
 .include <bsd.port.mk>
 
