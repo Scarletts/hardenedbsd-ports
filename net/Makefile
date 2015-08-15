@@ -1055,6 +1055,7 @@
     SUBDIR += rubygem-epp-client-smallregistry
     SUBDIR += rubygem-fog-atmos
     SUBDIR += rubygem-fog-aws
+    SUBDIR += rubygem-fog-dynect
     SUBDIR += rubygem-fog-ecloud
     SUBDIR += rubygem-fog-google
     SUBDIR += rubygem-fog-local
@@ -1177,6 +1178,7 @@
     SUBDIR += spread4
     SUBDIR += sprinkle
     SUBDIR += sqtop
+    SUBDIR += srelay
     SUBDIR += ss5
     SUBDIR += ssldump
     SUBDIR += sslh
