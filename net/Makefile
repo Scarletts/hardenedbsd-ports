@@ -307,6 +307,7 @@
     SUBDIR += libilbc
     SUBDIR += libkfbapi
     SUBDIR += libkvkontakte
+    SUBDIR += libmaia
     SUBDIR += libmateweather
     SUBDIR += libmaxminddb
     SUBDIR += libmediawiki
@@ -449,6 +450,7 @@
     SUBDIR += nxproxy
     SUBDIR += nyancat
     SUBDIR += nylon
+    SUBDIR += ocserv
     SUBDIR += ohphone
     SUBDIR += olsrd
     SUBDIR += omcmd

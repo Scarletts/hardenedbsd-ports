@@ -12,13 +12,15 @@ COMMENT=	ANSI-BBS terminal which supports telnet, rlogin, and SSH
 LICENSE=	GPLv2
 
 WRKSRC=		${WRKDIR}/syncterm-${PORTVERSION}/src/syncterm
-USES=		gmake tar:tgz
+USES=		gmake perl5 tar:tgz
+USE_PERL5=	build
 MAKEFILE=	GNUmakefile
 PLIST_FILES=	bin/syncterm \
 		man/man1/syncterm.1.gz \
 		share/applications/syncterm.desktop \
 		share/icons/hicolor/64x64/apps/syncterm.png
 
+NO_CCACHE=	yes
 DISABLE_MAKE_JOBS=	yes
 MAKE_ARGS+=	WITHOUT_PORTAUDIO=yes
 MAKE_ARGS+=	-C ${WRKSRC}
