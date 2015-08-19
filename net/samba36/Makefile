@@ -31,7 +31,8 @@ AUTOHEADER_ARGS=	${IPATHS}
 AUTOCONF_ARGS=		${IPATHS}
 
 GNU_CONFIGURE=		yes
-USES=			cpe execinfo gmake iconv pkgconfig pie
+USES=			cpe execinfo gmake iconv pkgconfig
+USES+=			pie relro
 USE_AUTOTOOLS=		autoconf autoheader
 USE_LDCONFIG=		${SAMBA_LIBDIR}
 # pkg-config is used to find talloc

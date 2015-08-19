@@ -14,7 +14,7 @@ LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
 PORTSCOUT=	limitw:1,even
 
 USE_GNOME=	# empty but we need it for USE_GNOME_SUBR
-USES=		cpe gmake libtool pathfix pie
+USES=		cpe gmake libtool pathfix
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=--localstatedir=/var \
@@ -26,6 +26,8 @@ CONFIGURE_ARGS=--localstatedir=/var \
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
+
+USES+=		pie relro
 
 CPE_VENDOR=	d-bus_project
 CPE_PRODUCT=	d-bus

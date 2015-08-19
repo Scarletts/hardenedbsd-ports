@@ -27,10 +27,12 @@ RUN_DEPENDS=	p5-IPC-Run>=0:${PORTSDIR}/devel/p5-IPC-Run \
 		p5-AnyEvent-I3>=0:${PORTSDIR}/devel/p5-AnyEvent-I3
 
 USE_XORG=	xcb
-USES=		pkgconfig iconv gmake perl5 tar:bzip2 pie
+USES=		pkgconfig iconv gmake perl5 tar:bzip2
 USE_PERL5=	run
 LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}
 MAKE_JOBS_UNSAFE=	yes
+
+USES+=		pie relro
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/etc|${PREFIX}/etc|g' ${WRKSRC}/src/config.c

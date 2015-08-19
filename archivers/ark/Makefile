@@ -19,7 +19,7 @@ CPE_VENDOR=	kde
 USE_QT4=	qtestlib qmake_build moc_build rcc_build uic_build
 USE_LDCONFIG=	yes
 
-USES+=		pie
+USES+=		pie relro
 
 OPTIONS_DEFINE=	7ZIP RAR ZIP
 

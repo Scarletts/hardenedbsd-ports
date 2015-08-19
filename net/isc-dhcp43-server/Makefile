@@ -15,7 +15,8 @@ COMMENT?=	ISC Dynamic Host Configuration Protocol server
 
 LICENSE=	ISCL
 
-USES=		gmake pie
+USES=		gmake
+USES+=		pie relro
 
 #PATCHLEVEL=	P1
 PORTREVISION_SERVER=	1

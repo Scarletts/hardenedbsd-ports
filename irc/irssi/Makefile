@@ -15,10 +15,12 @@ LIB_DEPENDS=	libglib-2.0.so:${PORTSDIR}/devel/glib20
 
 CONFLICTS=	irssi-devel-[0-9]* zh-irssi-[0-9]*
 
-USES=		gmake libtool ncurses pkgconfig tar:bzip2 pie
+USES=		gmake libtool ncurses pkgconfig tar:bzip2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-ncurses=${NCURSESBASE}
 INSTALL_TARGET=	install-strip
+
+USES+=		pie relro
 
 OPTIONS_DEFINE=	PERL PROXY SOCKS IPV6 BOT DOCS TRUECOLOR
 OPTIONS_DEFAULT=	PERL IPV6 DOCS

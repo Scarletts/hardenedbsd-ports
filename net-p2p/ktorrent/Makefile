@@ -18,8 +18,10 @@ LIB_DEPENDS=	libtag.so:${PORTSDIR}/audio/taglib \
 USE_KDE4=	kdelibs kdeprefix automoc4 pimlibs workspace
 USE_QT4=	corelib gui network qt3support qtestlib webkit \
 		qmake_build moc_build rcc_build uic_build
-USES=		cmake:outsource gettext tar:bzip2 pie
+USES=		cmake:outsource gettext tar:bzip2
 USE_LDCONFIG=	yes
+
+USES+=		pie relro
 
 CONFLICTS_BUILD=	ktorrent-2*
 

@@ -54,7 +54,7 @@ USE_XORG=	kbproto x11 xau xcomposite xcursor xdamage xdmcp xfixes \
 SHEBANG_FILES=	kwin/clients/oxygen/data/update_oxygen.pl
 USE_LDCONFIG=	yes
 
-USES+=		pie
+USES+=		pie relro
 
 CMAKE_ARGS=	-DCMAKE_REQUIRED_FLAGS:STRING="-L${LOCALBASE}/lib" \
 		-DBUILD_python:BOOL=OFF \

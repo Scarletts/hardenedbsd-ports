@@ -14,10 +14,12 @@ COMMENT=	Interpreted object-oriented programming language
 
 LICENSE=	PSFL
 
-USES=		cpe ncurses pkgconfig readline tar:xz pie
+USES=		cpe ncurses pkgconfig readline tar:xz
 USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+
+USES+=		pie relro
 
 CPE_VENDOR=	python
 CPE_PRODUCT=	${CPE_VENDOR}

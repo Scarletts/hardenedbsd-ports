@@ -41,9 +41,11 @@ USE_XCB=		x11extras wm
 USE_LDCONFIG=	yes
 USE_QT5=	core gui network quick svg linguist multimedia imageformats \
 		buildtools x11extras
-USES=		qmake pie
+USES=		qmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	pcbsd
+
+USES+=		pie relro
 
 QMAKE_ARGS=	CONFIG+="configure NO_I18N"
 

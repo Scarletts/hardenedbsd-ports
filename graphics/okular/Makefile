@@ -28,7 +28,7 @@ USE_QT4=	corelib declarative gui opengl xml \
 USES=		cmake:outsource jpeg pkgconfig tar:xz
 USE_LDCONFIG=	yes
 
-USES+=		pie
+USES+=		pie relro
 
 OPTIONS_DEFINE=	DVI
 

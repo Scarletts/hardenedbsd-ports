@@ -24,7 +24,7 @@ GROUPS=		git_daemon
 SUB_FILES=	pkg-message
 
 GNU_CONFIGURE=	yes
-USES=		gmake shebangfix tar:xz pie
+USES=		gmake shebangfix tar:xz
 CPPFLAGS+=	-isystem${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 MAKE_ENV+=	V=1
@@ -36,6 +36,8 @@ SHEBANG_FILES=	*.perl */*.perl */*/*.perl */*.pl */*/*.pl */*/*/*.pl \
 		contrib/diff-highlight/diff-highlight \
 		contrib/buildsystems/generate contrib/contacts/git-contacts \
 		contrib/svn-fe/svnrdump_sim.py
+
+USES+=		pie relro
 
 CONFIGURE_ARGS=	--enable-pthreads=-pthread ac_cv_header_libcharset_h=no
 

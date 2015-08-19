@@ -35,7 +35,9 @@ SUB_FILES=	pkg-message
 CONFLICTS=	mplayer2-2.*
 
 CONFFILES=	example.conf input.conf menu.conf dvb-menu.conf
-USES+=		iconv pkgconfig pie
+USES+=		iconv pkgconfig
+
+USES+=		pie relro
 
 .include "${.CURDIR}/Makefile.optvars"
 .include <bsd.port.pre.mk>

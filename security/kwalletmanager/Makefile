@@ -11,7 +11,9 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Password manager for KDE
 
 USE_KDE4=	kdeprefix automoc4 kdelibs
-USES=		cmake:outsource gmake tar:xz pie
+USES=		cmake:outsource gmake tar:xz
 USE_QT4=	qmake_build moc_build rcc_build uic_build
+
+USES+=		pie relro
 
 .include <bsd.port.mk>

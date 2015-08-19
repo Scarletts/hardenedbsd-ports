@@ -35,7 +35,8 @@ SYSTEM_SCREENRC_DESC=	Install system screenrc with helpful status line
 
 OPTIONS_SUB=
 
-USES=		gmake cpe pie
+USES=		gmake cpe
+USES+=		pie relro
 
 CPE_VENDOR=	gnu
 

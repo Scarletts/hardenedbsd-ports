@@ -27,6 +27,6 @@ USE_LDCONFIG=	yes
 MAKE_ENV=	XDG_CONFIG_HOME=/dev/null
 CONFIGURE_ENV=	XDG_CONFIG_HOME=/dev/null
 
-USES+=	pie
+USES+=	pie relro
 
 .include <bsd.port.mk>

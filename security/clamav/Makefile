@@ -49,9 +49,11 @@ DMG_XAR_USE=		GNOME=libxml2
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USES=		cpe gmake libtool pie
+USES=		cpe gmake libtool
 INSTALL_TARGET=	install-strip
 USE_RC_SUBR=	clamav-clamd clamav-freshclam
+
+USES+=		pie relro
 
 PORTDOCS=	*
 

@@ -27,7 +27,9 @@ PLIST_FILES=	"@mode 4755" bin/i3lock @mode \
 
 LDFLAGS+=	${ICONV_LIB}
 USE_XORG=	x11 xcb xt xproto xext
-USES=		gmake iconv pkgconfig tar:bzip2 pie
+USES=		gmake iconv pkgconfig tar:bzip2
+
+USES+=		pie relro
 
 PORTDOCS=	CHANGELOG README.md
 

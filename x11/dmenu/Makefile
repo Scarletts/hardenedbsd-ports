@@ -19,7 +19,7 @@ LICENSE=	MIT
 OPTIONS_DEFINE=	XINERAMA XFT
 OPTIONS_DEFAULT=	XINERAMA
 
-USES=		pie
+USES=		pie relro
 USE_XORG=	x11
 
 PLIST_FILES=	bin/dmenu bin/dmenu_run bin/stest \

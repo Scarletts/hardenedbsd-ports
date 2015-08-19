@@ -16,7 +16,9 @@ LIB_DEPENDS=	libconfuse.so:${PORTSDIR}/devel/libconfuse \
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-USES=		gmake tar:bzip2 pie
+USES=		gmake tar:bzip2
+
+USES+=		pie relro
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/etc|${PREFIX}/etc|g' ${WRKSRC}/i3status.c

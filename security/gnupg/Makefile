@@ -24,7 +24,7 @@ BUILD_DEPENDS=	libgpg-error>=1.16:${PORTSDIR}/security/libgpg-error
 RUN_DEPENDS=	pinentry>0:${PORTSDIR}/security/pinentry
 
 GNU_CONFIGURE=	YES
-USES=		cpe gmake iconv pkgconfig tar:bzip2 pie
+USES=		cpe gmake iconv pkgconfig tar:bzip2
 USE_LDCONFIG=	YES
 # libreadline.so.8 is placed in /lib, but --with-readline argument
 # will be treated as $value/lib, so try using /usr instead.
@@ -33,6 +33,8 @@ USE_LDCONFIG=	YES
 CONFIGURE_ARGS+=	--disable-ntbtls --enable-symcryptrun --with-readline=/usr
 CONFLICTS=	gnupg-2.0.* dirmngr-*
 CPE_VENDOR=	gnupg
+
+USES+=		pie relro
 
 OPTIONS_DEFINE=		GNUTLS LDAP SCDAEMON KDNS NLS DOCS SUID_GPG
 LDAP_DESC=		LDAP keyserver interface

@@ -12,11 +12,13 @@ COMMENT=	Terminal Multiplexer
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		pkgconfig shebangfix ncurses pie
+USES=		pkgconfig shebangfix ncurses
 SHEBANG_FILES=	examples/tmux_backup.sh
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--sysconfdir=${PREFIX}/etc
+
+USES+=		pie relro
 
 PLIST_FILES=	bin/tmux \
 		man/man1/tmux.1.gz \

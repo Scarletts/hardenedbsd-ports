@@ -19,12 +19,14 @@ CONFLICTS_INSTALL=	keepassx-0.*
 DATADIR=	${PREFIX}/share/${PORTNAME:tl}
 WRKSRC=		${WRKDIR}/${DISTNAME:tl}
 
-USES=		cmake pie
+USES=		cmake
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
 USE_QT4=	corelib gui xml qtestlib dbus uic_build moc_build \
 		qmake_build rcc_build
 USE_XORG=	xt inputproto xtst xrender xrandr xfixes xcursor \
 		xext x11 sm ice xi
+
+USES+=		pie relro
 
 .include <bsd.port.mk>

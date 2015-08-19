@@ -17,10 +17,12 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 CONFLICTS=	sqlite34-[0-9]* sqlcipher-[0-9]*
 
-USES=		pathfix libtool ncurses pie
+USES=		pathfix libtool ncurses
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
+
+USES+=		pie relro
 
 MAKE_JOBS_UNSAFE=	yes
 

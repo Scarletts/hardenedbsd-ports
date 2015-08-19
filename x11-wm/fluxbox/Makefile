@@ -17,9 +17,11 @@ RUN_DEPENDS=	xmessage:${PORTSDIR}/x11/xmessage
 LIB_DEPENDS=	libfribidi.so:${PORTSDIR}/converters/fribidi
 
 USE_XORG=	xextproto xft xpm xrandr
-USES=		gmake pkgconfig pie
+USES=		gmake pkgconfig
 WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
+
+USES+=		pie relro
 
 PORTDOCS=		AUTHORS ChangeLog NEWS README TODO
 

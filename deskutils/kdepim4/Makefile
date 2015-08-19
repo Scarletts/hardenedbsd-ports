@@ -41,7 +41,7 @@ CXXFLAGS+=	-Wno-error=return-type
 USE_LDCONFIG=	yes
 MAKE_ENV=	XDG_CONFIG_HOME=/dev/null
 
-USES+=	pie
+USES+=		pie relro
 
 PLIST_SUB=	GRANTLEE_VER=0.5
 

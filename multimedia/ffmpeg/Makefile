@@ -46,7 +46,7 @@ X11GRAB_DESC=	Enable x11 grabbing
 
 OPTIONS_SUB=	yes
 
-USES+=	pie
+USES+=	pie relro
 
 # aacplus
 AACPLUS_LIB_DEPENDS=	libaacplus.so:${PORTSDIR}/audio/libaacplus

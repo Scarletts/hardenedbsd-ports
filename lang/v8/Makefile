@@ -22,7 +22,9 @@ ALL_TARGET=	native
 MAKE_ARGS=	library=shared
 MAKE_ENV=	CC.host=${CC} CXX.host=${CXX} LINK.host=${CXX} LINK.target=${CXX}
 USE_LDCONFIG=	yes
-USES=		alias compiler cpe execinfo gmake python:2 shebangfix tar:xz pie
+USES=		alias compiler cpe execinfo gmake python:2 shebangfix tar:xz
+
+USES+=		pie relro
 
 CPE_VENDOR=	google
 

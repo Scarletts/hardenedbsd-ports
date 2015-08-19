@@ -18,13 +18,15 @@ LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs
 BUILD_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt
 
 USE_KDE4=	kdeprefix automoc4 soprano
-USES=		cmake:outsource execinfo shared-mime-info compiler:c++11-lang tar:bzip2 pie
+USES=		cmake:outsource execinfo shared-mime-info compiler:c++11-lang tar:bzip2
 USE_QT4=	corelib dbus gui network qtestlib_build sql xml \
 		moc_build qmake_build rcc_build uic_build
 CMAKE_ARGS+=	-DAKONADI_BUILD_TESTS:BOOL=FALSE \
 		-DINSTALL_QSQLITE_IN_QT_PREFIX:BOOL=TRUE \
 		-DCMAKE_REQUIRED_INCLUDES:STRING="${LOCALBASE}/include"
 USE_LDCONFIG=	yes
+
+USES+=		pie relro
 
 OPTIONS_MULTI=	DB
 OPTIONS_MULTI_DB=	MYSQL PGSQL SQLITE

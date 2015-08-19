@@ -14,11 +14,13 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
-USES=		alias cmake:outsource cpe execinfo pkgconfig compiler:c++11-lib pie
+USES=		alias cmake:outsource cpe execinfo pkgconfig compiler:c++11-lib
 USE_GITHUB=	yes
 GH_ACCOUNT=	FreeRDP
 GH_PROJECT=	${GH_ACCOUNT}
 GH_TAGNAME=	f5ff6e1
+
+USES+=		pie relro
 
 CPE_VENDOR=	freerdp_project
 

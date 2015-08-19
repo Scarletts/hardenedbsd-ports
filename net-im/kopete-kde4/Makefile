@@ -20,7 +20,7 @@ LIB_DEPENDS=	libidn.so:${PORTSDIR}/dns/libidn \
 		libjasper.so:${PORTSDIR}/graphics/jasper
 BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev2.h:${PORTSDIR}/multimedia/v4l_compat
 
-USES=		cmake:outsource jpeg pkgconfig shebangfix tar:xz webplugin:native pie
+USES=		cmake:outsource jpeg pkgconfig shebangfix tar:xz webplugin:native
 USE_GNOME=	libxml2 libxslt
 USE_KDE4=	kdelibs kdeprefix pimlibs \
 		automoc4 qimageblitz
@@ -29,6 +29,8 @@ USE_QT4=	corelib gui network qt3support sql xml \
 USE_SQLITE=	yes
 USE_XORG=	x11 xdamage xext xscrnsaver xtst
 USE_LDCONFIG=	yes
+
+USES+=		pie relro
 
 SHEBANG_FILES=	protocols/winpopup/winpopup-install \
 		protocols/winpopup/winpopup-send \

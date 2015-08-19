@@ -18,7 +18,7 @@ LIB_DEPENDS=	libpolkit.so.2:${PORTSDIR}/sysutils/policykit \
 		libck-connector.so:${PORTSDIR}/sysutils/consolekit
 RUN_DEPENDS=	${LOCALBASE}/share/pciids/pci.ids:${PORTSDIR}/misc/pciids
 
-USES=		gettext gmake libtool:keepla pathfix pkgconfig python shebangfix pie
+USES=		gettext gmake libtool:keepla pathfix pkgconfig python shebangfix
 USE_GNOME=	intlhack
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
@@ -44,6 +44,8 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 bash_CMD=	${SH}
 SHEBANG_FILES=	tools/hal-*
+
+USES+=		pie relro
 
 #HALVERSION=	0.5.10
 #SNAPVERSION=	20080218

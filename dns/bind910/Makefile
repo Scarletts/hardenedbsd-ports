@@ -27,6 +27,8 @@ MAKE_JOBS_UNSAFE=	yes
 
 USES=	cpe
 
+USES+=	pie relro
+
 CPE_VENDOR=	isc
 CPE_VERSION=	${ISCVERSION:C/-.*//}
 .if ${ISCVERSION:M*-*}

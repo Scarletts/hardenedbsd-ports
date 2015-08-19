@@ -14,9 +14,11 @@ COMMENT=	Terminal emulator for the X Window System
 
 CONFLICTS=	x11iraf-[0-9]*
 
-USES=		tar:tgz pie
+USES=		tar:tgz
 USE_XORG=	xft
 GNU_CONFIGURE=	yes
+
+USES+=		pie relro
 
 CONFIGURE_ARGS+=	--with-utempter --enable-narrowproto
 

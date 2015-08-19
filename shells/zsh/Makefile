@@ -37,7 +37,7 @@ zsh_OLD_CMD=	/bin/zsh
 zsh_CMD=	${PREFIX}/bin/zsh
 GNU_CONFIGURE=	yes
 
-USES+=		pie
+USES+=		pie relro
 
 CPPFLAGS+=	-I${LOCALBASE}/include -DBOOL_DEFINED
 LDFLAGS+=	-L${LOCALBASE}/lib -Wl,--as-needed
