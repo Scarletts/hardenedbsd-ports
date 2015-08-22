@@ -168,8 +168,9 @@ if [ -z "${RELEASE}" ]; then
 	RELEASE=${VERSION}
 
 	if [ ${ARCH} = "amd64" ]; then
-		echo "Updates are not supported, yet" >&2
-		exit 1
+		OBSOLETESHA=""
+		BASESHA="17d60f90180ba19ef08406c65cd193aab842584a506269f9114a7477a34a2e3d"
+		KERNELSHA="4af257d0d10a66fc58251830d106d0aa9ff2c5bad8f2b0d4a0e7a30a82d7af13"
 	elif [ ${ARCH} = "i386" ]; then
 		echo "Updates are not supported, yet" >&2
 		exit 1
@@ -278,7 +279,9 @@ fi
 
 if [ -n "${DO_BASE}" ]; then
 	fetch_set ${BASESET} ${BASESHA}
-	fetch_set ${OBSOLETESET} ${OBSOLETESHA}
+	if [ -n ${OBSOLETESHA} ]; then
+		fetch_set ${OBSOLETESET} ${OBSOLETESHA}
+	fi
 fi
 
 if [ -n "${DO_KERNEL}" ]; then
@@ -287,7 +290,9 @@ fi
 
 if [ -n "${DO_BASE}" ]; then
 	apply_base
-	apply_obsolete
+	if [ -n ${OBSOLETESHA} ]; then
+		apply_obsolete
+	fi
 fi
 
 # bootstrap the directory  if needed
