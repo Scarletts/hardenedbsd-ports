@@ -335,7 +335,6 @@
     SUBDIR += hs-cairo
     SUBDIR += hs-dia-base
     SUBDIR += hs-dia-functions
-    SUBDIR += hs-soegtk
     SUBDIR += hs-svgcairo
     SUBDIR += hsetroot
     SUBDIR += hugin
@@ -1052,6 +1051,7 @@
     SUBDIR += xoris
     SUBDIR += xournal
     SUBDIR += xpaint
+    SUBDIR += xpeps
     SUBDIR += xpdf
     SUBDIR += xpx
     SUBDIR += xsane
