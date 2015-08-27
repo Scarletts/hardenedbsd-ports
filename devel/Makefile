@@ -1485,6 +1485,7 @@
     SUBDIR += nini
     SUBDIR += ninja
     SUBDIR += ninja-ide
+    SUBDIR += ninja16
     SUBDIR += node-thrift
     SUBDIR += notify-sharp
     SUBDIR += noweb
@@ -3432,6 +3433,7 @@
     SUBDIR += pccts
     SUBDIR += pcl
     SUBDIR += pcre
+    SUBDIR += pcre2
     SUBDIR += pcre++
     SUBDIR += pcsc-ada
     SUBDIR += pcsc-lite
