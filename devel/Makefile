@@ -1485,6 +1485,7 @@
     SUBDIR += nini
     SUBDIR += ninja
     SUBDIR += ninja-ide
+    SUBDIR += ninja16
     SUBDIR += node-thrift
     SUBDIR += notify-sharp
     SUBDIR += noweb
@@ -4311,6 +4312,7 @@
     SUBDIR += py-xmltodict
     SUBDIR += py-xoltar-toolkit
     SUBDIR += py-yaml
+    SUBDIR += py-yandex-money-sdk
     SUBDIR += py-yappi
     SUBDIR += py-yapps2
     SUBDIR += py-ydbf
