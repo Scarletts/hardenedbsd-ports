@@ -15,11 +15,11 @@ COMMENT=	BIND DNS suite with updated DNSSEC and DNS64
 LICENSE=	ISCL
 
 # ISC releases things like 9.8.0-P1, which our versioning doesn't like
-ISCVERSION=	9.9.7-P3
+ISCVERSION=	9.9.8
 
 MAKE_JOBS_UNSAFE=	yes
 
-USES=	cpe
+USES=	cpe libedit
 
 USES+=	pie relro
 
@@ -47,7 +47,7 @@ OPTIONS_DEFAULT=	IPV6 SSL THREADS SIGCHASE IDN GSSAPI_NONE RRL
 OPTIONS_DEFINE=		SSL IDN REPLACE_BASE LARGE_FILE FIXED_RRSET SIGCHASE \
 			IPV6 THREADS FILTER_AAAA GOST PYTHON START_LATE MINCACHE \
 			LINKS RPZ_NSIP RPZ_NSDNAME RRL DOCS RPZ_PATCH NEWSTATS \
-			PORTREVISION
+			PORTREVISION FETCHLIMIT QUERYTRACE
 OPTIONS_GROUP=		DLZ
 OPTIONS_GROUP_DLZ=	DLZ_POSTGRESQL DLZ_MYSQL DLZ_BDB \
 			DLZ_LDAP DLZ_FILESYSTEM DLZ_STUB
@@ -67,6 +67,8 @@ PYTHON_DESC=		Build with Python utilities
 START_LATE_DESC=	Start BIND late in the boot process
 MINCACHE_DESC=		Use the mincachettl patch
 PORTREVISION_DESC=	Show PORTREVISION in the version string
+FETCHLIMIT_DESC=	Enable the query quotas for resolvers
+QUERYTRACE_DESC=	Enable the very verbose query tracelogging
 
 LINKS_DESC=		Create conf file symlinks in ${PREFIX}
 NEWSTATS_DESC=		Enable alternate xml statistics channel format
@@ -86,6 +88,8 @@ GSSAPI_HEIMDAL_DESC=	${GSSAPI_DESC} (security/heimdal)
 GSSAPI_MIT_DESC=	${GSSAPI_DESC} (security/krb5)
 GSSAPI_NONE_DESC=	No ${GSSAPI_DESC}
 MINCACHE_EXTRA_PATCHES=	${FILESDIR}/extrapatch-bind-min-override-ttl
+FETCHLIMIT_CONFIGURE_ENABLE=	fetchlimit
+QUERYTRACE_CONFIGURE_ENABLE=	querytrace
 
 SSL_CONFIGURE_ON=	--with-openssl=${OPENSSLBASE}
 SSL_USE=		openssl=yes
@@ -200,9 +204,11 @@ post-patch:
 		${WRKSRC}/bin/${FILE}
 .endfor
 
+.if ${PORTREVISION:N0}
 post-patch-PORTREVISION-on:
 	@${REINPLACE_CMD} -e '/EXTENSIONS/s#=$$#=_${PORTREVISION}#' \
 		${WRKSRC}/version
+.endif
 
 post-configure:
 	@${REINPLACE_CMD} -e '/^SO_LDFLAGS/s/-Wl,-rpath,/-rpath /' ${WRKSRC}/bin/tests/system/dlzexternal/Makefile
