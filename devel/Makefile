@@ -632,6 +632,7 @@
     SUBDIR += git
     SUBDIR += git-bzr-ng
     SUBDIR += git-codereview
+    SUBDIR += git-cola
     SUBDIR += git-extras
     SUBDIR += git-lite
     SUBDIR += git-merge-changelog
@@ -1253,6 +1254,7 @@
     SUBDIR += libphutil
     SUBDIR += libplist
     SUBDIR += libpo6
+    SUBDIR += libpololu-avr
     SUBDIR += libpru
     SUBDIR += libpthread-stubs
     SUBDIR += libqcow
@@ -4207,6 +4209,7 @@
     SUBDIR += py-raven
     SUBDIR += py-repl
     SUBDIR += py-repoze.lru
+    SUBDIR += py-repoze.sphinx.autointerface
     SUBDIR += py-repoze.tm2
     SUBDIR += py-repoze.what
     SUBDIR += py-repoze.what-pylons
@@ -4839,6 +4842,7 @@
     SUBDIR += rubygem-power_assert
     SUBDIR += rubygem-powerbar
     SUBDIR += rubygem-progressbar
+    SUBDIR += rubygem-protected_attributes
     SUBDIR += rubygem-prototype-rails
     SUBDIR += rubygem-pry
     SUBDIR += rubygem-pry-rails
@@ -5042,6 +5046,7 @@
     SUBDIR += smokeqt
     SUBDIR += smv
     SUBDIR += soapui
+    SUBDIR += sope
     SUBDIR += sourcenav
     SUBDIR += sparc64-binutils
     SUBDIR += sparc64-gcc
