@@ -294,8 +294,6 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  if a particular version is desired.
 # LIB_DEPENDS	- A list of "lib:dir[:target]" tuples of other ports this
 #				  package depends on.  "lib" is the name of a shared library.
-#				  make will use "ldconfig -r" to search for the library.
-#				  lib can contain extended regular expressions.
 # DEPENDS_TARGET
 #				- The default target to execute when a port is calling a
 #				  dependency.
@@ -1047,7 +1045,7 @@ SCRIPTSDIR?=	${PORTSDIR}/Mk/Scripts
 LIB_DIRS?=		/lib /usr/lib ${LOCALBASE}/lib
 STAGEDIR?=	${WRKDIR}/stage
 NOTPHONY?=
-MINIMAL_PKG_VERSION=	1.3.8
+MINIMAL_PKG_VERSION=	1.6.0
 
 # make sure bmake treats -V as expected
 .MAKE.EXPAND_VARIABLES= yes
@@ -1812,16 +1810,8 @@ PKGPREUPGRADE?=		${PKGDIR}/pkg-pre-upgrade
 PKGPOSTUPGRADE?=	${PKGDIR}/pkg-post-upgrade
 PKGUPGRADE?=		${PKGDIR}/pkg-upgrade
 
-_FORCE_POST_PATTERNS=	rmdir kldxref mkfontscale mkfontdir fc-cache \
+_FORCE_POST_PATTERNS=	rmdir fc-cache \
 						fonts.dir fonts.scale gtk-update-icon-cache \
-						gio-querymodules \
-						gtk-query-immodules \
-						ldconfig \
-						load-octave-pkg \
-						ocamlfind \
-						update-desktop-database update-mime-database \
-						gdk-pixbuf-query-loaders catalog.ports \
-						glib-compile-schemas \
 						ccache-update-links
 
 .if defined(USE_LOCAL_MK)
@@ -4765,26 +4755,26 @@ generate-plist: ${WRKDIR}
 
 .if defined(USE_LINUX_PREFIX)
 .if defined(USE_LDCONFIG)
-	@${ECHO_CMD} "@exec ${LDCONFIG_CMD}" >> ${TMPPLIST}
-	@${ECHO_CMD} "@unexec ${LDCONFIG_CMD}" >> ${TMPPLIST}
+	@${ECHO_CMD} "@postexec ${LDCONFIG_CMD}" >> ${TMPPLIST}
+	@${ECHO_CMD} "@postunexec ${LDCONFIG_CMD}" >> ${TMPPLIST}
 .endif
 .else
 .if defined(USE_LDCONFIG)
 .if !defined(INSTALL_AS_USER)
-	@${ECHO_CMD} "@exec ${LDCONFIG} -m ${USE_LDCONFIG}" >> ${TMPPLIST}
-	@${ECHO_CMD} "@unexec ${LDCONFIG} -R" >> ${TMPPLIST}
+	@${ECHO_CMD} "@postexec ${LDCONFIG} -m ${USE_LDCONFIG}" >> ${TMPPLIST}
+	@${ECHO_CMD} "@postunexec ${LDCONFIG} -R" >> ${TMPPLIST}
 .else
-	@${ECHO_CMD} "@exec ${LDCONFIG} -m ${USE_LDCONFIG} || ${TRUE}" >> ${TMPPLIST}
-	@${ECHO_CMD} "@unexec ${LDCONFIG} -R || ${TRUE}" >> ${TMPPLIST}
+	@${ECHO_CMD} "@postexec ${LDCONFIG} -m ${USE_LDCONFIG} || ${TRUE}" >> ${TMPPLIST}
+	@${ECHO_CMD} "@postunexec ${LDCONFIG} -R || ${TRUE}" >> ${TMPPLIST}
 .endif
 .endif
 .if defined(USE_LDCONFIG32)
 .if !defined(INSTALL_AS_USER)
-	@${ECHO_CMD} "@exec ${LDCONFIG} -32 -m ${USE_LDCONFIG32}" >> ${TMPPLIST}
-	@${ECHO_CMD} "@unexec ${LDCONFIG} -32 -R" >> ${TMPPLIST}
+	@${ECHO_CMD} "@postexec ${LDCONFIG} -32 -m ${USE_LDCONFIG32}" >> ${TMPPLIST}
+	@${ECHO_CMD} "@postunexec ${LDCONFIG} -32 -R" >> ${TMPPLIST}
 .else
-	@${ECHO_CMD} "@exec ${LDCONFIG} -32 -m ${USE_LDCONFIG32} || ${TRUE}" >> ${TMPPLIST}
-	@${ECHO_CMD} "@unexec ${LDCONFIG} -32 -R || ${TRUE}" >> ${TMPPLIST}
+	@${ECHO_CMD} "@postexec ${LDCONFIG} -32 -m ${USE_LDCONFIG32} || ${TRUE}" >> ${TMPPLIST}
+	@${ECHO_CMD} "@postunexec ${LDCONFIG} -32 -R || ${TRUE}" >> ${TMPPLIST}
 .endif
 .endif
 .endif
