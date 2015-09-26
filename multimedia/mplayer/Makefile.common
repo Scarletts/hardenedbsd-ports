@@ -6,7 +6,7 @@
 
 MPLAYER_SNAPSHOT_DATE=	2015-08-22
 MPLAYER_PORT_VERSION=	1.1.r${MPLAYER_SNAPSHOT_DATE:S/-//g}
-FFMPEG_VERSION=	2.7.2
+FFMPEG_VERSION=	2.8
 MASTER_SITES=	LOCAL/riggs/mplayer:local \
 		http://ffmpeg.org/releases/:ffmpeg
 DISTFILES+=	ffmpeg-${FFMPEG_VERSION}.tar.bz2:ffmpeg \
@@ -20,8 +20,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
 		libfreetype.so:${PORTSDIR}/print/freetype2 \
 		libdvdnav.so:${PORTSDIR}/multimedia/libdvdnav
-
-BUILD_DEPENDS=	${LOCALBASE}/bin/yasm:${PORTSDIR}/devel/yasm
 
 USES=		compiler:c11 gmake iconv ncurses tar:bzip2 tar:xz
 GNU_CONFIGURE=	yes

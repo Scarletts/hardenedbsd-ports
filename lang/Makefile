@@ -19,6 +19,7 @@
     SUBDIR += awka
     SUBDIR += bas2tap
     SUBDIR += basic256
+    SUBDIR += beignet
     SUBDIR += bf2c
     SUBDIR += bigloo
     SUBDIR += bsh
@@ -38,9 +39,11 @@
     SUBDIR += clang34
     SUBDIR += clang35
     SUBDIR += clang36
+    SUBDIR += clang37
     SUBDIR += clojure
     SUBDIR += clojure-mode.el
     SUBDIR += cloudabi-clang
+    SUBDIR += clover
     SUBDIR += cmucl
     SUBDIR += cmucl-extra
     SUBDIR += cocor
@@ -135,6 +138,7 @@
     SUBDIR += kturtle
     SUBDIR += lafontaine
     SUBDIR += lci
+    SUBDIR += lfe
     SUBDIR += libhx
     SUBDIR += libjit
     SUBDIR += libobjc2
@@ -263,6 +267,7 @@
     SUBDIR += python32
     SUBDIR += python33
     SUBDIR += python34
+    SUBDIR += python35
     SUBDIR += qore
     SUBDIR += qscheme
     SUBDIR += qt5-qml

@@ -8,7 +8,7 @@ PORTVERSION=	${ISCVERSION:S/-P/P/}
 PORTREVISION=	0
 .else
 # dns/bind910 here
-PORTREVISION=	1
+PORTREVISION=	0
 .endif
 CATEGORIES=	dns net ipv6
 MASTER_SITES=	ISC/bind9/${ISCVERSION}
@@ -21,11 +21,13 @@ COMMENT?=	BIND DNS suite with updated DNSSEC and DNS64
 LICENSE=	ISCL
 
 # ISC releases things like 9.8.0-P1, which our versioning doesn't like
-ISCVERSION=	9.10.2-P3
+ISCVERSION=	9.10.3
 
 MAKE_JOBS_UNSAFE=	yes
 
-USES=	cpe pie
+USES=	cpe libedit
+
+USES+=	pie
 
 CPE_VENDOR=	isc
 CPE_VERSION=	${ISCVERSION:C/-.*//}
@@ -59,7 +61,7 @@ OPTIONS_RADIO_GOSTDEF=	GOST GOST_ASN1
 .if !defined(BIND_TOOLS_SLAVE)
 OPTIONS_DEFAULT+=	RRL
 OPTIONS_DEFINE+=	LINKS RPZ_NSIP RPZ_NSDNAME RRL DOCS NEWSTATS GEOIP \
-			MINCACHE
+			MINCACHE PORTREVISION FETCHLIMIT QUERYTRACE
 OPTIONS_GROUP=		DLZ
 OPTIONS_GROUP_DLZ=	DLZ_POSTGRESQL DLZ_MYSQL DLZ_BDB \
 			DLZ_LDAP DLZ_FILESYSTEM DLZ_STUB
@@ -83,6 +85,9 @@ GOST_ASN1_DESC=		GOST using ASN.1
 PYTHON_DESC=		Build with Python utilities
 START_LATE_DESC=	Start BIND late in the boot process
 MINCACHE_DESC=		Use the mincachettl patch
+PORTREVISION_DESC=	Show PORTREVISION in the version string
+FETCHLIMIT_DESC=	Enable the query quotas for resolvers
+QUERYTRACE_DESC=	Enable the very verbose query tracelogging
 
 LINKS_DESC=		Create conf file symlinks in ${PREFIX}
 NEWSTATS_DESC=		Enable alternate xml statistics channel format
@@ -101,6 +106,8 @@ GSSAPI_HEIMDAL_DESC=	Using security/heimdal
 GSSAPI_MIT_DESC=	Using security/krb5
 GSSAPI_NONE_DESC=	Disable
 MINCACHE_EXTRA_PATCHES=	${FILESDIR}/extrapatch-bind-min-override-ttl
+FETCHLIMIT_CONFIGURE_ENABLE=	fetchlimit
+QUERYTRACE_CONFIGURE_ENABLE=	querytrace
 
 .if !defined(BIND_TOOLS_SLAVE)
 CONFLICTS+=		bind-tools-9.*
@@ -167,13 +174,13 @@ START_LATE_SUB_LIST_OFF=NAMED_REQUIRE="NETWORKING ldconfig syslogd" \
 
 GSSAPI_BASE_USES=	gssapi
 GSSAPI_BASE_CONFIGURE_ON= \
-	--with-gssapi=${GSSAPIBASEDIR} ${GSSAPI_CONFIGURE_ARGS}
+	--with-gssapi=${GSSAPIBASEDIR} KRB5CONFIG="${KRB5CONFIG}"
 GSSAPI_HEIMDAL_USES=	gssapi:heimdal
 GSSAPI_HEIMDAL_CONFIGURE_ON= \
-	--with-gssapi=${GSSAPIBASEDIR} ${GSSAPI_CONFIGURE_ARGS}
+	--with-gssapi=${GSSAPIBASEDIR} KRB5CONFIG="${KRB5CONFIG}"
 GSSAPI_MIT_USES=	gssapi:mit
 GSSAPI_MIT_CONFIGURE_ON= \
-	--with-gssapi=${GSSAPIBASEDIR} ${GSSAPI_CONFIGURE_ARGS}
+	--with-gssapi=${GSSAPIBASEDIR} KRB5CONFIG="${KRB5CONFIG}"
 GSSAPI_NONE_CONFIGURE_ON=	--without-gssapi
 
 .include <bsd.port.options.mk>
@@ -225,6 +232,12 @@ post-patch:
 		-e "s#/var\/run\/named\/named.pid#/var/run/named/pid#" \
 		${WRKSRC}/bin/${FILE}
 .endfor
+
+.if ${PORTREVISION:N0}
+post-patch-PORTREVISION-on:
+	@${REINPLACE_CMD} -e '/EXTENSIONS/s#=$$#=_${PORTREVISION}#' \
+		${WRKSRC}/version
+.endif
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}

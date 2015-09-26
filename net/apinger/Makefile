@@ -3,7 +3,7 @@
 
 PORTNAME=	apinger
 PORTVERSION=	0.6.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://freebsdcluster.org/~mich/software/ \
 		http://www.bnet.pl/~jajcus/apinger/
@@ -23,11 +23,7 @@ USES=		bison pie
 
 MAKE_JOBS_UNSAFE=	yes
 
-.include <bsd.port.options.mk>
-
-.if !${PORT_OPTIONS:MIPV6}
-CONFIGURE_ARGS+=	--disable-ipv6
-.endif
+IPV6_CONFIGURE_OFF=	--disable-ipv6
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/src/apinger.conf ${STAGEDIR}${PREFIX}/etc/apinger.conf.sample

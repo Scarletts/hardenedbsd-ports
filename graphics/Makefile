@@ -47,6 +47,7 @@
     SUBDIR += aoi
     SUBDIR += apngasm
     SUBDIR += apngdis
+    SUBDIR += appleseed
     SUBDIR += apvlv
     SUBDIR += aqsis
     SUBDIR += argyllcms
@@ -328,6 +329,7 @@
     SUBDIR += guilib
     SUBDIR += gwenview-kde4
     SUBDIR += gx
+    SUBDIR += hdr_tools
     SUBDIR += hobbes-icons-xpm
     SUBDIR += hppsmtools
     SUBDIR += hs-HGL
@@ -769,6 +771,7 @@
     SUBDIR += picpuz
     SUBDIR += picviz
     SUBDIR += piddle
+    SUBDIR += pikopixel
     SUBDIR += pinpoint
     SUBDIR += pinta
     SUBDIR += pixelize
@@ -978,6 +981,7 @@
     SUBDIR += sk1libs
     SUBDIR += skanlite
     SUBDIR += sketch
+    SUBDIR += smillaenlarger
     SUBDIR += springgraph
     SUBDIR += squish
     SUBDIR += sswf

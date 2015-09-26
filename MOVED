@@ -4139,7 +4139,6 @@ net-mgmt/zabbix-frontend|net-mgmt/zabbix2-frontend|2013-03-15|Has expired: no lo
 net-mgmt/zabbix-proxy|net-mgmt/zabbix2-proxy|2013-03-15|Has expired: no longer supported by upstream
 net-mgmt/zabbix-server|net-mgmt/zabbix2-server|2013-03-15|Has expired: no longer supported by upstream
 dns/h2n||2013-03-17|Removed: legally questionable and obsolete
-sysutils/facter|sysutils/rubygem-facter|2013-03-17|Renamed to match naming convention for rubygems
 french/gibi||2013-03-18|Removed: IGNORE for more than 6 months
 finance/pfpro||2013-03-18|Removed: upstream no longer exists
 finance/p5-PFProAPI||2013-03-18|Removed: upstream no longer exists
@@ -6058,7 +6057,6 @@ net/py-spreadmodule||2014-05-04|Has expired: Depends on expired net/spread
 net/p5-Spread-Message||2014-05-04|Has expired: Depends on expired net/spread
 net/p5-POE-Component-Spread||2014-05-04|Has expired: Depends on expired net/spread
 net/p5-Spread-Session||2014-05-04|Has expired: Depends on expired net/spread
-sysutils/wmmemload||2014-05-04|Has expired: Broken
 lang/ml-pnet||2014-05-04|Has expired: Alpha-quality abandonware - Decommissioned Dec 2012 - Use mono
 lang/treecc||2014-05-04|Has expired: PNET dependency decommissioned Dec 2012
 lang/pnetlib||2014-05-04|Has expired: Alpha-quality abandonware - Decommissioned Dec 2012 - Use mono
@@ -7724,7 +7722,7 @@ security/rubygem-net-ssh27||2015-07-20|Has expired: not used by other ports anym
 graphics/kuickshow-kde4||2015-07-21|Has expired: Broken for more than 6 months
 graphics/sng||2015-07-21|Has expired: Broken for more than 6 months
 japanese/netype||2015-07-21|Has expired: Broken for more than 6 months
-databases/p5-DBD-Pg32|databases/p5-DBD-Pg|2015-07-22|Has expired: Use databases/p5-DBD-Pg instead, compatability probles are fixed
+databases/p5-DBD-Pg32|databases/p5-DBD-Pg|2015-07-22|Has expired: Use databases/p5-DBD-Pg instead, compatibility probles are fixed
 textproc/py-asciinema|textproc/asciinema|2015-07-23|Has expired: use textproc/asciinema instead
 devel/libiomp5-devel|devel/llvm-devel|2015-07-24|Merged with devel/llvm-devel
 devel/amd64-binutils||2015-07-25|No real use
@@ -7848,3 +7846,31 @@ print/ghostscript9|print/ghostscript9-base|2015-08-22|Split into print/ghostscri
 print/ghostscript9-nox11|print/ghostscript9-base|2015-08-22|Integrated into print/ghostscript9-base
 print/ghostscript9-agpl|print/ghostscript9-agpl-base|2015-08-22|Split into print/ghostscript9-agpl-base and print/ghostscript9-agpl-x11
 print/ghostscript9-agpl-nox11|print/ghostscript9-agpl-base|2015-08-22|Integrated into print/ghostscript9-agpl-base
+www/pelican|www/py-pelican|2015-08-29|Rename to match Python naming conventions
+devel/ninja16|devel/ninja|2015-08-29|Use devel/ninja instead
+devel/geany-plugin-gproject|devel/geany-plugin-projectorganizer|2015-08-31|Renamed to match upstream naming
+www/p5-WWW-Shorten-NotLong||2015-09-01|Has expired: notlong.com is now dead
+games/linux-majesty-demo||2015-09-01|Has expired: Broken for more than 6 months
+games/linux-coldwar-demo||2015-09-01|Has expired: Broken for more than 6 months
+games/linux-hdb-demo||2015-09-01|Has expired: Broken for more than 6 months
+devel/rubygem-igraph||2015-09-01|Has expired: Broken for more than 6 months
+games/linux-candycruncher-demo||2015-09-01|Has expired: Broken for more than 6 months
+games/linux-gorky17-demo||2015-09-01|Has expired: Broken for more than 6 months
+sysutils/syslog-ng33||2015-09-01|Has expired: No longer supported by Balabit cince November 2014.
+textproc/ruby-xmlconfigfile|textproc/ruby-xml-configfile|2015-09-03|Rename to match our ruby naming
+net/mcast-tools|net/pim6-tools|2015-09-07|Rename
+www/p5-Dancer-Session-Memcached|databases/p5-Dancer-Session-Memcached|2015-09-09|Duplicate port
+devel/cloudabi-cloudlibc||2015-09-12|Moved to the CloudABI Ports Collection
+devel/cloudabi-compiler-rt||2015-09-12|Moved to the CloudABI Ports Collection
+devel/cloudabi-libc++||2015-09-12|Moved to the CloudABI Ports Collection
+devel/cloudabi-libc++abi||2015-09-12|Moved to the CloudABI Ports Collection
+devel/cloudabi-libunwind||2015-09-12|Moved to the CloudABI Ports Collection
+japanese/marumoji-fonts|japanese/font-marumoji|2015-09-13|Renamed
+www/asp-php||2015-09-13|Unmaintained upstream, generate unsupported php
+textproc/py-xmltools||2015-09-15|Remove port marked broken for six months: fetch failed
+security/krb5-111|security/krb5-112|2015-09-15|krb5-1.11 EOLed by MIT in December 2014
+textproc/py-xml||2015-09-16|Remove: this package is available in standard python library since 2.2
+x11-toolkits/wxgtk28-unicode|x11-toolkits/wxgtk28|2015-09-16|Make wxGTK now only unicode
+x11-toolkits/wxgtk28-unicode-contrib|x11-toolkits/wxgtk28-contrib|2015-09-16|Make wxGTK now only unicode
+x11-toolkits/py-wxPython28-unicode|x11-toolkits/py-wxPython28|2015-09-16|Make wxGTK now only unicode
+japanese/font-mplus|japanese/font-mplus-outline|2015-09-21|Renamed

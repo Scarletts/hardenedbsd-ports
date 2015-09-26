@@ -168,6 +168,7 @@
     SUBDIR += eo-aspell
     SUBDIR += eqe
     SUBDIR += erlang-edown
+    SUBDIR += erlang-p1xml
     SUBDIR += erlang-yamerl
     SUBDIR += es-aspell
     SUBDIR += es-hunspell
@@ -1149,6 +1150,7 @@
     SUBDIR += peco
     SUBDIR += perl2html
     SUBDIR += permute
+    SUBDIR += php-mecab
     SUBDIR += php5-ctype
     SUBDIR += php5-dom
     SUBDIR += php5-pspell
@@ -1258,9 +1260,12 @@
     SUBDIR += py-sphinx
     SUBDIR += py-sphinx-intl
     SUBDIR += py-sphinx_rtd_theme
+    SUBDIR += py-sphinx_numfig
+    SUBDIR += py-sphinx_wikipedia
     SUBDIR += py-sphinxcontrib-adadomain
     SUBDIR += py-sphinxcontrib-bitbucket
     SUBDIR += py-sphinxcontrib-httpdomain
+    SUBDIR += py-sphinxcontrib-programoutput
     SUBDIR += py-syck
     SUBDIR += py-texttable
     SUBDIR += py-tinycss
@@ -1278,8 +1283,6 @@
     SUBDIR += py-xlutils
     SUBDIR += py-xlwriter
     SUBDIR += py-xlwt
-    SUBDIR += py-xml
-    SUBDIR += py-xmltools
     SUBDIR += py-xmltv
     SUBDIR += py-zope.app.i18n
     SUBDIR += py-zope.app.locales
@@ -1342,9 +1345,10 @@
     SUBDIR += ruby-rss.alt
     SUBDIR += ruby-rttool
     SUBDIR += ruby-sary
-    SUBDIR += ruby-xmlconfigfile
+    SUBDIR += ruby-xml-configfile
     SUBDIR += ruby-xmlparser
     SUBDIR += ruby-xmlscan
+    SUBDIR += rubygem-actionpack-xml_parser
     SUBDIR += rubygem-albino
     SUBDIR += rubygem-amatch
     SUBDIR += rubygem-asciidoctor
@@ -1374,6 +1378,7 @@
     SUBDIR += rubygem-fog-xml
     SUBDIR += rubygem-gemoji
     SUBDIR += rubygem-gherkin
+    SUBDIR += rubygem-gherkin3
     SUBDIR += rubygem-github-linguist
     SUBDIR += rubygem-github-markdown
     SUBDIR += rubygem-github-markup
@@ -1433,6 +1438,7 @@
     SUBDIR += rubygem-sass-rails5
     SUBDIR += rubygem-sass32
     SUBDIR += rubygem-sax-machine
+    SUBDIR += rubygem-scss_lint
     SUBDIR += rubygem-simplecov-html
     SUBDIR += rubygem-spreadsheet
     SUBDIR += rubygem-stamp
@@ -1498,6 +1504,7 @@
     SUBDIR += sl-hyphen
     SUBDIR += sl-mythes
     SUBDIR += slides
+    SUBDIR += smi
     SUBDIR += smu
     SUBDIR += so-hunspell
     SUBDIR += soothsayer

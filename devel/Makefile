@@ -252,14 +252,10 @@
     SUBDIR += cld2
     SUBDIR += clewn
     SUBDIR += clig
+    SUBDIR += clinfo
     SUBDIR += clisp-hyperspec
     SUBDIR += clojure-cider
     SUBDIR += cloudabi-binutils
-    SUBDIR += cloudabi-cloudlibc
-    SUBDIR += cloudabi-compiler-rt
-    SUBDIR += cloudabi-libc++
-    SUBDIR += cloudabi-libc++abi
-    SUBDIR += cloudabi-libunwind
     SUBDIR += cloudabi-toolchain
     SUBDIR += cmake
     SUBDIR += cmake-fedora
@@ -575,8 +571,10 @@
     SUBDIR += geany
     SUBDIR += geany-plugin-addons
     SUBDIR += geany-plugin-autoclose
+    SUBDIR += geany-plugin-automark
     SUBDIR += geany-plugin-codenav
     SUBDIR += geany-plugin-commander
+    SUBDIR += geany-plugin-ctags
     SUBDIR += geany-plugin-debugger
     SUBDIR += geany-plugin-defineformat
     SUBDIR += geany-plugin-devhelp
@@ -585,20 +583,23 @@
     SUBDIR += geany-plugin-geanypy
     SUBDIR += geany-plugin-gendoc
     SUBDIR += geany-plugin-geniuspaste
-    SUBDIR += geany-plugin-gproject
+    SUBDIR += geany-plugin-git-changebar
     SUBDIR += geany-plugin-insertnum
     SUBDIR += geany-plugin-latex
     SUBDIR += geany-plugin-lipsum
     SUBDIR += geany-plugin-lua
     SUBDIR += geany-plugin-macro
+    SUBDIR += geany-plugin-markdown
     SUBDIR += geany-plugin-miniscript
     SUBDIR += geany-plugin-multiterm
     SUBDIR += geany-plugin-numberedbookmarks
+    SUBDIR += geany-plugin-overview
     SUBDIR += geany-plugin-pairtaghighlighter
     SUBDIR += geany-plugin-pg
     SUBDIR += geany-plugin-pohelper
     SUBDIR += geany-plugin-pretty-printer
     SUBDIR += geany-plugin-prj
+    SUBDIR += geany-plugin-projectorganizer
     SUBDIR += geany-plugin-scope
     SUBDIR += geany-plugin-sendmail
     SUBDIR += geany-plugin-shiftcolumn
@@ -642,6 +643,7 @@
     SUBDIR += gitg0
     SUBDIR += github-backup-utils
     SUBDIR += gitinspector
+    SUBDIR += gitlist
     SUBDIR += gitolite
     SUBDIR += gitolite2
     SUBDIR += gitphp
@@ -1107,6 +1109,7 @@
     SUBDIR += libcli
     SUBDIR += libconfig
     SUBDIR += libconfuse
+    SUBDIR += libcutl
     SUBDIR += libcwd
     SUBDIR += libcxxrt
     SUBDIR += libdaemon
@@ -1139,6 +1142,7 @@
     SUBDIR += libesedb
     SUBDIR += libestr
     SUBDIR += libev
+    SUBDIR += libevdev
     SUBDIR += libevent-hiphop
     SUBDIR += libevent2
     SUBDIR += libevt
@@ -1211,6 +1215,7 @@
     SUBDIR += libmpsse
     SUBDIR += libmsiecf
     SUBDIR += libmsocket
+    SUBDIR += libmtdev
     SUBDIR += libmtrie
     SUBDIR += libnaji
     SUBDIR += libnfc
@@ -1353,6 +1358,7 @@
     SUBDIR += linux_kdump
     SUBDIR += linux_libusb
     SUBDIR += lion
+    SUBDIR += lldb37
     SUBDIR += llnextgen
     SUBDIR += llvm-cheri
     SUBDIR += llvm-devel
@@ -1392,6 +1398,7 @@
     SUBDIR += lua-lgi
     SUBDIR += lua-lpeg
     SUBDIR += lua-lpeg51
+    SUBDIR += lua-luarocks
     SUBDIR += lua-lunit
     SUBDIR += lua-posix
     SUBDIR += lua-pty
@@ -1485,7 +1492,6 @@
     SUBDIR += nini
     SUBDIR += ninja
     SUBDIR += ninja-ide
-    SUBDIR += ninja16
     SUBDIR += node-thrift
     SUBDIR += notify-sharp
     SUBDIR += noweb
@@ -1531,6 +1537,7 @@
     SUBDIR += ocaml-xstr
     SUBDIR += ocaml-xstrp4
     SUBDIR += ocfpcsc
+    SUBDIR += ocl-icd
     SUBDIR += ode
     SUBDIR += ois
     SUBDIR += okteta
@@ -2211,6 +2218,7 @@
     SUBDIR += p5-File-Cat
     SUBDIR += p5-File-ChangeNotify
     SUBDIR += p5-File-ConfigDir
+    SUBDIR += p5-File-Copy-Link
     SUBDIR += p5-File-Copy-Recursive
     SUBDIR += p5-File-CountLines
     SUBDIR += p5-File-CreationTime
@@ -2264,6 +2272,7 @@
     SUBDIR += p5-File-Slurp
     SUBDIR += p5-File-Slurp-Tiny
     SUBDIR += p5-File-Slurp-Tree
+    SUBDIR += p5-File-Slurper
     SUBDIR += p5-File-Spec-Native
     SUBDIR += p5-File-Stream
     SUBDIR += p5-File-Sync
@@ -2682,6 +2691,7 @@
     SUBDIR += p5-MooseX-Types-DateTime
     SUBDIR += p5-MooseX-Types-DateTime-ButMaintained
     SUBDIR += p5-MooseX-Types-DateTime-MoreCoercions
+    SUBDIR += p5-MooseX-Types-DateTime-MySQL
     SUBDIR += p5-MooseX-Types-DateTimeX
     SUBDIR += p5-MooseX-Types-ISO8601
     SUBDIR += p5-MooseX-Types-JSON
@@ -3433,6 +3443,7 @@
     SUBDIR += pccts
     SUBDIR += pcl
     SUBDIR += pcre
+    SUBDIR += pcre2
     SUBDIR += pcre++
     SUBDIR += pcsc-ada
     SUBDIR += pcsc-lite
@@ -3628,6 +3639,7 @@
     SUBDIR += pecl-expect
     SUBDIR += pecl-gearman
     SUBDIR += pecl-hidef
+    SUBDIR += pecl-hrtime
     SUBDIR += pecl-htscanner
     SUBDIR += pecl-inclued
     SUBDIR += pecl-inotify
@@ -3678,6 +3690,7 @@
     SUBDIR += php-libawl
     SUBDIR += php-memoize
     SUBDIR += php-scalar_objects
+    SUBDIR += php-uprofiler
     SUBDIR += php-xdebug
     SUBDIR += php5-blitz
     SUBDIR += php5-blitz-devel
@@ -3851,6 +3864,7 @@
     SUBDIR += py-apipkg
     SUBDIR += py-appdirs
     SUBDIR += py-application
+    SUBDIR += py-apscheduler
     SUBDIR += py-archetypes.querywidget
     SUBDIR += py-archetypes.referencebrowserwidget
     SUBDIR += py-archetypes.schemaextender
@@ -3944,10 +3958,12 @@
     SUBDIR += py-doit
     SUBDIR += py-durus
     SUBDIR += py-dynrules
+    SUBDIR += py-efilter
     SUBDIR += py-efl
     SUBDIR += py-eggtestinfo
     SUBDIR += py-enum34
     SUBDIR += py-epsilon
+    SUBDIR += py-evdev
     SUBDIR += py-event
     SUBDIR += py-experimental.cssselect
     SUBDIR += py-extras
@@ -4135,6 +4151,7 @@
     SUBDIR += py-pycerberus
     SUBDIR += py-pycparser
     SUBDIR += py-pydasm
+    SUBDIR += py-pydoop
     SUBDIR += py-pyechonest
     SUBDIR += py-pyee
     SUBDIR += py-pyelftools
@@ -4166,6 +4183,7 @@
     SUBDIR += py-python-statsd
     SUBDIR += py-python2-pythondialog
     SUBDIR += py-pythonbrew
+    SUBDIR += py-pytimeparse
     SUBDIR += py-pytrie
     SUBDIR += py-pytz
     SUBDIR += py-pyutil
@@ -4189,6 +4207,7 @@
     SUBDIR += py-raven
     SUBDIR += py-repl
     SUBDIR += py-repoze.lru
+    SUBDIR += py-repoze.sphinx.autointerface
     SUBDIR += py-repoze.tm2
     SUBDIR += py-repoze.what
     SUBDIR += py-repoze.what-pylons
@@ -4223,6 +4242,7 @@
     SUBDIR += py-setuptools32
     SUBDIR += py-setuptools33
     SUBDIR += py-setuptools34
+    SUBDIR += py-setuptools35
     SUBDIR += py-setuptools_darcs
     SUBDIR += py-setuptools_hg
     SUBDIR += py-sh
@@ -4732,7 +4752,6 @@
     SUBDIR += rubygem-icalendar
     SUBDIR += rubygem-ice_cube
     SUBDIR += rubygem-ice_nine
-    SUBDIR += rubygem-igraph
     SUBDIR += rubygem-inflecto
     SUBDIR += rubygem-interact
     SUBDIR += rubygem-io-like
@@ -4821,6 +4840,7 @@
     SUBDIR += rubygem-power_assert
     SUBDIR += rubygem-powerbar
     SUBDIR += rubygem-progressbar
+    SUBDIR += rubygem-protected_attributes
     SUBDIR += rubygem-prototype-rails
     SUBDIR += rubygem-pry
     SUBDIR += rubygem-pry-rails
@@ -5165,6 +5185,7 @@
     SUBDIR += winpdb
     SUBDIR += wizardkit
     SUBDIR += wxGlade
+    SUBDIR += wxformbuilder
     SUBDIR += xa65
     SUBDIR += xc3sprog
     SUBDIR += xdg-user-dirs

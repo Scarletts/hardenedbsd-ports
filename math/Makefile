@@ -88,10 +88,13 @@
     SUBDIR += chryzodus
     SUBDIR += clarence
     SUBDIR += clasp
+    SUBDIR += clblas
+    SUBDIR += clfft
     SUBDIR += clipper
     SUBDIR += cln
     SUBDIR += cloog
     SUBDIR += clp
+    SUBDIR += clrng
     SUBDIR += cminpack
     SUBDIR += cmlib
     SUBDIR += coinmp
@@ -171,6 +174,7 @@
     SUBDIR += hexcalc
     SUBDIR += hfst
     SUBDIR += hs-Agda
+    SUBDIR += hs-Agda-stdlib
     SUBDIR += hs-NumInstances
     SUBDIR += hs-adjunctions
     SUBDIR += hs-categories
