@@ -12,7 +12,7 @@ COMMENT=	OPNsense update utility
 LICENSE=	BSD2CLAUSE
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	opnsense
-GH_PROJECT=	update
+GH_ACCOUNT=	HardenedBSD
+GH_PROJECT=	opnsense-update
 
 .include <bsd.port.mk>
