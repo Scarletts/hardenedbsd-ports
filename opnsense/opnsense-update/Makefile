@@ -13,6 +13,8 @@ LICENSE=	BSD2CLAUSE
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	HardenedBSD
+GH_COMMIT=	a00080f
+GH_TAGNAME=	${GH_COMMIT}
 GH_PROJECT=	opnsense-update
 
 .include <bsd.port.mk>
