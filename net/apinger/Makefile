@@ -21,6 +21,8 @@ OPTIONS_DEFINE=	IPV6
 
 USES=		bison pie
 
+MAKE_JOBS_UNSAFE=	yes
+
 .include <bsd.port.options.mk>
 
 .if !${PORT_OPTIONS:MIPV6}
