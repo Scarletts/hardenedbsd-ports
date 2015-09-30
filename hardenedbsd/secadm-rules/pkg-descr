@@ -1,0 +1,5 @@
+secadm-rules
+============
+
+Basic ruleset for secadm to make OPNSense fully work under
+HardenedBSD.

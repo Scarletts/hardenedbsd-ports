@@ -1,7 +1,7 @@
 # Created by: Shawn Webb <shawn.webb@hardenedbsd.org>
 # $FreeBSD$
 
-PORTNAME=	opnsense-update
+PORTNAME=	secadm-rules
 PORTVERSION=	15.7.14
 PORTREVISION=	0
 CATEGORIES=	hardenedbsd
