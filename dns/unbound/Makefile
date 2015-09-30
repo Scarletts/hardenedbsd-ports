@@ -20,6 +20,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-ssl=${OPENSSLBASE} --with-libexpat=${LOCALBASE}
 USE_LDCONFIG=	yes
 
+USES+=		pie
+
 USERS=		${PORTNAME}
 GROUPS=		${PORTNAME}
 
