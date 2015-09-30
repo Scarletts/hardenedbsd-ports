@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	strongswan
-PORTVERSION=	5.3.2
+PORTVERSION=	5.3.3
 CATEGORIES=	security
 MASTER_SITES=	http://download.strongswan.org/ \
 		http://download2.strongswan.org/
@@ -12,12 +12,14 @@ COMMENT=	Open Source IKEv2 IPsec-based VPN solution
 
 LICENSE=	GPLv2
 
-USES=		cpe execinfo libtool:keepla tar:bzip2 pkgconfig pie
+USES=		cpe execinfo libtool:keepla pkgconfig tar:bzip2
 USE_OPENSSL=	yes
 USE_RC_SUBR=	strongswan
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
+
+USES+=		pie
 
 CONFIGURE_ARGS=	--enable-kernel-pfkey \
 		--enable-kernel-pfroute  \
