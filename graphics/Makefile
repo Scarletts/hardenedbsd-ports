@@ -141,6 +141,7 @@
     SUBDIR += easypaint
     SUBDIR += edje_viewer
     SUBDIR += electrix
+    SUBDIR += embree
     SUBDIR += enblend
     SUBDIR += entangle
     SUBDIR += eog
@@ -148,7 +149,6 @@
     SUBDIR += eom
     SUBDIR += eos-movrec
     SUBDIR += epdfview
-    SUBDIR += epeg
     SUBDIR += epix
     SUBDIR += eps2png
     SUBDIR += epstool
@@ -968,6 +968,7 @@
     SUBDIR += sdump
     SUBDIR += seam-carving-gui
     SUBDIR += seejpeg
+    SUBDIR += seexpr
     SUBDIR += seom
     SUBDIR += separate
     SUBDIR += seq2gif
