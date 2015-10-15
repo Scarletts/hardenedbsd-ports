@@ -572,6 +572,7 @@
     SUBDIR += luminance
     SUBDIR += luminance-qt5
     SUBDIR += luxrender
+    SUBDIR += luxrender14
     SUBDIR += mahotas
     SUBDIR += maim
     SUBDIR += makehuman
@@ -833,6 +834,7 @@
     SUBDIR += py-gimp
     SUBDIR += py-glewpy
     SUBDIR += py-goocanvas
+    SUBDIR += py-gphoto2
     SUBDIR += py-graph
     SUBDIR += py-graph-core
     SUBDIR += py-graph-dot

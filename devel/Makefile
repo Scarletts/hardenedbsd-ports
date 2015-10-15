@@ -1463,6 +1463,7 @@
     SUBDIR += mm
     SUBDIR += mm-common
     SUBDIR += mongo-c-driver
+    SUBDIR += mongo-cxx-driver
     SUBDIR += mono-addins
     SUBDIR += monodevelop
     SUBDIR += monodevelop-database
@@ -4178,6 +4179,7 @@
     SUBDIR += py-pymarc
     SUBDIR += py-pympler
     SUBDIR += py-pymtbl
+    SUBDIR += py-pyopencl
     SUBDIR += py-pyrfc3339
     SUBDIR += py-pyro
     SUBDIR += py-pyshapelib
@@ -4195,6 +4197,7 @@
     SUBDIR += py-python2-pythondialog
     SUBDIR += py-pythonbrew
     SUBDIR += py-pytimeparse
+    SUBDIR += py-pytools
     SUBDIR += py-pytrie
     SUBDIR += py-pytz
     SUBDIR += py-pyutil
@@ -4455,6 +4458,8 @@
     SUBDIR += pysvn
     SUBDIR += pythk
     SUBDIR += pythontidy
+    SUBDIR += pyvisa
+    SUBDIR += pyvisa-py
     SUBDIR += qbzr
     SUBDIR += qca
     SUBDIR += qca-qt5

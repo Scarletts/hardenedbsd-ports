@@ -6561,7 +6561,6 @@ devel/libparserutils||2014-09-01|Not staged
 devel/libslave||2014-09-01|Not staged
 devel/linux-kmod-compat||2014-09-01|Not staged
 devel/ml-doc||2014-09-01|Not staged
-devel/mongo-cxx-driver||2014-09-01|Not staged
 devel/nemiver||2014-09-01|Not staged
 devel/ocaml-event||2014-09-01|Not staged
 devel/ocamlweb||2014-09-01|Not staged
@@ -7892,3 +7891,5 @@ emulators/ppsspp-devel|emulators/ppsspp|2015-10-06|Out of date: use emulators/pp
 ports-mgmt/bpm||2015-10-10|No support for pkg
 www/moodle27||2015-10-11|Has expired: Please upgrade to moodle28 or moodle29
 graphics/epeg|devel/efl|2015-10-11|Has expired: Merged into devel/efl
+x11-drivers/xf86-video-ati-ums||2015-10-13|Not supported by xorg-server 1.17
+x11/nvidia-driver-173||2015-10-13|Does not support xorg-server 1.15 and higher

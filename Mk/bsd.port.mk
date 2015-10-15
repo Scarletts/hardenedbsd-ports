@@ -1166,16 +1166,22 @@ MAINTAINER?=	ports@FreeBSD.org
 .if !defined(ARCH)
 ARCH!=	${UNAME} -p
 .endif
+_EXPORTED_VARS+=	ARCH
 
 # Get the operating system type
 .if !defined(OPSYS)
 OPSYS!=	${UNAME} -s
 .endif
+_EXPORTED_VARS+=	OPSYS
 
-UNAMER!=${UNAME} -r
+.if !defined(_OSRELEASE)
+_OSRELEASE!=	${UNAME} -r
+.endif
+_EXPORTED_VARS+=	_OSRELEASE
 
 # Get the operating system revision
-OSREL?=	${UNAMER:C/-.*//}
+OSREL?=	${_OSRELEASE:C/-.*//}
+_EXPORTED_VARS+=	OSREL
 
 # Get __FreeBSD_version
 .if !defined(OSVERSION)
@@ -1187,14 +1193,15 @@ OSVERSION!=	${AWK} '/^\#define[[:blank:]]__FreeBSD_version/ {print $$3}' < ${SRC
 .error Unable to determine OS version.  Either define OSVERSION, install /usr/include/sys/param.h or define SRC_BASE.
 .endif
 .endif
+_EXPORTED_VARS+=	OSVERSION
 
 # Convert OSVERSION to major release number
 _OSVERSION_MAJOR=	${OSVERSION:C/([0-9]?[0-9])([0-9][0-9])[0-9]{3}/\1/}
 # Sanity checks for chroot/jail building.
 # Skip if OSVERSION specified on cmdline for testing. Only works for bmake.
 .if !defined(.MAKEOVERRIDES) || !${.MAKEOVERRIDES:MOSVERSION}
-.if ${_OSVERSION_MAJOR} != ${UNAMER:R}
-.error UNAME_r (${UNAMER}) and OSVERSION (${OSVERSION}) do not agree on major version number.
+.if ${_OSVERSION_MAJOR} != ${_OSRELEASE:R}
+.error UNAME_r (${_OSRELEASE}) and OSVERSION (${OSVERSION}) do not agree on major version number.
 .elif ${_OSVERSION_MAJOR} != ${OSREL:R}
 .error OSREL (${OSREL}) and OSVERSION (${OSVERSION}) do not agree on major version number.
 .endif
@@ -1203,7 +1210,7 @@ _OSVERSION_MAJOR=	${OSVERSION:C/([0-9]?[0-9])([0-9][0-9])[0-9]{3}/\1/}
 # Only define tools here (for transition period with between pkg tools)
 .include "${PORTSDIR}/Mk/bsd.commands.mk"
 
-.if exists(${PKG_BIN})
+.if !defined(_PKG_CHECKED) && !defined(PACKAGE_BUILDING) && exists(${PKG_BIN})
 .if !defined(_PKG_VERSION)
 _PKG_VERSION!=	${PKG_BIN} -v
 .endif
@@ -1211,7 +1218,9 @@ _PKG_STATUS!=	${PKG_BIN} version -t ${_PKG_VERSION:C/-.*//g} ${MINIMAL_PKG_VERSI
 .if ${_PKG_STATUS} == "<"
 IGNORE=		pkg(8) must be version ${MINIMAL_PKG_VERSION} or greater, but you have ${_PKG_VERSION}. You must upgrade the ${PKG_ORIGIN} port first
 .endif
+_PKG_CHECKED=	1
 .endif
+_EXPORTED_VARS+=	_PKG_CHECKED
 
 MASTERDIR?=	${.CURDIR}
 
@@ -1556,7 +1565,7 @@ CO_ENV+=		STAGEDIR=${STAGEDIR} \
 				PORTSDIR="${PORTSDIR}"
 
 .if defined(X_BUILD_FOR)
-BUILD_DEPENDS+=	${X_BUILD_FOR}-cc:${PORTSDIR}/devel/${X_BUILD_FOR}-xdev
+BUILD_DEPENDS+=	${X_BUILD_FOR}-cc:devel/${X_BUILD_FOR}-xdev
 PKG_ENV+=		ABI_FILE=${X_SYSROOT}/usr/lib/crt1.o
 MAKE_ENV+=		NM=${NM} \
 				STRIPBIN=${X_BUILD_FOR}-strip \
@@ -1647,7 +1656,7 @@ CONFIGURE_ENV+=	SHELL=${CONFIGURE_SHELL} CONFIG_SHELL=${CONFIGURE_SHELL}
 MAKE_ENV+=		SHELL=${MAKE_SHELL} NO_LINT=YES
 
 .if defined(PATCHFILES) && ${PATCHFILES:M*.zip}
-PATCH_DEPENDS+=		${LOCALBASE}/bin/unzip:${PORTSDIR}/archivers/unzip
+PATCH_DEPENDS+=		${LOCALBASE}/bin/unzip:archivers/unzip
 .endif
 
 # Check the compatibility layer for amd64/ia64
@@ -1663,6 +1672,7 @@ HAVE_COMPAT_IA32_KERN!= if ${SYSCTL} -n compat.ia32.maxvmem >/dev/null 2>&1; the
 .endif
 .endif
 .endif
+_EXPORTED_VARS+=	HAVE_COMPAT_IA32_KERN
 
 .if defined(IA32_BINARY_PORT) && ${ARCH} != "i386"
 .if ${ARCH} == "amd64" || ${ARCH} == "ia64"
@@ -1686,7 +1696,7 @@ PKG_ORIGIN=		ports-mgmt/pkg-devel
 .endif
 
 .if !defined(PKG_DEPENDS) && !defined(CLEAN_FETCH_ENV)
-PKG_DEPENDS+=	${LOCALBASE}/sbin/pkg:${PORTSDIR}/${PKG_ORIGIN}
+PKG_DEPENDS+=	${LOCALBASE}/sbin/pkg:${PKG_ORIGIN}
 .endif
 
 .if defined(USE_GCC)
@@ -1694,7 +1704,7 @@ PKG_DEPENDS+=	${LOCALBASE}/sbin/pkg:${PORTSDIR}/${PKG_ORIGIN}
 .endif
 
 .if defined(USE_BINUTILS) && !defined(DISABLE_BINUTILS)
-BUILD_DEPENDS+=	${LOCALBASE}/bin/as:${PORTSDIR}/devel/binutils
+BUILD_DEPENDS+=	${LOCALBASE}/bin/as:devel/binutils
 BINUTILS?=	ADDR2LINE AR AS CPPFILT GPROF LD NM OBJCOPY OBJDUMP RANLIB \
 	READELF SIZE STRINGS
 BINUTILS_NO_MAKE_ENV?=
@@ -1738,6 +1748,7 @@ USE_LINUX?=	yes
 .  if !defined(LINUX_OSRELEASE)
 LINUX_OSRELEASE!=	${ECHO_CMD} `${SYSCTL} -n compat.linux.osrelease 2>/dev/null`
 .  endif
+_EXPORTED_VARS+=	LINUX_OSRELEASE
 
 # install(1) also does a brandelf on strip, so don't strip with FreeBSD tools.
 STRIP=
@@ -1760,13 +1771,13 @@ USE_LINUX=	${OVERRIDE_LINUX_BASE_PORT}
 # don't forget to update the Handbook!
 
 .	if exists(${PORTSDIR}/emulators/linux_base-${USE_LINUX})
-LINUX_BASE_PORT=	${LINUXBASE}/bin/sh:${PORTSDIR}/emulators/linux_base-${USE_LINUX}
+LINUX_BASE_PORT=	${LINUXBASE}/bin/sh:emulators/linux_base-${USE_LINUX}
 .	else
 .		if ${USE_LINUX:tl} == "yes"
 USE_LINUX=	c6
-LINUX_BASE_PORT=	${LINUXBASE}/etc/redhat-release:${PORTSDIR}/emulators/linux_base-c6
+LINUX_BASE_PORT=	${LINUXBASE}/etc/redhat-release:emulators/linux_base-c6
 .		elif ${USE_LINUX} == "c6_64"
-LINUX_BASE_PORT=	${LINUXBASE}/etc/redhat-release:${PORTSDIR}/emulators/linux_base-c6
+LINUX_BASE_PORT=	${LINUXBASE}/etc/redhat-release:emulators/linux_base-c6
 .		else
 IGNORE=		cannot be built: there is no emulators/linux_base-${USE_LINUX}, perhaps wrong use of USE_LINUX or OVERRIDE_LINUX_BASE_PORT
 .		endif
@@ -1790,19 +1801,19 @@ RUN_DEPENDS+=	${LINUX_BASE_PORT}
 
 PKG_IGNORE_DEPENDS?=		'this_port_does_not_exist'
 
-_GL_gbm_LIB_DEPENDS=		libgbm.so:${PORTSDIR}/graphics/gbm
-_GL_glesv2_BUILD_DEPENDS=		libglesv2>0:${PORTSDIR}/graphics/libglesv2
-_GL_glesv2_RUN_DEPENDS=		libglesv2>0:${PORTSDIR}/graphics/libglesv2
-_GL_egl_BUILD_DEPENDS=		libEGL>0:${PORTSDIR}/graphics/libEGL
-_GL_egl_RUN_DEPENDS=		libEGL>0:${PORTSDIR}/graphics/libEGL
-_GL_gl_BUILD_DEPENDS=		libGL>0:${PORTSDIR}/graphics/libGL
-_GL_gl_RUN_DEPENDS=		libGL>0:${PORTSDIR}/graphics/libGL
+_GL_gbm_LIB_DEPENDS=		libgbm.so:graphics/gbm
+_GL_glesv2_BUILD_DEPENDS=		libglesv2>0:graphics/libglesv2
+_GL_glesv2_RUN_DEPENDS=		libglesv2>0:graphics/libglesv2
+_GL_egl_BUILD_DEPENDS=		libEGL>0:graphics/libEGL
+_GL_egl_RUN_DEPENDS=		libEGL>0:graphics/libEGL
+_GL_gl_BUILD_DEPENDS=		libGL>0:graphics/libGL
+_GL_gl_RUN_DEPENDS=		libGL>0:graphics/libGL
 _GL_gl_USE_XORG=		glproto dri2proto
-_GL_glew_LIB_DEPENDS=		libGLEW.so:${PORTSDIR}/graphics/glew
-_GL_glu_LIB_DEPENDS=		libGLU.so:${PORTSDIR}/graphics/libGLU
+_GL_glew_LIB_DEPENDS=		libGLEW.so:graphics/glew
+_GL_glu_LIB_DEPENDS=		libGLU.so:graphics/libGLU
 _GL_glu_USE_XORG=		glproto dri2proto
-_GL_glw_LIB_DEPENDS=		libGLw.so:${PORTSDIR}/graphics/libGLw
-_GL_glut_LIB_DEPENDS=		libglut.so:${PORTSDIR}/graphics/freeglut
+_GL_glw_LIB_DEPENDS=		libGLw.so:graphics/libGLw
+_GL_glut_LIB_DEPENDS=		libglut.so:graphics/freeglut
 
 .if defined(USE_GL)
 . if ${USE_GL:tl} == "yes"
@@ -2023,7 +2034,11 @@ MAKE_JOBS_NUMBER=	1
 .if defined(MAKE_JOBS_NUMBER)
 _MAKE_JOBS_NUMBER:=	${MAKE_JOBS_NUMBER}
 .else
-_MAKE_JOBS_NUMBER!=	${SYSCTL} -n kern.smp.cpus
+.if !defined(_SMP_CPUS)
+_SMP_CPUS!=		${SYSCTL} -n kern.smp.cpus
+.endif
+_EXPORTED_VARS+=	_SMP_CPUS
+_MAKE_JOBS_NUMBER=	${_SMP_CPUS}
 .endif
 .if defined(MAKE_JOBS_NUMBER_LIMIT) && ( ${MAKE_JOBS_NUMBER_LIMIT} < ${_MAKE_JOBS_NUMBER} )
 MAKE_JOBS_NUMBER=	${MAKE_JOBS_NUMBER_LIMIT}
@@ -2610,6 +2625,7 @@ CONFIGURE_FAIL_MESSAGE?=	"Please report the problem to ${MAINTAINER} [maintainer
 .if !defined(CONFIGURE_MAX_CMD_LEN)
 CONFIGURE_MAX_CMD_LEN!=	${SYSCTL} -n kern.argmax
 .endif
+_EXPORTED_VARS+=	CONFIGURE_MAX_CMD_LEN
 GNU_CONFIGURE_PREFIX?=	${PREFIX}
 GNU_CONFIGURE_MANPREFIX?=	${MANPREFIX}
 CONFIG_SITE?=		${PORTSDIR}/Templates/config.site
@@ -2669,7 +2685,7 @@ INFO_PATH?=	info
 .endif
 
 .if defined(INFO)
-RUN_DEPENDS+=	indexinfo:${PORTSDIR}/print/indexinfo
+RUN_DEPENDS+=	indexinfo:print/indexinfo
 
 . for D in ${INFO:H}
 RD:=	${D}
@@ -4420,7 +4436,7 @@ fetch-recursive-list:
 
 # Used by fetch-required and fetch-required list, this script looks
 # at each of the dependencies. If 3 items are specified in the tuple,
-# such as foo:${PORTSDIR}/graphics/foo:extract, the first item (foo)
+# such as foo:graphics/foo:extract, the first item (foo)
 # is examined. Only if it begins with a / and does not exist on the
 # file-system will ``make targ'' proceed.
 # For more usual (dual-item) dependency tuples, the ``make targ''
@@ -4702,12 +4718,12 @@ missing-packages:
 # first to avoid gratuitous breakage.
 
 . if !target(describe)
-_EXTRACT_DEPENDS=${EXTRACT_DEPENDS:C/^[^ :]+:([^ :]+)(:[^ :]+)?/\1/:O:u}
-_PATCH_DEPENDS=${PATCH_DEPENDS:C/^[^ :]+:([^ :]+)(:[^ :]+)?/\1/:O:u}
-_FETCH_DEPENDS=${FETCH_DEPENDS:C/^[^ :]+:([^ :]+)(:[^ :]+)?/\1/:O:u}
-_LIB_DEPENDS=${LIB_DEPENDS:C/^[^ :]+:([^ :]+)(:[^ :]+)?/\1/:O:u}
-_BUILD_DEPENDS=${BUILD_DEPENDS:C/^[^ :]+:([^ :]+)(:[^ :]+)?/\1/:O:u} ${_LIB_DEPENDS}
-_RUN_DEPENDS=${RUN_DEPENDS:C/^[^ :]+:([^ :]+)(:[^ :]+)?/\1/:O:u} ${_LIB_DEPENDS}
+_EXTRACT_DEPENDS=${EXTRACT_DEPENDS:C/^[^ :]+:([^ :]+)(:[^ :]+)?/\1/:O:u:C,(^[^/]),${PORTSDIR}/\1,}
+_PATCH_DEPENDS=${PATCH_DEPENDS:C/^[^ :]+:([^ :]+)(:[^ :]+)?/\1/:O:u:C,(^[^/]),${PORTSDIR}/\1,}
+_FETCH_DEPENDS=${FETCH_DEPENDS:C/^[^ :]+:([^ :]+)(:[^ :]+)?/\1/:O:u:C,(^[^/]),${PORTSDIR}/\1,}
+_LIB_DEPENDS=${LIB_DEPENDS:C/^[^ :]+:([^ :]+)(:[^ :]+)?/\1/:O:u:C,(^[^/]),${PORTSDIR}/\1,}
+_BUILD_DEPENDS=${BUILD_DEPENDS:C/^[^ :]+:([^ :]+)(:[^ :]+)?/\1/:O:u:C,(^[^/]),${PORTSDIR}/\1,} ${_LIB_DEPENDS}
+_RUN_DEPENDS=${RUN_DEPENDS:C/^[^ :]+:([^ :]+)(:[^ :]+)?/\1/:O:u:C,(^[^/]),${PORTSDIR}/\1,} ${_LIB_DEPENDS}
 . if exists(${DESCR})
 _DESCR=${DESCR}
 . else
@@ -5048,12 +5064,11 @@ ${_t}:
 
 .if !defined(NOPRECIOUSMAKEVARS)
 # These won't change, so we can pass them through the environment
-.MAKEFLAGS: \
-	ARCH="${ARCH:S/"/"'"'"/g:S/\$/\$\$/g:S/\\/\\\\/g}" \
-	OPSYS="${OPSYS:S/"/"'"'"/g:S/\$/\$\$/g:S/\\/\\\\/g}" \
-	OSREL="${OSREL:S/"/"'"'"/g:S/\$/\$\$/g:S/\\/\\\\/g}" \
-	OSVERSION="${OSVERSION:S/"/"'"'"/g:S/\$/\$\$/g:S/\\/\\\\/g}" \
-	SYSTEMVERSION="${SYSTEMVERSION:S/"/"'"'"/g:S/\$/\$\$/g:S/\\/\\\\/g}"
+.for var in ${_EXPORTED_VARS}
+.if empty(.MAKEFLAGS:M${var}=*) && !empty(${var})
+.MAKEFLAGS:	${var}=${${var}:Q}
+.endif
+.endfor
 .endif
 
 .if !target(pre-check-config)
@@ -5292,7 +5307,7 @@ config-conditional:
 .endif
 .endif # config-conditional
 
-.if !target(showconfig)
+.if !target(showconfig) && (make(*config*) || (!empty(.MAKEFLAGS:M-V) && !empty(.MAKEFLAGS:M*_DESC)))
 .include "${PORTSDIR}/Mk/bsd.options.desc.mk"
 MULTI_EOL=	: you have to choose at least one of them
 SINGLE_EOL=	: you have to select exactly one of them

@@ -55,6 +55,7 @@
     SUBDIR += elixir-calecto
     SUBDIR += elixir-ecto
     SUBDIR += elixir-ecto_migrate
+    SUBDIR += elixir-exredis
     SUBDIR += elixir-geo
     SUBDIR += elixir-mariaex
     SUBDIR += elixir-mongo
@@ -92,6 +93,7 @@
     SUBDIR += gnats4
     SUBDIR += gnatsweb4
     SUBDIR += godis
+    SUBDIR += gomdb
     SUBDIR += gosqlite3
     SUBDIR += gqlplus
     SUBDIR += grass
@@ -122,6 +124,7 @@
     SUBDIR += jdbc-oracle8i
     SUBDIR += jdbc-oracle9i
     SUBDIR += jdbm2
+    SUBDIR += jlog
     SUBDIR += jrobin
     SUBDIR += jrrd
     SUBDIR += kbibtex
