@@ -70,6 +70,7 @@
     SUBDIR += anjuta
     SUBDIR += anjuta-extras
     SUBDIR += antlr
+    SUBDIR += antlr3
     SUBDIR += antlrworks
     SUBDIR += apache-ant
     SUBDIR += api-sanity-autotest
@@ -562,6 +563,7 @@
     SUBDIR += gazpacho
     SUBDIR += gb
     SUBDIR += gcc-arm-embedded
+    SUBDIR += gcc-msp430-ti-toolchain
     SUBDIR += gccmakedep
     SUBDIR += gconf2
     SUBDIR += gconf2-reference
@@ -1020,6 +1022,7 @@
     SUBDIR += isl
     SUBDIR += it-eric6
     SUBDIR += itext
+    SUBDIR += ivykis
     SUBDIR += jakarta-commons-configuration
     SUBDIR += jakarta-commons-daemon
     SUBDIR += jakarta-commons-io
@@ -5104,6 +5107,7 @@
     SUBDIR += subversion-book
     SUBDIR += subversion-static
     SUBDIR += subversion17
+    SUBDIR += subversion18
     SUBDIR += subversive
     SUBDIR += svk
     SUBDIR += svn2git

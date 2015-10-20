@@ -29,7 +29,6 @@ USES+=		pie relro
 CPE_VENDOR=	google
 
 SHEBANG_FILES=	build/gyp/gyp
-python_OLD_CMD=	/usr/bin/env python
 
 .include <bsd.port.pre.mk>
 
