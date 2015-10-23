@@ -92,7 +92,7 @@ EXTRA_PATCHES+=	${FILESDIR}/security-patch-CVE-2012-4225
 .endif
 
 OPTIONS_DEFINE=	ACPI_PM LINUX DOCS
-OPTIONS_DEFAULT=	LINUX
+OPTIONS_DEFAULT=
 
 ACPI_PM_DESC=		ACPI Power Management support
 LINUX_DESC=		Linux compatibility support
