@@ -277,6 +277,7 @@
     SUBDIR += commit-patch
     SUBDIR += commoncpp
     SUBDIR += compiler-rt
+    SUBDIR += compiler-rt-devel
     SUBDIR += compiz-bcop
     SUBDIR += concurrencykit
     SUBDIR += configkit
@@ -4920,6 +4921,7 @@
     SUBDIR += rubygem-ruby-atmos-pure
     SUBDIR += rubygem-ruby-bugzilla
     SUBDIR += rubygem-ruby-filemagic
+    SUBDIR += rubygem-ruby-libvirt
     SUBDIR += rubygem-ruby-ole
     SUBDIR += rubygem-ruby-prof
     SUBDIR += rubygem-ruby-progressbar
@@ -5087,6 +5089,7 @@
     SUBDIR += spice-protocol
     SUBDIR += spin
     SUBDIR += splint
+    SUBDIR += spyder
     SUBDIR += srecord
     SUBDIR += st
     SUBDIR += statcvs
@@ -5213,6 +5216,7 @@
     SUBDIR += vtcl
     SUBDIR += vxlog
     SUBDIR += wand-libconfig
+    SUBDIR += wandio
     SUBDIR += websocketpp
     SUBDIR += websvn
     SUBDIR += wininfo
