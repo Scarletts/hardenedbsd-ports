@@ -524,6 +524,7 @@
     SUBDIR += mod_umask
     SUBDIR += mod_vhost_ldap
     SUBDIR += mod_vhs
+    SUBDIR += mod_webauth
     SUBDIR += mod_webkit
     SUBDIR += mod_whatkilledus
     SUBDIR += mod_wsgi4
@@ -1890,6 +1891,7 @@
     SUBDIR += rubygem-innate
     SUBDIR += rubygem-jekyll
     SUBDIR += rubygem-jekyll-watch
+    SUBDIR += rubygem-jekyll2
     SUBDIR += rubygem-journey
     SUBDIR += rubygem-jquery-atwho-rails
     SUBDIR += rubygem-jquery-atwho-rails-rails4
@@ -2195,6 +2197,7 @@
     SUBDIR += uzbl
     SUBDIR += validator
     SUBDIR += varnish-libvmod-header
+    SUBDIR += varnish-libvmod-saintmode
     SUBDIR += varnish-nagios
     SUBDIR += varnish4
     SUBDIR += vdr-plugin-live

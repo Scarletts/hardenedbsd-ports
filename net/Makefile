@@ -936,7 +936,6 @@
     SUBDIR += py-libdnet
     SUBDIR += py-libnet
     SUBDIR += py-maxminddb
-    SUBDIR += py-medusa
     SUBDIR += py-miniupnpc
     SUBDIR += py-msrplib
     SUBDIR += py-ndg_httpsclient
@@ -1064,6 +1063,7 @@
     SUBDIR += rubygem-epp-client-rgp
     SUBDIR += rubygem-epp-client-secdns
     SUBDIR += rubygem-epp-client-smallregistry
+    SUBDIR += rubygem-fog-aliyun
     SUBDIR += rubygem-fog-atmos
     SUBDIR += rubygem-fog-aws
     SUBDIR += rubygem-fog-brightbox
@@ -1082,6 +1082,7 @@
     SUBDIR += rubygem-fog-terremark
     SUBDIR += rubygem-fog-vmfusion
     SUBDIR += rubygem-fog-voxel
+    SUBDIR += rubygem-fog-xenserver
     SUBDIR += rubygem-geoip
     SUBDIR += rubygem-gitlab_omniauth-ldap
     SUBDIR += rubygem-http_parser.rb
@@ -1248,6 +1249,7 @@
     SUBDIR += tigervnc
     SUBDIR += tightvnc
     SUBDIR += tintin++
+    SUBDIR += tiny-network-utilities
     SUBDIR += tinyfugue
     SUBDIR += tinyldap
     SUBDIR += tn5250

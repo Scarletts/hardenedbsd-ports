@@ -455,6 +455,7 @@
     SUBDIR += eris
     SUBDIR += erlang-bbmustache
     SUBDIR += erlang-bear
+    SUBDIR += erlang-certifi
     SUBDIR += erlang-clique
     SUBDIR += erlang-common_lib
     SUBDIR += erlang-cuttlefish
@@ -498,6 +499,7 @@
     SUBDIR += f77flow
     SUBDIR += fam
     SUBDIR += fastcrc
+    SUBDIR += fb-adb
     SUBDIR += fb303
     SUBDIR += fc++
     SUBDIR += ffcall
@@ -1051,6 +1053,7 @@
     SUBDIR += json-c
     SUBDIR += json-glib
     SUBDIR += jsoncpp
+    SUBDIR += jsonnet
     SUBDIR += jtag
     SUBDIR += judy
     SUBDIR += jwasm
@@ -1488,6 +1491,7 @@
     SUBDIR += mspdebug
     SUBDIR += msrc0
     SUBDIR += mtbl
+    SUBDIR += myrepos
     SUBDIR += nana
     SUBDIR += nant
     SUBDIR += nasm
@@ -1715,6 +1719,7 @@
     SUBDIR += p5-C-Scan
     SUBDIR += p5-CBOR-XS
     SUBDIR += p5-CHI
+    SUBDIR += p5-CHI-Driver-DBI
     SUBDIR += p5-CLASS
     SUBDIR += p5-CPAN-Changes
     SUBDIR += p5-CPAN-Checksums
@@ -3663,6 +3668,7 @@
     SUBDIR += pecl-jsmin
     SUBDIR += pecl-jsonc
     SUBDIR += pecl-jsond
+    SUBDIR += pecl-jsonnet
     SUBDIR += pecl-judy
     SUBDIR += pecl-libevent
     SUBDIR += pecl-mcve
@@ -4148,6 +4154,7 @@
     SUBDIR += py-pip
     SUBDIR += py-plan
     SUBDIR += py-plex
+    SUBDIR += py-pluggy
     SUBDIR += py-ply
     SUBDIR += py-polib
     SUBDIR += py-posix_ipc
@@ -4282,6 +4289,7 @@
     SUBDIR += py-sortedcontainers
     SUBDIR += py-spark
     SUBDIR += py-speaklater
+    SUBDIR += py-spyder
     SUBDIR += py-sqlcc
     SUBDIR += py-statgrab
     SUBDIR += py-stdnum
@@ -5089,9 +5097,9 @@
     SUBDIR += spice-protocol
     SUBDIR += spin
     SUBDIR += splint
-    SUBDIR += spyder
     SUBDIR += srecord
     SUBDIR += st
+    SUBDIR += staf
     SUBDIR += statcvs
     SUBDIR += statik
     SUBDIR += statsvn
