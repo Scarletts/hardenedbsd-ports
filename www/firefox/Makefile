@@ -42,11 +42,14 @@ USE_GL=		gl
 USES=		dos2unix tar:xz
 DOS2UNIX_FILES=	media/webrtc/trunk/webrtc/system_wrappers/source/spreadsortlib/spreadsort.hpp
 
+USES+=		relro
+
 FIREFOX_ICON=		${MOZILLA}.png
 FIREFOX_ICON_SRC=	${PREFIX}/lib/${MOZILLA}/browser/chrome/icons/default/default48.png
 MOZ_OPTIONS=	--program-transform-name='s/firefox/${MOZILLA}/' \
 		--enable-application=browser \
-		--enable-official-branding
+		--enable-official-branding \
+		--enable-pie
 
 OPTIONS_EXCLUDE=	LOGGING
 OPTIONS_DEFAULT=	GTK2
