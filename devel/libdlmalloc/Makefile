@@ -14,10 +14,10 @@ NO_WRKSUBDIR=	yes
 USE_LDCONFIG=	yes
 
 do-extract:
-	@${MKDIR} ${WRKDIR}
+	@${MKDIR} ${WRKSRC}
 .for f in ${DISTFILES}
-	${CP} ${DISTDIR}/${f} ${WRKDIR}
+	${CP} -p ${DISTDIR}/${f} ${WRKSRC}
 .endfor
-	${CP} ${FILESDIR}/Makefile ${WRKDIR}
+	${CP} -p ${FILESDIR}/Makefile ${WRKSRC}
 
 .include <bsd.port.mk>
