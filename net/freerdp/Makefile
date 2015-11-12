@@ -20,7 +20,7 @@ GH_ACCOUNT=	FreeRDP
 GH_PROJECT=	${GH_ACCOUNT}
 GH_TAGNAME=	f5ff6e1
 
-USES+=		pie relro
+USES+=		pie
 
 CPE_VENDOR=	freerdp_project
 
