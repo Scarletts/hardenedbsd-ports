@@ -7,7 +7,7 @@
 #
 # MAINTAINER:	shawn.webb@hardenedbsd.org
 
-.if ${OSVERSION} > 1100000 || !defined(POUDRIERE_VERSION)
+.if ${OSVERSION} > 1100000
 .if !defined(_INCLUDE_USES_PIE_MK)
 _INCLUDE_USES_PIE_MK=    yes
 
