@@ -3906,7 +3906,6 @@
     SUBDIR += py-argparse
     SUBDIR += py-args
     SUBDIR += py-asn1
-    SUBDIR += py-asn1-modules
     SUBDIR += py-aspects
     SUBDIR += py-aspyct
     SUBDIR += py-astroid
@@ -4000,7 +3999,6 @@
     SUBDIR += py-epsilon
     SUBDIR += py-evdev
     SUBDIR += py-event
-    SUBDIR += py-experimental.cssselect
     SUBDIR += py-extras
     SUBDIR += py-extremes
     SUBDIR += py-ezpyinline
@@ -4183,6 +4181,7 @@
     SUBDIR += py-pudb
     SUBDIR += py-px
     SUBDIR += py-py
+    SUBDIR += py-pyasn1-modules
     SUBDIR += py-pycalendar
     SUBDIR += py-pycallgraph
     SUBDIR += py-pycerberus
