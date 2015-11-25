@@ -189,6 +189,7 @@
     SUBDIR += darkplaces
     SUBDIR += dcross
     SUBDIR += defendguin
+    SUBDIR += dhewm3
     SUBDIR += diameter
     SUBDIR += diaspora
     SUBDIR += digger-vgl
@@ -230,6 +231,7 @@
     SUBDIR += ember
     SUBDIR += endgame-singularity
     SUBDIR += endgame-singularity-music
+    SUBDIR += endless-sky
     SUBDIR += enigma
     SUBDIR += ensemblist
     SUBDIR += entombed
@@ -516,6 +518,7 @@
     SUBDIR += libkmahjongg
     SUBDIR += libmaitretarot
     SUBDIR += libmt_client
+    SUBDIR += libretro-cores
     SUBDIR += libshhcards
     SUBDIR += lightsoff
     SUBDIR += lincity
@@ -535,7 +538,6 @@
     SUBDIR += linux-etqw-demo-server
     SUBDIR += linux-etqw-server
     SUBDIR += linux-nerogame
-    SUBDIR += linux-ningpo-demo
     SUBDIR += linux-nwnclient
     SUBDIR += linux-nwserver
     SUBDIR += linux-quake3
@@ -834,6 +836,7 @@
     SUBDIR += reminiscence
     SUBDIR += rescue
     SUBDIR += residualvm
+    SUBDIR += retroarch
     SUBDIR += rezerwar
     SUBDIR += rfksay
     SUBDIR += ri-li
@@ -848,6 +851,7 @@
     SUBDIR += rt2-demo
     SUBDIR += rtb
     SUBDIR += rubix
+    SUBDIR += rubygem-fortune_gem
     SUBDIR += sampsvr
     SUBDIR += sarien
     SUBDIR += sauerbraten
@@ -897,6 +901,7 @@
     SUBDIR += sol
     SUBDIR += solarconquest
     SUBDIR += solarus
+    SUBDIR += solarus-quest-editor
     SUBDIR += solarwolf
     SUBDIR += sopwith
     SUBDIR += spacejunk

@@ -77,7 +77,6 @@
     SUBDIR += cmp3
     SUBDIR += cmt
     SUBDIR += cmus
-    SUBDIR += cmus-post.fm
     SUBDIR += cpige
     SUBDIR += cplay
     SUBDIR += cpp-xmms2
@@ -96,7 +95,9 @@
     SUBDIR += darkice
     SUBDIR += dcd
     SUBDIR += deadbeef
+    SUBDIR += deadbeef-jack-plugin
     SUBDIR += deadbeef-mpris-plugin
+    SUBDIR += deadbeef-mpris2-plugin
     SUBDIR += decibel-audio-player
     SUBDIR += deforaos-mixer
     SUBDIR += dekagen
@@ -207,6 +208,7 @@
     SUBDIR += gnormalize
     SUBDIR += gnuitar
     SUBDIR += gnupod
+    SUBDIR += gnuspeechsa
     SUBDIR += gnustep-cdplayer
     SUBDIR += gogglesmm
     SUBDIR += goobox
@@ -611,6 +613,7 @@
     SUBDIR += py-discogs-client
     SUBDIR += py-eyed3
     SUBDIR += py-fastaudio
+    SUBDIR += py-fmoo-audiotools
     SUBDIR += py-gmusicapi
     SUBDIR += py-id3
     SUBDIR += py-karaoke

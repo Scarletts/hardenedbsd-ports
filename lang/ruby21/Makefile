@@ -40,6 +40,9 @@ USE_OPENSSL=	yes
 USES=		cpe execinfo tar:xz
 WRKSRC=		${RUBY_WRKSRC}
 
+NOT_FOR_ARCHS=	ia64
+NOT_FOR_ARCHS_REASON_ia64=	does not build
+
 RUBY_VER=		2.1
 USE_RUBY=		yes
 RUBY_NO_BUILD_DEPENDS=	yes
@@ -62,11 +65,11 @@ CAPIDOCS_CONFIGURE_ENABLE=	install-capi
 GMP_CONFIGURE_WITH=	gmp
 GMP_LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp
 LIBEDIT_BUILD_DEPENDS=	libedit>=0:${PORTSDIR}/devel/libedit
-LIBEDIT_CONFIGURE_ON=	--enable-libedit --with-libedit-prefix=${LOCALBASE}
+LIBEDIT_CONFIGURE_ON=	--enable-libedit --with-libedit-dir=${LOCALBASE}
 LIBEDIT_RUN_DEPENDS=	libedit>=0:${PORTSDIR}/devel/libedit
 RDOC_CONFIGURE_ENABLE=	install-rdoc
 READLINE_BUILD_DEPENDS=	readline>=0:${PORTSDIR}/devel/readline
-READLINE_CONFIGURE_ON=	--disable-libedit --with-readline-prefix=${LOCALBASE}
+READLINE_CONFIGURE_ON=	--disable-libedit --with-readline-dir=${LOCALBASE}
 READLINE_RUN_DEPENDS=	readline>=0:${PORTSDIR}/devel/readline
 
 CPE_VENDOR=	ruby-lang
@@ -95,6 +98,7 @@ CONFIGURE_ARGS+=	--disable-dtrace
 
 .if ${ARCH} == "armv6" || ${ARCH} == "armv6hf"
 CONFIGURE_ARGS+=	--with-setjmp-type=_setjmp
+CONFIGURE_ENV+=	ac_cv_func__setjmp=yes
 .endif
 
 .if ${PORT_OPTIONS:MCAPIDOCS}

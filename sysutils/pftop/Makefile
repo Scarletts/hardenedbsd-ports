@@ -3,7 +3,7 @@
 
 PORTNAME=	pftop
 PORTVERSION=	0.7
-PORTREVISION=	4
+PORTREVISION=	6
 CATEGORIES=	sysutils net
 MASTER_SITES=	http://www.eee.metu.edu.tr/~canacar/
 
@@ -14,16 +14,12 @@ USES=		pie
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 1100000
+.if ${OSVERSION} >= 1100080
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-bpf_dump.c \
 		${FILESDIR}/extra-patch-sf-gencode.h
 CFLAGS+=	-I/usr/include/net
 .endif
 
-.if ${OSVERSION} < 900039
-MAKE_ARGS=	LOCALBASE="${PREFIX}" OSLEVEL=41
-CFLAGS+=	-DHAVE_ALTQ=1
-.else
 MAKE_ARGS=	LOCALBASE="${PREFIX}" OSLEVEL=45
 CFLAGS+=	-DHAVE_ALTQ=1 -DHAVE_SNPRINTF=1 -DHAVE_VSNPRINTF=1
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-cache.c \
@@ -34,7 +30,6 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-cache.c \
 .if ${OSVERSION} > 1000017
 CFLAGS+=	-DHAVE_FINE_GRAINED_LOCKING=1
 .endif
-.endif
 
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-engine.c
 
@@ -44,6 +39,11 @@ MAKE_ENV+=	__MAKE_CONF=/dev/null
 PLIST_FILES=	sbin/pftop man/man8/pftop.8.gz
 
 post-patch:
+.if ${OSVERSION} >= 1100000
+	@${ECHO_MSG} "===> Applying FairQ/Codel patches to ${PORTNAME}."
+	@${CAT} ${FILESDIR}/extra-patch-fairq_codel.diff | \
+		${PATCH} ${PATCH_ARGS}
+.endif
 	@${REINPLACE_CMD} -e 's|<sys/queue.h>|"${FILESDIR}/queue.h"|g' \
 	    ${WRKSRC}/engine.c
 	@${REINPLACE_CMD} -e 's|__dead|__dead2|g' ${WRKSRC}/sf-gencode.h

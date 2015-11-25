@@ -4,7 +4,7 @@
 PORTNAME=	platon
 PORTVERSION=	2015.03.30
 CATEGORIES=	biology
-MASTER_SITES=	http://www.cryst.chem.uu.nl/xraysoft/unix/
+MASTER_SITES=	http://www.platonsoft.nl/spek/xraysoft/unix/
 DISTNAME=	platon
 DIST_SUBDIR=	platon/${PORTVERSION}
 

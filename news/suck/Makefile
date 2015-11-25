@@ -50,7 +50,7 @@ CONFLICTS+=	suck-4.*
 .if ${PORT_OPTIONS:MINN}
 CFLAGS+=	-DNO_CONFIGDATA -I${LOCALBASE}/include/inn
 MAKE_ENV+=	DB_TYPE="-DUSE_INN23 -DDO_TAGGED_HASH"
-MAKE_ENV+=	DB_LIB="-linn -lstorage"
+MAKE_ENV+=	DB_LIB="-linn -lstorage -linnhist"
 MAKE_ENV+=	DB_LIB_LOC=-L${LOCALBASE}/news/lib
 MAKE_ENV+=	DB_INC_LOC="-I${LOCALBASE}/news/include -I${LOCALBASE}/news/include/inn"
 MAKE_ENV+=	INCDIR2=-I${LOCALBASE}/include

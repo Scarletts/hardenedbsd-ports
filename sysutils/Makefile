@@ -27,6 +27,7 @@
     SUBDIR += aird
     SUBDIR += am-utils
     SUBDIR += amrstat
+    SUBDIR += amtc
     SUBDIR += anacron
     SUBDIR += and
     SUBDIR += ansible
@@ -67,14 +68,14 @@
     SUBDIR += bacula5-client-static
     SUBDIR += bacula5-docs
     SUBDIR += bacula5-server
+    SUBDIR += baloo
+    SUBDIR += baloo-widgets
+    SUBDIR += bamf
     SUBDIR += bareos-bat
     SUBDIR += bareos-client
     SUBDIR += bareos-client-static
     SUBDIR += bareos-docs
     SUBDIR += bareos-server
-    SUBDIR += baloo
-    SUBDIR += baloo-widgets
-    SUBDIR += bamf
     SUBDIR += bashburn
     SUBDIR += batmon
     SUBDIR += battfink
@@ -177,6 +178,7 @@
     SUBDIR += daa2iso
     SUBDIR += dae
     SUBDIR += daedalus
+    SUBDIR += daemonize
     SUBDIR += daemontools
     SUBDIR += daemontools-encore
     SUBDIR += dar
@@ -308,6 +310,7 @@
     SUBDIR += fusefs-ifuse
     SUBDIR += fusefs-kmod
     SUBDIR += fusefs-libs
+    SUBDIR += fusefs-lkl
     SUBDIR += fusefs-mhddfs
     SUBDIR += fusefs-mp3fs
     SUBDIR += fusefs-ntfs
@@ -319,6 +322,7 @@
     SUBDIR += fusefs-sqlfs
     SUBDIR += fusefs-sshfs
     SUBDIR += fusefs-unionfs
+    SUBDIR += fusefs-wdfs
     SUBDIR += fusefs-wikipediafs
     SUBDIR += fusefs-zip
     SUBDIR += fvcool
@@ -409,12 +413,14 @@
     SUBDIR += i2c-tools
     SUBDIR += i7z
     SUBDIR += iat
+    SUBDIR += inotify-tools
     SUBDIR += installwatch
     SUBDIR += intel-pcm
     SUBDIR += iocage
     SUBDIR += iocage-devel
     SUBDIR += iogen
     SUBDIR += iograph
+    SUBDIR += iohyve
     SUBDIR += ioping
     SUBDIR += ipa
     SUBDIR += ipad_charge
@@ -552,9 +558,9 @@
     SUBDIR += monitord
     SUBDIR += monitorix
     SUBDIR += mono-kmod
-    SUBDIR += moosefs-chunkserver
     SUBDIR += moosefs-cgi
     SUBDIR += moosefs-cgiserv
+    SUBDIR += moosefs-chunkserver
     SUBDIR += moosefs-cli
     SUBDIR += moosefs-client
     SUBDIR += moosefs-master
@@ -596,6 +602,7 @@
     SUBDIR += obliterate
     SUBDIR += odo
     SUBDIR += ods2
+    SUBDIR += ohmu
     SUBDIR += open
     SUBDIR += openipmi
     SUBDIR += openupsd
@@ -721,6 +728,7 @@
     SUBDIR += php55-posix
     SUBDIR += php56-fileinfo
     SUBDIR += php56-posix
+    SUBDIR += phybs
     SUBDIR += pick
     SUBDIR += pidof
     SUBDIR += pipemeter
@@ -749,11 +757,11 @@
     SUBDIR += pstacku
     SUBDIR += pstree
     SUBDIR += ptools
-    SUBDIR += puppet37
-    SUBDIR += puppet4
     SUBDIR += puppet
     SUBDIR += puppet-lint
     SUBDIR += puppet-mode.el
+    SUBDIR += puppet37
+    SUBDIR += puppet4
     SUBDIR += pv
     SUBDIR += pwd_unmkdb
     SUBDIR += pwgen
@@ -765,15 +773,18 @@
     SUBDIR += py-croniter
     SUBDIR += py-crontab
     SUBDIR += py-danzfs
+    SUBDIR += py-dlipower
     SUBDIR += py-drmaa
     SUBDIR += py-execnet
     SUBDIR += py-ezjailremote
     SUBDIR += py-filelike
+    SUBDIR += py-freenas.cli
     SUBDIR += py-glances
     SUBDIR += py-halite
     SUBDIR += py-honcho
     SUBDIR += py-iowait
     SUBDIR += py-nagiosplugin
+    SUBDIR += py-pkginfo
     SUBDIR += py-ploy
     SUBDIR += py-ploy_ansible
     SUBDIR += py-ploy_ec2
@@ -872,8 +883,9 @@
     SUBDIR += rubygem-hammer_cli_foreman_salt
     SUBDIR += rubygem-hammer_cli_foreman_ssh
     SUBDIR += rubygem-hiera
-    SUBDIR += rubygem-hiera1
+    SUBDIR += rubygem-hieracles
     SUBDIR += rubygem-hiera-file
+    SUBDIR += rubygem-hiera1
     SUBDIR += rubygem-librarian-puppet
     SUBDIR += rubygem-log4r
     SUBDIR += rubygem-logify
@@ -888,6 +900,8 @@
     SUBDIR += rubygem-rubyipmi
     SUBDIR += rubygem-shellany
     SUBDIR += rubygem-smart_proxy_chef
+    SUBDIR += rubygem-smart_proxy_dynflow
+    SUBDIR += rubygem-smart_proxy_remote_execution_ssh
     SUBDIR += rubygem-smart_proxy_salt
     SUBDIR += rubygem-sys-admin
     SUBDIR += rubygem-sys-cpu
@@ -909,6 +923,7 @@
     SUBDIR += samefile
     SUBDIR += samesame
     SUBDIR += sas2ircu
+    SUBDIR += sas3ircu
     SUBDIR += savelogs
     SUBDIR += sb16config
     SUBDIR += sbsigntool
@@ -924,7 +939,6 @@
     SUBDIR += screenie
     SUBDIR += scterc
     SUBDIR += sd-agent
-    SUBDIR += sdd
     SUBDIR += sdparm
     SUBDIR += searchmonkey
     SUBDIR += seatools
@@ -1011,7 +1025,6 @@
     SUBDIR += tmux
     SUBDIR += topless
     SUBDIR += torque
-    SUBDIR += torsmo
     SUBDIR += toshctl
     SUBDIR += tracker
     SUBDIR += tree
@@ -1020,6 +1033,7 @@
     SUBDIR += tss
     SUBDIR += tty-clock
     SUBDIR += ttyload
+    SUBDIR += tuptime
     SUBDIR += tw_cli
     SUBDIR += tzdialog
     SUBDIR += u-boot-bananapi
@@ -1071,6 +1085,7 @@
     SUBDIR += vimpager
     SUBDIR += virtualmin
     SUBDIR += vlogger
+    SUBDIR += vm-bhyve
     SUBDIR += vmdktool
     SUBDIR += vmtouch
     SUBDIR += vobcopy
@@ -1125,7 +1140,6 @@
     SUBDIR += xfce4-diskperf-plugin
     SUBDIR += xfce4-fsguard-plugin
     SUBDIR += xfce4-genmon-plugin
-    SUBDIR += xfce4-minicmd-plugin
     SUBDIR += xfce4-mount-plugin
     SUBDIR += xfce4-netload-plugin
     SUBDIR += xfce4-power-manager

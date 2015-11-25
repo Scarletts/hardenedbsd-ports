@@ -193,6 +193,7 @@
     SUBDIR += psutils
     SUBDIR += py-cups
     SUBDIR += py-fonttools
+    SUBDIR += py-fpdf
     SUBDIR += py-pdf
     SUBDIR += py-pollyreports
     SUBDIR += py-preppy
@@ -225,6 +226,7 @@
     SUBDIR += rubygem-prawn-security
     SUBDIR += rubygem-prawn-svg
     SUBDIR += rubygem-rbpdf
+    SUBDIR += rubygem-rbpdf-font
     SUBDIR += rubygem-ttfunk
     SUBDIR += scribus
     SUBDIR += sgf2tex

@@ -196,8 +196,8 @@
     SUBDIR += plasma-applet-yawp
     SUBDIR += plopfolio
     SUBDIR += preferences
-    SUBDIR += py-khal
     SUBDIR += py-bugwarrior
+    SUBDIR += py-khal
     SUBDIR += py-pycarddav
     SUBDIR += py-pystash
     SUBDIR += py-send2trash
@@ -225,7 +225,6 @@
     SUBDIR += simplegroupware
     SUBDIR += sliderule
     SUBDIR += spice-gtk
-    SUBDIR += steadyflow
     SUBDIR += strigi
     SUBDIR += strigiclient
     SUBDIR += strigidaemon
@@ -234,6 +233,7 @@
     SUBDIR += superkaramba
     SUBDIR += superswitcher
     SUBDIR += surrealtodo
+    SUBDIR += syncthing-gtk
     SUBDIR += systempreferences
     SUBDIR += tagutils
     SUBDIR += taskcoach

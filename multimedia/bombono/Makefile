@@ -19,7 +19,6 @@ LIB_DEPENDS=	libgtkmm-2.4.so:${PORTSDIR}/x11-toolkits/gtkmm24 \
 		libavcodec.so:${PORTSDIR}/multimedia/ffmpeg \
 		libboost_filesystem.so:${PORTSDIR}/devel/boost-libs
 RUN_DEPENDS=	gm:${PORTSDIR}/graphics/GraphicsMagick \
-		dvda-author:${PORTSDIR}/audio/dvda-author \
 		enca:${PORTSDIR}/converters/enca \
 		growisofs:${PORTSDIR}/sysutils/dvd+rw-tools \
 		toolame:${PORTSDIR}/audio/toolame

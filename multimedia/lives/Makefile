@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	lives
-PORTVERSION=	2.4.2
-PORTREVISION=	1
+PORTVERSION=	2.4.4
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}/
 
@@ -79,7 +78,7 @@ NLS_USES=		gettext
 NLS_CONFIGURE_OFF=	--disable-nls
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|${perl_OLD_CMD}|${perl_CMD}|' \
+	@${REINPLACE_CMD} -e 's|/usr/bin/perl|${perl_CMD}|' \
 		${WRKSRC}/build-lives-rfx-plugin
 	@${REINPLACE_CMD} -e 's| install-docDATA||g; s|-$$(VERSION)||g' \
 		${WRKSRC}/Makefile.in

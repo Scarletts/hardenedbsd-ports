@@ -112,13 +112,19 @@
     SUBDIR += easy-rsa
     SUBDIR += easypg
     SUBDIR += elixir-comeonin
+    SUBDIR += elixir-comeonin_i18n
+    SUBDIR += elixir-jose
     SUBDIR += engine_pkcs11
+    SUBDIR += erlang-jose
     SUBDIR += erlang-p1tls
+    SUBDIR += esteidfirefoxplugin
     SUBDIR += expiretable
     SUBDIR += f-prot
     SUBDIR += fakebo
     SUBDIR += fakeident
     SUBDIR += fakeroot
+    SUBDIR += fastd
+    SUBDIR += fastd-devel
     SUBDIR += fbopenssl
     SUBDIR += fcheck
     SUBDIR += fcrackzip
@@ -263,6 +269,7 @@
     SUBDIR += kqoauth
     SUBDIR += krb5
     SUBDIR += krb5-112
+    SUBDIR += krb5-113
     SUBDIR += krb5-appl
     SUBDIR += kripp
     SUBDIR += kstart
@@ -306,6 +313,7 @@
     SUBDIR += libssh2
     SUBDIR += libtasn1
     SUBDIR += libtomcrypt
+    SUBDIR += libuecc
     SUBDIR += libwhisker
     SUBDIR += libyubikey
     SUBDIR += libzrtpcppcore
@@ -813,6 +821,7 @@
     SUBDIR += py-kerberos
     SUBDIR += py-keyczar
     SUBDIR += py-keyring
+    SUBDIR += py-letsencrypt
     SUBDIR += py-libnacl
     SUBDIR += py-m2crypto
     SUBDIR += py-mcrypt
@@ -843,6 +852,7 @@
     SUBDIR += py-pyptlib
     SUBDIR += py-pyscard
     SUBDIR += py-pysha3
+    SUBDIR += py-python-gnupg
     SUBDIR += py-python-registry
     SUBDIR += py-rekall
     SUBDIR += py-rekall-core
@@ -957,8 +967,10 @@
     SUBDIR += rubygem-ruby-saml
     SUBDIR += rubygem-scrypt
     SUBDIR += rubygem-six
+    SUBDIR += rubygem-sshkey
     SUBDIR += rubygem-sshkit
     SUBDIR += rubygem-twitter_oauth
+    SUBDIR += s2n
     SUBDIR += safesh
     SUBDIR += samba-virusfilter
     SUBDIR += sancp
@@ -1072,6 +1084,7 @@
     SUBDIR += vinetto
     SUBDIR += vlock
     SUBDIR += vlog
+    SUBDIR += vm-to-tor
     SUBDIR += vnccrack
     SUBDIR += vpnc
     SUBDIR += vuxml
@@ -1097,6 +1110,7 @@
     SUBDIR += yersinia
     SUBDIR += ykclient
     SUBDIR += ykpers
+    SUBDIR += yubikey-personalization-gui
     SUBDIR += zebedee
     SUBDIR += zenmap
     SUBDIR += zxid
