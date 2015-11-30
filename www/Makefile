@@ -421,6 +421,7 @@
     SUBDIR += mediawiki123
     SUBDIR += mediawiki124
     SUBDIR += mediawiki125
+    SUBDIR += mediawiki126
     SUBDIR += mergelog
     SUBDIR += mgstat
     SUBDIR += mhonarc
@@ -1933,6 +1934,7 @@
     SUBDIR += rubygem-net-http-pipeline
     SUBDIR += rubygem-nicovideo
     SUBDIR += rubygem-ntlm-http
+    SUBDIR += rubygem-octopress
     SUBDIR += rubygem-pagerduty
     SUBDIR += rubygem-passenger
     SUBDIR += rubygem-puma

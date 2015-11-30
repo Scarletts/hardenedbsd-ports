@@ -4894,6 +4894,7 @@
     SUBDIR += rubygem-notiffany
     SUBDIR += rubygem-notify
     SUBDIR += rubygem-nprogress-rails
+    SUBDIR += rubygem-octopress-hooks
     SUBDIR += rubygem-oj
     SUBDIR += rubygem-omniauth_crowd
     SUBDIR += rubygem-omniauth_crowd-rails41
@@ -5045,6 +5046,7 @@
     SUBDIR += rubygem-timers
     SUBDIR += rubygem-tins
     SUBDIR += rubygem-tins0
+    SUBDIR += rubygem-titlecase
     SUBDIR += rubygem-toml
     SUBDIR += rubygem-transaction-simple
     SUBDIR += rubygem-travis
