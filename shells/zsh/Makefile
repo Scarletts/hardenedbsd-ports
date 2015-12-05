@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	zsh
-DISTVERSION=	5.1.1
+DISTVERSION=	5.2
 CATEGORIES=	shells
 MASTER_SITES=	\
 		http://www.zsh.org/pub/:doc \
@@ -35,6 +35,7 @@ SHEBANG_LANG=	zsh
 zsh_OLD_CMD=	/bin/zsh
 zsh_CMD=	${PREFIX}/bin/zsh
 GNU_CONFIGURE=	yes
+TEST_TARGET=	test
 
 USES+=		pie relro
 
@@ -43,7 +44,8 @@ LDFLAGS+=	-L${LOCALBASE}/lib -Wl,--as-needed
 CONFIGURE_ENV+=	zsh_cv_sys_path_dev_fd=no
 CONFIGURE_ARGS=	--with-term-lib="ncursesw ncurses" --with-tcsetpgrp \
 		--enable-function-subdirs --enable-multibyte \
-		--sysconfdir=${PREFIX}/etc
+		--sysconfdir=${PREFIX}/etc \
+		--enable-etcdir=${PREFIX}/etc
 
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-bsdtar
 #EXTRA_COMPLETION_FILES=	_sockstat
