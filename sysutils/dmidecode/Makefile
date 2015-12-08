@@ -3,7 +3,7 @@
 
 PORTNAME=	dmidecode
 PORTVERSION=	2.12
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	SAVANNAH
 
@@ -22,7 +22,7 @@ PLIST_FILES=	etc/periodic/daily/dmidecode \
 		man/man8/dmidecode.8.gz \
 		sbin/dmidecode
 PORTDOCS=	AUTHORS CHANGELOG README
-USE_RC_SUBR=	dmidecode
+SUB_FILES=	dmidecode
 
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/periodic/daily

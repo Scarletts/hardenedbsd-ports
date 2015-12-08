@@ -2,11 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	ua_parser
-PORTVERSION=	0.3.5
-PORTREVISION=	1
+PORTVERSION=	0.5.1
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	${PORTNAME:S/_/-/}-${PORTVERSION}
 
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Python port of Browserscope's user agent parser
@@ -19,7 +17,7 @@ RUN_DEPENDS=	${LOCALBASE}/share/ua_parser/regexes.yaml:${PORTSDIR}/devel/ua_pars
 USE_GITHUB=yes
 GH_ACCOUNT=	ua-parser
 GH_PROJECT=	uap-python
-GH_TAGNAME=	90a18d6
+GH_TAGNAME=	ef275f5
 
 USES=		python
 USE_PYTHON=	distutils autoplist
