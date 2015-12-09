@@ -1,0 +1,11 @@
+--- js/src/jit/ExecutableAllocator.cpp.orig	2015-12-08 19:01:57.683715000 -0500
++++ js/src/jit/ExecutableAllocator.cpp	2015-12-08 19:01:42.016567000 -0500
+@@ -88,7 +88,7 @@
+     }
+ }
+ 
+-#if TARGET_OS_IPHONE
++#if TARGET_OS_IPHONE || defined(HARDENEDBSD)
+ bool ExecutableAllocator::nonWritableJitCode = true;
+ #else
+ bool ExecutableAllocator::nonWritableJitCode = false;
