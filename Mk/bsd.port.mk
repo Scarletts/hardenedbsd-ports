@@ -1613,6 +1613,10 @@ INSTALL_TARGET:=	${INSTALL_TARGET:S/^install-strip$/install/g}
 .include "${PORTSDIR}/Mk/bsd.ssp.mk"
 .endif
 
+# We will control debug files.  Don't let builds that use /usr/share/mk
+# split out debug symbols since the plist won't know to expect it.
+MAKE_ENV+=	NO_DEBUG_FILES=yes
+
 .if defined(NOPORTDOCS)
 PLIST_SUB+=		PORTDOCS="@comment "
 .else
