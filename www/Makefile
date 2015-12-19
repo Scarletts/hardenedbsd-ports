@@ -358,8 +358,6 @@
     SUBDIR += jetty9
     SUBDIR += jinzora
     SUBDIR += jmeter
-    SUBDIR += joomla15
-    SUBDIR += joomla25
     SUBDIR += joomla3
     SUBDIR += jspacker
     SUBDIR += jspwiki
@@ -564,6 +562,7 @@
     SUBDIR += node-devel
     SUBDIR += node010
     SUBDIR += node012
+    SUBDIR += node4
     SUBDIR += nostromo
     SUBDIR += npapi-vlc
     SUBDIR += npapi-xine
@@ -1532,6 +1531,7 @@
     SUBDIR += py-django-cms
     SUBDIR += py-django-contact-form
     SUBDIR += py-django-contrib-comments
+    SUBDIR += py-django-countries
     SUBDIR += py-django-crispy-forms
     SUBDIR += py-django-datetime-widget
     SUBDIR += py-django-debug-toolbar
@@ -1540,6 +1540,7 @@
     SUBDIR += py-django-evolution
     SUBDIR += py-django-extensions
     SUBDIR += py-django-filer
+    SUBDIR += py-django-formtools
     SUBDIR += py-django-haystack
     SUBDIR += py-django-json-rpc
     SUBDIR += py-django-keyedcache
@@ -1555,7 +1556,6 @@
     SUBDIR += py-django-photologue
     SUBDIR += py-django-picklefield
     SUBDIR += py-django-pipeline
-    SUBDIR += py-django-pipeline12
     SUBDIR += py-django-pipeline13
     SUBDIR += py-django-pipeline14
     SUBDIR += py-django-piston
@@ -1577,7 +1577,6 @@
     SUBDIR += py-django-threaded-multihost
     SUBDIR += py-django-tinymce
     SUBDIR += py-django-voting
-    SUBDIR += py-django14
     SUBDIR += py-django16
     SUBDIR += py-django16-tastypie
     SUBDIR += py-django17
