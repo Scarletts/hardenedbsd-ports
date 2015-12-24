@@ -1,12 +1,11 @@
 # $FreeBSD$
 
-PORTNAME=	alegreya-sans
-PORTVERSION=	1.002.20150827
-PORTEPOCH=	1
+PORTNAME=	alegreya
+PORTVERSION=	1.004.20150827
 CATEGORIES=	x11-fonts
 
 MAINTAINER=	rakuco@FreeBSD.org
-COMMENT=	Humanist sans serif font with a calligraphic feeling
+COMMENT=	Serif typeface originally intended for literature
 
 LICENSE=	OFL11
 
@@ -14,8 +13,8 @@ USES=		fonts
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	huertatipografica
-GH_PROJECT=	Alegreya-Sans
-GH_TAGNAME=	4b5282d
+GH_PROJECT=	Alegreya-libre
+GH_TAGNAME=	8f40fc1
 
 NO_BUILD=	yes
 
