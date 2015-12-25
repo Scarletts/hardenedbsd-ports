@@ -519,6 +519,7 @@
     SUBDIR += fib
     SUBDIR += firmware-utils
     SUBDIR += fistgen
+    SUBDIR += flatbuffers
     SUBDIR += flatzebra
     SUBDIR += flex-sdk
     SUBDIR += flex-sdk35
@@ -3976,6 +3977,7 @@
     SUBDIR += py-ctags
     SUBDIR += py-curtsies
     SUBDIR += py-cxx
+    SUBDIR += py-cycler
     SUBDIR += py-d2to1
     SUBDIR += py-daemon
     SUBDIR += py-daemons
@@ -4149,6 +4151,7 @@
     SUBDIR += py-natural
     SUBDIR += py-ncurses
     SUBDIR += py-nose
+    SUBDIR += py-nose-cov
     SUBDIR += py-notifier
     SUBDIR += py-notify
     SUBDIR += py-ocempgui
