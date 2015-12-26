@@ -4040,6 +4040,7 @@
     SUBDIR += py-fsm
     SUBDIR += py-fudge
     SUBDIR += py-funcparserlib
+    SUBDIR += py-funcsigs
     SUBDIR += py-functools32
     SUBDIR += py-fusefs
     SUBDIR += py-future
@@ -4113,6 +4114,7 @@
     SUBDIR += py-kqueue
     SUBDIR += py-krosspython
     SUBDIR += py-lazy
+    SUBDIR += py-lazy-object-proxy
     SUBDIR += py-levenshtein
     SUBDIR += py-liblarch
     SUBDIR += py-libpeas
@@ -4399,6 +4401,7 @@
     SUBDIR += py-wcwidth
     SUBDIR += py-weblib
     SUBDIR += py-wheel
+    SUBDIR += py-wrapt
     SUBDIR += py-wsgi_xmlrpc
     SUBDIR += py-wsgitools
     SUBDIR += py-wsgiutils
