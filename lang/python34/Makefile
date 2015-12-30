@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	python34
-PORTVERSION=	3.4.3
+PORTVERSION=	${PYTHON_PORTVERSION}
 PORTREVISION=	2
 CATEGORIES=	lang python ipv6
 MASTER_SITES=	PYTHON/ftp/python/${PORTVERSION}
@@ -84,6 +84,7 @@ THREADS_LDFLAGS=	-lpthread
 
 TSC_CONFIGURE_WITH=	tsc
 
+.include "${.CURDIR}/Makefile.version"
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPYMALLOC}
