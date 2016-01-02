@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	secadm
-PORTVERSION=	0.2.4
+PORTVERSION=	0.3
 PORTREVISION=	0
 CATEGORIES=	hardenedbsd
 
@@ -18,8 +18,8 @@ MAKE_JOBS_UNSAFE=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	HardenedBSD
 GH_PROJECT=	secadm
-#GH_COMMIT=	ace6559
-GH_TAGNAME=	v0.2.4
+GH_COMMIT=	3e3fe8c
+GH_TAGNAME=	${GH_COMMIT}
 
 .include <bsd.port.mk>
 
