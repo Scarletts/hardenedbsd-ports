@@ -430,6 +430,7 @@
     SUBDIR += elfrc
     SUBDIR += elfsh
     SUBDIR += elftoaout
+    SUBDIR += elixir-apex
     SUBDIR += elixir-bson
     SUBDIR += elixir-calendar
     SUBDIR += elixir-combine
@@ -1499,12 +1500,7 @@
     SUBDIR += mq4cpp
     SUBDIR += msgpack
     SUBDIR += msgpuck
-    SUBDIR += msp430-binutils
     SUBDIR += msp430-debug-stack
-    SUBDIR += msp430-gcc
-    SUBDIR += msp430-gdb
-    SUBDIR += msp430-libc
-    SUBDIR += msp430mcu
     SUBDIR += mspdebug
     SUBDIR += msrc0
     SUBDIR += mtbl
@@ -3941,9 +3937,11 @@
     SUBDIR += py-bitstring
     SUBDIR += py-blessings
     SUBDIR += py-blinker
+    SUBDIR += py-blist
     SUBDIR += py-bluelet
     SUBDIR += py-boto
     SUBDIR += py-botocore
+    SUBDIR += py-canonicaljson
     SUBDIR += py-capstone
     SUBDIR += py-cclib
     SUBDIR += py-celery
@@ -3984,6 +3982,7 @@
     SUBDIR += py-cycler
     SUBDIR += py-d2to1
     SUBDIR += py-daemon
+    SUBDIR += py-daemonize
     SUBDIR += py-daemons
     SUBDIR += py-dal
     SUBDIR += py-darcsver
@@ -4039,6 +4038,7 @@
     SUBDIR += py-freenas.dispatcher
     SUBDIR += py-freenas.utils
     SUBDIR += py-freezegun
+    SUBDIR += py-frozendict
     SUBDIR += py-fs
     SUBDIR += py-fsm
     SUBDIR += py-fudge
@@ -4076,6 +4076,7 @@
     SUBDIR += py-hgsubversion
     SUBDIR += py-hgtools
     SUBDIR += py-humanize
+    SUBDIR += py-hypothesis
     SUBDIR += py-icalendar
     SUBDIR += py-ice
     SUBDIR += py-icu
@@ -4133,6 +4134,7 @@
     SUBDIR += py-lxml
     SUBDIR += py-magic
     SUBDIR += py-manuel
+    SUBDIR += py-matrix-angular-sdk
     SUBDIR += py-mccabe
     SUBDIR += py-meliae
     SUBDIR += py-memory_profiler
@@ -4215,6 +4217,7 @@
     SUBDIR += py-pycmd
     SUBDIR += py-pycparser
     SUBDIR += py-pydasm
+    SUBDIR += py-pydenticon
     SUBDIR += py-pydoop
     SUBDIR += py-pyechonest
     SUBDIR += py-pyee
@@ -4296,6 +4299,7 @@
     SUBDIR += py-repoze.xmliter
     SUBDIR += py-resolver
     SUBDIR += py-resourcepackage
+    SUBDIR += py-responses
     SUBDIR += py-riak_pb
     SUBDIR += py-rlcompleter2
     SUBDIR += py-robotframework
@@ -4393,6 +4397,7 @@
     SUBDIR += py-unipath
     SUBDIR += py-unittest2
     SUBDIR += py-unittestplus
+    SUBDIR += py-unpaddedbase64
     SUBDIR += py-urlimport
     SUBDIR += py-urwid
     SUBDIR += py-urwidtrees
