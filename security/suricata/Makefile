@@ -21,6 +21,8 @@ USE_LDCONFIG=	yes
 USE_RC_SUBR=	${PORTNAME}
 GNU_CONFIGURE=	yes
 
+USES+=		pie relro
+
 CPE_VENDOR=	openinfosecfoundation
 
 INSTALL_TARGET=		install-strip
@@ -100,6 +102,7 @@ TESTS_CONFIGURE_ENABLE=		unittests
 SUB_FILES=	pkg-message
 
 CONFIGURE_ARGS+=--enable-gccprotect \
+		--enable-pie \
 		--disable-silent-rules \
 		--with-libpcre-includes=${LOCALBASE}/include \
 		--with-libpcre-libraries=${LOCALBASE}/lib \
