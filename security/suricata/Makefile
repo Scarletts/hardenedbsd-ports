@@ -21,7 +21,7 @@ USE_LDCONFIG=	yes
 USE_RC_SUBR=	${PORTNAME}
 GNU_CONFIGURE=	yes
 
-USES+=		pie relro
+USES+=		relro
 
 CPE_VENDOR=	openinfosecfoundation
 
