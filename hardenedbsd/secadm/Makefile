@@ -21,5 +21,11 @@ GH_PROJECT=	secadm
 GH_COMMIT=	3e3fe8c
 GH_TAGNAME=	${GH_COMMIT}
 
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1100000
+LIB_DEPENDS+=	libxo.so:${PORTSDIR}/devel/libxo
+.endif
+
 .include <bsd.port.mk>
 
